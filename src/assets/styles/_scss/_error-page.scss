@@ -1,0 +1,41 @@
+.error-page {
+  background-color: #f8f9fa;
+  height: 100vh;
+
+  .container {
+    padding: 20px;
+    height: 100%;
+    @include centerFlex();
+    flex-direction: column;
+  }
+
+  img {
+    height: 360px;
+  }
+
+  .error-title {
+    font-size: 32px;
+    color: $black;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .error-description {
+    font-size: 14px;
+    color: $gray;
+    margin-bottom: 24px;
+  }
+
+  a {
+    padding: 12px 42px;
+    font-size: 14px;
+    color: $white;
+    background: $main;
+    border-radius: 120px;
+    transition: $transition;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    &:hover {
+      background: $black;
+    }
+  }
+}

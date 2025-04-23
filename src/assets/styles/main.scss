@@ -1,0 +1,9 @@
+@import "./_scss/config";
+@import "./_scss/error-page";
+
+body {
+  position: relative;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  font-family: "Zain", sans-serif;
+}

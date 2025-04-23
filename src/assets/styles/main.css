@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@keyframes pulse {
+  0% {
+    background-color: #e0e0e0;
+  }
+  50% {
+    background-color: #f0f0f0;
+  }
+  100% {
+    background-color: #e0e0e0;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #f4f4f4;
+  height: 300px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li[data-sonner-toast=""] {
+  padding: 12px;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+button {
+  border: none;
+  background-color: unset;
+  color: #000;
+}
+
+.row {
+  margin: 0;
+}
+
+input[type=number] {
+  -webkit-appearance: textfield;
+          appearance: textfield;
+  -moz-appearance: textfield;
+}
+input[type=number]::-webkit-outer-spin-button {
+  display: none;
+}
+input[type=number]::-webkit-inner-spin-button {
+  display: none;
+}
+
+.error-page {
+  background-color: #f8f9fa;
+  height: 100vh;
+}
+.error-page .container {
+  padding: 20px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.error-page img {
+  height: 360px;
+}
+.error-page .error-title {
+  font-size: 32px;
+  color: #000;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.error-page .error-description {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 24px;
+}
+.error-page a {
+  padding: 12px 42px;
+  font-size: 14px;
+  color: #fff;
+  background: #54a0c4;
+  border-radius: 120px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.error-page a:hover {
+  background: #000;
+}
+
+body {
+  position: relative;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  font-family: "Zain", sans-serif;
+}/*# sourceMappingURL=main.css.map */

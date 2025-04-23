@@ -1,0 +1,13 @@
+{
+    "errorPage": {
+        "pageNotFoundTitle": "Page Not Found",
+        "pageNotFoundMessage": "We couldn't find the page you're looking for. The page might have been moved, deleted, or never existed.",
+        "errorTitle": "Error",
+        "applicationErrorTitle": "Application Error",
+        "applicationErrorMessage": "An unexpected error occurred. Please try again later.",
+        "unexpectedErrorTitle": "Unexpected Error",
+        "unexpectedErrorMessage": "An unexpected error occurred. Please try again later.",
+        "oops": "Oops!",
+        "returnToHome": "Return To Home"
+    }
+}

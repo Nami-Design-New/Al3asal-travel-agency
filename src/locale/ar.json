@@ -1,0 +1,13 @@
+{
+    "errorPage": {
+        "pageNotFoundTitle": "الصفحة غير موجودة",
+        "pageNotFoundMessage": "لم نتمكن من العثور على الصفحة التي تبحث عنها. ربما تم نقلها أو حذفها أو لم تكن موجودة من الأساس.",
+        "errorTitle": "خطأ",
+        "applicationErrorTitle": "خطأ في التطبيق",
+        "applicationErrorMessage": "حدث خطأ غير متوقع. يرجى المحاولة مرة أخرى لاحقاً.",
+        "unexpectedErrorTitle": "خطأ غير متوقع",
+        "unexpectedErrorMessage": "حدث خطأ غير متوقع. يرجى المحاولة مرة أخرى لاحقاً.",
+        "oops": "عذراً!",
+        "returnToHome": "العودة إلى الصفحة الرئيسية"
+    }
+}
