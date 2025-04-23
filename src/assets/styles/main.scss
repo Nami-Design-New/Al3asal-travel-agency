@@ -1,9 +1,21 @@
-@import "./_scss/config";
-@import "./_scss/error-page";
+@import "./scss/config";
+@import "./scss/layout";
+@import "./scss/error-page";
+@import "./scss/auth";
 
 body {
   position: relative;
+  direction: rtl;
   overflow-x: hidden;
   scrollbar-width: none;
-  font-family: "Zain", sans-serif;
+  font-family: "Baloo Bhaijaan 2", sans-serif;
+
+  main {
+    @import "./scss/home";
+  }
+
+  &.en {
+    font-family: "Outfit", sans-serif;
+    direction: ltr;
+  }
 }

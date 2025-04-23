@@ -23,17 +23,18 @@
   .error-description {
     font-size: 14px;
     color: $gray;
-    margin-bottom: 24px;
+    margin-bottom: 16px;
+    text-align: center;
   }
 
   a {
-    padding: 12px 42px;
+    padding: 12px 32px;
     font-size: 14px;
     color: $white;
     background: $main;
     border-radius: 120px;
     transition: $transition;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    box-shadow: $shadow;
     &:hover {
       background: $black;
     }

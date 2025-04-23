@@ -1,4 +1,14 @@
 {
+    "header": {
+        "home": "Home",
+        "tickets": "Tickets",
+        "about": "About Us",
+        "contact": "Contact Us",
+        "destinations": "Destinations",
+        "login": "Login",
+        "changeLanguage": "Change language",
+        "changeCurrency": "change currency"
+    },
     "errorPage": {
         "pageNotFoundTitle": "Page Not Found",
         "pageNotFoundMessage": "We couldn't find the page you're looking for. The page might have been moved, deleted, or never existed.",
@@ -9,5 +19,23 @@
         "unexpectedErrorMessage": "An unexpected error occurred. Please try again later.",
         "oops": "Oops!",
         "returnToHome": "Return To Home"
+    },
+    "currencies": {
+        "KWD": "دينار كويتي",
+        "AED": "درهم إماراتي",
+        "SAR": "ريال سعودي",
+        "EGP": "جنيه مصري",
+        "USD": "دولار أمريكي",
+        "BHD": "دينار بحريني",
+        "EUR": "يورو",
+        "INR": "روبية هندية",
+        "JOD": "دينار أردني",
+        "OMR": "ريال عماني",
+        "QAR": "ريال قطري",
+        "DZD": "دينار جزائري",
+        "TND": "دينار تونسي",
+        "MAD": "درهم مغربي",
+        "BRL": "ريال برازيلي",
+        "MXN": "بيزو مكسيكي"
     }
 }

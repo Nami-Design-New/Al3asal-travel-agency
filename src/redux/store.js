@@ -1,8 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import languageSlice from "./slices/languageSlice";
+import settings from "./slices/settings";
+import auth from "./slices/auth";
 
 export const store = configureStore({
   reducer: {
-    language: languageSlice,
+    settings: settings,
+    auth: auth,
   },
 });

@@ -1,4 +1,14 @@
 {
+    "header": {
+        "home": "الرئيسية",
+        "tickets": "التذاكر",
+        "about": "من نحن",
+        "contact": "اتصل بنا",
+        "destinations": "الوجهات",
+        "login": "تسجيل الدخول",
+        "changeLanguage": "تغيير اللغة",
+        "changeCurrency": "تغيير العملة"
+    },
     "errorPage": {
         "pageNotFoundTitle": "الصفحة غير موجودة",
         "pageNotFoundMessage": "لم نتمكن من العثور على الصفحة التي تبحث عنها. ربما تم نقلها أو حذفها أو لم تكن موجودة من الأساس.",
@@ -9,5 +19,23 @@
         "unexpectedErrorMessage": "حدث خطأ غير متوقع. يرجى المحاولة مرة أخرى لاحقاً.",
         "oops": "عذراً!",
         "returnToHome": "العودة إلى الصفحة الرئيسية"
+    },
+    "currencies": {
+        "KWD": "Kuwaiti Dinar",
+        "AED": "UAE Dirham",
+        "SAR": "Saudi Riyal",
+        "EGP": "Egyptian Pound",
+        "USD": "US Dollar",
+        "BHD": "Bahraini Dinar",
+        "EUR": "Euro",
+        "INR": "Indian Rupee",
+        "JOD": "Jordanian Dinar",
+        "OMR": "Omani Rial",
+        "QAR": "Qatari Riyal",
+        "DZD": "Algerian Dinar",
+        "TND": "Tunisian Dinar",
+        "MAD": "Moroccan Dirham",
+        "BRL": "Brazilian Real",
+        "MXN": "Mexican Peso"
     }
 }

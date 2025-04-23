@@ -1,0 +1,94 @@
+header {
+  top: 0;
+  width: 100%;
+  padding: 16px 0;
+  position: sticky;
+  z-index: 99;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+
+  &.sticky {
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    background: $white;
+    z-index: 100;
+  }
+
+  nav {
+    display: flex;
+    .logo {
+      display: flex;
+      flex: 1;
+      img {
+        object-fit: contain;
+        height: 50px;
+      }
+    }
+
+    .nav_items {
+      flex: 2;
+      gap: 42px;
+      @include centerFlex();
+      a {
+        color: $black;
+        font-size: 16px;
+        &:hover,
+        &.active {
+          color: $main;
+        }
+      }
+    }
+
+    .actions {
+      flex: 1;
+      gap: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      .dropdown-toggle {
+        background: none;
+        border: none;
+        color: $black;
+        padding: 8px 12px;
+        &:active {
+          color: $black;
+          background-color: transparent !important;
+        }
+      }
+
+      .input_field {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 16px;
+        gap: 4px;
+        label {
+          font-size: 14px;
+        }
+        &:last-child {
+          margin-bottom: 0;
+        }
+        select {
+          width: 100%;
+          padding: 8px 4px;
+          font-size: 14px;
+          border: 1px solid $input_stroke;
+          border-radius: 4px;
+        }
+      }
+
+      .dropdown-menu {
+        min-width: 15rem;
+        padding: 16px;
+      }
+
+      .login {
+        font-size: 16px;
+        background: $black;
+        color: $white;
+        border-radius: 120px;
+        padding: 8px 20px;
+        transition: $transition;
+      }
+    }
+  }
+}

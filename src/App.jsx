@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import i18n from "./utils/i18n";
 
 function App() {
-  const { lang } = useSelector((state) => state.language);
+  const { lang } = useSelector((state) => state.settings);
 
   useEffect(() => {
     localStorage.setItem("lang", lang);
