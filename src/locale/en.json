@@ -68,10 +68,16 @@
         "leavingFrom": "Leaving From",
         "goingTo": "Going To",
         "travelers": "Travelers",
-        "search": "Search"
+        "search": "Search",
+        "adults": "Adults",
+        "children": "Children",
+        "infants": "Infants",
+        "searchByCityOrAirPort": "Search by city or airport"
     },
     "home": {
         "welcome": "Welcome to Al3asal Travel & Tourism",
-        "description": "Embark on unforgettable journeys with Al3asal — where exceptional service meets exclusive travel experiences. Discover the world with comfort, care, and unmatched value."
+        "description": "Embark on unforgettable journeys with Al3asal — where exceptional service meets exclusive travel experiences. Discover the world with comfort, care, and unmatched value.",
+        "topDestinations": "Top Searched Destinations",
+        "topDestinationsSubtitle": "Explore the most popular travel destinations among our users."
     }
 }

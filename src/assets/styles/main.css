@@ -192,6 +192,118 @@ button {
   border-radius: 8px !important;
 }
 
+.calender_modal .rmdp-calendar {
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 8px;
+  background: #fff;
+}
+
+.rmdp-wrapper {
+  background: #fff !important;
+}
+
+.rmdp-day {
+  width: 52px !important;
+  height: 52px !important;
+  font-size: 16px !important;
+  color: #000 !important;
+  transition: all 0.3s ease-in-out;
+}
+.rmdp-day span:hover {
+  background-color: #fafafa !important;
+  color: #54a0c4 !important;
+}
+.rmdp-day.rmdp-today span {
+  background-color: #fafafa !important;
+  color: #54a0c4 !important;
+}
+.rmdp-day.rmdp-disabled {
+  color: #777 !important;
+  cursor: not-allowed !important;
+}
+.rmdp-day.rmdp-disabled span {
+  text-decoration: line-through !important;
+  cursor: not-allowed !important;
+}
+.rmdp-day.rmdp-disabled span:hover {
+  background-color: transparent !important;
+  color: #777 !important;
+}
+
+.rmdp-arrow-container {
+  width: 24px !important;
+  height: 24px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.rmdp-arrow-container i {
+  display: none;
+}
+.rmdp-arrow-container::before {
+  font-family: "Font Awesome 6 Pro";
+  content: "\f104";
+  font-size: 14px;
+  color: #54a0c4;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.rmdp-arrow-container.rmdp-right::before {
+  content: "\f105";
+}
+.rmdp-arrow-container:hover {
+  background: #fafafa !important;
+  box-shadow: none !important;
+}
+.rmdp-arrow-container.disabled {
+  cursor: not-allowed !important;
+}
+.rmdp-arrow-container.disabled::before {
+  color: #aaaaaa !important;
+}
+.rmdp-arrow-container.disabled:hover {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.rmdp-range {
+  background: #54a0c4 !important;
+  box-shadow: none !important;
+  color: #fff !important;
+}
+.rmdp-range.rmdp-today span {
+  background: #54a0c4 !important;
+  color: #fff !important;
+}
+
+.rmdp-week:first-child {
+  margin-bottom: 16px;
+}
+.rmdp-week:first-child .rmdp-week-day {
+  color: #54a0c4 !important;
+}
+
+.rmdp-header-values {
+  color: #54a0c4 !important;
+}
+
+.rmdp-shadow {
+  box-shadow: none !important;
+}
+
+.calender_wrapper {
+  min-height: 384px;
+}
+
+.rmdp-week-day {
+  width: 52px !important;
+}
+
 header {
   top: 0;
   width: 100%;
@@ -560,6 +672,7 @@ body main .hero_section {
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("/images/hero.jpg");
   background-size: cover;
   background-position: center;
+  position: relative;
 }
 body main .hero_section .hero_text {
   width: 100%;
@@ -582,6 +695,56 @@ body main .hero_section .hero_text p {
   width: min(100% - 24px, 700px);
   text-align: center;
   margin: 0 auto;
+}
+body main .top_destinations {
+  padding: 100px 0 80px;
+}
+body main .top_destinations h2 {
+  color: #000;
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+body main .top_destinations p {
+  color: #777;
+  font-size: 14px;
+}
+body main .top_destinations .destination_card {
+  width: 100%;
+  border: 1px solid #f4f4f4;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 16px;
+  border-radius: 24px;
+  transition: all 0.3s ease-in-out;
+}
+body main .top_destinations .destination_card:hover {
+  box-shadow: rgba(0, 0, 0, 0.035) 0px 2.45093px 8.98675px 0px;
+}
+body main .top_destinations .destination_card .img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+body main .top_destinations .destination_card .img img {
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+}
+body main .top_destinations .destination_card .content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+body main .top_destinations .destination_card .content h3 {
+  font-size: 16px;
+  margin: 0;
+}
+body main .top_destinations .destination_card .content p {
+  margin: 0;
+  font-size: 14px;
 }
 body main .flights_filter {
   background: #fff;
@@ -678,6 +841,75 @@ body main .flights_filter .flight_specifications .search {
   box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.1);
   border-radius: 12px;
   font-size: 14px;
+}
+body main .flights_filter .flight_specifications .travelers_menu {
+  min-width: 18rem;
+  padding: 16px;
+}
+body main .flights_filter .flight_specifications .travelers_menu .travelers_menu_content {
+  gap: 16px;
+  display: flex;
+  flex-direction: column;
+}
+body main .flights_filter .flight_specifications .travelers_menu .section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+body main .flights_filter .flight_specifications .travelers_menu .section h6 {
+  margin: 0;
+  font-size: 14px;
+}
+body main .flights_filter .flight_specifications .travelers_menu .section h6 strong {
+  font-size: 10px;
+  font-weight: 400;
+  color: #aaaaaa;
+}
+body main .flights_filter .flight_specifications .travelers_menu .section .btns {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+body main .flights_filter .flight_specifications .travelers_menu .section .btns .btn {
+  width: 28px;
+  height: 28px;
+  background: #f4f4f4;
+  border-radius: 50%;
+  color: #000;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body main .flights_filter .flight_specifications .travelers_menu .section .btns .num {
+  font-size: 14px;
+  color: #000;
+}
+body main .flights_filter .flight_specifications .places_menu {
+  min-width: 20rem;
+  min-height: 200px;
+  padding: 16px;
+}
+body main .flights_filter .flight_specifications .places_menu input {
+  font-size: 14px;
+  width: 100%;
+  padding: 0 0 10px;
+  border-bottom: 1px solid #f4f4f4;
+}
+body main .flights_filter .flight_specifications .places_menu .places_menu_content {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  gap: 12px;
+}
+body main .flights_filter .flight_specifications .places_menu .places_menu_content h6 {
+  width: 100%;
+  height: 100%;
+  font-size: 14px;
+  color: #aaaaaa;
+  text-align: center;
+  font-weight: 400;
+  margin: 40px 0;
 }
 body.en {
   font-family: "Outfit", sans-serif;
