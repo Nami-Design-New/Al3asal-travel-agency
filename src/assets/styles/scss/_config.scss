@@ -193,3 +193,31 @@ button {
   margin: 20px auto;
   justify-content: center;
 }
+
+.select__control {
+  box-shadow: none !important;
+  border-color: $input_stroke !important;
+  background-color: $input_bg !important;
+  border-radius: 12px !important;
+  font-size: 14px !important;
+  &:hover {
+    background-color: $white !important;
+  }
+}
+
+.select__indicator-separator {
+  display: none !important;
+}
+
+.select__menu {
+  white-space: nowrap !important;
+  width: fit-content !important;
+  z-index: 999999 !important;
+  font-size: 14px;
+}
+
+.select__multi-value {
+  margin: 0 !important;
+  margin-inline-end: 4px !important;
+  border-radius: 8px !important;
+}

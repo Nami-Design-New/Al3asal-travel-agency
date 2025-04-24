@@ -47,7 +47,7 @@
         "forgotPassword": "Forgot Password?",
         "loginTitle": "Login to your account",
         "loginSubtitle": "Please enter your credentials to access your account.",
-        "or": "or login",
+        "or": "OR Login",
         "loginWithGoogle": "with Google",
         "loginWithApple": "with Apple",
         "dontHaveAccount": "Don't have an account?",
@@ -57,5 +57,21 @@
         "fullName": "Full Name",
         "registerTitle": "Create an account",
         "registerSubtitle": "Please enter your details to create an account."
+    },
+    "flights": {
+        "oneWay": "One Way",
+        "roundTrip": "Round Trip",
+        "economy": "Economy",
+        "premiumEconomy": "Premium Economy",
+        "businessClass": "Business Class",
+        "firstClass": "First Class",
+        "leavingFrom": "Leaving From",
+        "goingTo": "Going To",
+        "travelers": "Travelers",
+        "search": "Search"
+    },
+    "home": {
+        "welcome": "Welcome to Al3asal Travel & Tourism",
+        "description": "Embark on unforgettable journeys with Al3asal — where exceptional service meets exclusive travel experiences. Discover the world with comfort, care, and unmatched value."
     }
 }

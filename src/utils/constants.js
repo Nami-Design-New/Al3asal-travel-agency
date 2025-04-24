@@ -16,3 +16,10 @@ export const currencies = [
   "BRL",
   "MXN",
 ];
+
+export const flightLevels = [
+  "economy",
+  "premiumEconomy",
+  "businessClass",
+  "firstClass",
+];

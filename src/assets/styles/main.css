@@ -163,6 +163,35 @@ button {
   justify-content: center;
 }
 
+.select__control {
+  box-shadow: none !important;
+  border-color: #f4f4f4 !important;
+  background-color: #fafafa !important;
+  border-radius: 12px !important;
+  font-size: 14px !important;
+}
+.select__control:hover {
+  background-color: #fff !important;
+}
+
+.select__indicator-separator {
+  display: none !important;
+}
+
+.select__menu {
+  white-space: nowrap !important;
+  width: -moz-fit-content !important;
+  width: fit-content !important;
+  z-index: 999999 !important;
+  font-size: 14px;
+}
+
+.select__multi-value {
+  margin: 0 !important;
+  margin-inline-end: 4px !important;
+  border-radius: 8px !important;
+}
+
 header {
   top: 0;
   width: 100%;
@@ -199,7 +228,7 @@ header nav .nav_items {
 }
 header nav .nav_items a {
   color: #000;
-  font-size: 16px;
+  font-size: 14px;
 }
 header nav .nav_items a:hover, header nav .nav_items a.active {
   color: #54a0c4;
@@ -216,6 +245,7 @@ header nav .actions .dropdown-toggle {
   border: none;
   color: #000;
   padding: 8px 12px;
+  font-size: 14px;
 }
 header nav .actions .dropdown-toggle:active {
   color: #000;
@@ -527,9 +557,127 @@ body {
 }
 body main .hero_section {
   min-height: 50dvh;
-  background-image: url("/images/hero.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("/images/hero.jpg");
   background-size: cover;
   background-position: center;
+}
+body main .hero_section .hero_text {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 12px;
+}
+body main .hero_section .hero_text h1 {
+  margin-top: 100px;
+  color: #fff;
+  margin-bottom: 0;
+  font-size: 28px;
+}
+body main .hero_section .hero_text p {
+  color: #fff;
+  font-size: 16px;
+  margin-bottom: 0;
+  width: min(100% - 24px, 700px);
+  text-align: center;
+  margin: 0 auto;
+}
+body main .flights_filter {
+  background: #fff;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.1);
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(100%, 1100px);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+body main .flights_filter .flight_type {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+body main .flights_filter .flight_type label {
+  cursor: pointer;
+}
+body main .flights_filter .flight_type label input {
+  display: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+body main .flights_filter .flight_type label input:checked + span {
+  background: #000;
+  color: #fff;
+  border-color: #000;
+}
+body main .flights_filter .flight_type label span {
+  background: #fafafa;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  border: 1px solid #f4f4f4;
+}
+body main .flights_filter .flight_specifications {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+body main .flights_filter .flight_specifications .dropdown {
+  width: 100%;
+}
+body main .flights_filter .flight_specifications .from_to {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+  min-width: 50%;
+}
+body main .flights_filter .flight_specifications .from_to .swap_button {
+  min-width: 32px;
+  height: 32px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.1);
+  border: 1px solid #aaaaaa;
+  font-size: 12px;
+  color: #aaaaaa;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 99;
+}
+body main .flights_filter .flight_specifications .filter_btn {
+  width: 100%;
+  box-shadow: none !important;
+  background: #fff;
+  border-radius: 12px;
+  color: #000;
+  cursor: pointer;
+  border: 1px solid #aaaaaa;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  padding: 10px 16px;
+}
+body main .flights_filter .flight_specifications .filter_btn i {
+  color: #aaaaaa;
+}
+body main .flights_filter .flight_specifications .search {
+  padding: 10px 16px;
+  color: #fff;
+  background: #54a0c4;
+  box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  font-size: 14px;
 }
 body.en {
   font-family: "Outfit", sans-serif;

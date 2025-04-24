@@ -1,6 +1,130 @@
 .hero_section {
   min-height: 50dvh;
-  background-image: url("/images/hero.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("/images/hero.jpg");
   background-size: cover;
   background-position: center;
+
+  .hero_text {
+    width: 100%;
+    @include centerFlex();
+    flex-direction: column;
+    gap: 12px;
+    h1 {
+      margin-top: 100px;
+      color: $white;
+      margin-bottom: 0;
+      font-size: 28px;
+    }
+
+    p {
+      color: $white;
+      font-size: 16px;
+      margin-bottom: 0;
+      width: min(100% - 24px, 700px);
+      text-align: center;
+      margin: 0 auto;
+    }
+  }
+}
+
+.flights_filter {
+  background: $white;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: $shadow;
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(100%, 1100px);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  .flight_type {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    label {
+      cursor: pointer;
+      input {
+        display: none;
+        appearance: none;
+        &:checked + span {
+          background: $black;
+          color: $white;
+          border-color: $black;
+        }
+      }
+
+      span {
+        background: $input_bg;
+        padding: 10px 16px;
+        border-radius: 8px;
+        font-size: 14px;
+        border: 1px solid $input_stroke;
+      }
+    }
+  }
+
+  .flight_specifications {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+
+    .dropdown {
+      width: 100%;
+    }
+
+    .from_to {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      position: relative;
+      min-width: 50%;
+
+      .swap_button {
+        min-width: 32px;
+        height: 32px;
+        background: $white;
+        border-radius: 50%;
+        box-shadow: $shadow;
+        border: 1px solid $input_hint;
+        font-size: 12px;
+        color: $input_hint;
+        @include centerAbsolute();
+        z-index: 99;
+      }
+    }
+
+    .filter_btn {
+      width: 100%;
+      box-shadow: none !important;
+      background: $white;
+      border-radius: 12px;
+      color: $black;
+      cursor: pointer;
+      border: 1px solid $input_hint;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+      padding: 10px 16px;
+      i {
+        color: $input_hint;
+      }
+    }
+
+    .search {
+      padding: 10px 16px;
+      color: $white;
+      background: $main;
+      box-shadow: $shadow;
+      border-radius: 12px;
+      font-size: 14px;
+    }
+  }
 }
