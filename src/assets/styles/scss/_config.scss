@@ -43,6 +43,7 @@ $black: #000;
 $white: #fff;
 $gray: #777;
 $input_bg: #fafafa;
+$input_hint: #aaaaaa;
 $input_stroke: #f4f4f4;
 $transition: all 0.3s ease-in-out;
 $shadow: 0 0 16px 0 rgba(0, 0, 0, 0.1);
@@ -107,7 +108,8 @@ input[type="number"] {
 
 input,
 select,
-textarea {
+textarea,
+button {
   @include clearInput();
 }
 
@@ -187,7 +189,7 @@ textarea {
 
 .modal .modal-xl {
   max-width: unset;
-  width: min(100% - 24px, 1140px);
+  width: min(100% - 24px, 1340px);
   margin: 20px auto;
   justify-content: center;
 }

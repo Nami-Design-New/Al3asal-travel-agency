@@ -2,6 +2,7 @@
 @import "./scss/layout";
 @import "./scss/error-page";
 @import "./scss/auth";
+@import "./scss/form_ui";
 
 body {
   position: relative;
@@ -17,5 +18,25 @@ body {
   &.en {
     font-family: "Outfit", sans-serif;
     direction: ltr;
+
+    .form_ui .input-field .pass-group {
+      input {
+        border-radius: 12px 0 0 12px !important;
+        border-right: 0 !important;
+        border-left: 1px solid $input_stroke !important;
+      }
+      .show-pass {
+        border-radius: 0 12px 12px 0 !important;
+        border-left: 0 !important;
+        border-right: 1px solid $input_stroke !important;
+      }
+    }
+
+    .auth_modal .modal_close_btn {
+      left: auto !important;
+      right: 16px !important;
+      margin-inline-start: 0 !important;
+      margin-inline-end: auto !important;
+    }
   }
 }

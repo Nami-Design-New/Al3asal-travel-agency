@@ -37,5 +37,25 @@
         "MAD": "درهم مغربي",
         "BRL": "ريال برازيلي",
         "MXN": "بيزو مكسيكي"
+    },
+    "auth": {
+        "emailAddress": "Email Address",
+        "enterEmailAddress": "Enter Email Address",
+        "enterPassword": "Enter Password",
+        "password": "Password",
+        "login": "Login",
+        "forgotPassword": "Forgot Password?",
+        "loginTitle": "Login to your account",
+        "loginSubtitle": "Please enter your credentials to access your account.",
+        "or": "or login",
+        "loginWithGoogle": "with Google",
+        "loginWithApple": "with Apple",
+        "dontHaveAccount": "Don't have an account?",
+        "createAccount": "Create Account",
+        "alreadyHaveAccount": "Already have an account?",
+        "enterYourName": "Enter your name",
+        "fullName": "Full Name",
+        "registerTitle": "Create an account",
+        "registerSubtitle": "Please enter your details to create an account."
     }
 }

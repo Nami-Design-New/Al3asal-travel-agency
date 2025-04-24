@@ -3,27 +3,32 @@ import { useDispatch, useSelector } from "react-redux";
 import { closeAuthModal } from "../../redux/slices/auth";
 import Login from "../../components/auth/Login";
 import Register from "../../components/auth/Register";
+import ResetPassword1 from "../../components/auth/ResetPassword1";
 
 export default function AuthModal() {
-  const show = useSelector((state) => state.auth);
-  const step = useSelector((state) => state.auth);
+  const { show } = useSelector((state) => state.auth);
+  const { step } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
+
+  const handleClose = () => {
+    dispatch(closeAuthModal());
+  };
 
   return (
     <Modal centered size="lg" show={show} backdrop="static">
       <Modal.Body className="auth_modal">
-        <div
-          className="modal_close_btn"
-          onClick={() => dispatch(closeAuthModal)}
-        />
+        <div className="modal_close_btn" onClick={handleClose} />
 
         <div className="auth_img">
-          <img src="/images/hero.jpg" alt="" />
+          <img src="/images/auth.jpg" alt="" />
         </div>
 
         <div className="auth_form">
           {step === "login" && <Login />}
+
           {step === "register" && <Register />}
+
+          {step === "reset1" && <ResetPassword1 />}
         </div>
       </Modal.Body>
     </Modal>

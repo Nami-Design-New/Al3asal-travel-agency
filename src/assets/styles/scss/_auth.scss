@@ -3,7 +3,7 @@
   padding: 0;
   position: relative;
   .auth_img {
-    width: 50%;
+    width: 40%;
     position: relative;
     img {
       width: 100%;
@@ -13,172 +13,84 @@
   }
 
   .auth_form {
-    width: 50%;
+    width: 60%;
     display: flex;
-    padding: 64px 32px 32px;
+    padding: 48px 32px 32px;
     gap: 24px;
     flex-direction: column;
-    &.register {
-      width: 100%;
-    }
     h5 {
-      text-align: start;
-      color: var(--main);
-      font-size: 22px;
+      color: $black;
+      font-size: 18px;
     }
+
     p {
-      color: var(--gray);
-      b {
-        color: var(--main);
-        font-size: 14px;
-        padding-inline-end: 16px;
-      }
-      span {
-        cursor: pointer;
-        font-size: 14px;
-        color: var(--main);
-        text-decoration: underline;
-      }
-    }
-    .form_group {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-    button {
-      width: 100%;
-      padding: 12px 32px;
-      height: 52px;
-      background: var(--main);
-      color: var(--white);
-      border-radius: 12px;
-      border: 1px solid transparent;
       font-size: 14px;
+      color: $gray;
+      margin-bottom: 12px;
+    }
+
+    .or {
+      @include centerFlex();
+      margin: 16px 0;
+      width: 100%;
+      height: 1px;
+      background: $input_stroke;
+      span {
+        padding: 0 16px;
+        color: $black;
+        font-size: 14px;
+        background: $white;
+      }
+    }
+
+    .socials_login {
       display: flex;
       align-items: center;
-      span {
-        width: 100%;
-        color: var(--main);
-        @include centerFlex();
-      }
-      img {
-        height: 20px;
-      }
-      &.stroked {
-        border-color: var(--input-stroke);
+      gap: 8px;
+      button {
         background: none;
+        border: 1px solid $input_stroke;
+        color: $black;
+        font-size: 14px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        img {
+          height: 24px;
+        }
       }
     }
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
+
+    .forgot_password {
+      text-align: end;
+      font-size: 14px;
+      margin: 4px 0;
+      cursor: pointer;
+      color: $black;
+      transition: $transition;
+      &:hover {
+        color: $main;
+      }
     }
-    .social_login {
+
+    .register_link {
+      margin: 12px 0 0;
+      font-size: 14px;
+      color: $black;
+    }
+
+    .form_ui {
       display: flex;
       flex-direction: column;
       gap: 12px;
-      .line {
-        width: 100%;
-        height: 1px;
-        background: var(--input-stroke);
-        @include centerFlex();
-        margin: 16px 0;
-        span {
-          margin-top: -6px;
-          padding: 0 16px;
-          color: var(--main);
-          background: var(--white);
-        }
-      }
-      .agreeToPrivacy {
-        color: var(--gray);
-        line-height: 1.8;
-        font-size: 14px;
-        margin-top: 12px;
-        margin-bottom: 0;
-        a {
-          color: var(--main);
-        }
-      }
-    }
-    .swiper-slide {
-      height: 100%;
-    }
-    .choose_img {
-      display: flex;
-      width: 100%;
-      margin-bottom: 14px;
-      .choose_img {
-        width: 100%;
+      span {
         cursor: pointer;
-        input {
-          display: none;
-          appearance: none;
-          &:checked + .img_wrap {
-            border-color: var(--main);
-            &::before {
-              opacity: 1;
-            }
-          }
-        }
-        .img_wrap {
-          position: relative;
-          border-radius: 12px;
-          border: 2px solid transparent;
-          transition: var(--transition);
-          img {
-            width: 100%;
-            height: 100%;
-            aspect-ratio: 1 / 1;
-            border-radius: 10px;
-            object-fit: cover;
-          }
-          &::before {
-            position: absolute;
-            left: 50%;
-            bottom: -10px;
-            transform: translateX(-50%);
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            @include centerFlex();
-            font-family: "Font Awesome 6 Pro";
-            content: "\f00c";
-            opacity: 0;
-            font-size: 12px;
-            color: var(--white);
-            background: var(--main);
-            transition: var(--transition);
-          }
-        }
-        .upload_img {
-          width: 100%;
-          position: relative;
-          aspect-ratio: 1 / 1;
-          @include centerFlex();
-          border: 1px dashed var(--input-stroke);
-          border-radius: 12px;
-          &::before {
-            position: absolute;
-            left: 50%;
-            bottom: -10px;
-            transform: translateX(-50%);
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            @include centerFlex();
-            font-family: "Font Awesome 6 Pro";
-            content: "\2b";
-            font-size: 12px;
-            color: var(--main);
-            background: var(--input-stroke);
-            transition: var(--transition);
-          }
-        }
+        color: $main;
       }
     }
   }
+
   .modal_close_btn {
     position: absolute;
     top: 16px;
@@ -198,10 +110,10 @@
       font-family: "Font Awesome 6 Pro";
       content: "\f00d";
       font-size: 14px;
-      color: var(--main);
+      color: $black;
     }
     &:hover {
-      background: var(--close-hover) !important;
+      background: $input_stroke !important;
     }
   }
 }
