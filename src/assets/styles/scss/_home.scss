@@ -41,6 +41,7 @@
     font-size: 14px;
   }
   .destination_card {
+    position: relative;
     width: 100%;
     border: 1px solid $input_stroke;
     display: flex;
@@ -52,6 +53,10 @@
 
     &:hover {
       box-shadow: rgba(0, 0, 0, 0.035) 0px 2.45093px 8.98675px 0px;
+      .link {
+        background: $black;
+        color: $white;
+      }
     }
 
     .img {
@@ -80,6 +85,20 @@
         font-size: 14px;
       }
     }
+  }
+
+  .link {
+    background: $input_bg;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    color: $input_hint;
+    transition: $transition;
+    @include centerFlex();
+    font-size: 12px;
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
   }
 }
 
@@ -185,6 +204,7 @@
     .travelers_menu {
       min-width: 18rem;
       padding: 16px;
+      z-index: 99;
 
       .travelers_menu_content {
         gap: 16px;
@@ -231,21 +251,32 @@
 
     .places_menu {
       min-width: 20rem;
-      min-height: 200px;
-      padding: 16px;
+      min-height: 16rem;
+      max-height: 16rem;
+      z-index: 99;
+      overflow-y: scroll;
+      scrollbar-width: 0;
+      position: relative;
+      padding: 0;
+      &::-webkit-scrollbar {
+        display: none;
+      }
 
       input {
         font-size: 14px;
         width: 100%;
-        padding: 0 0 10px;
+        padding: 16px;
         border-bottom: 1px solid $input_stroke;
+        position: sticky;
+        top: 0;
+        background: $white;
+        z-index: 99;
       }
 
       .places_menu_content {
         display: flex;
         height: 100%;
         flex-direction: column;
-        gap: 12px;
 
         h6 {
           width: 100%;
@@ -255,6 +286,46 @@
           text-align: center;
           font-weight: 400;
           margin: 40px 0;
+        }
+
+        .list_ariports {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+
+          button {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            transition: $transition;
+            padding: 12px 16px;
+            &:hover {
+              background: $input_bg;
+            }
+
+            i {
+              color: $black;
+              font-size: 18px;
+              transform: rotate(-45deg);
+            }
+
+            .content {
+              h6 {
+                margin: 0;
+                color: $black;
+                font-size: 14px;
+                font-weight: 500;
+                margin-bottom: 4px;
+              }
+
+              p {
+                color: $input_hint;
+                font-size: 12px;
+                text-align: start;
+                margin: 0;
+              }
+            }
+          }
         }
       }
     }

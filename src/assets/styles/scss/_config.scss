@@ -66,7 +66,7 @@ $shadow: 0 0 16px 0 rgba(0, 0, 0, 0.1);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: $input_stroke;
+  background: $input_hint;
   height: 300px;
 }
 
@@ -327,4 +327,8 @@ button {
 
 .rmdp-week-day {
   width: 52px !important;
+}
+
+.form-switch input {
+  box-shadow: none !important;
 }

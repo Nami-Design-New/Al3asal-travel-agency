@@ -29,7 +29,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #f4f4f4;
+  background: #aaaaaa;
   height: 300px;
 }
 
@@ -302,6 +302,10 @@ button {
 
 .rmdp-week-day {
   width: 52px !important;
+}
+
+.form-switch input {
+  box-shadow: none !important;
 }
 
 header {
@@ -609,6 +613,27 @@ header nav .actions .login {
   font-size: 12px;
   color: #777;
 }
+.form_ui .check_field {
+  cursor: pointer;
+}
+.form_ui .check_field input {
+  display: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+.form_ui .check_field input:checked + span {
+  background: #000;
+  color: #fff;
+  border-color: #000;
+}
+.form_ui .check_field span {
+  background: #fafafa;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  border: 1px solid #f4f4f4;
+}
 .form_ui button {
   width: 100%;
   height: 48px;
@@ -642,10 +667,6 @@ header nav .actions .login {
   .otp-container .otp-input {
     height: 60px !important;
   }
-}
-
-.form-switch input {
-  box-shadow: none !important;
 }
 
 .next_btn,
@@ -709,6 +730,7 @@ body main .top_destinations p {
   font-size: 14px;
 }
 body main .top_destinations .destination_card {
+  position: relative;
   width: 100%;
   border: 1px solid #f4f4f4;
   display: flex;
@@ -720,6 +742,10 @@ body main .top_destinations .destination_card {
 }
 body main .top_destinations .destination_card:hover {
   box-shadow: rgba(0, 0, 0, 0.035) 0px 2.45093px 8.98675px 0px;
+}
+body main .top_destinations .destination_card:hover .link {
+  background: #000;
+  color: #fff;
 }
 body main .top_destinations .destination_card .img {
   width: 70px;
@@ -745,6 +771,21 @@ body main .top_destinations .destination_card .content h3 {
 body main .top_destinations .destination_card .content p {
   margin: 0;
   font-size: 14px;
+}
+body main .top_destinations .link {
+  background: #fafafa;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  color: #aaaaaa;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
 }
 body main .flights_filter {
   background: #fff;
@@ -845,6 +886,7 @@ body main .flights_filter .flight_specifications .search {
 body main .flights_filter .flight_specifications .travelers_menu {
   min-width: 18rem;
   padding: 16px;
+  z-index: 99;
 }
 body main .flights_filter .flight_specifications .travelers_menu .travelers_menu_content {
   gap: 16px;
@@ -887,20 +929,31 @@ body main .flights_filter .flight_specifications .travelers_menu .section .btns 
 }
 body main .flights_filter .flight_specifications .places_menu {
   min-width: 20rem;
-  min-height: 200px;
-  padding: 16px;
+  min-height: 16rem;
+  max-height: 16rem;
+  z-index: 99;
+  overflow-y: scroll;
+  scrollbar-width: 0;
+  position: relative;
+  padding: 0;
+}
+body main .flights_filter .flight_specifications .places_menu::-webkit-scrollbar {
+  display: none;
 }
 body main .flights_filter .flight_specifications .places_menu input {
   font-size: 14px;
   width: 100%;
-  padding: 0 0 10px;
+  padding: 16px;
   border-bottom: 1px solid #f4f4f4;
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 99;
 }
 body main .flights_filter .flight_specifications .places_menu .places_menu_content {
   display: flex;
   height: 100%;
   flex-direction: column;
-  gap: 12px;
 }
 body main .flights_filter .flight_specifications .places_menu .places_menu_content h6 {
   width: 100%;
@@ -910,6 +963,39 @@ body main .flights_filter .flight_specifications .places_menu .places_menu_conte
   text-align: center;
   font-weight: 400;
   margin: 40px 0;
+}
+body main .flights_filter .flight_specifications .places_menu .places_menu_content .list_ariports {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+body main .flights_filter .flight_specifications .places_menu .places_menu_content .list_ariports button {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  transition: all 0.3s ease-in-out;
+  padding: 12px 16px;
+}
+body main .flights_filter .flight_specifications .places_menu .places_menu_content .list_ariports button:hover {
+  background: #fafafa;
+}
+body main .flights_filter .flight_specifications .places_menu .places_menu_content .list_ariports button i {
+  color: #000;
+  font-size: 18px;
+  transform: rotate(-45deg);
+}
+body main .flights_filter .flight_specifications .places_menu .places_menu_content .list_ariports button .content h6 {
+  margin: 0;
+  color: #000;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+body main .flights_filter .flight_specifications .places_menu .places_menu_content .list_ariports button .content p {
+  color: #aaaaaa;
+  font-size: 12px;
+  text-align: start;
+  margin: 0;
 }
 body.en {
   font-family: "Outfit", sans-serif;

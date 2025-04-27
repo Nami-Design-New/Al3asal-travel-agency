@@ -56,6 +56,27 @@
     }
   }
 
+  .check_field {
+    cursor: pointer;
+    input {
+      display: none;
+      appearance: none;
+      &:checked + span {
+        background: $black;
+        color: $white;
+        border-color: $black;
+      }
+    }
+
+    span {
+      background: $input_bg;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-size: 14px;
+      border: 1px solid $input_stroke;
+    }
+  }
+
   button {
     width: 100%;
     height: 48px;
@@ -87,12 +108,6 @@
     @media screen and (max-width: 576px) {
       height: 60px !important;
     }
-  }
-}
-
-.form-switch {
-  input {
-    box-shadow: none !important;
   }
 }
 

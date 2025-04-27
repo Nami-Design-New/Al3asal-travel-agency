@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router";
 
 export default function TopDestinations() {
   const { t } = useTranslation();
@@ -25,7 +26,10 @@ export default function TopDestinations() {
 
           {destinations.map((destination, index) => (
             <div className="col-6 col-md-3 p-2" key={index}>
-              <div className="destination_card">
+              <Link
+                to={`/destinations/${destination}`}
+                className="destination_card"
+              >
                 <div className="img">
                   <img
                     src={`/destinations/destination${index + 1}.png`}
@@ -39,7 +43,11 @@ export default function TopDestinations() {
                     <i className="fa-solid fa-flag-pennant"></i> 356 Tours
                   </p>
                 </div>
-              </div>
+
+                <div className="link">
+                  <i className="fa-regular fa-arrow-right"></i>
+                </div>
+              </Link>
             </div>
           ))}
         </div>

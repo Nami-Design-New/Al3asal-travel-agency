@@ -4,6 +4,7 @@ import { Dropdown } from "react-bootstrap";
 import { flightLevels } from "../../utils/constants";
 import Select from "react-select";
 import DateCalender from "../../ui/modals/DateCalender";
+import CheckField from "../../ui/forms/CheckField";
 
 export default function FilterFlights() {
   const { t } = useTranslation();
@@ -16,33 +17,19 @@ export default function FilterFlights() {
   return (
     <form className="flights_filter">
       <div className="flight_type">
-        <label htmlFor="one-way">
-          <input
-            type="radio"
-            id="one-way"
-            name="flight-type"
-            value="one-way"
-            checked={filterData.flightType === "one-way"}
-            onChange={(e) =>
-              setFilterData({ ...filterData, flightType: e.target.value })
-            }
-          />
-          <span>{t("flights.oneWay")}</span>
-        </label>
+        <CheckField
+          id="one-way"
+          name="flight-type"
+          text={t("flights.oneWay")}
+          checked={filterData.flightType === "one-way"}
+        />
 
-        <label htmlFor="round-trip">
-          <input
-            type="radio"
-            id="round-trip"
-            name="flight-type"
-            value="round-trip"
-            checked={filterData.flightType === "round-trip"}
-            onChange={(e) =>
-              setFilterData({ ...filterData, flightType: e.target.value })
-            }
-          />
-          <span>{t("flights.roundTrip")}</span>
-        </label>
+        <CheckField
+          id="round-trip"
+          name="flight-type"
+          text={t("flights.roundTrip")}
+          checked={filterData.flightType === "round-trip"}
+        />
 
         <Select
           aria-label="choose a group"
@@ -67,10 +54,17 @@ export default function FilterFlights() {
             <Dropdown.Menu className="places_menu">
               <div className="places_menu_content">
                 <input type="text" placeholder={t("flights.leavingFrom")} />
-                <h6>
-                  <i className="fa-regular fa-magnifying-glass-location"></i>{" "}
-                  {t("flights.searchByCityOrAirPort")}
-                </h6>
+
+                <div className="list_ariports">
+                  {Array.from({ length: 5 }, (_, index) => (
+                    <button key={index}>
+                      <i className="fa-regular fa-plane"></i>
+                      <div className="content">
+                        <h6>Cairo (CAI - Cairo Intl.)</h6> <p>Egypt</p>
+                      </div>
+                    </button>
+                  ))}
+                </div>
               </div>
             </Dropdown.Menu>
           </Dropdown>
