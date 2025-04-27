@@ -787,6 +787,10 @@ body main .top_destinations .link {
   bottom: 16px;
   right: 16px;
 }
+body main .how_we_work_section {
+  padding: 60px 0;
+  background: #fafafa;
+}
 body main .flights_filter {
   background: #fff;
   padding: 24px;
@@ -800,6 +804,7 @@ body main .flights_filter {
   display: flex;
   flex-direction: column;
   gap: 24px;
+  z-index: 99;
 }
 body main .flights_filter .flight_type {
   display: flex;
@@ -996,6 +1001,47 @@ body main .flights_filter .flight_specifications .places_menu .places_menu_conte
   font-size: 12px;
   text-align: start;
   margin: 0;
+}
+body main .contact_section {
+  padding: 60px 0 0;
+}
+body main .contact_section .contact_info {
+  padding: 24px;
+  border-radius: 16px;
+  height: 100%;
+  border: 1px solid #f4f4f4;
+}
+body main .contact_section .contact_info .icon {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  border: 1px solid #aaaaaa;
+  color: #000;
+  margin-bottom: 24px;
+}
+body main .contact_section .contact_info h6 {
+  color: #000;
+  font-size: 16px;
+  font-weight: 500;
+}
+body main .contact_section .contact_info p {
+  color: #aaaaaa;
+  font-size: 14px;
+  margin-top: 8px;
+}
+body main .contact_section .contact_info a {
+  color: #000;
+  font-size: 14px;
+  transition: all 0.3s ease-in-out;
+}
+body main .contact_section .contact_info a:hover {
+  color: #54a0c4;
+}
+body main .contact_section .map_container {
+  margin-top: 60px;
 }
 body.en {
   font-family: "Outfit", sans-serif;

@@ -13,6 +13,7 @@ body {
 
   main {
     @import "./scss/home";
+    @import "./scss/contact";
   }
 
   &.en {
