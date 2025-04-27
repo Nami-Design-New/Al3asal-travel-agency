@@ -94,3 +94,95 @@ header {
     }
   }
 }
+.footer {
+background-image:url("/images/footer.jpg") ;
+  font-size: 14px;
+  line-height: 1.8;
+margin-top: 40px;
+  .logo {
+    display: flex;
+    flex: 1;
+    filter: brightness(0) invert(1);
+        img {
+      object-fit: contain;
+      height: 50px;
+    }
+  }
+
+  h5 {
+    color: #fff;
+    border-bottom: 1px solid $main;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+  }
+
+  a {
+    color: #ccc;
+    text-decoration: none;
+    transition: 0.3s;
+
+    &:hover {
+      color: $main;
+    }
+  }
+
+  .newsletter-form {
+    input {
+      border-radius: 0;
+      border: none;
+    }
+
+    .btn {
+      background-color: $main;
+      border: none;
+      border-radius: 0;
+      padding: 8px 16px;
+
+      &:hover {
+        background-color: #0da7c3;
+      }
+    }
+  }
+
+  .social-icons {
+    a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: $main;
+      color: #fff;
+      width: 35px;
+      height: 35px;
+      margin-right: 8px;
+      border-radius: 50%;
+      transition: 0.3s;
+
+      &:hover {
+        background: #0da7c3;
+      }
+    }
+  }
+
+  .contact-info {
+    li {
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+
+      svg {
+        margin-left: 8px;
+        color: $main;
+      }
+    }
+  }
+
+  .border-top {
+    border-top: 1px solid #333;
+  }
+  .list-unstyled{
+    li{
+      margin-bottom: 15px;
+
+    }
+  }
+}
