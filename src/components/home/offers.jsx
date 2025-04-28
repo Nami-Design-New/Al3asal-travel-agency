@@ -36,7 +36,7 @@ const OffersSection = () => {
     return () => clearInterval(timer);
   }, []);
 
-  const cities = ["الصين", "نيويورك", "نيبال", "ميشور"];
+  const cities = ["الصين", "نيويورك", "نيبال", "ميشور","الصين"];
 
   return (
     <section className="offers-section">
