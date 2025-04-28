@@ -3,6 +3,7 @@ import Layout from "../layout/Layout";
 import Error from "../routes/Error";
 import Home from "../routes/Home";
 import Contact from "../routes/Contact";
+import AboutUs from "../routes/About";
 
 export const router = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ export const router = createBrowserRouter([
       {
         path: "contact",
         element: <Contact />,
+      },
+      {
+        path: "about",
+        element:<AboutUs />,
       },
     ],
   },

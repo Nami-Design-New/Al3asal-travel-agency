@@ -79,5 +79,46 @@
         "description": "Embark on unforgettable journeys with Al3asal — where exceptional service meets exclusive travel experiences. Discover the world with comfort, care, and unmatched value.",
         "topDestinations": "Top Searched Destinations",
         "topDestinationsSubtitle": "Explore the most popular travel destinations among our users."
+    },
+    "aboutUs": {
+        "title": "About Us",
+        "subtitle": "Your journey to excellence starts here",
+        "description": "At our institution, we believe true quality starts with small details. We work passionately and professionally to provide you with exceptional services and experiences that exceed your expectations. Our goal is to be your first choice through our constant commitment to development and innovation.",
+        "feature1": {
+            "title": "Advanced Booking System",
+            "description": "Ease of booking and quick service to ensure a smooth and distinctive experience."
+        },
+        "feature2": {
+            "title": "Comprehensive Services",
+            "description": "We provide complete solutions that meet all your needs with the highest standards of quality and attention."
+        },
+        "discoverMore": "Discover More"
+    },
+    "headerSec": {
+        "title": "Welcome to Our Institution",
+        "description": "We aim to provide comprehensive services with global standards and a local touch."
+    },
+    "benefits": {
+        "sectionTitle": "Why choose us?",
+        "onePlaceTitle": "One place for all your needs",
+        "onePlaceDescription": "From flights, stays, to sights, just count on our complete products and Travel Guides.",
+        "flexibleBookingTitle": "Flexible booking options",
+        "flexibleBookingDescription": "Sudden change of plan? No worries! Reschedule or Refund without hassle.",
+        "securePaymentTitle": "Secure & convenient payment",
+        "securePaymentDescription": "Enjoy many secure ways to pay, in the currency that's most convenient for you."
+    },
+    "contact": {
+        "callUs": "Call Us",
+        "callDescription": "Call us to speak to a member of our team.",
+        "helpSupport": "Help & Support",
+        "helpDescription": "For help with a current product or service or refer to FAQs and developer tools.",
+        "otherHelp": "Other Help & Support",
+        "otherHelpDescription": "For help with additional products or services.",
+        "followSocialMedia": "Follow us on Social Media",
+        "followDescription": "Stay connected through our social media channels.",
+        "followUs": "Follow Us",
+        "facebook": "Facebook",
+        "twitter": "Twitter",
+        "instagram": "Instagram"
     }
 }

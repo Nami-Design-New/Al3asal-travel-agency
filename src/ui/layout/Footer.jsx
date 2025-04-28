@@ -56,7 +56,7 @@ export default function Footer() {
                 <a href="#">الخدمات</a>
               </li>
               <li>
-                <a href="#">الجولات</a>
+                <a href="#">الوجهات</a>
               </li>
             </ul>
           </div>
@@ -70,9 +70,7 @@ export default function Footer() {
     <li>
       <a href="#">برامج سياحية متكاملة</a>
     </li>
-    <li>
-      <a href="#">حجز فنادق ومنتجعات</a>
-    </li>
+
     <li>
       <a href="#">تأمين تأشيرات السفر</a>
     </li>

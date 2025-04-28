@@ -5,15 +5,15 @@
     padding: 24px;
     border-radius: 16px;
     height: 100%;
-    border: 1px solid $input_stroke;
+    border: 2px solid $input_stroke;
 
     .icon {
       width: 52px;
       height: 52px;
       @include centerFlex();
       border-radius: 12px;
-      border: 1px solid $input_hint;
-      color: $black;
+      border: 1px solid $main;
+      color: $main;
       margin-bottom: 24px;
     }
 
@@ -38,7 +38,28 @@
       }
     }
   }
-
+  .social-media-links {
+    display: flex;
+    gap: 10px; 
+    align-items: center;
+  }
+  
+  .social-link i {
+    font-size: 1rem; 
+    margin-right: 8px; 
+  }
+  
+  .social-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none; 
+    color: inherit; 
+  }
+  
+  .social-link:hover {
+    opacity: 0.8; 
+  }
+  
   .map_container {
     margin-top: 60px;
   }
