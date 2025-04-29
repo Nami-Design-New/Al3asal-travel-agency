@@ -1,10 +1,10 @@
 {
     "header": {
         "home": "Home",
-        "tickets": "Tickets",
+        "flights": "Flights",
         "about": "About Us",
         "contact": "Contact Us",
-        "destinations": "Destinations",
+        "blogs": "blogs",
         "login": "Login",
         "changeLanguage": "Change language",
         "changeCurrency": "change currency"

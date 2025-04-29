@@ -4,6 +4,7 @@ import Error from "../routes/Error";
 import Home from "../routes/Home";
 import Contact from "../routes/Contact";
 import AboutUs from "../routes/About";
+import Flights from "../routes/Flights";
 
 export const router = createBrowserRouter([
   {
@@ -21,7 +22,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "about",
-        element:<AboutUs />,
+        element: <AboutUs />,
+      },
+      {
+        path: "flights",
+        element: <Flights />,
       },
     ],
   },

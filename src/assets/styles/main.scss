@@ -13,8 +13,10 @@ body {
   font-family: "Baloo Bhaijaan 2", sans-serif;
 
   main {
+    min-height: calc(100dvh - 300px);
     @import "./scss/home";
     @import "./scss/contact";
+    @import "./scss/flights";
   }
 
   &.en {

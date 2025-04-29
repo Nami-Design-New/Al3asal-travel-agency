@@ -1,10 +1,10 @@
 {
     "header": {
         "home": "الرئيسية",
-        "tickets": "التذاكر",
+        "flights": "الرحلات",
         "about": "من نحن",
         "contact": "اتصل بنا",
-        "destinations": "الوجهات",
+        "blogs": "المقالات",
         "login": "تسجيل الدخول",
         "changeLanguage": "تغيير اللغة",
         "changeCurrency": "تغيير العملة"

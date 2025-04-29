@@ -33,10 +33,10 @@ export default function Header() {
 
         <div className="nav_items">
           <NavLink to="/">{t("header.home")}</NavLink>
-          <NavLink to="/tickets">{t("header.tickets")}</NavLink>
+          <NavLink to="/flights">{t("header.flights")}</NavLink>
           <NavLink to="/about">{t("header.about")}</NavLink>
           <NavLink to="/contact">{t("header.contact")}</NavLink>
-          <NavLink to="/destinations">{t("header.destinations")}</NavLink>
+          <NavLink to="/blogs">{t("header.blogs")}</NavLink>
         </div>
 
         <div className="actions">

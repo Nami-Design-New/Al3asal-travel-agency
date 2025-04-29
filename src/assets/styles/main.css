@@ -314,9 +314,7 @@ header {
   padding: 16px 0;
   position: sticky;
   z-index: 99;
-  background: rgba(255, 255, 255, 0.8);
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
+  border-bottom: 1px solid #f4f4f4;
 }
 header.sticky {
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
@@ -1179,6 +1177,9 @@ body {
   scrollbar-width: none;
   font-family: "Baloo Bhaijaan 2", sans-serif;
 }
+body main {
+  min-height: calc(100dvh - 300px);
+}
 body main .hero_section {
   min-height: 50dvh;
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("/images/hero.jpg");
@@ -1759,6 +1760,9 @@ body main .contact_section .form_header p {
   color: #aaaaaa;
   font-size: 14px;
   margin: 0;
+}
+body main .flights {
+  padding: 40px 0;
 }
 body.en {
   font-family: "Outfit", sans-serif;
