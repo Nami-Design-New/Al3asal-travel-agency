@@ -94,16 +94,16 @@ header {
     }
   }
 }
+
 .footer {
-background-image:url("/images/footer.jpg") ;
+  background-image: url("/images/footer.jpg");
   font-size: 14px;
   line-height: 1.8;
-margin-top: 40px;
+  margin-top: 40px;
+
   .logo {
-    display: flex;
-    flex: 1;
     filter: brightness(0) invert(1);
-        img {
+    img {
       object-fit: contain;
       height: 50px;
     }
@@ -111,9 +111,34 @@ margin-top: 40px;
 
   h5 {
     color: #fff;
-    border-bottom: 1px solid $main;
     padding-bottom: 5px;
     margin-bottom: 20px;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      width: 80px;
+      height: 2px;
+      background: radial-gradient(
+        90% 20% at 100% 50%,
+        #54a0c4,
+        rgba(238, 238, 238, 0)
+      );
+
+      bottom: -2px;
+      right: 0;
+    }
+  }
+
+  .about {
+    max-width: 340px;
+  }
+
+  .newsletter {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    gap: 8px;
   }
 
   a {
@@ -126,17 +151,39 @@ margin-top: 40px;
     }
   }
 
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+  }
+
   .newsletter-form {
+    display: flex;
+    align-items: center;
+    background: $white;
+    border-radius: 100px;
+    max-width: 360px;
+    padding: 8px;
     input {
       border-radius: 0;
+      padding: 8px;
+      box-shadow: none;
       border: none;
+      font-size: 14px;
     }
 
-    .btn {
+    button {
       background-color: $main;
       border: none;
       border-radius: 0;
       padding: 8px 16px;
+      color: $white;
+      border-radius: 80px;
 
       &:hover {
         background-color: #0da7c3;
@@ -144,45 +191,31 @@ margin-top: 40px;
     }
   }
 
-  .social-icons {
-    a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: $main;
-      color: #fff;
-      width: 35px;
-      height: 35px;
-      margin-right: 8px;
-      border-radius: 50%;
-      transition: 0.3s;
-
-      &:hover {
-        background: #0da7c3;
-      }
+  .copyrights {
+    margin-top: 16px;
+    @include space-between();
+    border-top: 1px solid #333;
+    padding: 24px 0 8px;
+    p {
+      margin-bottom: 0;
     }
   }
 
-  .contact-info {
-    li {
-      margin-bottom: 15px;
-      display: flex;
-      align-items: center;
-
-      svg {
-        margin-left: 8px;
+  .social-icons {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    a {
+      color: $white;
+      transition: $transition;
+      @include centerFlex();
+      width: 20px;
+      i {
+        font-size: 16px;
+      }
+      &:hover {
         color: $main;
       }
-    }
-  }
-
-  .border-top {
-    border-top: 1px solid #333;
-  }
-  .list-unstyled{
-    li{
-      margin-bottom: 15px;
-
     }
   }
 }

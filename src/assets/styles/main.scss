@@ -3,7 +3,8 @@
 @import "./scss/error-page";
 @import "./scss/auth";
 @import "./scss/form_ui";
-@import "./scss/About";
+@import "./scss/about";
+
 body {
   position: relative;
   direction: rtl;
@@ -31,6 +32,20 @@ body {
         border-left: 0 !important;
         border-right: 1px solid $input_stroke !important;
       }
+    }
+
+    main .top_destinations .link {
+      right: initial !important;
+      left: 16px !important;
+      i {
+        transform: scale(-1);
+      }
+    }
+
+    .footer h5::after {
+      background: radial-gradient(90% 20% at 0% 50%, $main, #eee0);
+      left: 0 !important;
+      right: auto !important;
     }
 
     .auth_modal .modal_close_btn {

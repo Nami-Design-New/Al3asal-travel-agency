@@ -120,5 +120,23 @@
         "facebook": "Facebook",
         "twitter": "Twitter",
         "instagram": "Instagram"
+    },
+    "footer": {
+        "copyright": "All rights reserved to",
+        "al3asal": "Al3asal Travel & Tourism",
+        "contact": "Contact us",
+        "services": "Our Services",
+        "ser1": "Flight ticket bookings",
+        "ser2": "Comprehensive travel programs",
+        "ser3": "Travel visa arrangements",
+        "ser4": "Honeymoon trip planning",
+        "usefulLinks": "Useful Links",
+        "home": "Home",
+        "about": "About Us",
+        "terms": "Terms & Conditions",
+        "privacy": "Privacy Policy",
+        "email": "Enter your email address",
+        "subscribe": "Subscribe",
+        "description": "Al3asal Travel & Tourism offers unforgettable travel experiences with exceptional services and unmatched value. Discover the world with comfort, care, and unmatched value."
     }
 }

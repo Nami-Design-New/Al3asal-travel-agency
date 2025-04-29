@@ -1,119 +1,130 @@
-// import React from 'react'
+import { Form } from "react-bootstrap";
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router";
 
 export default function Footer() {
+  const { t } = useTranslation();
   return (
     <footer className="footer text-white pt-5 pb-3">
       <div className="container">
         <div className="row">
-          {/* Left column */}
-          <div className="col-lg-4 col-md-6 mb-4">
+          <div className="col-lg-4 col-md-6 p-2">
             <div className="logo mb-3">
               <Link to="/" className="logo">
                 <img src="/images/logo.svg" alt="logo" />
-              </Link>{" "}
-              <p>استكشف العالم</p>
+              </Link>
             </div>
-            <h5 className="mb-3">اشترك في النشرة الإخبارية</h5>
-            <p>احصل على أحدث العروض والتحديثات</p>
-            <form className="newsletter-form d-flex">
-              <input
-                type="email"
-                className="form-control me-2"
-                placeholder="بريدك الإلكتروني"
-              />
-              <button className="btn btn-primary">اشترك</button>
+            <p className="about">{t("footer.description")}</p>
+
+            <form className="newsletter-form ">
+              <Form.Control type="email" placeholder={t("footer.email")} />
+              <button>{t("footer.subscribe")}</button>
             </form>
-            <div className="social-icons mt-4">
-              <a href="#">
-                <i className="fab fa-facebook-f"></i>
-              </a>
-              <a href="#">
-                <i className="fab fa-twitter"></i>
-              </a>
-              <a href="#">
-                <i className="fab fa-linkedin-in"></i>
-              </a>
-              <a href="#">
-                <i className="fab fa-instagram"></i>
-              </a>
-            </div>
           </div>
 
-          <div className="col-lg-2 col-md-6 mb-4">
-            <h5 className="mb-3">روابط سريعة</h5>
-            <ul className="list-unstyled">
+          <div className="col-lg-2 col-md-6 p-2">
+            <h5 className="mb-4">{t("footer.usefulLinks")}</h5>
+            <ul>
               <li>
-                <a href="#">الرئيسية</a>
+                <Link to="/">{t("footer.home")}</Link>
               </li>
               <li>
-                <a href="#">معلومات عنا</a>
+                <Link to="/about">{t("footer.about")}</Link>
               </li>
               <li>
-                <a href="#">المدونة</a>
+                <Link to="/contact">{t("footer.contact")}</Link>
               </li>
               <li>
-                <a href="#">الخدمات</a>
+                <Link to="/terms">{t("footer.terms")}</Link>
               </li>
               <li>
-                <a href="#">الوجهات</a>
+                <Link to="/privacy">{t("footer.privacy")}</Link>
               </li>
             </ul>
           </div>
 
-          <div className="col-lg-3 col-md-6 mb-4">
-  <h5 className="mb-3">الخدمات</h5>
-  <ul className="list-unstyled">
-    <li>
-      <a href="#">حجوزات تذاكر الطيران</a>
-    </li>
-    <li>
-      <a href="#">برامج سياحية متكاملة</a>
-    </li>
-
-    <li>
-      <a href="#">تأمين تأشيرات السفر</a>
-    </li>
-    <li>
-      <a href="#">تنظيم رحلات شهر عسل</a>
-    </li>
-  </ul>
-</div>
-
-
-          <div className="col-lg-3 col-md-6 mb-4">
-            <h5 className="mb-3">اتصل بنا</h5>
-            <ul className="list-unstyled contact-info">
+          <div className="col-lg-3 col-md-6 p-2">
+            <h5 className="mb-4">{t("footer.services")}</h5>
+            <ul>
               <li>
-                <i className="fas fa-map-marker-alt mx-2"></i>
-                <a
-                  href="https://maps.google.com/?q=9550 Bolsa Ave #126, USA"
+                <Link to="/flights">{t("footer.ser1")}</Link>
+              </li>
+              <li>
+                <Link to="/flights">{t("footer.ser2")}</Link>
+              </li>
+              <li>
+                <Link to="/flights">{t("footer.ser3")}</Link>
+              </li>
+              <li>
+                <Link to="/flights">{t("footer.ser4")}</Link>
+              </li>
+            </ul>
+          </div>
+
+          <div className="col-lg-3 col-md-6 p-2">
+            <h5 className="mb-4">{t("footer.contact")}</h5>
+
+            <ul>
+              <li>
+                <i className="fas fa-map-marker-alt"></i>
+                <Link
+                  to="https://maps.app.goo.gl/7GDMHfsN3Z6BkrX47"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  9550 Bolsa Ave #126، الولايات المتحدة
-                </a>
+                  4QJ4+G95، حماة، سوريا
+                </Link>
               </li>
+
               <li>
-                <i className="fas fa-envelope mx-2"></i>
-                <a href="mailto:info@alasalatravel.com">
+                <i className="fas fa-envelope"></i>
+                <Link to="mailto:info@alasalatravel.com">
                   info@alasalatravel.com
-                </a>
+                </Link>
               </li>
+
               <li>
-                <i className="fas fa-phone-alt mx-2"></i>
-                <a href="tel:+963964442015">+963964442015</a>
+                <i className="fas fa-envelope"></i>
+                <Link to="mailto:info@alasalatravel.com">
+                  hr@alasalatravel.com
+                </Link>
+              </li>
+
+              <li>
+                <i className="fas fa-phone-alt"></i>
+                <Link to="tel:+963964442015">+963964442015</Link>
+              </li>
+
+              <li>
+                <i className="fab fa-whatsapp"></i>
+                <Link to="https://wa.me/963964442015">+963964442015</Link>
               </li>
             </ul>
           </div>
-        </div>
 
-        <div className="text-center mt-4 pt-3 border-top">
-          <p>جميع الحقوق محفوظة © وكالة العسل للسفر والسياحة</p>
-          <a href="#" className="mx-3">
-            شروط الاستخدام
-          </a>
-          <a href="#">سياسة الخصوصية </a>
+          <div className="col-12 p-2">
+            <div className="copyrights">
+              <p>
+                &copy; {new Date().getFullYear()} {t("footer.copyright")}{" "}
+                {t("footer.al3asal")}
+              </p>
+
+              <div className="social-icons">
+                <Link to="https://www.facebook.com/groups/al3asalofficial/">
+                  <i className="fab fa-facebook-f"></i>
+                </Link>
+                <Link to="#">
+                  <img src="/public/icons/twitter.svg" alt="twitter" />
+                </Link>
+                <Link to="#">
+                  <i className="fab fa-linkedin-in"></i>
+                </Link>
+                <Link to="https://www.instagram.com/al3asalofficial/?hl=ar">
+                  <i className="fab fa-instagram"></i>
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

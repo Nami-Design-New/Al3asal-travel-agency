@@ -1,13 +1,14 @@
 import { Dropdown } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import { currencies } from "../../utils/constants";
-import { useDispatch } from "react-redux";
-import { setLanguage } from "../../redux/slices/settings";
+import { useDispatch, useSelector } from "react-redux";
+import { setCurrency, setLanguage } from "../../redux/slices/settings";
 import i18next from "i18next";
 
 export default function SettingDropDown() {
   const { t } = useTranslation();
   const dispatch = useDispatch();
+  const { currency } = useSelector((state) => state.settings);
 
   const handleLanguageChange = (selectedLanguage) => {
     dispatch(setLanguage(selectedLanguage));
@@ -20,9 +21,16 @@ export default function SettingDropDown() {
     }
   };
 
+  const handleCurrencyChange = (selectedCurrency) => {
+    localStorage.setItem("currency", selectedCurrency);
+    dispatch(setCurrency(selectedCurrency));
+  };
+
   return (
     <Dropdown>
-      <Dropdown.Toggle>English | USD</Dropdown.Toggle>
+      <Dropdown.Toggle>
+        {i18next.language === "en" ? "English" : "العربيه"} | {currency}
+      </Dropdown.Toggle>
 
       <Dropdown.Menu>
         <div className="input_field">
@@ -30,6 +38,7 @@ export default function SettingDropDown() {
           <select
             name="language"
             id="language"
+            value={i18next.language}
             onChange={(e) => handleLanguageChange(e.target.value)}
           >
             <option value="ar">العربيه</option>
@@ -39,7 +48,12 @@ export default function SettingDropDown() {
 
         <div className="input_field">
           <label htmlFor="language">{t("header.changeCurrency")}</label>
-          <select name="currency" id="currency">
+          <select
+            name="currency"
+            id="currency"
+            value={currency}
+            onChange={(e) => handleCurrencyChange(e.target.value)}
+          >
             {currencies.map((currency) => (
               <option key={currency} value={currency}>
                 ( {currency} ) {t(`currencies.${currency}`)}
