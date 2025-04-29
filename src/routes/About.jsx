@@ -1,25 +1,9 @@
 import { useTranslation } from "react-i18next";
 import HeaderSection from "../ui/layout/HeaderSection";
+import WhyChooseUs from "../components/home/WhyChooseUs";
 
 const AboutUsSection = () => {
   const { t } = useTranslation();
-  const benefits = [
-    {
-      title: t("benefits.onePlaceTitle"),
-      description: t("benefits.onePlaceDescription"),
-      image: "/icons/b1.png",
-    },
-    {
-      title: t("benefits.flexibleBookingTitle"),
-      description: t("benefits.flexibleBookingDescription"),
-      image: "/icons/b2.webp",
-    },
-    {
-      title: t("benefits.securePaymentTitle"),
-      description: t("benefits.securePaymentDescription"),
-      image: "/icons/b3.webp",
-    },
-  ];
 
   return (
     <>
@@ -97,38 +81,8 @@ const AboutUsSection = () => {
           </div>
         </div>
       </section>
-      
-      <section className="benefits py-5 position-relative">
-        <img
-          src="/icons/plane-shape2.png"
-          alt="Shape"
-          className="benefits-shape"
-        />
 
-        <div className="container">
-          <h2 className="mb-5">{t("benefits.sectionTitle")}</h2>
-
-          <div className="row">
-            {benefits.map((benefit, index) => (
-              <div key={index} className="col-md-4 mb-4">
-                <div className="benefit-card h-100 p-4 d-flex align-items-start gap-3">
-                  <img
-                    src={benefit.image}
-                    alt={benefit.title}
-                    className="benefit-img"
-                  />
-                  <div>
-                    <h3 className="benefit-title mb-2">{benefit.title}</h3>
-                    <p className="benefit-description mb-0">
-                      {benefit.description}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <WhyChooseUs />
     </>
   );
 };

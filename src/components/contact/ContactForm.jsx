@@ -73,10 +73,7 @@ export default function ContactForm() {
               label={t("contact.fields.referenceNumber.label")}
               placeholder={t("contact.fields.referenceNumber.placeholder")}
             />
-            <InputField
-              type="date"
-              label={t("contact.fields.flightDate")}
-            />
+            <InputField type="date" label={t("contact.fields.flightDate")} />
           </div>
 
           <div className="form_group">
@@ -95,7 +92,7 @@ export default function ContactForm() {
 
       <div className="col-lg-5 col-12 p-2">
         <div className="img">
-          <img src="/public/images/contact.jpg" alt="contact" />
+          <img src="/images/contact.jpg" alt="contact" />
         </div>
       </div>
     </div>

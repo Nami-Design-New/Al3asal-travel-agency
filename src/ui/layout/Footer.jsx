@@ -114,7 +114,7 @@ export default function Footer() {
                   <i className="fab fa-facebook-f"></i>
                 </Link>
                 <Link to="#">
-                  <img src="/public/icons/twitter.svg" alt="twitter" />
+                  <img src="/icons/twitter.svg" alt="twitter" />
                 </Link>
                 <Link to="#">
                   <i className="fab fa-linkedin-in"></i>

@@ -157,6 +157,10 @@
             "submit": "Send Message"
         }
     },
+    "popularAirlines": {
+        "title": "Popular Airlines",
+        "subtitle": "Explore top-rated airlines trusted by travelers around the world."
+    },
     "footer": {
         "copyright": "All rights reserved to",
         "al3asal": "Al3asal Travel & Tourism",
@@ -174,5 +178,9 @@
         "email": "Enter your email address",
         "subscribe": "Subscribe",
         "description": "Al3asal Travel & Tourism offers unforgettable travel experiences with exceptional services and unmatched value. Discover the world with comfort, care, and unmatched value."
+    },
+    "blogs": {
+        "title": "Latest Blogs",
+        "viewAll": "View All"
     }
 }

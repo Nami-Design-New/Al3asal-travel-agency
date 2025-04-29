@@ -34,16 +34,20 @@ body {
       }
     }
 
-    main .top_destinations .destination_card {
-      right: initial !important;
-      left: 16px !important;
+    main .top_destinations .link {
+      left: initial !important;
+      right: 16px !important;
       i {
-        transform: scale(-1);
+        transform: scale(1) !important;
       }
     }
 
     .footer h5::after {
-      background: radial-gradient(90% 20% at 0% 50%, $main, #eee0);
+      background: radial-gradient(
+        90% 70% at 0% 20%,
+        $main,
+        rgba(238, 238, 238, 0)
+      );
       left: 0 !important;
       right: auto !important;
     }
