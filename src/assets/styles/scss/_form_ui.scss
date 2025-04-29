@@ -42,7 +42,7 @@
     }
 
     textarea {
-      height: 152px;
+      height: 122px;
     }
 
     label {
@@ -119,4 +119,11 @@
   border: 1px solid $black;
   color: $black;
   border-radius: 12px;
+}
+
+.form_group {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
 }

@@ -1,6 +1,13 @@
 import { Form } from "react-bootstrap";
 
-export default function SelectField({ label, hint, options, error, ...props }) {
+export default function SelectField({
+  label,
+  hint,
+  options,
+  error,
+  defaultSelect,
+  ...props
+}) {
   return (
     <div className="input-field">
       {label && (
@@ -11,7 +18,7 @@ export default function SelectField({ label, hint, options, error, ...props }) {
 
       <Form.Select isInvalid={!!props?.error} {...props}>
         <option value="" disabled>
-          Select
+          {defaultSelect}
         </option>
         {options?.map((option, index) => (
           <option key={index} value={option.value}>

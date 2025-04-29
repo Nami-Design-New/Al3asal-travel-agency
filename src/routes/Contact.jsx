@@ -1,93 +1,16 @@
-import { useTranslation } from "react-i18next";
-import HeaderSection from "../components/home/HeaderSec";
+import HeaderSection from "../ui/layout/HeaderSection";
+import ContactInfo from "../components/contact/ContactInfo";
+import ContactForm from "../components/contact/ContactForm";
 
 export default function Contact() {
-  const { t } = useTranslation(); // استدعاء useTranslation هنا للحصول على دالة t()
-
-  const contactInfo = [
-    {
-      icon: "fa-light fa-phone-volume",
-      title: t("contact.callUs"),
-      description: t("contact.callDescription"),
-      linkText: "+963964442015",
-      linkUrl: "tel:+963964442015",
-    },
-    {
-      icon: "fa-light fa-envelope",
-      title: t("contact.helpSupport"),
-      description: t("contact.helpDescription"),
-      linkText: "info@alasalatravel.com",
-      linkUrl: "mailto:info@alasalatravel.com",
-    },
-    {
-      icon: "fa-light fa-phone-volume",
-      title: t("contact.otherHelp"),
-      description: t("contact.otherHelpDescription"),
-      linkText: "+963964442015",
-      linkUrl: "tel:+963964442015",
-    },
-    {
-      icon: "fa-light fa-share-alt",
-      title: t("contact.followSocialMedia"),
-      description: t("contact.followDescription"),
-      linkText: t("contact.followUs"),
-      linkUrl: "#",
-      subLinks: [
-        {
-          // name: t("contact.facebook"),
-          link: "https://facebook.com/yourpage",
-          icon: "fa-facebook",
-        },
-        {
-          // name: t("contact.twitter"),
-          link: "https://twitter.com/yourhandle",
-          icon: "fa-twitter",
-        },
-        {
-          // name: t("contact.instagram"),
-          link: "https://instagram.com/yourprofile",
-          icon: "fa-instagram",
-        },
-      ],
-    },
-  ];
-
   return (
     <>
       <HeaderSection />
 
       <section className="contact_section">
         <div className="container">
-          <div className="row">
-            {contactInfo.map((item, index) => (
-              <div key={index} className="col-lg-3 col-md-6 col-12 p-2">
-                <div className="contact_info">
-                  <div className="icon">
-                    <i className={item.icon}></i>
-                  </div>
-                  <h6>{t(item.title)}</h6>
-                  <p>{t(item.description)}</p>
-                  <a href={item.linkUrl}>{item.linkText}</a>
-
-                  {item.subLinks && (
-                    <div className="social-media-links">
-                     {item.subLinks && (
-  <div className="social-media-links">
-    {item.subLinks.map((link, idx) => (
-      <a key={idx} href={link.link} target="_blank" rel="noopener noreferrer" className="social-link">
-        <i className={`fa-brands ${link.icon} `}></i> 
-        {t(link.name)}
-      </a>
-    ))}
-  </div>
-)}
-
-                    </div>
-                  )}
-                </div>
-              </div>
-            ))}
-          </div>
+          <ContactInfo />
+          <ContactForm />
         </div>
 
         <div className="map_container">

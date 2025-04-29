@@ -1,9 +1,9 @@
 @import "./scss/config";
 @import "./scss/layout";
-@import "./scss/error-page";
 @import "./scss/auth";
 @import "./scss/form_ui";
 @import "./scss/about";
+@import "./scss/error-page";
 
 body {
   position: relative;
@@ -34,7 +34,7 @@ body {
       }
     }
 
-    main .top_destinations .link {
+    main .top_destinations .destination_card {
       right: initial !important;
       left: 16px !important;
       i {

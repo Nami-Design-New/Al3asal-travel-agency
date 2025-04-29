@@ -119,7 +119,43 @@
         "followUs": "تابعنا",
         "facebook": "فيسبوك",
         "twitter": "تويتر",
-        "instagram": "إنستاجرام"
+        "instagram": "إنستاجرام",
+        "formTitle": "تواصل مع فريق خبرائنا المتخصص",
+        "formDescription": "يرجى تعبئة النموذج أدناه وسنقوم بالتواصل معك في أقرب وقت ممكن.",
+        "fields": {
+            "fullName": {
+                "label": "الاسم الكامل",
+                "placeholder": "أدخل اسمك الكامل"
+            },
+            "email": {
+                "label": "البريد الإلكتروني",
+                "placeholder": "أدخل بريدك الإلكتروني"
+            },
+            "problemType": {
+                "label": "نوع المشكلة",
+                "placeholder": "اختر نوع المشكلة",
+                "booking": "مشكلة في الحجز",
+                "payment": "مشكلة في الدفع",
+                "other": "أخرى"
+            },
+            "problemCategory": {
+                "label": "فئة المشكلة",
+                "placeholder": "اختر الفئة",
+                "technical": "تقنية",
+                "service": "خدمة العملاء",
+                "billing": "الفوترة"
+            },
+            "referenceNumber": {
+                "label": "رقم الحجز المرجعي",
+                "placeholder": "أدخل رقم الحجز الخاص بك"
+            },
+            "flightDate": "تاريخ الرحلة",
+            "message": {
+                "label": "الرسالة",
+                "placeholder": "اكتب رسالتك هنا"
+            },
+            "submit": "إرسال الرسالة"
+        }
     },
     "footer": {
         "copyright": "جميع الحقوق محفوظة لـ",
@@ -132,7 +168,7 @@
         "ser4": "تنظيم رحلات شهر عسل",
         "usefulLinks": "روابط مفيدة",
         "home": "الرئيسية",
-        "about":"من نحن",
+        "about": "من نحن",
         "terms": "الشروط والاحكام",
         "privacy": "سياسة الخصوصية",
         "email": "ادخل عنوان بريدك الالكتروني",

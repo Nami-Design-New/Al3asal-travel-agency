@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import HeaderSection from "../components/home/HeaderSec";
+import HeaderSection from "../ui/layout/HeaderSection";
 
 const AboutUsSection = () => {
   const { t } = useTranslation();
@@ -97,6 +97,7 @@ const AboutUsSection = () => {
           </div>
         </div>
       </section>
+      
       <section className="benefits py-5 position-relative">
         <img
           src="/icons/plane-shape2.png"
