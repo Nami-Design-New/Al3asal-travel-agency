@@ -2,20 +2,18 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Dropdown } from "react-bootstrap";
 import { flightLevels } from "../../utils/constants";
+import { Calendar } from "react-multi-date-picker";
 import Select from "react-select";
-import DateCalender from "../../ui/modals/DateCalender";
 import CheckField from "../../ui/forms/CheckField";
 
 export default function FilterFlights() {
   const { t } = useTranslation();
-
-  const [showModal, setShowModal] = useState(false);
   const [filterData, setFilterData] = useState({
     flightType: "one-way",
   });
 
   return (
-    <form className="flights_filter">
+    <form className="filter_container">
       <div className="flight_type">
         <CheckField
           id="one-way"
@@ -90,10 +88,17 @@ export default function FilterFlights() {
           </Dropdown>
         </div>
 
-        <div className="filter_btn" onClick={() => setShowModal(true)}>
-          <i className="fa-light fa-calendar"></i>
-          <span>14 May - 28 June</span>
-        </div>
+        <Dropdown>
+          <Dropdown.Toggle className="filter_btn">
+            <i className="fa-light fa-calendar"></i>
+            <span>14 May - 28 June</span>
+          </Dropdown.Toggle>
+          <Dropdown.Menu className="travelers_menu">
+            <div className="calender_wrapper">
+              <Calendar numberOfMonths={2} minDate={new Date()} />
+            </div>
+          </Dropdown.Menu>
+        </Dropdown>
 
         <Dropdown>
           <Dropdown.Toggle className="filter_btn">
@@ -158,11 +163,9 @@ export default function FilterFlights() {
         </Dropdown>
 
         <button type="submit" className="search">
-          {t("flights.search")}
+          {t("flights.search")} <i className="fa-light fa-magnifying-glass"></i>
         </button>
       </div>
-
-      <DateCalender showModal={showModal} setShowModal={setShowModal} />
     </form>
   );
 }
