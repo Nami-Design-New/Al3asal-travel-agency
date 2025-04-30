@@ -11,7 +11,9 @@ export default function HeroSection() {
           <h1>{t("home.welcome")}</h1>
           <p>{t("home.description")}</p>
         </div>
-        <FilterFlights />
+        <div className="flights_filter">
+          <FilterFlights />
+        </div>
       </div>
     </section>
   );

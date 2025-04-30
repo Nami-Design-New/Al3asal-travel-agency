@@ -1,4 +1,6 @@
+import FilterFlights from "../components/home/FilterFlights";
 import FlightCard from "../ui/cards/FlightCard";
+import SortingFilter from "../components/flights/SortingFilter";
 
 export default function Flights() {
   const flightsDefaults = [
@@ -56,12 +58,36 @@ export default function Flights() {
     <section className="flights">
       <div className="container">
         <div className="row">
-          <div className="col-12 p-2"></div>
+          <div className="col-12 p-2">
+            <FilterFlights />
+
+            <div className="round_trip_flight">
+              <div className="departing_flight active" >
+                <div className="num">1</div>
+
+                <div className="content">
+                  <h3>Select Departing Flight</h3>
+                  <p>Tue, 10 Jun 2025</p>
+                </div>
+              </div>
+              <div className="shape"></div>
+              <div className="return_flight">
+                <div className="num">2</div>
+
+                <div className="content">
+                  <h3>Select Returning Flight</h3>
+                  <p>Fri, 13 Jun 2025</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div className="row">
-          <div className=" col-12 p-2">
+        <div className="row mt-2">
+          <div className="col-12 p-2">
             <div className="results">
+              <SortingFilter />
+
               {flightsDefaults.map((flight, index) => (
                 <FlightCard key={index} flight={flight} />
               ))}

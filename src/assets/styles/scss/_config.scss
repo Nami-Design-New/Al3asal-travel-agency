@@ -122,30 +122,30 @@ button {
   border-radius: 8px;
   text-align: start !important;
   padding: 8px;
-  span {
-    display: block;
-    width: 100%;
-    height: 1px;
-    background: $input_stroke;
-    margin: 8px 0;
-  }
-  a {
-    text-align: start;
-    border-radius: 4px;
-    padding: 6px 12px;
-    font-size: 14px;
-    color: $black;
-    display: flex;
-    margin-bottom: 2px;
-    align-items: center;
-    gap: 8px;
-    &:active {
-      background-color: $white !important;
-    }
-    i {
-      width: 18px;
-    }
-  }
+  // span {
+  //   display: block;
+  //   width: 100%;
+  //   height: 1px;
+  //   background: $input_stroke;
+  //   margin: 8px 0;
+  // }
+  // a {
+  //   text-align: start;
+  //   border-radius: 4px;
+  //   padding: 6px 12px;
+  //   font-size: 14px;
+  //   color: $black;
+  //   display: flex;
+  //   margin-bottom: 2px;
+  //   align-items: center;
+  //   gap: 8px;
+  //   &:active {
+  //     background-color: $white !important;
+  //   }
+  //   i {
+  //     width: 18px;
+  //   }
+  // }
 }
 
 .dropdown-toggle::after {
@@ -332,4 +332,9 @@ button {
 
 .form-switch input {
   box-shadow: none !important;
+}
+
+.rmdp-selected span{
+  background-color: $main !important;
+  color: $white !important;
 }

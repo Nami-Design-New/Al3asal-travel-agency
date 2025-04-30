@@ -185,6 +185,125 @@
   }
 }
 
+.offers-section {
+  background-image: url("/images/bg.jpg");
+  background-size: cover;
+  padding: 50px 0;
+  .nav-buttons {
+    display: flex;
+    gap: 8px;
+
+    .custom-nav-btn {
+      background: rgba(255, 255, 255, 0.235);
+      color: $white;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+
+      &:hover {
+        background: $black;
+        color: $white;
+      }
+    }
+  }
+  .discount-box {
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    .timer {
+      display: flex;
+      gap: 10px;
+
+      .time-box {
+        padding: 10px;
+        border-radius: 8px;
+        min-width: 55px;
+        text-align: center;
+        margin-top: 40px;
+
+        h4 {
+          margin: 0;
+          font-size: 26px;
+          color: #fff;
+        }
+
+        span {
+          font-size: 20px;
+          color: #ccc;
+        }
+      }
+    }
+  }
+
+  .card {
+    border: none;
+    overflow: hidden;
+    border-radius: 10px;
+
+    img {
+      height: 250px;
+      object-fit: cover;
+    }
+    .card-img-overlay {
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
+      border-radius: 10px;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card-badges {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+
+      .One {
+        background-color: $main;
+        width: 40%;
+        padding: 10px;
+      }
+      .Two {
+        background-color: $black;
+        width: 40%;
+        padding: 8px;
+      }
+    }
+
+    .card-text {
+      margin-top: 10px;
+    }
+
+    .card-title {
+      font-size: 20px;
+      margin: 5px 0 0;
+      font-weight: bold;
+      color: $white;
+    }
+
+    p {
+      margin: 0;
+      color: $white;
+      font-size: 14px;
+    }
+  }
+
+  button {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+  }
+}
+
 .flights_filter {
   background: $white;
   padding: 24px;
@@ -195,11 +314,13 @@
   left: 50%;
   transform: translateX(-50%);
   width: min(100%, 1100px);
+  z-index: 99;
+}
+
+.filter_container {
   display: flex;
   flex-direction: column;
   gap: 24px;
-  z-index: 99;
-
   .flight_type {
     display: flex;
     align-items: center;
@@ -283,6 +404,9 @@
       box-shadow: $shadow;
       border-radius: 12px;
       font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
 
     .travelers_menu {
@@ -413,124 +537,5 @@
         }
       }
     }
-  }
-}
-
-.offers-section {
-  background-image: url("/images/bg.jpg");
-  background-size: cover;
-  padding: 50px 0;
-  .nav-buttons {
-    display: flex;
-    gap: 8px;
-
-    .custom-nav-btn {
-      background: rgba(255, 255, 255, 0.235);
-      color: $white;
-      border: none;
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s;
-
-      &:hover {
-        background: $black;
-        color: $white;
-      }
-    }
-  }
-  .discount-box {
-    border-radius: 12px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 15px;
-    .timer {
-      display: flex;
-      gap: 10px;
-
-      .time-box {
-        padding: 10px;
-        border-radius: 8px;
-        min-width: 55px;
-        text-align: center;
-        margin-top: 40px;
-
-        h4 {
-          margin: 0;
-          font-size: 26px;
-          color: #fff;
-        }
-
-        span {
-          font-size: 20px;
-          color: #ccc;
-        }
-      }
-    }
-  }
-
-  .card {
-    border: none;
-    overflow: hidden;
-    border-radius: 10px;
-
-    img {
-      height: 250px;
-      object-fit: cover;
-    }
-    .card-img-overlay {
-      background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
-      border-radius: 10px;
-      padding: 10px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .card-badges {
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-
-      .One {
-        background-color: $main;
-        width: 40%;
-        padding: 10px;
-      }
-      .Two {
-        background-color: $black;
-        width: 40%;
-        padding: 8px;
-      }
-    }
-
-    .card-text {
-      margin-top: 10px;
-    }
-
-    .card-title {
-      font-size: 20px;
-      margin: 5px 0 0;
-      font-weight: bold;
-      color: $white;
-    }
-
-    p {
-      margin: 0;
-      color: $white;
-      font-size: 14px;
-    }
-  }
-
-  button {
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
   }
 }

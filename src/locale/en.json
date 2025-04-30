@@ -75,7 +75,12 @@
         "searchByCityOrAirPort": "Search by city or airport",
         "direct": "Direct Flight",
         "in": "In",
-        "stops": "Stops"
+        "stops": "Stops",
+        "sortBy": "Sort By",
+        "recommended": "Recommended",
+        "departureTime": "Departure Time",
+        "duration": "Duration",
+        "price": "Price"
     },
     "home": {
         "welcome": "Welcome to Al3asal Travel & Tourism",

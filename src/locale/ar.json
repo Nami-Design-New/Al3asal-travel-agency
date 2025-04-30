@@ -75,7 +75,12 @@
         "searchByCityOrAirPort": "البحث حسب المدينة أو المطار",
         "direct": "بدون توقفات",
         "in": "فى",
-        "stops": "محطات"
+        "stops": "محطات",
+        "sortBy": "ترتيب حسب",
+        "recommended": "موصى به",
+        "departureTime": "وقت الذهاب",
+        "duration": "المدة",
+        "price": "السعر"
     },
     "home": {
         "welcome": "مرحبًا بك في وكالة العسل للسفر والسياحة",
