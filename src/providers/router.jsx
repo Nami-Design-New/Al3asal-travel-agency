@@ -6,10 +6,11 @@ import Contact from "../routes/Contact";
 import AboutUs from "../routes/About";
 import Flights from "../routes/Flights";
 import Terms from "../routes/Terms";
-import Privacy from './../routes/Privacy';
+import Privacy from "./../routes/Privacy";
 import Blogs from "../routes/Blogs";
 import BlogDetails from "../routes/BlogDetails";
 import FAQ from "../routes/Faq";
+import Checkout from "../routes/Checkout";
 
 export const router = createBrowserRouter([
   {
@@ -34,6 +35,10 @@ export const router = createBrowserRouter([
         element: <Flights />,
       },
       {
+        path: "checkout",
+        element: <Checkout />,
+      },
+      {
         path: "terms",
         element: <Terms />,
       },
@@ -43,22 +48,21 @@ export const router = createBrowserRouter([
       },
       {
         path: "faq",
-        element: <FAQ />
+        element: <FAQ />,
       },
       {
         path: "blogs",
         children: [
           {
-            index: true, 
+            index: true,
             element: <Blogs />,
           },
           {
-            path: ":id", 
+            path: ":id",
             element: <BlogDetails />,
           },
         ],
-      }
-      
+      },
     ],
   },
 ]);

@@ -7,7 +7,7 @@ header {
   border-bottom: 1px solid $input_stroke;
 
   &.sticky {
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: rgba(0, 0, 0, 0.035) 0px 2.45093px 8.98675px 0px;
     background: $white;
     z-index: 100;
   }
@@ -117,7 +117,7 @@ header {
       width: 80px;
       height: 2px;
       background: radial-gradient(
-        90% 20% at 100% 50%,
+        90% 100% at 100% 20%,
         #54a0c4,
         rgba(238, 238, 238, 0)
       );

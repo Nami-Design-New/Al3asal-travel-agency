@@ -264,6 +264,7 @@
     padding: 16px;
     flex: 1;
     @include centerFlex();
+    gap: 12px;
 
     h5 {
       font-size: 18px;
@@ -278,4 +279,8 @@
       }
     }
   }
+}
+
+.flight_review {
+  padding: 40px 0;
 }
