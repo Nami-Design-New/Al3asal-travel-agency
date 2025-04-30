@@ -7,7 +7,12 @@
         "destinations": "الوجهات",
         "login": "تسجيل الدخول",
         "changeLanguage": "تغيير اللغة",
-        "changeCurrency": "تغيير العملة"
+        "changeCurrency": "تغيير العملة",
+        "myTrips": "رحلاتي",
+        "editBooking": "تعديل الحجز",
+        "myAccount": " تعديل حسابي",
+        "logout": "تسجيل الخروج",
+        "deleteAccount": "حذف الحساب"
     },
     "errorPage": {
         "pageNotFoundTitle": "الصفحة غير موجودة",
@@ -99,7 +104,7 @@
         "description": "نهدف إلى تقديم خدمات متكاملة بمعايير عالمية وبلمسة محلية."
     },
     "benefits": {
-        "sectionTitle": "لماذا تحجز معنا ؟",
+        "sectionTitle": "لماذا نحن ؟",
         "onePlaceTitle": "كل ما تحتاجه في مكان واحد",
         "onePlaceDescription": "من الرحلات والإقامات إلى المعالم السياحية، اعتمد على منتجاتنا الكاملة ودلائل السفر.",
         "flexibleBookingTitle": "خيارات حجز مرنة",
@@ -120,5 +125,25 @@
         "facebook": "فيسبوك",
         "twitter": "تويتر",
         "instagram": "إنستاجرام"
-    }
+    },
+        "myTrips": {
+          "title": "مخطط الرحلات",
+          "noTripsTitle": "لا توجد رحلات بعد",
+          "noTripsMessage": "ابدأ التخطيط لرحلتك القادمة واستكشف الوجهات الرائعة!",
+          "searchBtn": "ابحث عن رحلات",
+          "editBtn":"تعديل الحجز"
+        },
+        
+            "modal": {
+              "title": "حجوزاتي",
+              "description": "مرحباً! أدخل رقم الحجز الخاص بك والبريد الإلكتروني أو رقم الهاتف لاستعراض تفاصيل حجزك.",
+              "flight": "رحلات الطيران",
+              "hotel": "الفنادق",
+              "emailOrPhone": "البريد الإلكتروني / رقم الهاتف",
+              "refNumber": "رقم الحجز المرجعي",
+              "required": "هذه الخانة مطلوبه",
+              "viewDetails": "استعرض التفاصيل"
+            }
+          
+          
 }

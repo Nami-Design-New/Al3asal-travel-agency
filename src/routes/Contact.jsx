@@ -71,17 +71,22 @@ export default function Contact() {
 
                   {item.subLinks && (
                     <div className="social-media-links">
-                     {item.subLinks && (
-  <div className="social-media-links">
-    {item.subLinks.map((link, idx) => (
-      <a key={idx} href={link.link} target="_blank" rel="noopener noreferrer" className="social-link">
-        <i className={`fa-brands ${link.icon} `}></i> 
-        {t(link.name)}
-      </a>
-    ))}
-  </div>
-)}
-
+                      {item.subLinks && (
+                        <div className="social-media-links">
+                          {item.subLinks.map((link, idx) => (
+                            <a
+                              key={idx}
+                              href={link.link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="social-link"
+                            >
+                              <i className={`fa-brands ${link.icon} `}></i>
+                              {t(link.name)}
+                            </a>
+                          ))}
+                        </div>
+                      )}
                     </div>
                   )}
                 </div>

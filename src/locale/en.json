@@ -7,7 +7,12 @@
         "destinations": "Destinations",
         "login": "Login",
         "changeLanguage": "Change language",
-        "changeCurrency": "change currency"
+        "changeCurrency": "change currency",
+        "myTrips": "My Trips",
+        "editBooking": "Edit Booking",
+        "myAccount": "Edit Account",
+        "logout": "Logout",
+        "deleteAccount": "Delete Account"
     },
     "errorPage": {
         "pageNotFoundTitle": "Page Not Found",
@@ -120,5 +125,25 @@
         "facebook": "Facebook",
         "twitter": "Twitter",
         "instagram": "Instagram"
-    }
+    },
+    "myTrips": {
+        "title": "My Trips",
+        "noTripsTitle": "No trips yet",
+        "noTripsMessage": "Start planning your next adventure and explore amazing destinations!",
+        "searchBtn": "Search for trips",
+        "editBtn": "Edit Booking"
+    },
+    
+        "modal": {
+          "title": "My Bookings",
+          "description": "Hello! Enter your booking reference number and email or phone number to view your booking details.",
+          "flight": "Flights",
+          "hotel": "Hotels",
+          "emailOrPhone": "Email / Phone Number",
+          "refNumber": "Reference Number",
+          "required": "This field is required",
+          "viewDetails": "View Details"
+        }
+      
+      
 }

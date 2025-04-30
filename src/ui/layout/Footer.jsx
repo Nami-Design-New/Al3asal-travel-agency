@@ -62,24 +62,23 @@ export default function Footer() {
           </div>
 
           <div className="col-lg-3 col-md-6 mb-4">
-  <h5 className="mb-3">الخدمات</h5>
-  <ul className="list-unstyled">
-    <li>
-      <a href="#">حجوزات تذاكر الطيران</a>
-    </li>
-    <li>
-      <a href="#">برامج سياحية متكاملة</a>
-    </li>
+            <h5 className="mb-3">الخدمات</h5>
+            <ul className="list-unstyled">
+              <li>
+                <a href="#">حجوزات تذاكر الطيران</a>
+              </li>
+              <li>
+                <a href="#">برامج سياحية متكاملة</a>
+              </li>
 
-    <li>
-      <a href="#">تأمين تأشيرات السفر</a>
-    </li>
-    <li>
-      <a href="#">تنظيم رحلات شهر عسل</a>
-    </li>
-  </ul>
-</div>
-
+              <li>
+                <a href="#">تأمين تأشيرات السفر</a>
+              </li>
+              <li>
+                <a href="#">تنظيم رحلات شهر عسل</a>
+              </li>
+            </ul>
+          </div>
 
           <div className="col-lg-3 col-md-6 mb-4">
             <h5 className="mb-3">اتصل بنا</h5>
@@ -87,11 +86,11 @@ export default function Footer() {
               <li>
                 <i className="fas fa-map-marker-alt mx-2"></i>
                 <a
-                  href="https://maps.google.com/?q=9550 Bolsa Ave #126, USA"
+                  href="https://maps.app.goo.gl/W8FUMXF581satcmcA"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  9550 Bolsa Ave #126، الولايات المتحدة
+                  4QJ4+G95، حماة، سوريا
                 </a>
               </li>
               <li>
