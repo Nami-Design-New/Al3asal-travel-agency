@@ -98,15 +98,18 @@
     "title": "مرحباً بك في مؤسستنا",
     "description": "نهدف إلى تقديم خدمات متكاملة بمعايير عالمية وبلمسة محلية."
   },
-  "benefits": {
-    "sectionTitle": "لماذا تحجز معنا ؟",
-    "onePlaceTitle": "كل ما تحتاجه في مكان واحد",
-    "onePlaceDescription": "من الرحلات والإقامات إلى المعالم السياحية، اعتمد على منتجاتنا الكاملة ودلائل السفر.",
-    "flexibleBookingTitle": "خيارات حجز مرنة",
-    "flexibleBookingDescription": "تغيير مفاجئ في خططك؟ لا داعي للقلق! قم بإعادة الجدولة أو استرداد المبالغ بسهولة.",
-    "securePaymentTitle": "دفع آمن ومريح",
-    "securePaymentDescription": "استمتع بالعديد من طرق الدفع الآمنة، وبالعملة التي تناسبك."
-  },
+ "benefits": {
+  "sectionTitle": "لماذا تحجز معنا ؟",
+    "easyBookingTitle": "سهولة الحجز",
+    "easyBookingDescription": "احجز رحلتك بخطوات بسيطة وسريعة دون أي تعقيد.",
+    "bestPriceTitle": "خيارات دفع واسعة",
+    "bestPriceDescription": "نتائج بحث تناسب وسائل الدفع المفضلة لديك",
+    "support247Title": "خدمة عملاء 24/7",
+    "support247Description": "نحن هنا لمساعدتك في أي وقت وأي مكان.",
+    "securePaymentTitle": "أسعار نهائيّة",
+    "securePaymentDescription": "لا ضرائب أو رسوم إضافية"
+},
+
   "contact": {
     "callUs": "اتصل بنا",
     "callDescription": "اتصل بنا للتحدث مع أحد أعضاء فريقنا.",

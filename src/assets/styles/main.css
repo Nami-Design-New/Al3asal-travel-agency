@@ -1070,28 +1070,28 @@ header nav .actions .login {
   color: #000;
   font-weight: 600;
   font-size: 28px;
+  text-align: center;
 }
 .benefits .benefit-card {
-  background: #fff;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  text-align: center;
   transition: 0.3s;
-}
-.benefits .benefit-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .benefits .benefit-img {
-  width: 60px;
-  height: 80px;
-  -o-object-fit: contain;
-     object-fit: contain;
-  flex-shrink: 0;
+  width: 70px;
+  height: auto;
+  margin-bottom: 1rem;
 }
 .benefits .benefit-title {
   font-size: 1.25rem;
   color: #2c3e50;
   font-weight: 600;
+  margin-bottom: 0.75rem;
 }
 .benefits .benefit-description {
   color: #7f8c8d;
@@ -1099,12 +1099,7 @@ header nav .actions .login {
 }
 @media (max-width: 767.98px) {
   .benefits .benefit-card {
-    flex-direction: column;
-    align-items: center;
     text-align: center;
-  }
-  .benefits .benefit-card .benefit-img {
-    margin-bottom: 1rem;
   }
   .benefits .benefits-shape {
     display: none;
@@ -1337,43 +1332,67 @@ header nav .actions .login {
 }
 .faq_section .section_title h2 {
   font-size: 32px;
-  margin-bottom: 10px;
   color: #000;
 }
 .faq_section .section_title p {
   color: #777;
   font-size: 16px;
 }
-.faq_section .accordion .accordion-item {
-  border: none;
-  margin-bottom: 12px;
-  background: #fff;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
-}
-.faq_section .accordion .accordion-item .accordion-header .accordion-button {
+.faq_section .faq_tabs .nav-item {
+  padding: 14px 20px;
+  margin-bottom: 8px;
   background-color: #fff;
-  font-size: 18px;
-  font-weight: 500;
-  color: #333;
-  padding: 18px 20px;
+  color: #000;
+  border-radius: 8px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid #ddd;
 }
-.faq_section .accordion .accordion-item .accordion-header .accordion-button:not(.collapsed) {
+.faq_section .faq_tabs .nav-item i {
+  margin-left: 8px;
+  color: #54a0c4;
+}
+.faq_section .faq_tabs .nav-item:hover {
   background-color: #54a0c4;
   color: #fff;
 }
-.faq_section .accordion .accordion-item .accordion-header .accordion-button:not(.collapsed)::after {
+.faq_section .faq_tabs .nav-item:hover i {
   color: #fff;
 }
-.faq_section .accordion .accordion-item .accordion-body {
-  padding: 20px;
+.faq_section .faq_tabs .nav-item.active {
+  background-color: #54a0c4;
+  color: #fff;
+  border-color: #54a0c4;
+}
+.faq_section .faq_tabs .nav-item.active i {
+  color: #fff;
+}
+.faq_section .tab-content {
+  padding: 30px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+  animation: fadeIn 0.5s ease;
+}
+.faq_section .tab-content p {
   font-size: 16px;
   color: #777;
   line-height: 1.8;
-  background-color: #fff;
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .blog_section {
   padding: 60px 0;
 }
@@ -1422,35 +1441,6 @@ header nav .actions .login {
   font-size: 12px;
   color: #aaaaaa;
   margin: 0;
-}
-
-.pagination {
-  display: flex;
-  gap: 10px;
-  list-style: none;
-  padding: 10px;
-  margin-bottom: 10px;
-}
-.pagination .page-item {
-  background: #f5f5f5;
-  border-radius: 5px;
-}
-.pagination .page-item.active .page-link {
-  color: #fff;
-  background-color: #54a0c4;
-  font-weight: bold;
-  border-radius: 5px;
-}
-.pagination .page-link {
-  border: none;
-  background: transparent;
-  color: #54a0c4;
-  padding: 10px 14px;
-  cursor: pointer;
-}
-.pagination .page-item.disabled .page-link {
-  color: #ccc;
-  cursor: not-allowed;
 }
 
 .blog_details {

@@ -98,15 +98,19 @@
     "title": "Welcome to Our Institution",
     "description": "We aim to provide comprehensive services with global standards and a local touch."
   },
-  "benefits": {
-    "sectionTitle": "Why choose us?",
-    "onePlaceTitle": "One place for all your needs",
-    "onePlaceDescription": "From flights, stays, to sights, just count on our complete products and Travel Guides.",
-    "flexibleBookingTitle": "Flexible booking options",
-    "flexibleBookingDescription": "Sudden change of plan? No worries! Reschedule or Refund without hassle.",
-    "securePaymentTitle": "Secure & convenient payment",
-    "securePaymentDescription": "Enjoy many secure ways to pay, in the currency that's most convenient for you."
-  },
+ "benefits": {
+  "sectionTitle": "Why choose us?",
+    "easyBookingTitle": "Easy Booking",
+    "easyBookingDescription": "Book your trip in simple and quick steps with no hassle.",
+    "bestPriceTitle": "Pay the way you want",
+    "bestPriceDescription": "See only sellers who support your preferred methods",
+    "support247Title": "24/7 Customer Support",
+    "support247Description": "We're here to help you anytime, anywhere.",
+    "securePaymentTitle": "Shop with confidence",
+    "securePaymentDescription": "No hidden fees, taxes or other nasty surprises"
+},
+
+
   "contact": {
     "callUs": "Call Us",
     "callDescription": "Call us to speak to a member of our team.",
