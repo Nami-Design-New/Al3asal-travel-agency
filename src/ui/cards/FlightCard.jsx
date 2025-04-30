@@ -1,10 +1,11 @@
+import { Link } from "react-router";
 import TicketTimeLine from "./TicketTimeLine";
 import TicketsAirLine from "./TicketsAirLine";
 import TicketDuration from "./TicketDuration";
 
 export default function FlightCard({ flight }) {
   return (
-    <div className="flight_card">
+    <Link to="/checkout" className="flight_card">
       <div className="flight_info">
         <TicketsAirLine flight={flight} />
         <TicketTimeLine flight={flight} />
@@ -16,6 +17,6 @@ export default function FlightCard({ flight }) {
           {flight?.price} <span>EGP</span>
         </h5>
       </div>
-    </div>
+    </Link>
   );
 }

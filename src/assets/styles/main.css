@@ -1748,7 +1748,7 @@ body main .contact_section .form_header p {
   margin: 0;
 }
 body main .flights {
-  padding: 40px 0;
+  padding: 30px 0;
   position: relative;
 }
 body main .flights .results {
@@ -1843,6 +1843,10 @@ body main .flights .round_trip_flight .content p {
   color: #777;
   margin: 0;
 }
+body main .flights .round_trip_flight .departing_flight {
+  -webkit-clip-path: polygon(0% 0%, 98% 0%, 100% 50%, 98% 100%, 0% 100%);
+          clip-path: polygon(0% 0%, 98% 0%, 100% 50%, 98% 100%, 0% 100%);
+}
 body main .flights .round_trip_flight .departing_flight,
 body main .flights .round_trip_flight .return_flight {
   flex: 1;
@@ -1865,6 +1869,10 @@ body main .flight_card {
   border-radius: 16px;
   border: 1px solid #f4f4f4;
   display: flex;
+  transition: all 0.3s ease-in-out;
+}
+body main .flight_card:hover {
+  box-shadow: rgba(0, 0, 0, 0.035) 0px 2.45093px 8.98675px 0px;
 }
 body main .flight_card .flight_info {
   flex: 4;
