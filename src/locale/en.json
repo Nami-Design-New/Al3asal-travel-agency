@@ -72,7 +72,10 @@
         "adults": "Adults",
         "children": "Children",
         "infants": "Infants",
-        "searchByCityOrAirPort": "Search by city or airport"
+        "searchByCityOrAirPort": "Search by city or airport",
+        "direct": "Direct Flight",
+        "in": "In",
+        "stops": "Stops"
     },
     "home": {
         "welcome": "Welcome to Al3asal Travel & Tourism",

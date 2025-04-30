@@ -72,7 +72,10 @@
         "adults": "البالغين",
         "children": "الأطفال",
         "infants": "الرضع",
-        "searchByCityOrAirPort": "البحث حسب المدينة أو المطار"
+        "searchByCityOrAirPort": "البحث حسب المدينة أو المطار",
+        "direct": "بدون توقفات",
+        "in": "فى",
+        "stops": "محطات"
     },
     "home": {
         "welcome": "مرحبًا بك في وكالة العسل للسفر والسياحة",
