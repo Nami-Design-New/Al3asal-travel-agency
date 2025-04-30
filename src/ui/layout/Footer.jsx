@@ -40,6 +40,9 @@ export default function Footer() {
               <li>
                 <Link to="/privacy">{t("footer.privacy")}</Link>
               </li>
+              <li>
+                <Link to="/faq">{t("footer.FAQs")}</Link>
+              </li>
             </ul>
           </div>
 

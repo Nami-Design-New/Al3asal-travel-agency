@@ -3,9 +3,39 @@ import { Link } from "react-router";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
+import BlogCard from "../../ui/cards/BlogCard"; 
 
 export default function BlogSection() {
   const { t } = useTranslation();
+
+  const blogData = [
+    {
+      title: "استكشاف العجائب الطبيعية: أفضل وجهات السفر لمحبي المغامرات",
+      date: "23 Apr 2023",
+      image: "/blogs/blog1.jpg",
+    },
+    {
+      title: "تجربة الطيران الشراعي: متعة المغامرة في سماء البحر",
+      date: "10 May 2023",
+      image: "/blogs/blog2.jpg",
+    },
+    {
+      title: "كيف تخطط لعطلة عائلية مثالية؟ نصائح للسفر مع الأطفال",
+      date: "05 Jun 2023",
+      image: "/blogs/blog3.jpg",
+    },
+    {
+      title: "أفضل الوجهات الجوية لرحلة صيفية هادئة ومنعشة",
+      date: "15 Jul 2023",
+      image: "/blogs/blog4.jpg",
+    },
+    {
+      title: "أفضل الوجهات الجوية لرحلة صيفية هادئة ومنعشة",
+      date: "15 Jul 2023",
+      image: "/blogs/blog5.jpg",
+    },
+  ];
+
   return (
     <section className="blog_section">
       <div className="container">
@@ -40,19 +70,14 @@ export default function BlogSection() {
                 },
               }}
             >
-              {Array.from({ length: 4 }).map((_, index) => (
+              {blogData.map((blog, index) => (
                 <SwiperSlide key={index}>
-                  <div className="blog_card">
-                    <div className="img">
-                      <img src={`/images/blog${index + 1}.webp`} alt="blog1" />
-                    </div>
-                    <div className="content">
-                      <h5>آخر موعد للعمرة قبل الحج 2025 في هذا التاريخ!</h5>
-                      <p>
-                        <i className="fa-regular fa-calendar"></i> 23 Apr 2023
-                      </p>
-                    </div>
-                  </div>
+                  <BlogCard
+                    title={blog.title}
+                    date={blog.date}
+                    image={blog.image}
+                    index={index}
+                  />
                 </SwiperSlide>
               ))}
             </Swiper>
