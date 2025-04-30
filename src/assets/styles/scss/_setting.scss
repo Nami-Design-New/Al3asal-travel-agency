@@ -1,0 +1,166 @@
+.terms-page,
+.privacy-policy-page {
+  .terms-header,
+  .privacy-policy-header {
+    text-align: center;
+    h4 {
+      color: $black;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      position: relative;
+      padding-bottom: 1rem;
+      max-width: 800px;
+      margin: 0 auto;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 50%;
+        transform: translateX(50%);
+        width: 90px;
+        height: 4px;
+        background-color: $main;
+        border-radius: 2px;
+      }
+    }
+
+    p {
+      margin-top: 1rem;
+      color: $gray;
+      font-size: 1rem;
+    }
+  }
+
+  .terms-content,
+  .privacy-policy-content {
+    background: $white;
+    border-radius: 10px;
+
+    .term-section,
+    .privacy-policy-section {
+      .section-title {
+        color: $black;
+        font-weight: 600;
+        margin-bottom: 1.2rem;
+        position: relative;
+      }
+
+      .section-content {
+        background: #f9f9f9;
+        padding: 1.5rem;
+        border-radius: 8px;
+        border-right: 3px solid $main;
+
+        p,
+        ol,
+        ul {
+          color: #34495e;
+          line-height: 1.8;
+        }
+
+        ol,
+        ul {
+          padding-right: 1.5rem;
+          li {
+            margin-bottom: 0.75rem;
+          }
+        }
+      }
+    }
+
+    .contact-info {
+      h3 {
+        color: #2c3e50;
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        color: #7f8c8d;
+        background: #f5f5f5;
+        padding: 1.5rem;
+        border-radius: 8px;
+        strong {
+          color: $main;
+          display: block;
+          margin-bottom: 0.5rem;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .terms-page,
+  .privacy-policy-page {
+    padding: 1.5rem 0;
+
+    .terms-header,
+    .privacy-policy-header {
+      h1 {
+        font-size: 1.8rem;
+      }
+    }
+
+    .terms-content,
+    .privacy-policy-content {
+      padding: 1.2rem;
+    }
+  }
+}
+.faq_section {
+  padding: 60px 0;
+  background-color: #f9f9f9;
+
+  .section_title {
+    h2 {
+      font-size: 32px;
+      margin-bottom: 10px;
+      color: $black;
+    }
+
+    p {
+      color: $gray;
+      font-size: 16px;
+    }
+  }
+
+  .accordion {
+    .accordion-item {
+      border: none;
+      margin-bottom: 12px;
+      background: $white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+
+      .accordion-header {
+        .accordion-button {
+          background-color: $white;
+          font-size: 18px;
+          font-weight: 500;
+          color: #333;
+          padding: 18px 20px;
+
+          &:not(.collapsed) {
+            background-color: $main;
+            color: $white;
+          }
+
+          &:not(.collapsed)::after {
+            color: $white;
+          }
+        }
+      }
+
+      .accordion-body {
+        padding: 20px;
+        font-size: 16px;
+        color: $gray;
+        line-height: 1.8;
+        background-color: $white;
+      }
+    }
+  }
+}

@@ -1,63 +1,210 @@
 {
-    "header": {
-        "home": "Home",
-        "flights": "Flights",
-        "about": "About Us",
-        "contact": "Contact Us",
-        "blogs": "blogs",
-        "login": "Login",
-        "changeLanguage": "Change language",
-        "changeCurrency": "change currency"
+  "header": {
+    "home": "Home",
+    "flights": "Flights",
+    "about": "About Us",
+    "contact": "Contact Us",
+    "blogs": "blogs",
+    "login": "Login",
+    "changeLanguage": "Change language",
+    "changeCurrency": "change currency"
+  },
+  "errorPage": {
+    "pageNotFoundTitle": "Page Not Found",
+    "pageNotFoundMessage": "We couldn't find the page you're looking for. The page might have been moved, deleted, or never existed.",
+    "errorTitle": "Error",
+    "applicationErrorTitle": "Application Error",
+    "applicationErrorMessage": "An unexpected error occurred. Please try again later.",
+    "unexpectedErrorTitle": "Unexpected Error",
+    "unexpectedErrorMessage": "An unexpected error occurred. Please try again later.",
+    "oops": "Oops!",
+    "returnToHome": "Return To Home"
+  },
+  "currencies": {
+    "KWD": "Kuwaiti Dinar",
+    "AED": "UAE Dirham",
+    "SAR": "Saudi Riyal",
+    "EGP": "Egyptian Pound",
+    "USD": "US Dollar",
+    "BHD": "Bahraini Dinar",
+    "EUR": "Euro",
+    "INR": "Indian Rupee",
+    "JOD": "Jordanian Dinar",
+    "OMR": "Omani Rial",
+    "QAR": "Qatari Riyal",
+    "DZD": "Algerian Dinar",
+    "TND": "Tunisian Dinar",
+    "MAD": "Moroccan Dirham",
+    "BRL": "Brazilian Real",
+    "MXN": "Mexican Peso"
+  },
+  "auth": {
+    "emailAddress": "Email Address",
+    "enterEmailAddress": "Enter Email Address",
+    "enterPassword": "Enter Password",
+    "password": "Password",
+    "login": "Login",
+    "forgotPassword": "Forgot Password?",
+    "loginTitle": "Login to your account",
+    "loginSubtitle": "Please enter your credentials to access your account.",
+    "or": "OR Login",
+    "loginWithGoogle": "with Google",
+    "loginWithApple": "with Apple",
+    "dontHaveAccount": "Don't have an account?",
+    "createAccount": "Create Account",
+    "alreadyHaveAccount": "Already have an account?",
+    "enterYourName": "Enter your name",
+    "fullName": "Full Name",
+    "registerTitle": "Create an account",
+    "registerSubtitle": "Please enter your details to create an account."
+  },
+  "flights": {
+    "oneWay": "One Way",
+    "roundTrip": "Round Trip",
+    "economy": "Economy",
+    "premiumEconomy": "Premium Economy",
+    "businessClass": "Business Class",
+    "firstClass": "First Class",
+    "leavingFrom": "Leaving From",
+    "goingTo": "Going To",
+    "travelers": "Travelers",
+    "search": "Search",
+    "adults": "Adults",
+    "children": "Children",
+    "infants": "Infants",
+    "searchByCityOrAirPort": "Search by city or airport"
+  },
+  "home": {
+    "welcome": "Welcome to Al3asal Travel & Tourism",
+    "description": "Embark on unforgettable journeys with Al3asal — where exceptional service meets exclusive travel experiences. Discover the world with comfort, care, and unmatched value.",
+    "topDestinations": "Top Searched Destinations",
+    "topDestinationsSubtitle": "Explore the most popular travel destinations among our users."
+  },
+  "aboutUs": {
+    "title": "About Us",
+    "subtitle": "Your journey to excellence starts here",
+    "description": "At our institution, we believe true quality starts with small details. We work passionately and professionally to provide you with exceptional services and experiences that exceed your expectations. Our goal is to be your first choice through our constant commitment to development and innovation.",
+    "feature1": {
+      "title": "Advanced Booking System",
+      "description": "Ease of booking and quick service to ensure a smooth and distinctive experience."
     },
-    "errorPage": {
-        "pageNotFoundTitle": "Page Not Found",
-        "pageNotFoundMessage": "We couldn't find the page you're looking for. The page might have been moved, deleted, or never existed.",
-        "errorTitle": "Error",
-        "applicationErrorTitle": "Application Error",
-        "applicationErrorMessage": "An unexpected error occurred. Please try again later.",
-        "unexpectedErrorTitle": "Unexpected Error",
-        "unexpectedErrorMessage": "An unexpected error occurred. Please try again later.",
-        "oops": "Oops!",
-        "returnToHome": "Return To Home"
+    "feature2": {
+      "title": "Comprehensive Services",
+      "description": "We provide complete solutions that meet all your needs with the highest standards of quality and attention."
     },
-    "currencies": {
-        "KWD": "Kuwaiti Dinar",
-        "AED": "UAE Dirham",
-        "SAR": "Saudi Riyal",
-        "EGP": "Egyptian Pound",
-        "USD": "US Dollar",
-        "BHD": "Bahraini Dinar",
-        "EUR": "Euro",
-        "INR": "Indian Rupee",
-        "JOD": "Jordanian Dinar",
-        "OMR": "Omani Rial",
-        "QAR": "Qatari Riyal",
-        "DZD": "Algerian Dinar",
-        "TND": "Tunisian Dinar",
-        "MAD": "Moroccan Dirham",
-        "BRL": "Brazilian Real",
-        "MXN": "Mexican Peso"
+    "discoverMore": "Discover More"
+  },
+  "headerSec": {
+    "title": "Welcome to Our Institution",
+    "description": "We aim to provide comprehensive services with global standards and a local touch."
+  },
+  "benefits": {
+    "sectionTitle": "Why choose us?",
+    "onePlaceTitle": "One place for all your needs",
+    "onePlaceDescription": "From flights, stays, to sights, just count on our complete products and Travel Guides.",
+    "flexibleBookingTitle": "Flexible booking options",
+    "flexibleBookingDescription": "Sudden change of plan? No worries! Reschedule or Refund without hassle.",
+    "securePaymentTitle": "Secure & convenient payment",
+    "securePaymentDescription": "Enjoy many secure ways to pay, in the currency that's most convenient for you."
+  },
+  "contact": {
+    "callUs": "Call Us",
+    "callDescription": "Call us to speak to a member of our team.",
+    "helpSupport": "Help & Support",
+    "helpDescription": "For help with a current product or service or refer to FAQs and developer tools.",
+    "otherHelp": "Other Help & Support",
+    "otherHelpDescription": "For help with additional products or services.",
+    "followSocialMedia": "Follow us on Social Media",
+    "followDescription": "Stay connected through our social media channels.",
+    "followUs": "Follow Us",
+    "facebook": "Facebook",
+    "twitter": "Twitter",
+    "instagram": "Instagram",
+    "formTitle": "Contact Our Expert Team",
+    "formDescription": "Please fill out the form below and we will get back to you as soon as possible.",
+    "fields": {
+      "fullName": {
+        "label": "Full Name",
+        "placeholder": "Enter your full name"
+      },
+      "email": {
+        "label": "Email Address",
+        "placeholder": "Enter your email address"
+      },
+      "problemType": {
+        "label": "Problem Type",
+        "placeholder": "Select problem type",
+        "booking": "Booking Issue",
+        "payment": "Payment Problem",
+        "other": "Other"
+      },
+      "problemCategory": {
+        "label": "Problem Category",
+        "placeholder": "Select category",
+        "technical": "Technical",
+        "service": "Customer Service",
+        "billing": "Billing"
+      },
+      "referenceNumber": {
+        "label": "Reference Booking Number",
+        "placeholder": "Enter your booking reference"
+      },
+      "flightDate": "Flight Date",
+      "message": {
+        "label": "Message",
+        "placeholder": "Type your message here"
+      },
+      "submit": "Send Message"
+    }
+  },
+  "popularAirlines": {
+    "title": "Popular Airlines",
+    "subtitle": "Explore top-rated airlines trusted by travelers around the world."
+  },
+  "footer": {
+    "copyright": "All rights reserved to",
+    "al3asal": "Al3asal Travel & Tourism",
+    "contact": "Contact us",
+    "services": "Our Services",
+    "ser1": "Flight ticket bookings",
+    "ser2": "Comprehensive travel programs",
+    "ser3": "Travel visa arrangements",
+    "ser4": "Honeymoon trip planning",
+    "usefulLinks": "Useful Links",
+    "home": "Home",
+    "about": "About Us",
+    "terms": "Terms & Conditions",
+    "privacy": "Privacy Policy",
+    "FAQs":"FAQs",
+    "email": "Enter your email address",
+    "subscribe": "Subscribe",
+    "description": "Al3asal Travel & Tourism offers unforgettable travel experiences with exceptional services and unmatched value. Discover the world with comfort, care, and unmatched value."
+  },
+  "blogs": {
+    "title": "Latest Articles",
+    "viewAll": "View All"
+  },
+  "terms": {
+    "pageTitle": "Al-Asal Travel & Tourism Terms and Conditions",
+    "intro": "By using our services, you agree to be bound by the following terms and conditions. Please read them carefully before booking.",
+    "lastUpdate": "Last updated: {{date}}",
+    "sections": {
+      "use": "1. Use of Services",
+      "booking": "2. Bookings & Payments",
+      "cancel": "3. Cancellation & Modifications",
+      "liability": "4. Liability",
+      "general": "5. General Terms"
     },
-    "auth": {
-        "emailAddress": "Email Address",
-        "enterEmailAddress": "Enter Email Address",
-        "enterPassword": "Enter Password",
-        "password": "Password",
-        "login": "Login",
-        "forgotPassword": "Forgot Password?",
-        "loginTitle": "Login to your account",
-        "loginSubtitle": "Please enter your credentials to access your account.",
-        "or": "OR Login",
-        "loginWithGoogle": "with Google",
-        "loginWithApple": "with Apple",
-        "dontHaveAccount": "Don't have an account?",
-        "createAccount": "Create Account",
-        "alreadyHaveAccount": "Already have an account?",
-        "enterYourName": "Enter your name",
-        "fullName": "Full Name",
-        "registerTitle": "Create an account",
-        "registerSubtitle": "Please enter your details to create an account."
-    },
+    "use": {
+      "text": "Al-Asal services are provided to you on the condition of accepting these terms without modification. Using the services constitutes your agreement to these terms.",
+      "restrictions": "Usage Restrictions",
+      "restrictionsText": "You agree to use the services only for lawful personal purposes and not for making fake or fraudulent bookings, or interfering with operations in any way.",
+      "changes": "Modifications",
+      "changesText": "Al-Asal reserves the right to modify or discontinue services, or change terms at any time without notice. Continued use means you agree to the changes.",
+      "privacy": "Privacy",
+      "privacyText": "We are committed to protecting your privacy and personal data according to our Privacy Policy.",
+      "account": "User Account",
+      "accountText": "If you create an account, you are responsible for maintaining the confidentiality of your login data and for all activities under it."
     "flights": {
         "oneWay": "One Way",
         "roundTrip": "Round Trip",
@@ -82,113 +229,79 @@
         "duration": "Duration",
         "price": "Price"
     },
-    "home": {
-        "welcome": "Welcome to Al3asal Travel & Tourism",
-        "description": "Embark on unforgettable journeys with Al3asal — where exceptional service meets exclusive travel experiences. Discover the world with comfort, care, and unmatched value.",
-        "topDestinations": "Top Searched Destinations",
-        "topDestinationsSubtitle": "Explore the most popular travel destinations among our users."
+    "booking": {
+      "items": [
+        "All bookings are subject to confirmation and availability.",
+        "30% of the total amount is required to confirm a booking.",
+        "The final payment must be completed 30 days before travel.",
+        "Prices are subject to change until final booking."
+      ]
     },
-    "aboutUs": {
-        "title": "About Us",
-        "subtitle": "Your journey to excellence starts here",
-        "description": "At our institution, we believe true quality starts with small details. We work passionately and professionally to provide you with exceptional services and experiences that exceed your expectations. Our goal is to be your first choice through our constant commitment to development and innovation.",
-        "feature1": {
-            "title": "Advanced Booking System",
-            "description": "Ease of booking and quick service to ensure a smooth and distinctive experience."
-        },
-        "feature2": {
-            "title": "Comprehensive Services",
-            "description": "We provide complete solutions that meet all your needs with the highest standards of quality and attention."
-        },
-        "discoverMore": "Discover More"
+    "cancel": {
+      "items": [
+        "Cancellation before 60 days: Full refund.",
+        "Between 30-60 days: 30% deduction.",
+        "Less than 30 days: No refund.",
+        "Additional conditions may apply depending on service providers."
+      ]
     },
-    "headerSec": {
-        "title": "Welcome to Our Institution",
-        "description": "We aim to provide comprehensive services with global standards and a local touch."
+    "liability": {
+      "disclaimer": "Disclaimer",
+      "disclaimerText": "Al-Asal provides services 'as is' without any explicit or implied warranties. We do not guarantee uninterrupted, error-free services.",
+      "limits": "Limitation of Liability",
+      "limitsText": "Al-Asal bears no responsibility for indirect, consequential, or incidental damages arising from the use or inability to use services, or for personal, material losses or delays beyond our control. The traveler is responsible for personal insurance and visas."
     },
-    "benefits": {
-        "sectionTitle": "Why choose us?",
-        "onePlaceTitle": "One place for all your needs",
-        "onePlaceDescription": "From flights, stays, to sights, just count on our complete products and Travel Guides.",
-        "flexibleBookingTitle": "Flexible booking options",
-        "flexibleBookingDescription": "Sudden change of plan? No worries! Reschedule or Refund without hassle.",
-        "securePaymentTitle": "Secure & convenient payment",
-        "securePaymentDescription": "Enjoy many secure ways to pay, in the currency that's most convenient for you."
+    "general": {
+      "items": [
+        "Valid travel documents are required.",
+        "We are not responsible for the loss of personal belongings.",
+        "We reserve the right to amend these terms at any time."
+      ]
     },
     "contact": {
-        "callUs": "Call Us",
-        "callDescription": "Call us to speak to a member of our team.",
-        "helpSupport": "Help & Support",
-        "helpDescription": "For help with a current product or service or refer to FAQs and developer tools.",
-        "otherHelp": "Other Help & Support",
-        "otherHelpDescription": "For help with additional products or services.",
-        "followSocialMedia": "Follow us on Social Media",
-        "followDescription": "Stay connected through our social media channels.",
-        "followUs": "Follow Us",
-        "facebook": "Facebook",
-        "twitter": "Twitter",
-        "instagram": "Instagram",
-        "formTitle": "Contact Our Expert Team",
-        "formDescription": "Please fill out the form below and we will get back to you as soon as possible.",
-        "fields": {
-            "fullName": {
-                "label": "Full Name",
-                "placeholder": "Enter your full name"
-            },
-            "email": {
-                "label": "Email Address",
-                "placeholder": "Enter your email address"
-            },
-            "problemType": {
-                "label": "Problem Type",
-                "placeholder": "Select problem type",
-                "booking": "Booking Issue",
-                "payment": "Payment Problem",
-                "other": "Other"
-            },
-            "problemCategory": {
-                "label": "Problem Category",
-                "placeholder": "Select category",
-                "technical": "Technical",
-                "service": "Customer Service",
-                "billing": "Billing"
-            },
-            "referenceNumber": {
-                "label": "Reference Booking Number",
-                "placeholder": "Enter your booking reference"
-            },
-            "flightDate": "Flight Date",
-            "message": {
-                "label": "Message",
-                "placeholder": "Type your message here"
-            },
-            "submit": "Send Message"
-        }
-    },
-    "popularAirlines": {
-        "title": "Popular Airlines",
-        "subtitle": "Explore top-rated airlines trusted by travelers around the world."
-    },
-    "footer": {
-        "copyright": "All rights reserved to",
-        "al3asal": "Al3asal Travel & Tourism",
-        "contact": "Contact us",
-        "services": "Our Services",
-        "ser1": "Flight ticket bookings",
-        "ser2": "Comprehensive travel programs",
-        "ser3": "Travel visa arrangements",
-        "ser4": "Honeymoon trip planning",
-        "usefulLinks": "Useful Links",
-        "home": "Home",
-        "about": "About Us",
-        "terms": "Terms & Conditions",
-        "privacy": "Privacy Policy",
-        "email": "Enter your email address",
-        "subscribe": "Subscribe",
-        "description": "Al3asal Travel & Tourism offers unforgettable travel experiences with exceptional services and unmatched value. Discover the world with comfort, care, and unmatched value."
-    },
-    "blogs": {
-        "title": "Latest Blogs",
-        "viewAll": "View All"
+      "title": "For Inquiries:",
+      "agency": "Al-Asal Travel & Tourism",
+      "phone": "Phone: +966 12 345 6789",
+      "email": "Email: info@alasal-travel.com",
+      "workingHours": "Working Hours: Sunday-Thursday, 9am - 5pm"
     }
+  },
+  "privacy": {
+    "intro": "We care about your privacy and are committed to protecting your data.",
+    "lastUpdate": "Last updated: {{date}}",
+    "sections": {
+      "dataCollection": "Data Collection",
+      "dataUsage": "Data Usage",
+      "dataProtection": "Data Protection",
+      "thirdParties": "Sharing with Third Parties",
+      "mobileAppData": "Mobile App Data",
+      "cookies": "Cookie Policy",
+      "contact": "Contact Us"
+    },
+    "dataCollection": {
+      "text": "We collect information from you when you use our website or apps, whether during registration, booking, or communicating with us. This includes personal information such as your name, email, phone number, and booking data, as well as technical data such as your IP address, device ID, and location data with your consent."
+    },
+    "dataUsage": {
+      "text": "We use the data we collect to provide better services, complete booking and payment procedures, send booking details and itineraries, improve user experience, support customer service, send marketing offers with your prior consent, and analyze activities to enhance services. We also use the information to respond to official authorities when required."
+    },
+    "dataProtection": {
+      "text": "We are committed to protecting your data using the latest security technologies. We protect your data from unauthorized access, alteration, disclosure, or destruction, and limit access to authorized personnel only."
+    },
+    "thirdParties": {
+      "text": "We may share your data with service providers who help us provide our services, such as payment companies, booking agents, telecom companies, and travel services. Data may also be shared with government authorities upon request or as required by law. We do not share your data with any third party for marketing purposes without your explicit consent."
+    },
+    "mobileAppData": {
+      "text": "When you use the Al Asal Travel app, we may collect additional information such as device ID, IP address, location data (with prior consent), booking data, and travel details. This data is used to complete bookings, enhance website services, send notifications like flight schedule changes, and ensure security."
+    },
+    "cookies": {
+      "text": "We use cookies to enhance your browsing experience. Cookies allow us to remember your preferences, improve performance, and provide personalized content. You can change your cookie settings in your browser at any time."
+    },
+    "contact": {
+      "text": "For any inquiries or requests related to our privacy policy, please contact us.",
+      "title": "Contact Information:",
+      "agency": "Al Asal Travel and Tourism Agency",
+      "phone": "Phone: +966 12 345 6789",
+      "email": "Email: info@alasal-travel.com"
+    }
+  }
 }

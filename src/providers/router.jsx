@@ -5,6 +5,11 @@ import Home from "../routes/Home";
 import Contact from "../routes/Contact";
 import AboutUs from "../routes/About";
 import Flights from "../routes/Flights";
+import Terms from "../routes/Terms";
+import Privacy from './../routes/Privacy';
+import Blogs from "../routes/Blogs";
+import BlogDetails from "../routes/BlogDetails";
+import FAQ from "../routes/Faq";
 
 export const router = createBrowserRouter([
   {
@@ -28,6 +33,32 @@ export const router = createBrowserRouter([
         path: "flights",
         element: <Flights />,
       },
+      {
+        path: "terms",
+        element: <Terms />,
+      },
+      {
+        path: "privacy",
+        element: <Privacy />,
+      },
+      {
+        path: "faq",
+        element: <FAQ />
+      },
+      {
+        path: "blogs",
+        children: [
+          {
+            index: true, 
+            element: <Blogs />,
+          },
+          {
+            path: ":id", 
+            element: <BlogDetails />,
+          },
+        ],
+      }
+      
     ],
   },
 ]);

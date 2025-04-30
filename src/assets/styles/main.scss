@@ -4,7 +4,8 @@
 @import "./scss/form_ui";
 @import "./scss/about";
 @import "./scss/error-page";
-
+@import "./scss/setting";
+@import "./scss/blogs";
 body {
   position: relative;
   direction: rtl;
@@ -59,6 +60,11 @@ body {
       right: 16px !important;
       margin-inline-start: 0 !important;
       margin-inline-end: auto !important;
+    }
+    .terms-page .terms-content .term-section .section-content,
+    .privacy-policy-page .privacy-policy-content .privacy-policy-section .section-content {
+      border-right:none;
+      border-left: 3px solid $main;
     }
   }
 }
