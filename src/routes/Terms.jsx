@@ -77,7 +77,7 @@ const Terms = () => {
       <div className="terms-content">
         {sections.map((section, idx) => (
           <section key={idx} className="term-section mb-5">
-            <h className="section-title">{section.title}</h>
+            <h3 className="section-title">{section.title}</h3>
             <div className="section-content">{section.content}</div>
           </section>
         ))}

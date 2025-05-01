@@ -7,8 +7,10 @@ const AboutUsSection = () => {
 
   return (
     <>
-      <HeaderSection />
-
+      <HeaderSection
+      title={t('aboutUs.title')}
+      description={t('aboutUs.description')}
+    />
       <section className="about-us-section">
         <div className="container">
           <div className="row align-items-center">
@@ -16,12 +18,12 @@ const AboutUsSection = () => {
               <div className="images-wrapper">
                 <img
                   src="/images/about.jpg"
-                  alt={t("aboutUs.title")}
+                  alt={t("aboutUs.title2")}
                   className="main-image img-fluid rounded"
                 />
                 <img
                   src="/images/app.jpg"
-                  alt={t("aboutUs.subtitle")}
+                  alt={t("aboutUs.subtitle2")}
                   className="side-image img-fluid rounded"
                 />
                 <div className="img-shape"></div>

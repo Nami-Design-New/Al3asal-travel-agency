@@ -1,95 +1,49 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function FAQ() {
+  const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState("tab1");
 
   const handleTabClick = (tab) => setActiveTab(tab);
 
   return (
     <section className="faq_section">
+      <img
+        src="/icons/plane-shape2.png"
+        alt="Shape"
+        className="faq-shape d-none d-md-block"
+      />
+
+      <img src="/icons/plane-shape3.png" alt="Shape" className="faq-shape2" />
+
       <div className="container">
         <div className="section_title mb-5 text-center">
-          <h2>الأسئلة الشائعة</h2>
-          <p>هنا تجد إجابات عن أهم الاستفسارات</p>
+          <h2>{t("faq.sectionTitle")}</h2>
+          <p>{t("faq.sectionSubtitle")}</p>
         </div>
 
         <div className="row">
           <div className="col-lg-4">
             <ul className="nav flex-column faq_tabs" role="tablist">
-              <li
-                className={`nav-item ${activeTab === "tab1" ? "active" : ""}`}
-                onClick={() => handleTabClick("tab1")}
-              >
-                <i className="fas fa-globe-americas"></i> ما هي أفضل وجهات السفر
-                في الشتاء؟
-              </li>
-              <li
-                className={`nav-item ${activeTab === "tab2" ? "active" : ""}`}
-                onClick={() => handleTabClick("tab2")}
-              >
-                <i className="fas fa-cogs"></i> هل يمكن تعديل مواعيد السفر؟
-              </li>
-              <li
-                className={`nav-item ${activeTab === "tab3" ? "active" : ""}`}
-                onClick={() => handleTabClick("tab3")}
-              >
-                <i className="fas fa-passport"></i> ما هي متطلبات التأشيرة للسفر
-                إلى أوروبا؟
-              </li>
-              <li
-                className={`nav-item ${activeTab === "tab4" ? "active" : ""}`}
-                onClick={() => handleTabClick("tab4")}
-              >
-                <i className="fas fa-calendar-check"></i> كيف يمكنني إلغاء
-                الحجز؟
-              </li>
-              <li
-                className={`nav-item ${activeTab === "tab5" ? "active" : ""}`}
-                onClick={() => handleTabClick("tab5")}
-              >
-                <i className="fas fa-users"></i> هل يمكن ترتيب رحلات خاصة
-                للمجموعات؟
-              </li>
+              {[1, 2, 3, 4, 5].map((num) => (
+                <li
+                  key={num}
+                  className={`nav-item ${
+                    activeTab === `tab${num}` ? "active" : ""
+                  }`}
+                  onClick={() => handleTabClick(`tab${num}`)}
+                >
+                  <i className={`fas ${t(`faq.tabs.tab${num}Icon`)}`}></i>{" "}
+                  {t(`faq.tabs.tab${num}Title`)}
+                </li>
+              ))}
             </ul>
           </div>
 
           <div className="col-lg-8">
             <div className={`tab-content ${activeTab}`}>
-              {activeTab === "tab1" && (
-                <p>
-                  أفضل الوجهات لفصل الشتاء تشمل أماكن مثل سويسرا لتمتع بالتزلج
-                  على الجليد، كما تعتبر مناطق البحر الأحمر مثل شرم الشيخ
-                  والغردقة من الخيارات الممتازة لمحبي الشمس والطقس المعتدل.
-                </p>
-              )}
-              {activeTab === "tab2" && (
-                <p>
-                  نعم، يمكنك تعديل مواعيد السفر قبل موعد الرحلة، بشرط أن تكون قد
-                  تم الحجز وفقًا للسياسات المتبعة في باقتك. يتطلب ذلك دفع رسوم
-                  إضافية في بعض الأحيان حسب شروط كل باقة.
-                </p>
-              )}
-              {activeTab === "tab3" && (
-                <p>
-                  تختلف متطلبات التأشيرة حسب الجنسية ووجهة السفر في أوروبا. من
-                  الضروري التحقق من المتطلبات الخاصة بكل دولة عبر القنصليات أو
-                  السفارات الأوروبية.
-                </p>
-              )}
-              {activeTab === "tab4" && (
-                <p>
-                  نعم، يمكنك إلغاء الحجز وفقًا لسياسة الإلغاء الخاصة بكل باقة.
-                  عادة ما تكون هناك رسوم إلغاء بناءً على المدة الزمنية قبل
-                  الرحلة.
-                </p>
-              )}
-              {activeTab === "tab5" && (
-                <p>
-                  نعم، نقدم خدمات مخصصة للرحلات الخاصة سواء للمجموعات أو
-                  الشركات. تشمل هذه الخدمات تخطيط شامل للرحلة مع مرشدين سياحيين
-                  خاصين وخيارات مميزة للإقامة.
-                </p>
-              )}
+              <p>{t(`faq.answers.${activeTab}`)}</p>
             </div>
           </div>
         </div>
