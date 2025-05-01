@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Dropdown } from "react-bootstrap";
 import { flightLevels } from "../../utils/constants";
@@ -8,9 +7,6 @@ import CheckField from "../../ui/forms/CheckField";
 
 export default function FilterFlights() {
   const { t } = useTranslation();
-  const [filterData, setFilterData] = useState({
-    flightType: "one-way",
-  });
 
   return (
     <form className="filter_container">
@@ -19,14 +15,13 @@ export default function FilterFlights() {
           id="one-way"
           name="flight-type"
           text={t("flights.oneWay")}
-          checked={filterData.flightType === "one-way"}
+          checked={true}
         />
 
         <CheckField
           id="round-trip"
           name="flight-type"
           text={t("flights.roundTrip")}
-          checked={filterData.flightType === "round-trip"}
         />
 
         <Select
@@ -35,6 +30,10 @@ export default function FilterFlights() {
           classNamePrefix="select"
           isSearchable={false}
           placeholder={"choose"}
+          defaultValue={{
+            value: flightLevels[0],
+            label: t(`flights.${flightLevels[0]}`),
+          }}
           options={flightLevels.map((level) => ({
             value: level,
             label: t(`flights.${level}`),
