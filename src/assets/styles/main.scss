@@ -76,7 +76,31 @@ body {
       border-right: none;
       border-left: 3px solid $main;
     }
-    .faq_tabs .nav-item  i {
+
+    .faq_tabs .nav-item i {
       margin-right: 8px;
+    }
+
+    main .flight_card .flight_info {
+      border-left: 0 !important;
+      border-right: 1px dashed $input_stroke !important;
+    }
+
+    .flight_details_modal
+      .modal-body
+      .itinerary
+      .details
+      .flight
+      .time_line
+      .stop_over {
+      margin-right: 0 !important;
+      margin-left: 52px !important;
+      border-right: 0 !important;
+      border-left: 1px dashed $input_hint !important;
+
+      span {
+        border-radius: 0 8px 8px 0 !important;
+      }
+    }
   }
-  }}
+}

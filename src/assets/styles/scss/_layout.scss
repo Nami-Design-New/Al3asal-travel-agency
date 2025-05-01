@@ -292,20 +292,21 @@ header {
     height: 100vh;
     border-radius: 0 !important;
   }
+  
+  .header {
+    width: 100%;
+    background: $input_stroke;
+    padding: 12px 16px;
+    @include space-between();
+    h6 {
+      font-size: 16px;
+      margin-bottom: 0;
+    }
+  }
 
   .modal-body {
     padding: 0 !important;
     background: $input_bg;
-    .header {
-      width: 100%;
-      background: $input_stroke;
-      padding: 12px 16px;
-      @include space-between();
-      h6 {
-        font-size: 16px;
-        margin-bottom: 0;
-      }
-    }
 
     .itinerary {
       padding: 24px;
@@ -426,13 +427,13 @@ header {
             }
 
             .stop_over {
-              margin-left: 52px;
+              margin-right: 52px;
               padding: 32px 0;
-              border-left: 2px dotted $input_hint;
+              border-right: 2px dotted $input_hint;
               span {
                 width: 100%;
                 display: flex;
-                border-radius: 0 8px 8px 0;
+                border-radius: 8px 0 0 8px;
                 padding: 8px 12px;
                 background: #fdf5cb;
                 font-size: 14px;

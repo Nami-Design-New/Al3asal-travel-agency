@@ -565,11 +565,7 @@ header nav .actions .login {
   height: 100vh;
   border-radius: 0 !important;
 }
-.flight_details_modal .modal-body {
-  padding: 0 !important;
-  background: #fafafa;
-}
-.flight_details_modal .modal-body .header {
+.flight_details_modal .header {
   width: 100%;
   background: #f4f4f4;
   padding: 12px 16px;
@@ -577,9 +573,13 @@ header nav .actions .login {
   align-items: center;
   justify-content: space-between;
 }
-.flight_details_modal .modal-body .header h6 {
+.flight_details_modal .header h6 {
   font-size: 16px;
   margin-bottom: 0;
+}
+.flight_details_modal .modal-body {
+  padding: 0 !important;
+  background: #fafafa;
 }
 .flight_details_modal .modal-body .itinerary {
   padding: 24px;
@@ -684,14 +684,14 @@ header nav .actions .login {
   border: 2px solid #54a0c4;
 }
 .flight_details_modal .modal-body .itinerary .details .flight .time_line .stop_over {
-  margin-left: 52px;
+  margin-right: 52px;
   padding: 32px 0;
-  border-left: 2px dotted #aaaaaa;
+  border-right: 2px dotted #aaaaaa;
 }
 .flight_details_modal .modal-body .itinerary .details .flight .time_line .stop_over span {
   width: 100%;
   display: flex;
-  border-radius: 0 8px 8px 0;
+  border-radius: 8px 0 0 8px;
   padding: 8px 12px;
   background: #fdf5cb;
   font-size: 14px;
@@ -1826,7 +1826,7 @@ body main .flight_card:hover {
 body main .flight_card .flight_info {
   flex: 4;
   padding: 16px;
-  border-right: 1px dashed #f4f4f4;
+  border-left: 1px dashed #f4f4f4;
   display: flex;
   align-items: center;
 }
@@ -2814,4 +2814,17 @@ body.en .privacy-policy-page .privacy-policy-content .privacy-policy-section .se
 }
 body.en .faq_tabs .nav-item i {
   margin-right: 8px;
+}
+body.en main .flight_card .flight_info {
+  border-left: 0 !important;
+  border-right: 1px dashed #f4f4f4 !important;
+}
+body.en .flight_details_modal .modal-body .itinerary .details .flight .time_line .stop_over {
+  margin-right: 0 !important;
+  margin-left: 52px !important;
+  border-right: 0 !important;
+  border-left: 1px dashed #aaaaaa !important;
+}
+body.en .flight_details_modal .modal-body .itinerary .details .flight .time_line .stop_over span {
+  border-radius: 0 8px 8px 0 !important;
 }/*# sourceMappingURL=main.css.map */
