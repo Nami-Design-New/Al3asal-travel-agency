@@ -1,33 +1,33 @@
 import { useTranslation } from "react-i18next";
 import { useDispatch } from "react-redux";
 import { setStep } from "../../redux/slices/auth";
-import InputField from "../../ui/forms/InputField";
+import PasswordField from "./../../ui/forms/PasswordField";
 import SubmitButton from "../../ui/forms/SubmitButton";
 
-export default function ResetPassword1() {
+export default function ResetPassword3() {
   const { t } = useTranslation();
   const dispatch = useDispatch();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    dispatch(setStep("reset2"));
-  };
-
   const handleBack = () => {
-    dispatch(setStep("login"));
+    dispatch(setStep("reset2"));
   };
 
   return (
     <>
       <div>
-        <h5>{t("auth.forgetTitle")}</h5>
-        <p>{t("auth.forgetSubtitle")}</p>
+        <h5>{t("auth.resetPassword")}</h5>
+        <p>{t("auth.resetPasswordSubtitle")}</p>
       </div>
 
-      <form className="form_ui mt-5" onSubmit={handleSubmit}>
-        <InputField
-          label={t("auth.emailAddress")}
-          placeholder={t("auth.enterEmailAddress")}
+      <form className="form_ui mt-5">
+        <PasswordField
+          label={t("auth.newPassword")}
+          placeholder={t("auth.enterNewPassword")}
+        />
+
+        <PasswordField
+          label={t("auth.confirmPassword")}
+          placeholder={t("auth.enterConfirmPassword")}
         />
 
         <div className="d-flex align-items-center gap-2 mt-2">
