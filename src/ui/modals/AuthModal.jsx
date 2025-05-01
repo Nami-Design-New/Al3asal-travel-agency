@@ -4,6 +4,8 @@ import { closeAuthModal } from "../../redux/slices/auth";
 import Login from "../../components/auth/Login";
 import Register from "../../components/auth/Register";
 import ResetPassword1 from "../../components/auth/ResetPassword1";
+import ResetPassword2 from "../../components/auth/ResetPassword2";
+import ResetPassword3 from "../../components/auth/ResetPassword3";
 
 export default function AuthModal() {
   const { show } = useSelector((state) => state.auth);
@@ -29,6 +31,10 @@ export default function AuthModal() {
           {step === "register" && <Register />}
 
           {step === "reset1" && <ResetPassword1 />}
+
+          {step === "reset2" && <ResetPassword2 />}
+
+          {step === "reset3" && <ResetPassword3 />}
         </div>
       </Modal.Body>
     </Modal>

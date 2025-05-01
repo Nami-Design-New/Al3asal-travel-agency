@@ -56,7 +56,19 @@
     "enterYourName": "Enter your name",
     "fullName": "Full Name",
     "registerTitle": "Create an account",
-    "registerSubtitle": "Please enter your details to create an account."
+    "registerSubtitle": "Please enter your details to create an account.",
+    "forgetTitle": "Forgot your password?",
+    "forgetSubtitle": "Don’t worry, we’ll help you reset it. Just enter your email and we’ll send you instructions.",
+    "confirm": "Confirm",
+    "resend": "Resend verification code?",
+    "enterCode": "Enter the verification code",
+    "enterCodeSubtitle": "We’ve sent a verification code to your email. Please enter it below to continue.",
+    "resetPassword": "Reset your password",
+    "resetPasswordSubtitle": "Create a strong new password to securely access your account.",
+    "newPassword": "New Password",
+    "confirmPassword": "Confirm Password",
+    "enterNewPassword": "Enter new password",
+    "enterConfirmPassword": "Enter confirm password"
   },
   "flights": {
     "oneWay": "One Way",
