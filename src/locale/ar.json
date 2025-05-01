@@ -96,7 +96,11 @@
     "bookNow": "حجز الان",
     "departing": "اختر رحلة المغادرة",
     "return": "اختر رحلة العودة",
-    "flightDetails": "تفاصيل الرحلة"
+    "flightDetails": "تفاصيل الرحلة",
+    "itinerary": "مسار الرحلة",
+    "totalPrice": "السعر الكلي",
+    "departure": "المغادرة",
+    "arrival": "الوصول"
   },
   "home": {
     "welcome": "مرحبًا بك في وكالة العسل للسفر والسياحة",
