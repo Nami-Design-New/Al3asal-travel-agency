@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import HeaderSection from "../ui/layout/HeaderSection";
 import BlogCard from "../ui/cards/BlogCard";
+import { useTranslation } from "react-i18next";
 
 const blogData = [
   { title: "استكشاف العجائب الطبيعية: أفضل وجهات السفر لمحبي المغامرات", date: "23 Apr 2023", image: "/blogs/blog1.jpg" },
@@ -16,6 +17,8 @@ const blogData = [
 ];
 
 const Blogs = () => {
+      const { t } = useTranslation();
+  
   const blogsPerPage = 6;
   const [currentBlogs, setCurrentBlogs] = useState(blogData.slice(0, blogsPerPage));
 
@@ -39,7 +42,9 @@ const Blogs = () => {
 
   return (
     <div className="blogs-page">
-      <HeaderSection title="المدونة" />
+       <HeaderSection
+      title={t('blogs.title')}
+      description={t('blogs.description')}/>
 
       <div className="container blog-grid mt-5">
         <div className="row">

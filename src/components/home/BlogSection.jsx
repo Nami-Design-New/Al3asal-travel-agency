@@ -42,7 +42,7 @@ export default function BlogSection() {
         <div className="row">
           <div className="col-12 p-2">
             <div className="title">
-              <h4>{t("blogs.title")}</h4>
+              <h4>{t("blogs.text")}</h4>
               <Link to="/blogs">
                 {t("blogs.viewAll")} <i className="fa-solid fa-angle-right"></i>
               </Link>

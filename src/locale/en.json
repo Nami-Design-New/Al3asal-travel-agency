@@ -82,8 +82,10 @@
   },
   "aboutUs": {
     "title": "About Us",
-    "subtitle": "Your journey to excellence starts here",
-    "description": "At our institution, we believe true quality starts with small details. We work passionately and professionally to provide you with exceptional services and experiences that exceed your expectations. Our goal is to be your first choice through our constant commitment to development and innovation.",
+    "description": "Your first destination for travel and tourism, where we offer a selection of the best destinations and exclusive deals for unforgettable experiences around the world.",
+    "title2": "About Us",
+    "subtitle2": "Your journey to excellence starts here",
+    "description2": "At our institution, we believe true quality starts with small details. We work passionately and professionally to provide you with exceptional services and experiences that exceed your expectations. Our goal is to be your first choice through our constant commitment to development and innovation.",
     "feature1": {
       "title": "Advanced Booking System",
       "description": "Ease of booking and quick service to ensure a smooth and distinctive experience."
@@ -94,12 +96,8 @@
     },
     "discoverMore": "Discover More"
   },
-  "headerSec": {
-    "title": "Welcome to Our Institution",
-    "description": "We aim to provide comprehensive services with global standards and a local touch."
-  },
- "benefits": {
-  "sectionTitle": "Why choose us?",
+  "benefits": {
+    "sectionTitle": "Why choose us?",
     "easyBookingTitle": "Easy Booking",
     "easyBookingDescription": "Book your trip in simple and quick steps with no hassle.",
     "bestPriceTitle": "Pay the way you want",
@@ -108,10 +106,10 @@
     "support247Description": "We're here to help you anytime, anywhere.",
     "securePaymentTitle": "Shop with confidence",
     "securePaymentDescription": "No hidden fees, taxes or other nasty surprises"
-},
-
-
+  },
   "contact": {
+    "title": "Contact Us",
+    "description": "We are always happy to hear from you. Our team is ready to answer all your inquiries and assist you in planning your next trip.",
     "callUs": "Call Us",
     "callDescription": "Call us to speak to a member of our team.",
     "helpSupport": "Help & Support",
@@ -185,7 +183,9 @@
     "description": "Al3asal Travel & Tourism offers unforgettable travel experiences with exceptional services and unmatched value. Discover the world with comfort, care, and unmatched value."
   },
   "blogs": {
-    "title": "Latest Articles",
+    "title": "Articles",
+    "description": "Stay updated with the latest articles and travel tips, and discover inspiring travel destinations and experiences around the world.",
+    "text": "Latest Articles",
     "viewAll": "View All"
   },
   "terms": {
@@ -308,6 +308,29 @@
       "agency": "Al Asal Travel and Tourism Agency",
       "phone": "Phone: +966 12 345 6789",
       "email": "Email: info@alasal-travel.com"
+    }
+  },
+  "faq": {
+    "sectionTitle": "Frequently Asked Questions",
+    "sectionSubtitle": "Find answers to common questions below.",
+    "tabs": {
+      "tab1Title": "What are the best travel destinations in winter?",
+      "tab1Icon": "fa-globe-americas",
+      "tab2Title": "Can I change my travel dates?",
+      "tab2Icon": "fa-cogs",
+      "tab3Title": "What are the visa requirements for Europe?",
+      "tab3Icon": "fa-passport",
+      "tab4Title": "How can I cancel my booking?",
+      "tab4Icon": "fa-calendar-check",
+      "tab5Title": "Can I arrange group trips?",
+      "tab5Icon": "fa-users"
+    },
+    "answers": {
+      "tab1": "Top winter destinations include places like Switzerland for skiing, or Red Sea areas like Sharm El Sheikh and Hurghada for warm weather.",
+      "tab2": "Yes, you can change your travel dates depending on your package's policies. Additional fees may apply.",
+      "tab3": "Visa requirements vary depending on your nationality and destination. Check with the respective European consulate or embassy.",
+      "tab4": "Yes, cancellations are possible based on your package's cancellation policy. Fees may apply depending on timing.",
+      "tab5": "Yes, we offer custom trips for groups and companies, including planning, guides, and exclusive accommodation options."
     }
   }
 }

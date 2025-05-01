@@ -1,12 +1,19 @@
 import HeaderSection from "../ui/layout/HeaderSection";
 import ContactInfo from "../components/contact/ContactInfo";
 import ContactForm from "../components/contact/ContactForm";
+import { useTranslation } from "react-i18next";
+
 
 export default function Contact() {
+    const { t } = useTranslation();
+  
   return (
     <>
-      <HeaderSection />
-
+      <HeaderSection
+      title={t('contact.title')}
+      description={t('contact.description')}
+    />
+     
       <section className="contact_section">
         <div className="container">
           <ContactInfo />
