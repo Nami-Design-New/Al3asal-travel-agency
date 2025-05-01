@@ -554,6 +554,14 @@ header nav .actions .login {
   }
 }
 
+.flight_details_modal .modal-dialog {
+  margin: 0 auto !important;
+}
+.flight_details_modal .modal-content {
+  height: 100vh;
+  border-radius: 0 !important;
+}
+
 .auth_modal {
   display: flex;
   padding: 0;
@@ -675,6 +683,16 @@ header nav .actions .login {
 .form_ui {
   width: 100%;
 }
+.form_ui .resend_code {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+.form_ui .resend_code h6 {
+  font-size: 14px;
+  color: #000;
+}
 .form_ui .input-field {
   width: 100%;
   display: flex;
@@ -764,13 +782,12 @@ header nav .actions .login {
 .otp-container .otp-input {
   flex: 1;
   width: 100%;
-  height: 80px !important;
+  aspect-ratio: 1/1;
   outline: none;
-  background: #fafafa;
   border: 1px solid #f4f4f4;
   border-radius: 12px;
   text-align: center;
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 600;
   color: #54a0c4 !important;
 }
@@ -783,16 +800,22 @@ header nav .actions .login {
   }
 }
 
-.next_btn,
 .back_btn {
-  width: 74px;
-  border: none;
-  background: none;
-  outline: none;
-  height: 52px;
-  border: 1px solid #000;
-  color: #000;
+  width: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  border: 1px solid #aaaaaa;
+  color: #aaaaaa;
   border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.back_btn:hover {
+  border-color: #000;
+  color: #fff;
+  background: #000;
 }
 
 .form_group {
@@ -800,315 +823,6 @@ header nav .actions .login {
   align-items: center;
   gap: 16px;
   margin-bottom: 16px;
-}
-
-.about-us-section {
-  padding: 5rem 0;
-  background-color: #fff;
-}
-.about-us-section .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 15px;
-}
-.about-us-section .row {
-  align-items: center;
-}
-.about-us-section .about-us-content {
-  padding-left: 3rem;
-}
-.about-us-section .about-us-content .section-title {
-  font-size: 1rem;
-  color: #54a0c4;
-  text-transform: uppercase;
-  letter-spacing: 0.125rem;
-  margin-bottom: 1rem;
-  font-weight: 600;
-  position: relative;
-  display: inline-block;
-}
-.about-us-section .about-us-content .section-subtitle {
-  font-size: 28px;
-  color: #000;
-  margin-bottom: 1rem;
-  font-weight: 600;
-  line-height: 1.3;
-}
-.about-us-section .about-us-content .section-description {
-  font-size: 1rem;
-  color: #777;
-  line-height: 1.5;
-  margin-bottom: 2.5rem;
-}
-.about-us-section .features-container {
-  margin-bottom: 2.5rem;
-}
-.about-us-section .features-container .feature-item {
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: 1.5rem;
-  gap: 1rem;
-}
-.about-us-section .features-container .feature-item .feature-icon {
-  width: 2.2rem;
-  height: 2.2rem;
-  flex-shrink: 0;
-}
-.about-us-section .features-container .feature-item .feature-title {
-  font-size: 1.25rem;
-  color: #000;
-  margin-bottom: 0.5rem;
-  font-weight: 600;
-}
-.about-us-section .features-container .feature-item .feature-description {
-  font-size: 0.9375rem;
-  color: #777;
-  line-height: 1.6;
-  margin: 0;
-}
-.about-us-section .discover-more-btn {
-  background-color: transparent;
-  color: #333;
-  border: 1px solid #54a0c4;
-  padding: 0.75rem 2rem;
-  font-size: 0.875rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.0625rem;
-  transition: all 0.35s ease;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  position: relative;
-  overflow: hidden;
-  border-radius: 50px;
-}
-.about-us-section .discover-more-btn:hover {
-  background: linear-gradient(135deg, #54a0c4 0%, #3b86aa 100%);
-  color: #fff;
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(84, 160, 196, 0.35);
-}
-.about-us-section .discover-more-btn:hover .arrow {
-  transform: translateX(-5px) rotate(180deg);
-}
-.about-us-section .discover-more-btn:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(84, 160, 196, 0.3);
-}
-.about-us-section .discover-more-btn .arrow {
-  display: inline-block;
-  transition: transform 0.3s ease;
-}
-.about-us-section .discover-more-btn::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.1);
-  transform: skewX(-45deg);
-  transition: all 0.5s ease;
-}
-.about-us-section .discover-more-btn:hover::after {
-  left: 150%;
-}
-.about-us-section .images-wrapper {
-  position: relative;
-  width: -moz-fit-content;
-  width: fit-content;
-  margin: 0 auto;
-  z-index: 1;
-}
-.about-us-section .images-wrapper .main-image {
-  width: 65%;
-  max-width: 400px;
-  margin-right: 80px;
-  border-radius: 15px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-}
-.about-us-section .images-wrapper .side-image {
-  position: absolute;
-  bottom: -15px;
-  right: -30px;
-  height: 180px;
-  width: 50%;
-  max-width: 400px;
-  border: 5px solid #fff;
-  border-radius: 10px;
-}
-.about-us-section .images-wrapper .img-shape {
-  position: absolute;
-  top: 0px;
-  right: -70px;
-  width: 60%;
-  height: 60%;
-  background: url("/images/plane-shape.png") no-repeat center center;
-  background-size: contain;
-  border-radius: 15px;
-  z-index: -1;
-}
-.about-us-section .images-wrapper .floating-image {
-  position: absolute;
-  top: 20%;
-  left: -50px;
-  width: 45%;
-  animation: floatUpDown 3s ease-in-out infinite;
-  border: 5px solid #fff;
-  border-radius: 10px;
-}
-.about-us-section .images-wrapper .floating-image img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-@keyframes floatUpDown {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-15px);
-  }
-}
-@media (max-width: 991px) {
-  .about-us-section .images-wrapper .main-image {
-    max-width: 80%;
-    margin-right: 20px;
-  }
-  .about-us-section .images-wrapper .side-image {
-    width: 40%;
-    right: -10px;
-  }
-  .about-us-section .images-wrapper .img-shape {
-    width: 50%;
-    height: 50%;
-    bottom: 60px;
-  }
-}
-@media (max-width: 576px) {
-  .about-us-section .images-wrapper .main-image {
-    max-width: 100%;
-    margin-right: 50px;
-  }
-  .about-us-section .images-wrapper .side-image {
-    width: 60%;
-    right: -30px;
-  }
-  .about-us-section .images-wrapper .floating-image {
-    left: -20px;
-  }
-  .about-us-section .images-wrapper .img-shape {
-    width: 40%;
-    height: 40%;
-    bottom: 50px;
-  }
-}
-@media (max-width: 991.98px) {
-  .about-us-section {
-    padding: 4rem 0;
-  }
-  .about-us-section .about-us-content {
-    padding-left: 0;
-    margin-bottom: 3rem;
-    text-align: center;
-  }
-  .about-us-section .about-us-content .section-title::after {
-    right: 50%;
-    transform: translateX(50%);
-    width: 30%;
-  }
-  .about-us-section .about-us-content .section-subtitle {
-    font-size: 1.75rem;
-  }
-  .about-us-section .year-established {
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80%;
-  }
-  .about-us-section .year-established .year-box .year {
-    font-size: 3.5rem;
-  }
-}
-@media (max-width: 767.98px) {
-  .about-us-section {
-    padding: 3rem 0;
-  }
-  .about-us-section .section-subtitle {
-    font-size: 1.5rem;
-  }
-  .about-us-section .features-container .feature-item {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  .about-us-section .year-established .year-box .year {
-    font-size: 2.5rem;
-  }
-}
-
-.benefits {
-  position: relative;
-  background-color: #f8f9fa;
-}
-.benefits .benefits-shape {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 100px;
-  height: auto;
-  z-index: 1;
-  opacity: 0.8;
-  pointer-events: none;
-}
-.benefits .container {
-  position: relative;
-  z-index: 2;
-}
-.benefits h2 {
-  color: #000;
-  font-weight: 600;
-  font-size: 28px;
-}
-.benefits .benefit-card {
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: 0.3s;
-}
-.benefits .benefit-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-.benefits .benefit-img {
-  width: 60px;
-  height: 80px;
-  -o-object-fit: contain;
-     object-fit: contain;
-  flex-shrink: 0;
-}
-.benefits .benefit-title {
-  font-size: 1.25rem;
-  color: #2c3e50;
-  font-weight: 600;
-}
-.benefits .benefit-description {
-  color: #7f8c8d;
-  line-height: 1.6;
-}
-@media (max-width: 767.98px) {
-  .benefits .benefit-card {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  .benefits .benefit-card .benefit-img {
-    margin-bottom: 1rem;
-  }
-  .benefits .benefits-shape {
-    display: none;
-  }
 }
 
 .error-page {
@@ -1149,518 +863,6 @@ header nav .actions .login {
 }
 .error-page a:hover {
   background: #000;
-}
-
-.terms-page .terms-header,
-.terms-page .privacy-policy-header,
-.privacy-policy-page .terms-header,
-.privacy-policy-page .privacy-policy-header {
-  text-align: center;
-}
-.terms-page .terms-header h4,
-.terms-page .privacy-policy-header h4,
-.privacy-policy-page .terms-header h4,
-.privacy-policy-page .privacy-policy-header h4 {
-  color: #000;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  position: relative;
-  padding-bottom: 1rem;
-  max-width: 800px;
-  margin: 0 auto;
-}
-.terms-page .terms-header h4::after,
-.terms-page .privacy-policy-header h4::after,
-.privacy-policy-page .terms-header h4::after,
-.privacy-policy-page .privacy-policy-header h4::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  right: 50%;
-  transform: translateX(50%);
-  width: 90px;
-  height: 4px;
-  background-color: #54a0c4;
-  border-radius: 2px;
-}
-.terms-page .terms-header p,
-.terms-page .privacy-policy-header p,
-.privacy-policy-page .terms-header p,
-.privacy-policy-page .privacy-policy-header p {
-  margin-top: 1rem;
-  color: #777;
-  font-size: 1rem;
-}
-.terms-page .terms-content,
-.terms-page .privacy-policy-content,
-.privacy-policy-page .terms-content,
-.privacy-policy-page .privacy-policy-content {
-  background: #fff;
-  border-radius: 10px;
-}
-.terms-page .terms-content .term-section .section-title,
-.terms-page .terms-content .privacy-policy-section .section-title,
-.terms-page .privacy-policy-content .term-section .section-title,
-.terms-page .privacy-policy-content .privacy-policy-section .section-title,
-.privacy-policy-page .terms-content .term-section .section-title,
-.privacy-policy-page .terms-content .privacy-policy-section .section-title,
-.privacy-policy-page .privacy-policy-content .term-section .section-title,
-.privacy-policy-page .privacy-policy-content .privacy-policy-section .section-title {
-  color: #000;
-  font-weight: 600;
-  margin-bottom: 1.2rem;
-  position: relative;
-}
-.terms-page .terms-content .term-section .section-content,
-.terms-page .terms-content .privacy-policy-section .section-content,
-.terms-page .privacy-policy-content .term-section .section-content,
-.terms-page .privacy-policy-content .privacy-policy-section .section-content,
-.privacy-policy-page .terms-content .term-section .section-content,
-.privacy-policy-page .terms-content .privacy-policy-section .section-content,
-.privacy-policy-page .privacy-policy-content .term-section .section-content,
-.privacy-policy-page .privacy-policy-content .privacy-policy-section .section-content {
-  background: #f9f9f9;
-  padding: 1.5rem;
-  border-radius: 8px;
-  border-right: 3px solid #54a0c4;
-}
-.terms-page .terms-content .term-section .section-content p,
-.terms-page .terms-content .term-section .section-content ol,
-.terms-page .terms-content .term-section .section-content ul,
-.terms-page .terms-content .privacy-policy-section .section-content p,
-.terms-page .terms-content .privacy-policy-section .section-content ol,
-.terms-page .terms-content .privacy-policy-section .section-content ul,
-.terms-page .privacy-policy-content .term-section .section-content p,
-.terms-page .privacy-policy-content .term-section .section-content ol,
-.terms-page .privacy-policy-content .term-section .section-content ul,
-.terms-page .privacy-policy-content .privacy-policy-section .section-content p,
-.terms-page .privacy-policy-content .privacy-policy-section .section-content ol,
-.terms-page .privacy-policy-content .privacy-policy-section .section-content ul,
-.privacy-policy-page .terms-content .term-section .section-content p,
-.privacy-policy-page .terms-content .term-section .section-content ol,
-.privacy-policy-page .terms-content .term-section .section-content ul,
-.privacy-policy-page .terms-content .privacy-policy-section .section-content p,
-.privacy-policy-page .terms-content .privacy-policy-section .section-content ol,
-.privacy-policy-page .terms-content .privacy-policy-section .section-content ul,
-.privacy-policy-page .privacy-policy-content .term-section .section-content p,
-.privacy-policy-page .privacy-policy-content .term-section .section-content ol,
-.privacy-policy-page .privacy-policy-content .term-section .section-content ul,
-.privacy-policy-page .privacy-policy-content .privacy-policy-section .section-content p,
-.privacy-policy-page .privacy-policy-content .privacy-policy-section .section-content ol,
-.privacy-policy-page .privacy-policy-content .privacy-policy-section .section-content ul {
-  color: #34495e;
-  line-height: 1.8;
-}
-.terms-page .terms-content .term-section .section-content ol,
-.terms-page .terms-content .term-section .section-content ul,
-.terms-page .terms-content .privacy-policy-section .section-content ol,
-.terms-page .terms-content .privacy-policy-section .section-content ul,
-.terms-page .privacy-policy-content .term-section .section-content ol,
-.terms-page .privacy-policy-content .term-section .section-content ul,
-.terms-page .privacy-policy-content .privacy-policy-section .section-content ol,
-.terms-page .privacy-policy-content .privacy-policy-section .section-content ul,
-.privacy-policy-page .terms-content .term-section .section-content ol,
-.privacy-policy-page .terms-content .term-section .section-content ul,
-.privacy-policy-page .terms-content .privacy-policy-section .section-content ol,
-.privacy-policy-page .terms-content .privacy-policy-section .section-content ul,
-.privacy-policy-page .privacy-policy-content .term-section .section-content ol,
-.privacy-policy-page .privacy-policy-content .term-section .section-content ul,
-.privacy-policy-page .privacy-policy-content .privacy-policy-section .section-content ol,
-.privacy-policy-page .privacy-policy-content .privacy-policy-section .section-content ul {
-  padding-right: 1.5rem;
-}
-.terms-page .terms-content .term-section .section-content ol li,
-.terms-page .terms-content .term-section .section-content ul li,
-.terms-page .terms-content .privacy-policy-section .section-content ol li,
-.terms-page .terms-content .privacy-policy-section .section-content ul li,
-.terms-page .privacy-policy-content .term-section .section-content ol li,
-.terms-page .privacy-policy-content .term-section .section-content ul li,
-.terms-page .privacy-policy-content .privacy-policy-section .section-content ol li,
-.terms-page .privacy-policy-content .privacy-policy-section .section-content ul li,
-.privacy-policy-page .terms-content .term-section .section-content ol li,
-.privacy-policy-page .terms-content .term-section .section-content ul li,
-.privacy-policy-page .terms-content .privacy-policy-section .section-content ol li,
-.privacy-policy-page .terms-content .privacy-policy-section .section-content ul li,
-.privacy-policy-page .privacy-policy-content .term-section .section-content ol li,
-.privacy-policy-page .privacy-policy-content .term-section .section-content ul li,
-.privacy-policy-page .privacy-policy-content .privacy-policy-section .section-content ol li,
-.privacy-policy-page .privacy-policy-content .privacy-policy-section .section-content ul li {
-  margin-bottom: 0.75rem;
-}
-.terms-page .terms-content .contact-info h3,
-.terms-page .privacy-policy-content .contact-info h3,
-.privacy-policy-page .terms-content .contact-info h3,
-.privacy-policy-page .privacy-policy-content .contact-info h3 {
-  color: #2c3e50;
-  font-weight: 600;
-  margin-bottom: 1rem;
-}
-.terms-page .terms-content .contact-info p,
-.terms-page .privacy-policy-content .contact-info p,
-.privacy-policy-page .terms-content .contact-info p,
-.privacy-policy-page .privacy-policy-content .contact-info p {
-  color: #7f8c8d;
-  background: #f5f5f5;
-  padding: 1.5rem;
-  border-radius: 8px;
-}
-.terms-page .terms-content .contact-info p strong,
-.terms-page .privacy-policy-content .contact-info p strong,
-.privacy-policy-page .terms-content .contact-info p strong,
-.privacy-policy-page .privacy-policy-content .contact-info p strong {
-  color: #54a0c4;
-  display: block;
-  margin-bottom: 0.5rem;
-}
-
-@media (max-width: 768px) {
-  .terms-page,
-  .privacy-policy-page {
-    padding: 1.5rem 0;
-  }
-  .terms-page .terms-header h1,
-  .terms-page .privacy-policy-header h1,
-  .privacy-policy-page .terms-header h1,
-  .privacy-policy-page .privacy-policy-header h1 {
-    font-size: 1.8rem;
-  }
-  .terms-page .terms-content,
-  .terms-page .privacy-policy-content,
-  .privacy-policy-page .terms-content,
-  .privacy-policy-page .privacy-policy-content {
-    padding: 1.2rem;
-  }
-}
-.faq_section {
-  padding: 60px 0;
-  background-color: #f9f9f9;
-}
-.faq_section .faq-shape {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 120px;
-  height: auto;
-  z-index: 1;
-  opacity: 0.8;
-  pointer-events: none;
-}
-.faq_section .faq-shape2 {
-  position: absolute;
-  right: 0;
-  top: 20%;
-  transform: translateY(-50%);
-  width: 140px;
-  height: auto;
-  z-index: 1;
-  opacity: 0.8;
-  pointer-events: none;
-}
-@media (max-width: 768px) {
-  .faq_section .faq-shape2 {
-    width: 100px;
-    top: 8%;
-  }
-}
-.faq_section .section_title h2 {
-  font-size: 32px;
-  color: #000;
-}
-.faq_section .section_title p {
-  color: #777;
-  font-size: 16px;
-}
-.faq_section .faq_tabs .nav-item {
-  padding: 14px 20px;
-  margin-bottom: 8px;
-  background-color: #fff;
-  color: #000;
-  border-radius: 8px;
-  font-size: 16px;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  border: 1px solid #ddd;
-}
-.faq_section .faq_tabs .nav-item i {
-  margin-left: 8px;
-  color: #54a0c4;
-}
-.faq_section .faq_tabs .nav-item:hover {
-  background-color: #54a0c4;
-  color: #fff;
-}
-.faq_section .faq_tabs .nav-item:hover i {
-  color: #fff;
-}
-.faq_section .faq_tabs .nav-item.active {
-  background-color: #54a0c4;
-  color: #fff;
-  border-color: #54a0c4;
-}
-.faq_section .faq_tabs .nav-item.active i {
-  color: #fff;
-}
-.faq_section .tab-content {
-  padding: 30px;
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
-  animation: fadeIn 0.5s ease;
-}
-.faq_section .tab-content p {
-  font-size: 16px;
-  color: #777;
-  line-height: 1.8;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.blog_section {
-  padding: 60px 0;
-}
-.blog_section .title {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.blog_section .title h4 {
-  color: #000;
-  font-size: 18px;
-}
-.blog_section .title a {
-  color: #54a0c4;
-  font-size: 14px;
-}
-
-.swiper-slide {
-  height: auto;
-}
-
-.blog_card {
-  border: 1px solid #f4f4f4;
-  border-radius: 16px;
-  overflow: hidden;
-  height: 100%;
-  transition: all 0.3s ease-in-out;
-}
-.blog_card .img {
-  aspect-ratio: 3/2;
-}
-.blog_card .img img {
-  width: 100%;
-  height: 100%;
-  border-radius: 16px;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.blog_card .content {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  padding: 16px;
-}
-.blog_card .content h5 {
-  font-size: 14px;
-  color: #000;
-  margin: 0;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.blog_card .content p {
-  font-size: 12px;
-  color: #aaaaaa;
-  margin: 0;
-}
-
-.blog_details_page {
-  padding: 40px 0;
-}
-.blog_details_page .blog_header {
-  margin-bottom: 30px;
-}
-.blog_details_page .blog_header h1 {
-  font-size: 1.8rem;
-  margin-bottom: 16px;
-  color: #333;
-}
-.blog_details_page .blog_header .tags {
-  margin-bottom: 12px;
-}
-.blog_details_page .blog_header .tags span {
-  display: inline-block;
-  background: #eee;
-  padding: 4px 10px;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  color: #555;
-  margin-left: 6px;
-}
-.blog_details_page .blog_header .blog_header_actions {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 15px;
-}
-.blog_details_page .blog_header .blog_header_actions .date {
-  font-size: 0.85rem;
-  color: #888;
-}
-.blog_details_page .blog_header .blog_header_actions .date i {
-  margin-inline: 6px;
-}
-.blog_details_page .blog_header .blog_header_actions .share_section {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.blog_details_page .blog_header .blog_header_actions .share_section i {
-  color: #666;
-  font-size: 1rem;
-}
-.blog_details_page .blog_header .blog_header_actions .share_section .share_buttons {
-  display: flex;
-  gap: 8px;
-}
-.blog_details_page .blog_header .blog_header_actions .share_section .share_buttons button {
-  background: #54a0c4;
-  border: none;
-  color: #fff;
-  padding: 4px 10px;
-  border-radius: 4px;
-  font-size: 0.8rem;
-  cursor: pointer;
-  transition: 0.3s;
-}
-.blog_details_page .blog_header .blog_header_actions .share_section .share_buttons button:hover {
-  opacity: 0.8;
-}
-.blog_details_page .blog_image img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  margin-bottom: 25px;
-}
-.blog_details_page .blog_content {
-  background: #f9f9f9;
-  padding: 1rem;
-  border-radius: 0 0 8px 8px;
-}
-.blog_details_page .blog_content .content-text {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  font-size: 1rem;
-  color: #333;
-}
-.blog_details_page .blog_content .content-text h3,
-.blog_details_page .blog_content .content-text h4 {
-  color: #000;
-  font-weight: 600;
-  margin-top: 10px;
-}
-.blog_details_page .blog_content .content-text h3 {
-  font-size: 1.4rem;
-}
-.blog_details_page .blog_content .content-text h4 {
-  font-size: 1.2rem;
-}
-.blog_details_page .blog_content .content-text p {
-  font-size: 1rem;
-  color: #777;
-  margin: 0;
-}
-.blog_details_page .blog_content .content-text ul,
-.blog_details_page .blog_content .content-text ol {
-  padding-inline-start: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  margin: 0;
-}
-.blog_details_page .blog_content .content-text ul li,
-.blog_details_page .blog_content .content-text ol li {
-  font-size: 0.95rem;
-  color: #555;
-}
-.blog_details_page .blog_content .content-text ul li strong,
-.blog_details_page .blog_content .content-text ol li strong {
-  color: #54a0c4;
-}
-.blog_details_page .blog_content .content-text blockquote {
-  background: #f0f0f0;
-  border-right: 4px solid #54a0c4;
-  padding: 1rem;
-  font-style: italic;
-  color: #777;
-  border-radius: 8px;
-  margin: 0;
-}
-.blog_details_page .recent_blogs {
-  background: #f9f9f9;
-  padding: 20px;
-  border-radius: 8px;
-  position: sticky;
-  top: 120px;
-}
-.blog_details_page .recent_blogs h3 {
-  font-size: 1.1rem;
-  margin-bottom: 16px;
-  color: #333;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 6px;
-}
-.blog_details_page .recent_blogs ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.blog_details_page .recent_blogs ul li {
-  margin-bottom: 15px;
-}
-.blog_details_page .recent_blogs ul li a {
-  text-decoration: none;
-  color: #333;
-}
-.blog_details_page .recent_blogs ul li a .blog_item {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-}
-.blog_details_page .recent_blogs ul li a .blog_item img {
-  width: 70px;
-  height: 50px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-radius: 5px;
-  flex-shrink: 0;
-}
-.blog_details_page .recent_blogs ul li a .blog_item .blog_info h4 {
-  font-size: 0.95rem;
-  margin: 0 0 4px;
-  line-height: 1.4;
-  transition: color 0.3s;
-}
-.blog_details_page .recent_blogs ul li a .blog_item .blog_info .date {
-  font-size: 0.75rem;
-  color: #999;
-}
-.blog_details_page .recent_blogs ul li a:hover .blog_info h4 {
-  color: #54a0c4;
 }
 
 body {
@@ -1805,6 +1007,45 @@ body main .flights_filter {
   border-radius: 16px;
   box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.1);
   position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100px;
+  height: auto;
+  z-index: 1;
+  opacity: 0.8;
+  pointer-events: none;
+}
+.benefits .container {
+  position: relative;
+  z-index: 2;
+}
+.benefits h2 {
+  color: #000;
+  font-weight: 600;
+  font-size: 28px;
+}
+.benefits .benefit-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+.benefits .benefit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+.benefits .benefit-img {
+  width: 60px;
+  height: 80px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  flex-shrink: 0;
+}
+.benefits .benefit-title {
+  font-size: 1.25rem;
+  color: #2c3e50;
+  font-weight: 600;
   bottom: -50px;
   left: 50%;
   transform: translateX(-50%);
@@ -1835,6 +1076,19 @@ body main .filter_container .flight_type label input:checked + span {
   color: #fff;
   border-color: #000;
 }
+@media (max-width: 767.98px) {
+  .benefits .benefit-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .benefits .benefit-card .benefit-img {
+    margin-bottom: 1rem;
+  }
+  .benefits .benefits-shape {
+    display: none;
+  }
+
 body main .filter_container .flight_type label span {
   background: #fafafa;
   padding: 10px 16px;
@@ -1997,7 +1251,40 @@ body main .filter_container .flight_specifications .places_menu .places_menu_con
 body main .filter_container .flight_specifications .places_menu .places_menu_content .list_ariports button:hover {
   background: #fafafa;
 }
+
+.faq_section .faq-shape {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 120px;
+  height: auto;
+  z-index: 1;
+  opacity: 0.8;
+  pointer-events: none;
+}
+.faq_section .faq-shape2 {
+  position: absolute;
+  right: 0;
+  top: 20%;
+  transform: translateY(-50%);
+  width: 140px;
+  height: auto;
+  z-index: 1;
+  opacity: 0.8;
+  pointer-events: none;
+}
+@media (max-width: 768px) {
+  .faq_section .faq-shape2 {
+    width: 100px;
+    top: 8%;
+  }
+}
+.faq_section .section_title h2 {
+  font-size: 32px;
+
 body main .filter_container .flight_specifications .places_menu .places_menu_content .list_ariports button i {
+
   color: #000;
   font-size: 18px;
   transform: rotate(-45deg);
@@ -2085,6 +1372,102 @@ body main .offers-section .card .card-img-overlay {
   padding: 10px;
   display: flex;
   flex-direction: column;
+
+  gap: 12px;
+  padding: 16px;
+}
+.blog_card .content h5 {
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.blog_card .content p {
+  font-size: 12px;
+  color: #aaaaaa;
+  margin: 0;
+}
+
+.blog_details_page {
+  padding: 40px 0;
+}
+.blog_details_page .blog_header {
+  margin-bottom: 30px;
+}
+.blog_details_page .blog_header h1 {
+  font-size: 1.8rem;
+  margin-bottom: 16px;
+  color: #333;
+}
+.blog_details_page .blog_header .tags {
+  margin-bottom: 12px;
+}
+.blog_details_page .blog_header .tags span {
+  display: inline-block;
+  background: #eee;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  color: #555;
+  margin-left: 6px;
+}
+.blog_details_page .blog_header .blog_header_actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.blog_details_page .blog_header .blog_header_actions .date {
+  font-size: 0.85rem;
+  color: #888;
+}
+.blog_details_page .blog_header .blog_header_actions .date i {
+  margin-inline: 6px;
+}
+.blog_details_page .blog_header .blog_header_actions .share_section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.blog_details_page .blog_header .blog_header_actions .share_section i {
+  color: #666;
+  font-size: 1rem;
+}
+.blog_details_page .blog_header .blog_header_actions .share_section .share_buttons {
+  display: flex;
+  gap: 8px;
+}
+.blog_details_page .blog_header .blog_header_actions .share_section .share_buttons button {
+  background: #54a0c4;
+  border: none;
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.blog_details_page .blog_header .blog_header_actions .share_section .share_buttons button:hover {
+  opacity: 0.8;
+}
+.blog_details_page .blog_image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 25px;
+}
+.blog_details_page .blog_content {
+  background: #f9f9f9;
+  padding: 1rem;
+  border-radius: 0 0 8px 8px;
+}
+.blog_details_page .blog_content .content-text {
+
   justify-content: space-between;
 }
 body main .offers-section .card .card-badges {
@@ -2133,6 +1516,7 @@ body main .contact_section .contact_info {
 body main .contact_section .contact_info .icon {
   width: 52px;
   height: 52px;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2141,11 +1525,30 @@ body main .contact_section .contact_info .icon {
   color: #54a0c4;
   margin-bottom: 24px;
 }
-body main .contact_section .contact_info h6 {
+
+.blog_details_page .blog_content .content-text h3,
+.blog_details_page .blog_content .content-text h4 {
+
   color: #000;
   font-size: 16px;
   font-weight: 500;
 }
+
+.blog_details_page .blog_content .content-text h3 {
+  font-size: 1.4rem;
+}
+.blog_details_page .blog_content .content-text h4 {
+  font-size: 1.2rem;
+}
+.blog_details_page .blog_content .content-text p {
+  font-size: 1rem;
+  color: #777;
+  margin: 0;
+}
+.blog_details_page .blog_content .content-text ul,
+.blog_details_page .blog_content .content-text ol {
+  padding-inline-start: 1.5rem;
+
 body main .contact_section .contact_info p {
   color: #aaaaaa;
   font-size: 14px;
@@ -2160,6 +1563,7 @@ body main .contact_section .contact_info a:hover {
   color: #54a0c4;
 }
 body main .contact_section .social-media {
+
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -2169,6 +1573,77 @@ body main .contact_section .social-media h6 {
   margin: 0;
   font-size: 14px;
 }
+
+.blog_details_page .blog_content .content-text ul li,
+.blog_details_page .blog_content .content-text ol li {
+  font-size: 0.95rem;
+  color: #555;
+}
+.blog_details_page .blog_content .content-text ul li strong,
+.blog_details_page .blog_content .content-text ol li strong {
+  color: #54a0c4;
+}
+.blog_details_page .blog_content .content-text blockquote {
+  background: #f0f0f0;
+  border-right: 4px solid #54a0c4;
+  padding: 1rem;
+  font-style: italic;
+  color: #777;
+  border-radius: 8px;
+  margin: 0;
+}
+.blog_details_page .recent_blogs {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  position: sticky;
+  top: 120px;
+}
+.blog_details_page .recent_blogs h3 {
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+  color: #333;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 6px;
+}
+.blog_details_page .recent_blogs ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.blog_details_page .recent_blogs ul li {
+  margin-bottom: 15px;
+}
+.blog_details_page .recent_blogs ul li a {
+  text-decoration: none;
+  color: #333;
+}
+.blog_details_page .recent_blogs ul li a .blog_item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.blog_details_page .recent_blogs ul li a .blog_item img {
+  width: 70px;
+  height: 50px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 5px;
+  flex-shrink: 0;
+}
+.blog_details_page .recent_blogs ul li a .blog_item .blog_info h4 {
+  font-size: 0.95rem;
+  margin: 0 0 4px;
+  line-height: 1.4;
+  transition: color 0.3s;
+}
+.blog_details_page .recent_blogs ul li a .blog_item .blog_info .date {
+  font-size: 0.75rem;
+  color: #999;
+}
+.blog_details_page .recent_blogs ul li a:hover .blog_info h4 {
+  color: #54a0c4;
+
 body main .contact_section .social-media .social-media-links {
   display: flex;
   align-items: center;
@@ -2209,6 +1684,7 @@ body main .contact_section .form_header p {
   color: #aaaaaa;
   font-size: 14px;
   margin: 0;
+
 }
 body main .flights {
   padding: 30px 0;
@@ -2307,8 +1783,8 @@ body main .flights .round_trip_flight .content p {
   margin: 0;
 }
 body main .flights .round_trip_flight .departing_flight {
-  -webkit-clip-path: polygon(0% 0%, 98% 0%, 100% 50%, 98% 100%, 0% 100%);
-          clip-path: polygon(0% 0%, 98% 0%, 100% 50%, 98% 100%, 0% 100%);
+  -webkit-clip-path: polygon(100% 0%, 2% 0%, 0% 50%, 2% 100%, 100% 100%);
+          clip-path: polygon(100% 0%, 2% 0%, 0% 50%, 2% 100%, 100% 100%);
 }
 body main .flights .round_trip_flight .departing_flight,
 body main .flights .round_trip_flight .return_flight {
@@ -2333,6 +1809,7 @@ body main .flight_card {
   border: 1px solid #f4f4f4;
   display: flex;
   transition: all 0.3s ease-in-out;
+  cursor: pointer;
 }
 body main .flight_card:hover {
   box-shadow: rgba(0, 0, 0, 0.035) 0px 2.45093px 8.98675px 0px;
@@ -2375,7 +1852,7 @@ body main .flight_card .flight_info .departure .time_line .line {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  height: 6px;
+  height: 8px;
   border: 1px solid #aaaaaa;
   border-radius: 24px;
   background: #fff;
@@ -2470,8 +1947,731 @@ body main .flight_card .price h5 span {
 body main .flight_review {
   padding: 40px 0;
 }
+body main .terms-page .terms-header,
+body main .terms-page .privacy-policy-header,
+body main .privacy-policy-page .terms-header,
+body main .privacy-policy-page .privacy-policy-header {
+  text-align: center;
+}
+body main .terms-page .terms-header h4,
+body main .terms-page .privacy-policy-header h4,
+body main .privacy-policy-page .terms-header h4,
+body main .privacy-policy-page .privacy-policy-header h4 {
+  color: #000;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  position: relative;
+  padding-bottom: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+body main .terms-page .terms-header h4::after,
+body main .terms-page .privacy-policy-header h4::after,
+body main .privacy-policy-page .terms-header h4::after,
+body main .privacy-policy-page .privacy-policy-header h4::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 50%;
+  transform: translateX(50%);
+  width: 90px;
+  height: 4px;
+  background-color: #54a0c4;
+  border-radius: 2px;
+}
+body main .terms-page .terms-header p,
+body main .terms-page .privacy-policy-header p,
+body main .privacy-policy-page .terms-header p,
+body main .privacy-policy-page .privacy-policy-header p {
+  margin-top: 1rem;
+  color: #777;
+  font-size: 1rem;
+}
+body main .terms-page .terms-content,
+body main .terms-page .privacy-policy-content,
+body main .privacy-policy-page .terms-content,
+body main .privacy-policy-page .privacy-policy-content {
+  background: #fff;
+  border-radius: 10px;
+}
+body main .terms-page .terms-content .term-section .section-title,
+body main .terms-page .terms-content .privacy-policy-section .section-title,
+body main .terms-page .privacy-policy-content .term-section .section-title,
+body main .terms-page .privacy-policy-content .privacy-policy-section .section-title,
+body main .privacy-policy-page .terms-content .term-section .section-title,
+body main .privacy-policy-page .terms-content .privacy-policy-section .section-title,
+body main .privacy-policy-page .privacy-policy-content .term-section .section-title,
+body main .privacy-policy-page .privacy-policy-content .privacy-policy-section .section-title {
+  color: #000;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+  position: relative;
+}
+body main .terms-page .terms-content .term-section .section-content,
+body main .terms-page .terms-content .privacy-policy-section .section-content,
+body main .terms-page .privacy-policy-content .term-section .section-content,
+body main .terms-page .privacy-policy-content .privacy-policy-section .section-content,
+body main .privacy-policy-page .terms-content .term-section .section-content,
+body main .privacy-policy-page .terms-content .privacy-policy-section .section-content,
+body main .privacy-policy-page .privacy-policy-content .term-section .section-content,
+body main .privacy-policy-page .privacy-policy-content .privacy-policy-section .section-content {
+  background: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-right: 3px solid #54a0c4;
+}
+body main .terms-page .terms-content .term-section .section-content p,
+body main .terms-page .terms-content .term-section .section-content ol,
+body main .terms-page .terms-content .term-section .section-content ul,
+body main .terms-page .terms-content .privacy-policy-section .section-content p,
+body main .terms-page .terms-content .privacy-policy-section .section-content ol,
+body main .terms-page .terms-content .privacy-policy-section .section-content ul,
+body main .terms-page .privacy-policy-content .term-section .section-content p,
+body main .terms-page .privacy-policy-content .term-section .section-content ol,
+body main .terms-page .privacy-policy-content .term-section .section-content ul,
+body main .terms-page .privacy-policy-content .privacy-policy-section .section-content p,
+body main .terms-page .privacy-policy-content .privacy-policy-section .section-content ol,
+body main .terms-page .privacy-policy-content .privacy-policy-section .section-content ul,
+body main .privacy-policy-page .terms-content .term-section .section-content p,
+body main .privacy-policy-page .terms-content .term-section .section-content ol,
+body main .privacy-policy-page .terms-content .term-section .section-content ul,
+body main .privacy-policy-page .terms-content .privacy-policy-section .section-content p,
+body main .privacy-policy-page .terms-content .privacy-policy-section .section-content ol,
+body main .privacy-policy-page .terms-content .privacy-policy-section .section-content ul,
+body main .privacy-policy-page .privacy-policy-content .term-section .section-content p,
+body main .privacy-policy-page .privacy-policy-content .term-section .section-content ol,
+body main .privacy-policy-page .privacy-policy-content .term-section .section-content ul,
+body main .privacy-policy-page .privacy-policy-content .privacy-policy-section .section-content p,
+body main .privacy-policy-page .privacy-policy-content .privacy-policy-section .section-content ol,
+body main .privacy-policy-page .privacy-policy-content .privacy-policy-section .section-content ul {
+  color: #34495e;
+  line-height: 1.8;
+}
+body main .terms-page .terms-content .term-section .section-content ol,
+body main .terms-page .terms-content .term-section .section-content ul,
+body main .terms-page .terms-content .privacy-policy-section .section-content ol,
+body main .terms-page .terms-content .privacy-policy-section .section-content ul,
+body main .terms-page .privacy-policy-content .term-section .section-content ol,
+body main .terms-page .privacy-policy-content .term-section .section-content ul,
+body main .terms-page .privacy-policy-content .privacy-policy-section .section-content ol,
+body main .terms-page .privacy-policy-content .privacy-policy-section .section-content ul,
+body main .privacy-policy-page .terms-content .term-section .section-content ol,
+body main .privacy-policy-page .terms-content .term-section .section-content ul,
+body main .privacy-policy-page .terms-content .privacy-policy-section .section-content ol,
+body main .privacy-policy-page .terms-content .privacy-policy-section .section-content ul,
+body main .privacy-policy-page .privacy-policy-content .term-section .section-content ol,
+body main .privacy-policy-page .privacy-policy-content .term-section .section-content ul,
+body main .privacy-policy-page .privacy-policy-content .privacy-policy-section .section-content ol,
+body main .privacy-policy-page .privacy-policy-content .privacy-policy-section .section-content ul {
+  padding-right: 1.5rem;
+}
+body main .terms-page .terms-content .term-section .section-content ol li,
+body main .terms-page .terms-content .term-section .section-content ul li,
+body main .terms-page .terms-content .privacy-policy-section .section-content ol li,
+body main .terms-page .terms-content .privacy-policy-section .section-content ul li,
+body main .terms-page .privacy-policy-content .term-section .section-content ol li,
+body main .terms-page .privacy-policy-content .term-section .section-content ul li,
+body main .terms-page .privacy-policy-content .privacy-policy-section .section-content ol li,
+body main .terms-page .privacy-policy-content .privacy-policy-section .section-content ul li,
+body main .privacy-policy-page .terms-content .term-section .section-content ol li,
+body main .privacy-policy-page .terms-content .term-section .section-content ul li,
+body main .privacy-policy-page .terms-content .privacy-policy-section .section-content ol li,
+body main .privacy-policy-page .terms-content .privacy-policy-section .section-content ul li,
+body main .privacy-policy-page .privacy-policy-content .term-section .section-content ol li,
+body main .privacy-policy-page .privacy-policy-content .term-section .section-content ul li,
+body main .privacy-policy-page .privacy-policy-content .privacy-policy-section .section-content ol li,
+body main .privacy-policy-page .privacy-policy-content .privacy-policy-section .section-content ul li {
+  margin-bottom: 0.75rem;
+}
+body main .terms-page .terms-content .contact-info h3,
+body main .terms-page .privacy-policy-content .contact-info h3,
+body main .privacy-policy-page .terms-content .contact-info h3,
+body main .privacy-policy-page .privacy-policy-content .contact-info h3 {
+  color: #2c3e50;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+body main .terms-page .terms-content .contact-info p,
+body main .terms-page .privacy-policy-content .contact-info p,
+body main .privacy-policy-page .terms-content .contact-info p,
+body main .privacy-policy-page .privacy-policy-content .contact-info p {
+  color: #7f8c8d;
+  background: #f5f5f5;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+body main .terms-page .terms-content .contact-info p strong,
+body main .terms-page .privacy-policy-content .contact-info p strong,
+body main .privacy-policy-page .terms-content .contact-info p strong,
+body main .privacy-policy-page .privacy-policy-content .contact-info p strong {
+  color: #54a0c4;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+@media (max-width: 768px) {
+  body main .terms-page,
+  body main .privacy-policy-page {
+    padding: 1.5rem 0;
+  }
+  body main .terms-page .terms-header h1,
+  body main .terms-page .privacy-policy-header h1,
+  body main .privacy-policy-page .terms-header h1,
+  body main .privacy-policy-page .privacy-policy-header h1 {
+    font-size: 1.8rem;
+  }
+  body main .terms-page .terms-content,
+  body main .terms-page .privacy-policy-content,
+  body main .privacy-policy-page .terms-content,
+  body main .privacy-policy-page .privacy-policy-content {
+    padding: 1.2rem;
+  }
+}
+body main .faq_section {
+  padding: 60px 0;
+  background-color: #f9f9f9;
+}
+body main .faq_section .section_title h2 {
+  font-size: 32px;
+  color: #000;
+}
+body main .faq_section .section_title p {
+  color: #777;
+  font-size: 16px;
+}
+body main .faq_section .faq_tabs .nav-item {
+  padding: 14px 20px;
+  margin-bottom: 8px;
+  background-color: #fff;
+  color: #000;
+  border-radius: 8px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid #ddd;
+}
+body main .faq_section .faq_tabs .nav-item i {
+  margin-left: 8px;
+  color: #54a0c4;
+}
+body main .faq_section .faq_tabs .nav-item:hover {
+  background-color: #54a0c4;
+  color: #fff;
+}
+body main .faq_section .faq_tabs .nav-item:hover i {
+  color: #fff;
+}
+body main .faq_section .faq_tabs .nav-item.active {
+  background-color: #54a0c4;
+  color: #fff;
+  border-color: #54a0c4;
+}
+body main .faq_section .faq_tabs .nav-item.active i {
+  color: #fff;
+}
+body main .faq_section .tab-content {
+  padding: 30px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+  animation: fadeIn 0.5s ease;
+}
+body main .faq_section .tab-content p {
+  font-size: 16px;
+  color: #777;
+  line-height: 1.8;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 body main .checkout_section {
   padding: 40px 0;
+}
+body main .about-us-section {
+  padding: 5rem 0;
+  background-color: #fff;
+}
+body main .about-us-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+body main .about-us-section .row {
+  align-items: center;
+}
+body main .about-us-section .about-us-content {
+  padding-left: 3rem;
+}
+body main .about-us-section .about-us-content .section-title {
+  font-size: 1rem;
+  color: #54a0c4;
+  text-transform: uppercase;
+  letter-spacing: 0.125rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  position: relative;
+  display: inline-block;
+}
+body main .about-us-section .about-us-content .section-subtitle {
+  font-size: 28px;
+  color: #000;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+body main .about-us-section .about-us-content .section-description {
+  font-size: 1rem;
+  color: #777;
+  line-height: 1.5;
+  margin-bottom: 2.5rem;
+}
+body main .about-us-section .features-container {
+  margin-bottom: 2.5rem;
+}
+body main .about-us-section .features-container .feature-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+}
+body main .about-us-section .features-container .feature-item .feature-icon {
+  width: 2.2rem;
+  height: 2.2rem;
+  flex-shrink: 0;
+}
+body main .about-us-section .features-container .feature-item .feature-title {
+  font-size: 1.25rem;
+  color: #000;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+body main .about-us-section .features-container .feature-item .feature-description {
+  font-size: 0.9375rem;
+  color: #777;
+  line-height: 1.6;
+  margin: 0;
+}
+body main .about-us-section .discover-more-btn {
+  background-color: transparent;
+  color: #333;
+  border: 1px solid #54a0c4;
+  padding: 0.75rem 2rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.0625rem;
+  transition: all 0.35s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50px;
+}
+body main .about-us-section .discover-more-btn:hover {
+  background: linear-gradient(135deg, #54a0c4 0%, #3b86aa 100%);
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(84, 160, 196, 0.35);
+}
+body main .about-us-section .discover-more-btn:hover .arrow {
+  transform: translateX(-5px) rotate(180deg);
+}
+body main .about-us-section .discover-more-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(84, 160, 196, 0.3);
+}
+body main .about-us-section .discover-more-btn .arrow {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+body main .about-us-section .discover-more-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  transform: skewX(-45deg);
+  transition: all 0.5s ease;
+}
+body main .about-us-section .discover-more-btn:hover::after {
+  left: 150%;
+}
+body main .about-us-section .images-wrapper {
+  position: relative;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  z-index: 1;
+}
+body main .about-us-section .images-wrapper .main-image {
+  width: 65%;
+  max-width: 400px;
+  margin-right: 80px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+body main .about-us-section .images-wrapper .side-image {
+  position: absolute;
+  bottom: -15px;
+  right: -30px;
+  height: 180px;
+  width: 50%;
+  max-width: 400px;
+  border: 5px solid #fff;
+  border-radius: 10px;
+}
+body main .about-us-section .images-wrapper .img-shape {
+  position: absolute;
+  top: 0px;
+  right: -70px;
+  width: 60%;
+  height: 60%;
+  background: url("/images/plane-shape.png") no-repeat center center;
+  background-size: contain;
+  border-radius: 15px;
+  z-index: -1;
+}
+body main .about-us-section .images-wrapper .floating-image {
+  position: absolute;
+  top: 20%;
+  left: -50px;
+  width: 45%;
+  animation: floatUpDown 3s ease-in-out infinite;
+  border: 5px solid #fff;
+  border-radius: 10px;
+}
+body main .about-us-section .images-wrapper .floating-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+@keyframes floatUpDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+@media (max-width: 991px) {
+  body main .about-us-section .images-wrapper .main-image {
+    max-width: 80%;
+    margin-right: 20px;
+  }
+  body main .about-us-section .images-wrapper .side-image {
+    width: 40%;
+    right: -10px;
+  }
+  body main .about-us-section .images-wrapper .img-shape {
+    width: 50%;
+    height: 50%;
+    bottom: 60px;
+  }
+}
+@media (max-width: 576px) {
+  body main .about-us-section .images-wrapper .main-image {
+    max-width: 100%;
+    margin-right: 50px;
+  }
+  body main .about-us-section .images-wrapper .side-image {
+    width: 60%;
+    right: -30px;
+  }
+  body main .about-us-section .images-wrapper .floating-image {
+    left: -20px;
+  }
+  body main .about-us-section .images-wrapper .img-shape {
+    width: 40%;
+    height: 40%;
+    bottom: 50px;
+  }
+}
+@media (max-width: 991.98px) {
+  body main .about-us-section {
+    padding: 4rem 0;
+  }
+  body main .about-us-section .about-us-content {
+    padding-left: 0;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+  body main .about-us-section .about-us-content .section-title::after {
+    right: 50%;
+    transform: translateX(50%);
+    width: 30%;
+  }
+  body main .about-us-section .about-us-content .section-subtitle {
+    font-size: 1.75rem;
+  }
+  body main .about-us-section .year-established {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+  }
+  body main .about-us-section .year-established .year-box .year {
+    font-size: 3.5rem;
+  }
+}
+@media (max-width: 767.98px) {
+  body main .about-us-section {
+    padding: 3rem 0;
+  }
+  body main .about-us-section .section-subtitle {
+    font-size: 1.5rem;
+  }
+  body main .about-us-section .features-container .feature-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  body main .about-us-section .year-established .year-box .year {
+    font-size: 2.5rem;
+  }
+}
+body main .benefits {
+  position: relative;
+  background-color: #f8f9fa;
+}
+body main .benefits .benefits-shape {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100px;
+  height: auto;
+  z-index: 1;
+  opacity: 0.8;
+  pointer-events: none;
+}
+body main .benefits .container {
+  position: relative;
+  z-index: 2;
+}
+body main .benefits h2 {
+  color: #000;
+  font-weight: 600;
+  font-size: 28px;
+  text-align: center;
+}
+body main .benefits .benefit-card {
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  transition: 0.3s;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body main .benefits .benefit-img {
+  width: 70px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+body main .benefits .benefit-title {
+  font-size: 1.25rem;
+  color: #2c3e50;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+body main .benefits .benefit-description {
+  color: #7f8c8d;
+  line-height: 1.6;
+}
+@media (max-width: 767.98px) {
+  body main .benefits .benefit-card {
+    text-align: center;
+  }
+  body main .benefits .benefits-shape {
+    display: none;
+  }
+}
+body main .blog_section {
+  padding: 60px 0;
+}
+body main .blog_section .title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+body main .blog_section .title h4 {
+  color: #000;
+  font-size: 18px;
+}
+body main .blog_section .title a {
+  color: #54a0c4;
+  font-size: 14px;
+}
+body main .swiper-slide {
+  height: auto;
+}
+body main .blog_card {
+  border: 1px solid #f4f4f4;
+  border-radius: 16px;
+  overflow: hidden;
+  height: 100%;
+  transition: all 0.3s ease-in-out;
+}
+body main .blog_card .img {
+  aspect-ratio: 3/2;
+}
+body main .blog_card .img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+body main .blog_card .content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+}
+body main .blog_card .content h5 {
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+body main .blog_card .content p {
+  font-size: 12px;
+  color: #aaaaaa;
+  margin: 0;
+}
+body main .blog_details {
+  padding: 2rem 0;
+}
+body main .blog_details .blog_header {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: #f9f9f9;
+  padding: 16px 24px;
+  border-radius: 8px 8px 0 0;
+  border-bottom: 1px solid #54a0c4;
+}
+body main .blog_details .blog_header .blog_header_actions {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+body main .blog_details .blog_header h1 {
+  font-size: 1.5rem;
+  margin: 0;
+  font-weight: 700;
+}
+body main .blog_details .blog_header span {
+  font-size: 12px;
+  color: #777;
+}
+body main .blog_details .blog_content {
+  background: #f9f9f9;
+  padding: 1rem;
+  border-radius: 0 0 8px 8px;
+}
+body main .blog_details .blog_content .img {
+  margin-bottom: 1.5rem;
+}
+body main .blog_details .blog_content .img img {
+  border-radius: 8px;
+  width: 100%;
+  aspect-ratio: 3/2;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+body main .blog_details .blog_content .content-text {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 1rem;
+  color: #333;
+}
+body main .blog_details .blog_content .content-text h3,
+body main .blog_details .blog_content .content-text h4 {
+  color: #000;
+  font-weight: 600;
+  margin-top: 10px;
+}
+body main .blog_details .blog_content .content-text h3 {
+  font-size: 1.4rem;
+}
+body main .blog_details .blog_content .content-text h4 {
+  font-size: 1.2rem;
+}
+body main .blog_details .blog_content .content-text p {
+  font-size: 1rem;
+  color: #777;
+  margin: 0;
+}
+body main .blog_details .blog_content .content-text ul,
+body main .blog_details .blog_content .content-text ol {
+  padding-inline-start: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 0;
+}
+body main .blog_details .blog_content .content-text ul li,
+body main .blog_details .blog_content .content-text ol li {
+  font-size: 0.95rem;
+  color: #555;
+}
+body main .blog_details .blog_content .content-text ul li strong,
+body main .blog_details .blog_content .content-text ol li strong {
+  color: #54a0c4;
+}
+body main .blog_details .blog_content .content-text blockquote {
+  background: #f0f0f0;
+  border-right: 4px solid #54a0c4;
+  padding: 1rem;
+  font-style: italic;
+  color: #777;
+  border-radius: 8px;
+  margin: 0;
+}
+body main .blog_details .recent_blogs {
+  padding: 0 16px;
+  position: sticky;
+  top: 120px;
+}
+body main .blog_details .recent_blogs h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #54a0c4;
+}
+body main .blog_details .recent_blogs ul {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  list-style: disc;
+  padding-inline-start: 16px;
+}
+body main .blog_details .recent_blogs ul li {
+  padding: 6px 0;
+  border-bottom: 1px solid #54a0c4;
+}
+body main .blog_details .recent_blogs ul li a h4 {
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+body main .blog_details .recent_blogs ul li a:hover h4 {
+  color: #54a0c4;
 }
 body.en {
   font-family: "Outfit", sans-serif;
@@ -2504,6 +2704,10 @@ body.en .auth_modal .modal_close_btn {
   right: 16px !important;
   margin-inline-start: 0 !important;
   margin-inline-end: auto !important;
+}
+body.en main .flights .round_trip_flight .departing_flight {
+  -webkit-clip-path: polygon(0% 0%, 98% 0%, 100% 50%, 98% 100%, 0% 100%);
+          clip-path: polygon(0% 0%, 98% 0%, 100% 50%, 98% 100%, 0% 100%);
 }
 body.en .terms-page .terms-content .term-section .section-content,
 body.en .privacy-policy-page .privacy-policy-content .privacy-policy-section .section-content {

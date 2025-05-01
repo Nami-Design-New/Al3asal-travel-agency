@@ -1,11 +1,14 @@
-import { Link } from "react-router";
+import { useState } from "react";
 import TicketTimeLine from "./TicketTimeLine";
 import TicketsAirLine from "./TicketsAirLine";
 import TicketDuration from "./TicketDuration";
+import FlightDetails from "../modals/FlightDetails";
 
 export default function FlightCard({ flight }) {
+  const [showModal, setShowModal] = useState(false);
+
   return (
-    <Link to="/checkout" className="flight_card">
+    <div className="flight_card" onClick={() => setShowModal(true)}>
       <div className="flight_info">
         <TicketsAirLine flight={flight} />
         <TicketTimeLine flight={flight} />
@@ -17,6 +20,8 @@ export default function FlightCard({ flight }) {
           {flight?.price} <span>EGP</span>
         </h5>
       </div>
-    </Link>
+
+      <FlightDetails show={showModal} setShowModal={setShowModal} />
+    </div>
   );
 }

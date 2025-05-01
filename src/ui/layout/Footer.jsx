@@ -26,9 +26,6 @@ export default function Footer() {
             <h5 className="mb-4">{t("footer.usefulLinks")}</h5>
             <ul>
               <li>
-                <Link to="/">{t("footer.home")}</Link>
-              </li>
-              <li>
                 <Link to="/about">{t("footer.about")}</Link>
               </li>
               <li>

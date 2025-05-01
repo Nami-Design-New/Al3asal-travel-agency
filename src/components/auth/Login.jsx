@@ -29,7 +29,7 @@ export default function Login() {
 
         <span
           className="forgot_password"
-          onClick={() => dispatch(setStep("forget"))}
+          onClick={() => dispatch(setStep("reset1"))}
         >
           {t("auth.forgotPassword")}
         </span>

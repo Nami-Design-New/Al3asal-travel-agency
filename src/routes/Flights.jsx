@@ -1,8 +1,11 @@
+import { useTranslation } from "react-i18next";
 import FilterFlights from "../components/home/FilterFlights";
 import FlightCard from "../ui/cards/FlightCard";
 import SortingFilter from "../components/flights/SortingFilter";
 
 export default function Flights() {
+  const { t } = useTranslation();
+
   const flightsDefaults = [
     {
       price: 4907,
@@ -52,6 +55,37 @@ export default function Flights() {
       departure: { time: "05:20", airport: "SPX" },
       arrival: { time: "15:10", airport: "DMM" },
     },
+
+    {
+      price: 25000,
+      duration: "10h 30m",
+      stops: [
+        { name: "Abu Dhabi", code: "AUH", duration: "2h 30m", startTime: "07:30" },
+        { name: "Dammam", code: "DMM", duration: "1h 30m", startTime: "13:30" },
+      ],
+      airlines: [
+        { name: "Etihad Airways", code: "XY" },
+        { name: "Flynas", code: "SV" },
+      ],
+      departure: { time: "05:30", airport: "SPX" },
+      arrival: { time: "16:00", airport: "DMM" },
+    },
+
+    {
+      price: 32000,
+      duration: "12h 00m",
+      stops: [
+        { name: "Kuwait", code: "KWI", duration: "2h 00m", startTime: "07:00" },
+        { name: "Dammam", code: "DMM", duration: "2h 00m", startTime: "11:00" },
+        { name: "Dammam", code: "DMM", duration: "1h 30m", startTime: "13:30" },
+      ],
+      airlines: [
+        { name: "Kuwait Airways", code: "NP" },
+        { name: "Flynas", code: "E5" },
+      ],
+      departure: { time: "05:00", airport: "SPX" },
+      arrival: { time: "17:00", airport: "DMM" },
+    },
   ];
 
   return (
@@ -62,11 +96,11 @@ export default function Flights() {
             <FilterFlights />
 
             <div className="round_trip_flight">
-              <div className="departing_flight active" >
+              <div className="departing_flight active">
                 <div className="num">1</div>
 
                 <div className="content">
-                  <h3>Select Departing Flight</h3>
+                  <h3>{t("flights.departing")}</h3>
                   <p>Tue, 10 Jun 2025</p>
                 </div>
               </div>
@@ -75,7 +109,7 @@ export default function Flights() {
                 <div className="num">2</div>
 
                 <div className="content">
-                  <h3>Select Returning Flight</h3>
+                  <h3>{t("flights.return")}</h3>
                   <p>Fri, 13 Jun 2025</p>
                 </div>
               </div>
