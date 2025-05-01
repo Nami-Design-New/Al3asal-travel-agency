@@ -55,6 +55,37 @@ export default function Flights() {
       departure: { time: "05:20", airport: "SPX" },
       arrival: { time: "15:10", airport: "DMM" },
     },
+
+    {
+      price: 25000,
+      duration: "10h 30m",
+      stops: [
+        { name: "Abu Dhabi", code: "AUH", duration: "2h 30m", startTime: "07:30" },
+        { name: "Dammam", code: "DMM", duration: "1h 30m", startTime: "13:30" },
+      ],
+      airlines: [
+        { name: "Etihad Airways", code: "XY" },
+        { name: "Flynas", code: "SV" },
+      ],
+      departure: { time: "05:30", airport: "SPX" },
+      arrival: { time: "16:00", airport: "DMM" },
+    },
+
+    {
+      price: 32000,
+      duration: "12h 00m",
+      stops: [
+        { name: "Kuwait", code: "KWI", duration: "2h 00m", startTime: "07:00" },
+        { name: "Dammam", code: "DMM", duration: "2h 00m", startTime: "11:00" },
+        { name: "Dammam", code: "DMM", duration: "1h 30m", startTime: "13:30" },
+      ],
+      airlines: [
+        { name: "Kuwait Airways", code: "NP" },
+        { name: "Flynas", code: "E5" },
+      ],
+      departure: { time: "05:00", airport: "SPX" },
+      arrival: { time: "17:00", airport: "DMM" },
+    },
   ];
 
   return (
