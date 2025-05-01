@@ -336,5 +336,15 @@
       "tab4": "Yes, cancellations are possible based on your package's cancellation policy. Fees may apply depending on timing.",
       "tab5": "Yes, we offer custom trips for groups and companies, including planning, guides, and exclusive accommodation options."
     }
+  },
+  "checkoutForm": {
+    "fullName": "Full Name",
+    "enterName": "Enter your name",
+    "email": "Email",
+    "enterEmail": "Enter your email",
+    "phone": "Phone Number",
+    "enterPhone": "Enter your phone number",
+    "passportNumber": "Passport Number",
+    "enterPassportNumber": "Enter your passport number"
   }
 }

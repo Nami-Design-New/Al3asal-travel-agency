@@ -5,10 +5,10 @@ import TicketDuration from "./TicketDuration";
 import FlightDetails from "../modals/FlightDetails";
 
 export default function FlightCard({ flight }) {
-  const [showModal, setShowModal] = useState(false);
+  const [showFlightDetails, setShowFlightDetails] = useState(false);
 
   return (
-    <div className="flight_card" onClick={() => setShowModal(true)}>
+    <div className="flight_card" onClick={() => setShowFlightDetails(true)}>
       <div className="flight_info">
         <TicketsAirLine flight={flight} />
         <TicketTimeLine flight={flight} />
@@ -21,7 +21,7 @@ export default function FlightCard({ flight }) {
         </h5>
       </div>
 
-      <FlightDetails show={showModal} setShowModal={setShowModal} />
+      <FlightDetails show={showFlightDetails} setShow={setShowFlightDetails} />
     </div>
   );
 }

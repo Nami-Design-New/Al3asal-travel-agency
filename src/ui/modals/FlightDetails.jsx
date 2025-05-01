@@ -11,18 +11,13 @@ export default function FlightDetails({ show, setShowModal }) {
       centered
       size="lg"
       show={show}
-      backdrop="static"
       className="flight_details_modal"
       onHide={() => setShowModal(false)}
     >
+      <Modal.Header closeButton className="header">
+        <h6>{t("flights.flightDetails")}</h6>
+      </Modal.Header>
       <Modal.Body>
-        <div className="header">
-          <h6>{t("flights.flightDetails")}</h6>
-          <button className="close_btn" onClick={() => setShowModal(false)}>
-            <i className="fa-regular fa-x"></i>
-          </button>
-        </div>
-
         <div className="itinerary">
           <h6 className="title">{t("flights.itinerary")}</h6>
 
