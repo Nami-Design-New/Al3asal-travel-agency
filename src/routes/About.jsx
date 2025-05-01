@@ -35,8 +35,8 @@ const AboutUsSection = () => {
 
             <div className="col-lg-6 order-lg-0 order-0">
               <div className="about-us-content">
-                <h2 className="section-title">{t("aboutUs.title")}</h2>
-                <h3 className="section-subtitle">{t("aboutUs.subtitle")}</h3>
+                <h2 className="section-title">{t("aboutUs.title2")}</h2>
+                <h3 className="section-subtitle">{t("aboutUs.subtitle2")}</h3>
                 <p className="section-description">
                   {t("aboutUs.description")}
                 </p>

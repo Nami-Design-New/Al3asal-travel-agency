@@ -4,6 +4,7 @@ import { Link, NavLink } from "react-router";
 import { useDispatch } from "react-redux";
 import { setShowAuthModal } from "../../redux/slices/auth";
 import SettingDropDown from "./SettingDropDown";
+import UserDropDown from "./UserDropDown";
 
 export default function Header() {
   const { t } = useTranslation();
@@ -47,6 +48,7 @@ export default function Header() {
           >
             {t("header.login")}
           </button>
+          <UserDropDown />
         </div>
       </nav>
     </header>

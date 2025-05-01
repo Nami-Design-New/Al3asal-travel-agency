@@ -7,7 +7,11 @@
     "blogs": "blogs",
     "login": "Login",
     "changeLanguage": "Change language",
-    "changeCurrency": "change currency"
+    "changeCurrency": "change currency",
+    "Dashboard": "Dashboard",
+    "myflights": "Flight Bookings",
+    "contactus":"ContactUs",
+    "logout": "Logout"
   },
   "errorPage": {
     "pageNotFoundTitle": "Page Not Found",
