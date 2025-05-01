@@ -554,6 +554,10 @@ header nav .actions .login {
   }
 }
 
+.blogs-page {
+  padding: 40px 0;
+}
+
 .flight_details_modal .modal-dialog {
   margin: 0 auto !important;
 }
@@ -2316,23 +2320,22 @@ body main .benefits .benefit-card {
 }
 body main .benefits .benefit-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.1);
 }
 body main .benefits .benefit-img {
-  width: 60px;
-  height: 80px;
+  width: 48px;
   -o-object-fit: contain;
      object-fit: contain;
   flex-shrink: 0;
 }
 body main .benefits .benefit-title {
-  font-size: 1.25rem;
-  color: #2c3e50;
+  font-size: 16px;
+  color: #000;
   font-weight: 600;
 }
 body main .benefits .benefit-description {
-  color: #7f8c8d;
-  line-height: 1.6;
+  color: #777;
+  font-size: 14px;
 }
 @media (max-width: 767.98px) {
   body main .benefits .benefit-card {
