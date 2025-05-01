@@ -90,6 +90,31 @@ header {
         transition: $transition;
         box-shadow: $shadow;
       }
+      .rounded_btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 6px 16px;
+        border-radius: 30px;
+        background-color: transparent;
+        border: 1px solid $black;
+        color: $black;
+        font-size: 16px;
+        font-weight: bold;
+        box-shadow: none !important;
+
+        &:active,
+        &:focus,
+        &:hover {
+          color: $white;
+          background-color: $black;
+          border-color: $white;
+        }
+        i {
+          font-size: 12px;
+        }
+      }
     }
   }
 }
@@ -595,6 +620,27 @@ header {
           border-radius: 80px;
         }
       }
+    }
+  }
+}
+.custom-dropdown-menu {
+  border-radius: 16px;
+  padding: 10px;
+  min-width: 220px;
+
+  .dropdown-item {
+    display: flex;
+    font-size: 16px;
+    padding: 10px 0px;
+
+    i {
+      font-size: 18px;
+      margin: 0 10px;
+      color: $gray;
+    }
+
+    &:hover {
+      background-color: #f8f9fa;
     }
   }
 }

@@ -378,6 +378,28 @@ header nav .actions .login {
   transition: all 0.3s ease-in-out;
   box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.1);
 }
+header nav .actions .rounded_btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: 30px;
+  background-color: transparent;
+  border: 1px solid #000;
+  color: #000;
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: none !important;
+}
+header nav .actions .rounded_btn:active, header nav .actions .rounded_btn:focus, header nav .actions .rounded_btn:hover {
+  color: #fff;
+  background-color: #000;
+  border-color: #fff;
+}
+header nav .actions .rounded_btn i {
+  font-size: 12px;
+}
 
 .footer {
   background-image: url("/images/footer.jpg");
@@ -843,6 +865,25 @@ header nav .actions .login {
   font-size: 14px;
   padding: 8px 24px;
   border-radius: 80px;
+}
+
+.custom-dropdown-menu {
+  border-radius: 16px;
+  padding: 10px;
+  min-width: 220px;
+}
+.custom-dropdown-menu .dropdown-item {
+  display: flex;
+  font-size: 16px;
+  padding: 10px 0px;
+}
+.custom-dropdown-menu .dropdown-item i {
+  font-size: 18px;
+  margin: 0 10px;
+  color: #777;
+}
+.custom-dropdown-menu .dropdown-item:hover {
+  background-color: #f8f9fa;
 }
 
 .auth_modal {
@@ -2830,6 +2871,136 @@ body main .blog_details_page .recent_blogs ul li a .blog_item .blog_info .date {
 }
 body main .blog_details_page .recent_blogs ul li a:hover .blog_info h4 {
   color: #54a0c4;
+}
+body main .profile-container {
+  display: flex;
+  min-height: 100vh;
+}
+body main .profile-container .profile-sidebar {
+  width: 280px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-left: 1px solid #e0e0e0;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+}
+body main .profile-container .profile-sidebar .user-info {
+  text-align: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e0e0e0;
+}
+body main .profile-container .profile-sidebar .user-info .avatar {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 15px;
+  border: 1px solid #54a0c4;
+  color: #54a0c4;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+body main .profile-container .profile-sidebar .user-info h5 {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 5px;
+}
+body main .profile-container .profile-sidebar .user-info .email {
+  color: #666;
+  font-size: 0.9rem;
+}
+body main .profile-container .profile-sidebar .profile-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+body main .profile-container .profile-sidebar .profile-menu li {
+  padding: 12px 15px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: all 0.2s ease;
+}
+body main .profile-container .profile-sidebar .profile-menu li:hover {
+  background-color: #e9ecef;
+}
+body main .profile-container .profile-sidebar .profile-menu li.active {
+  background-color: #e3f2fd;
+  color: #1976d2;
+}
+body main .profile-container .profile-sidebar .profile-menu li.active i {
+  color: #1976d2;
+}
+body main .profile-container .profile-sidebar .profile-menu li i {
+  color: #666;
+  font-size: 1rem;
+  margin-left: 10px;
+}
+body main .profile-container .profile-sidebar .profile-menu li .menu-text {
+  flex-grow: 1;
+}
+body main .profile-container .profile-content {
+  flex-grow: 1;
+  padding: 30px;
+  background-color: #fff;
+}
+body main .payment-methods {
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+body main .payment-methods .methods-grid .icon {
+  width: 30px;
+  height: 30px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin: 0 10px;
+}
+body main .payment-methods .methods-grid .form-check-input {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+body main .payment-methods .methods-grid .form-check-input:checked {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+body main .payment-methods .methods-grid .form-check-label {
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+}
+body main .payment-methods button {
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: 0.75rem;
+  background-color: #54a0c4;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+body main .payment-methods button:hover {
+  background-color: #218838;
+  cursor: pointer;
+}
+body main .payment-methods button:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+}
+@media (max-width: 576px) {
+  body main .payment-methods {
+    padding: 1rem;
+  }
+  body main .methods-grid .form-check-label {
+    font-size: 0.9rem;
+  }
 }
 body.en {
   font-family: "Outfit", sans-serif;
