@@ -287,12 +287,13 @@ header {
   .modal-dialog {
     margin: 0 auto !important;
   }
+
   .modal-content {
     height: 100vh;
     border-radius: 0 !important;
   }
+
   .modal-body {
-    position: relative;
     padding: 0 !important;
     background: $input_bg;
     .header {
@@ -308,6 +309,8 @@ header {
 
     .itinerary {
       padding: 24px;
+      height: calc(100vh - 48px);
+      overflow-y: scroll;
 
       .title {
         font-size: 14px;
@@ -351,15 +354,219 @@ header {
             }
 
             .icon {
-              padding-top: 18px;
+              padding: 18px 12px 0;
             }
 
             .airPort {
               display: flex;
+              flex: 1;
               flex-direction: column;
               gap: 4px;
               &.last {
                 text-align: end;
+              }
+            }
+          }
+
+          .time_airline {
+            margin-top: 12px;
+            @include space-between();
+            p {
+              margin: 0 0 2px;
+              font-size: 12px;
+              color: $black;
+              span {
+                color: $input_hint;
+              }
+            }
+
+            .airlines {
+              display: flex;
+              align-items: center;
+              img {
+                width: 48px;
+                object-fit: contain;
+              }
+            }
+          }
+
+          .time_line {
+            display: flex;
+            flex-direction: column;
+            margin-top: 16px;
+            .segment {
+              display: flex;
+              gap: 12px;
+
+              &:first-child {
+                .line {
+                  &::after {
+                    background: $main;
+                    border: 2px solid $main;
+                  }
+                  &::before {
+                    background: $white;
+                    border: 2px solid $main;
+                  }
+                }
+              }
+
+              &:last-child {
+                .line {
+                  &::after {
+                    background: $white;
+                    border: 2px solid $main;
+                  }
+                  &::before {
+                    background: $main;
+                    border: 2px solid $main;
+                  }
+                }
+              }
+            }
+
+            .stop_over {
+              margin-left: 52px;
+              padding: 32px 0;
+              border-left: 2px dotted $input_hint;
+              span {
+                width: 100%;
+                display: flex;
+                border-radius: 0 8px 8px 0;
+                padding: 8px 12px;
+                background: #fdf5cb;
+                font-size: 14px;
+                align-items: center;
+                gap: 4px;
+                b {
+                  color: #cf000f;
+                }
+              }
+            }
+
+            .line {
+              width: 2px;
+              background: $main;
+              position: relative;
+              &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: -3px;
+                width: 8px;
+                height: 8px;
+                background: $white;
+                border: 2px solid $main;
+                border-radius: 50%;
+              }
+
+              &::before {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: -3px;
+                width: 8px;
+                height: 8px;
+                border: 2px solid $main;
+                background: $white;
+                border-radius: 50%;
+              }
+            }
+
+            .timing {
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              min-width: 40px;
+              .time {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                gap: 2px;
+                span {
+                  color: $input_hint;
+                  font-size: 10px;
+                }
+                i {
+                  color: $input_hint;
+                }
+                b {
+                  font-size: 12px;
+                  font-weight: 500;
+                }
+              }
+            }
+
+            .segment_info {
+              display: flex;
+              width: 100%;
+              gap: 16px;
+              flex-direction: column;
+              justify-content: space-between;
+
+              .title {
+                display: flex;
+                align-items: center;
+                background: $input_bg;
+                padding: 4px 8px;
+                border-radius: 8px;
+                width: 100%;
+                gap: 4px;
+                h6 {
+                  margin-bottom: 0;
+                  font-size: 12px !important;
+                }
+                span {
+                  font-size: 12px;
+                  color: $input_hint;
+                }
+              }
+
+              .content {
+                display: flex;
+                flex-direction: column;
+
+                ul {
+                  display: flex;
+                  flex-direction: column;
+                  gap: 8px;
+                  li {
+                    padding: 4px 0;
+                    div {
+                      display: flex;
+                      align-items: center;
+                      gap: 4px;
+                      margin-bottom: 4px;
+                      img {
+                        width: 48px;
+                        object-fit: contain;
+                      }
+                      h6 {
+                        color: $black;
+                        font-size: 12px;
+                        font-weight: 400;
+                      }
+                    }
+                    .features {
+                      margin-top: 4px;
+                      display: flex;
+                      align-items: center;
+                      gap: 8px;
+                      font-size: 12px;
+                      i {
+                        color: #21a024;
+                        &.not_available {
+                          color: #ff0011;
+                        }
+                      }
+                    }
+                    p {
+                      margin: 0;
+                      font-size: 12px;
+                      color: $input_hint;
+                    }
+                  }
+                }
               }
             }
           }
