@@ -318,26 +318,25 @@
 
     &:hover {
       transform: translateY(-5px);
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      box-shadow: $shadow;
     }
   }
 
   .benefit-img {
-    width: 60px;
-    height: 80px;
+    width: 48px;
     object-fit: contain;
     flex-shrink: 0;
   }
 
   .benefit-title {
-    font-size: 1.25rem;
-    color: #2c3e50;
+    font-size: 16px;
+    color: $black;
     font-weight: 600;
   }
 
   .benefit-description {
-    color: #7f8c8d;
-    line-height: 1.6;
+    color: $gray;
+    font-size: 14px;
   }
 
   @media (max-width: 767.98px) {
