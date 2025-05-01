@@ -278,3 +278,13 @@ header {
     }
   }
 }
+
+.flight_details_modal {
+  .modal-dialog {
+    margin: 0 auto !important;
+  }
+  .modal-content {
+    height: 100vh;
+    border-radius: 0 !important;
+  }
+}

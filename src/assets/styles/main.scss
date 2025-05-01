@@ -2,10 +2,8 @@
 @import "./scss/layout";
 @import "./scss/auth";
 @import "./scss/form_ui";
-@import "./scss/about";
 @import "./scss/error-page";
-@import "./scss/setting";
-@import "./scss/blogs";
+
 body {
   position: relative;
   direction: rtl;
@@ -18,7 +16,10 @@ body {
     @import "./scss/home";
     @import "./scss/contact";
     @import "./scss/flights";
+    @import "./scss/setting";
     @import "./scss/checkout";
+    @import "./scss/about";
+    @import "./scss/blogs";
   }
 
   &.en {

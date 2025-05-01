@@ -134,6 +134,7 @@
   border: 1px solid $input_stroke;
   display: flex;
   transition: $transition;
+  cursor: pointer;
 
   &:hover {
     box-shadow: rgba(0, 0, 0, 0.035) 0px 2.45093px 8.98675px 0px;
@@ -177,7 +178,7 @@
           position: absolute;
           top: 50%;
           transform: translateY(-50%);
-          height: 6px;
+          height: 8px;
           border: 1px solid $input_hint;
           border-radius: 24px;
           background: $white;
@@ -284,3 +285,5 @@
 .flight_review {
   padding: 40px 0;
 }
+
+

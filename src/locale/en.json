@@ -95,7 +95,8 @@
     "price": "Price",
     "bookNow": "Book Now",
     "departing": "Select Departing Flight",
-    "return": "Select Returning Flight"
+    "return": "Select Returning Flight",
+    "flightDetails": "Flight Details"
   },
   "home": {
     "welcome": "Welcome to Al3asal Travel & Tourism",
