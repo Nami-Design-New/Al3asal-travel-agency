@@ -72,7 +72,18 @@
     "adults": "البالغين",
     "children": "الأطفال",
     "infants": "الرضع",
-    "searchByCityOrAirPort": "البحث حسب المدينة أو المطار"
+    "searchByCityOrAirPort": "البحث حسب المدينة أو المطار",
+    "direct": "بدون توقفات",
+    "in": "فى",
+    "stops": "محطات",
+    "sortBy": "ترتيب حسب",
+    "recommended": "موصى به",
+    "departureTime": "وقت الذهاب",
+    "duration": "المدة",
+    "price": "السعر",
+    "bookNow": "حجز الان",
+    "departing": "اختر رحلة المغادرة",
+    "return": "اختر رحلة العودة"
   },
   "home": {
     "welcome": "مرحبًا بك في وكالة العسل للسفر والسياحة",
@@ -98,8 +109,8 @@
     "title": "مرحباً بك في مؤسستنا",
     "description": "نهدف إلى تقديم خدمات متكاملة بمعايير عالمية وبلمسة محلية."
   },
- "benefits": {
-  "sectionTitle": "لماذا تحجز معنا ؟",
+  "benefits": {
+    "sectionTitle": "لماذا تحجز معنا ؟",
     "easyBookingTitle": "سهولة الحجز",
     "easyBookingDescription": "احجز رحلتك بخطوات بسيطة وسريعة دون أي تعقيد.",
     "bestPriceTitle": "خيارات دفع واسعة",
@@ -108,8 +119,7 @@
     "support247Description": "نحن هنا لمساعدتك في أي وقت وأي مكان.",
     "securePaymentTitle": "أسعار نهائيّة",
     "securePaymentDescription": "لا ضرائب أو رسوم إضافية"
-},
-
+  },
   "contact": {
     "callUs": "اتصل بنا",
     "callDescription": "اتصل بنا للتحدث مع أحد أعضاء فريقنا.",
@@ -208,31 +218,6 @@
       "privacyText": "نلتزم بحماية خصوصيتك وبياناتك وفق سياسة الخصوصية.",
       "account": "حساب المستخدم",
       "accountText": "في حال إنشاء حساب، أنت مسؤول عن سرية بيانات الدخول..."
-    },
-    "flights": {
-      "oneWay": "ذهاب فقط",
-      "roundTrip": "ذهاب وعودة",
-      "economy": "اقتصادي",
-      "premiumEconomy": "اقتصادي مميز",
-      "businessClass": "درجة رجال الأعمال",
-      "firstClass": "الدرجة الأولى",
-      "leavingFrom": "مغادرة من",
-      "goingTo": "ذهاب ل",
-      "travelers": "المسافرين",
-      "search": "بحث",
-      "adults": "البالغين",
-      "children": "الأطفال",
-      "infants": "الرضع",
-      "searchByCityOrAirPort": "البحث حسب المدينة أو المطار",
-      "direct": "بدون توقفات",
-      "in": "فى",
-      "stops": "محطات",
-      "sortBy": "ترتيب حسب",
-      "recommended": "موصى به",
-      "departureTime": "وقت الذهاب",
-      "duration": "المدة",
-      "price": "السعر",
-      "bookNow": "حجز الان"
     },
     "booking": {
       "items": [

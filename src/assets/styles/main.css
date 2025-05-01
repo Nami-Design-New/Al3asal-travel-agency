@@ -2217,8 +2217,8 @@ body main .flights .round_trip_flight .content p {
   margin: 0;
 }
 body main .flights .round_trip_flight .departing_flight {
-  -webkit-clip-path: polygon(0% 0%, 98% 0%, 100% 50%, 98% 100%, 0% 100%);
-          clip-path: polygon(0% 0%, 98% 0%, 100% 50%, 98% 100%, 0% 100%);
+  -webkit-clip-path: polygon(100% 0%, 2% 0%, 0% 50%, 2% 100%, 100% 100%);
+          clip-path: polygon(100% 0%, 2% 0%, 0% 50%, 2% 100%, 100% 100%);
 }
 body main .flights .round_trip_flight .departing_flight,
 body main .flights .round_trip_flight .return_flight {
@@ -2414,6 +2414,10 @@ body.en .auth_modal .modal_close_btn {
   right: 16px !important;
   margin-inline-start: 0 !important;
   margin-inline-end: auto !important;
+}
+body.en main .flights .round_trip_flight .departing_flight {
+  -webkit-clip-path: polygon(0% 0%, 98% 0%, 100% 50%, 98% 100%, 0% 100%);
+          clip-path: polygon(0% 0%, 98% 0%, 100% 50%, 98% 100%, 0% 100%);
 }
 body.en .terms-page .terms-content .term-section .section-content,
 body.en .privacy-policy-page .privacy-policy-content .privacy-policy-section .section-content {

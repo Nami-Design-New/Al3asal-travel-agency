@@ -1,8 +1,11 @@
+import { useTranslation } from "react-i18next";
 import FilterFlights from "../components/home/FilterFlights";
 import FlightCard from "../ui/cards/FlightCard";
 import SortingFilter from "../components/flights/SortingFilter";
 
 export default function Flights() {
+  const { t } = useTranslation();
+
   const flightsDefaults = [
     {
       price: 4907,
@@ -62,11 +65,11 @@ export default function Flights() {
             <FilterFlights />
 
             <div className="round_trip_flight">
-              <div className="departing_flight active" >
+              <div className="departing_flight active">
                 <div className="num">1</div>
 
                 <div className="content">
-                  <h3>Select Departing Flight</h3>
+                  <h3>{t("flights.departing")}</h3>
                   <p>Tue, 10 Jun 2025</p>
                 </div>
               </div>
@@ -75,7 +78,7 @@ export default function Flights() {
                 <div className="num">2</div>
 
                 <div className="content">
-                  <h3>Select Returning Flight</h3>
+                  <h3>{t("flights.return")}</h3>
                   <p>Fri, 13 Jun 2025</p>
                 </div>
               </div>
