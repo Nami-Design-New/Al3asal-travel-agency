@@ -96,7 +96,11 @@
     "bookNow": "Book Now",
     "departing": "Select Departing Flight",
     "return": "Select Returning Flight",
-    "flightDetails": "Flight Details"
+    "flightDetails": "Flight Details",
+    "itinerary": "Itinerary",
+    "totalPrice": "Total Price",
+    "departure": "Depart",
+    "arrival": "Return"
   },
   "home": {
     "welcome": "Welcome to Al3asal Travel & Tourism",
