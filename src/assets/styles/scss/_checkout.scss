@@ -1,3 +1,71 @@
 .checkout_section {
   padding: 40px 0;
+  .checkout_form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .wizard_tabs {
+      background: $input_bg;
+      padding: 16px 0;
+      position: relative;
+      border-radius: 12px;
+      @include space-between();
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: $input_hint;
+        transform: translateY(-50%);
+      }
+
+      .wizard_tab {
+        background: $input_bg;
+        padding: 8px 24px;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        .num {
+          width: 26px;
+          height: 26px;
+          border-radius: 50%;
+          background: $black;
+          color: $white;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-right: 8px;
+          font-size: 12px;
+        }
+
+        h6 {
+          margin: 0;
+          color: $gray;
+          font-size: 14px;
+        }
+
+        &.active {
+          .num {
+            background: $main;
+          }
+
+          h6 {
+            color: $main;
+          }
+        }
+      }
+    }
+
+    .form_container {
+      padding: 16px;
+      border: 1px solid $input_stroke;
+      border-radius: 16px;
+    }
+  }
 }

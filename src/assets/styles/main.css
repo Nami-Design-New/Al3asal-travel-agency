@@ -2232,6 +2232,66 @@ body main .faq_section .tab-content p {
 body main .checkout_section {
   padding: 40px 0;
 }
+body main .checkout_section .checkout_form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+body main .checkout_section .checkout_form .wizard_tabs {
+  background: #fafafa;
+  padding: 16px 0;
+  position: relative;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+body main .checkout_section .checkout_form .wizard_tabs::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #aaaaaa;
+  transform: translateY(-50%);
+}
+body main .checkout_section .checkout_form .wizard_tabs .wizard_tab {
+  background: #fafafa;
+  padding: 8px 24px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+body main .checkout_section .checkout_form .wizard_tabs .wizard_tab .num {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #000;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
+  font-size: 12px;
+}
+body main .checkout_section .checkout_form .wizard_tabs .wizard_tab h6 {
+  margin: 0;
+  color: #777;
+  font-size: 14px;
+}
+body main .checkout_section .checkout_form .wizard_tabs .wizard_tab.active .num {
+  background: #54a0c4;
+}
+body main .checkout_section .checkout_form .wizard_tabs .wizard_tab.active h6 {
+  color: #54a0c4;
+}
+body main .checkout_section .checkout_form .form_container {
+  padding: 16px;
+  border: 1px solid #f4f4f4;
+  border-radius: 16px;
+}
 body main .about-us-section {
   padding: 5rem 0;
   background-color: #fff;
