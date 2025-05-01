@@ -5,19 +5,24 @@ export default function WhyChooseUs() {
 
   const benefits = [
     {
-      title: t("benefits.onePlaceTitle"),
-      description: t("benefits.onePlaceDescription"),
+      title: t("benefits.easyBookingTitle"),
+      description: t("benefits.easyBookingDescription"),
       image: "/icons/b1.png",
     },
     {
-      title: t("benefits.flexibleBookingTitle"),
-      description: t("benefits.flexibleBookingDescription"),
-      image: "/icons/b2.webp",
+      title: t("benefits.bestPriceTitle"),
+      description: t("benefits.bestPriceDescription"),
+      image: "/icons/b2.png",
+    },
+    {
+      title: t("benefits.support247Title"),
+      description: t("benefits.support247Description"),
+      image: "/icons/b3.webp",
     },
     {
       title: t("benefits.securePaymentTitle"),
       description: t("benefits.securePaymentDescription"),
-      image: "/icons/b3.webp",
+      image: "/icons/b4.png",
     },
   ];
 
@@ -28,25 +33,18 @@ export default function WhyChooseUs() {
         alt="Shape"
         className="benefits-shape"
       />
-
       <div className="container">
-        <h2 className="mb-5">{t("benefits.sectionTitle")}</h2>
-
         <div className="row">
           {benefits.map((benefit, index) => (
-            <div key={index} className="col-md-4 mb-4">
-              <div className="benefit-card h-100 p-4 d-flex align-items-start gap-3">
+            <div key={index} className="col-md-3 col-sm-6 mb-4">
+              <div className="benefit-card text-center">
                 <img
                   src={benefit.image}
                   alt={benefit.title}
-                  className="benefit-img"
+                  className="benefit-img mb-3"
                 />
-                <div>
-                  <h3 className="benefit-title mb-2">{benefit.title}</h3>
-                  <p className="benefit-description mb-0">
-                    {benefit.description}
-                  </p>
-                </div>
+                <h3 className="benefit-title">{benefit.title}</h3>
+                <p className="benefit-description">{benefit.description}</p>
               </div>
             </div>
           ))}
