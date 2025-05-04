@@ -13,18 +13,12 @@ export default function UserDropDown() {
       </Dropdown.Toggle>
 
       <Dropdown.Menu className="custom-dropdown-menu text-end">
-      {/* <Dropdown.Item href="/profile/payment-methods">
-  <i className="fa fa-th-large"></i>
-  {t("header.Dashboard")}
-</Dropdown.Item> */}
-<Dropdown.Item href="/profile">
-  <i className="fa fa-th-large "></i>
-  {t("header.Dashboard")}
-</Dropdown.Item>
-
-
-
         <Dropdown.Item href="/profile">
+          <i className="fa fa-th-large "></i>
+          {t("header.Dashboard")}
+        </Dropdown.Item>
+
+        <Dropdown.Item href="/profile/my-trips">
           <i className="fa fa-plane"></i>
           {t("header.myflights")}
         </Dropdown.Item>
@@ -39,6 +33,10 @@ export default function UserDropDown() {
         <Dropdown.Item href="/logout">
           <i className="fa fa-sign-out-alt"></i>
           {t("header.logout")}
+        </Dropdown.Item>
+        <Dropdown.Item >
+        <i className="fa-regular fa-trash-can"></i>         
+          {t("header.deleteaccount")}
         </Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>

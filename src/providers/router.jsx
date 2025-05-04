@@ -12,8 +12,9 @@ import BlogDetails from "../routes/BlogDetails";
 import FAQ from "../routes/Faq";
 import Checkout from "../routes/Checkout";
 import Profile from "../routes/Profile";
-import PaymentMethods from "../components/profile/PaymentMethods";
+// import PaymentMethods from "../components/profile/PaymentMethods";
 import Trips from "../components/profile/Trips";
+// import MyProfile from "../components/profile/MyProfile";
 
 export const router = createBrowserRouter([
   {
@@ -70,17 +71,10 @@ export const router = createBrowserRouter([
       },
       {
         path: "profile",
+        element: <Profile />,
         children: [
           {
-            index: true, 
-            element: <Profile />,
-          },
-          {
-            path: "payment-methods",
-            element: <PaymentMethods />,
-          },
-          {
-            path: "My-Trips",
+            path: "my-trips",
             element: <Trips />,
           },
         ],
