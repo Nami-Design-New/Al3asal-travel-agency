@@ -19,7 +19,7 @@ export default function Layout() {
         <Outlet />
       </main>
       <Footer />
-     <ResponsiveNav />
+      <ResponsiveNav />
 
       <AuthModal />
     </>

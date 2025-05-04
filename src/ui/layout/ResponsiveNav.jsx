@@ -29,7 +29,7 @@ function ResponsiveNav() {
 
       <Link
         aria-label="My Profile"
-        to="/profile/my-profile"
+        to="/profile"
         className={`menu_item ${
           location.pathname === "/profile/my-profile" ? "active" : ""
         }`}
