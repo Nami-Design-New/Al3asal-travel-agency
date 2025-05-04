@@ -1,42 +1,29 @@
 import { useTranslation } from "react-i18next";
-import { Link, useLocation } from "react-router";
+import { NavLink } from "react-router";
 
 function ResponsiveNav() {
   const { t } = useTranslation();
-  const location = useLocation();
 
   return (
     <div className="small_menu">
-      <Link
-        aria-label="Home"
-        to="/"
-        className={`menu_item ${location.pathname === "/" ? "active" : ""}`}
-      >
-        <i className="fa-solid fa-house-chimney"></i>
-        <span>{t("header.home")}</span>
-      </Link>
+      <NavLink to="/flights" className="menu_item">
+        <i className="fa-regular fa-plane-departure"></i>
+        <span>{t("header.flights")}</span>
+      </NavLink>
 
-      <Link
+      <NavLink
         aria-label="Flight Booking"
         to="/profile/my-trips"
-        className={`menu_item ${
-          location.pathname === "/profile/my-trips" ? "active" : ""
-        }`}
+        className="menu_item"
       >
-        <i className="fa-solid fa-plane-departure"></i>
+        <i className="fa-regular fa-calendar-range"></i>
         <span>{t("header.myflights")}</span>
-      </Link>
+      </NavLink>
 
-      <Link
-        aria-label="My Profile"
-        to="/profile/my-profile"
-        className={`menu_item ${
-          location.pathname === "/profile/my-profile" ? "active" : ""
-        }`}
-      >
+      <NavLink aria-label="My Profile" to="/profile" className="menu_item" end>
         <i className="fa-regular fa-user"></i>
         <span>{t("profile.myprofile")}</span>
-      </Link>
+      </NavLink>
     </div>
   );
 }
