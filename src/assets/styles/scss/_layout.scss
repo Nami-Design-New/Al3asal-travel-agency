@@ -233,7 +233,7 @@ header {
 }
 
 .header-section {
-  padding: 5rem 0;
+  padding: 3rem 0;
   background: linear-gradient(135deg, #54a0c4 0%, #60a0bd 100%);
   position: relative;
   overflow: hidden;
@@ -271,8 +271,6 @@ header {
       color: #fff;
       font-size: 2.5rem;
       font-weight: 700;
-      margin-bottom: 1rem;
-      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
       letter-spacing: 1px;
       @media (max-width: 576px) {
         font-size: 1.5rem;
@@ -285,7 +283,6 @@ header {
       font-weight: 400;
       max-width: 600px;
       margin: 0 auto;
-      line-height: 1.8;
       text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
       @media (max-width: 576px) {
         font-size: 0.5rem;
