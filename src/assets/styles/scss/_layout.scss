@@ -347,6 +347,10 @@ header {
         align-items: center;
         gap: 8px;
 
+        @media screen and (max-width: 768px) {
+          flex-direction: column;
+        }
+
         .flight {
           flex: 1;
           background: $white;
