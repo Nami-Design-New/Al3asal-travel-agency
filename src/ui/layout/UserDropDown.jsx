@@ -7,8 +7,8 @@ export default function UserDropDown() {
 
   return (
     <Dropdown>
-      <Dropdown.Toggle className="rounded_btn" id="dropdown-custom-components">
-        <span className="fw-bold">{userName}</span>
+      <Dropdown.Toggle className="user_dropdown">
+        <span>{userName}</span>
         <i className="fa fa-chevron-down"></i>
       </Dropdown.Toggle>
 

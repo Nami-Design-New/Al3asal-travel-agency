@@ -90,27 +90,17 @@ header {
         transition: $transition;
         box-shadow: $shadow;
       }
-      .rounded_btn {
+
+      .user_dropdown {
+        border: 1px solid $input_stroke;
+        border-radius: 120px;
+        padding: 8px 20px;
+        transition: $transition;
+        box-shadow: $shadow;
+        cursor: pointer;
         display: flex;
         align-items: center;
-        justify-content: center;
-        gap: 8px;
-        padding: 6px 16px;
-        border-radius: 30px;
-        background-color: transparent;
-        border: 1px solid $black;
-        color: $black;
-        font-size: 16px;
-        font-weight: bold;
-        box-shadow: none !important;
-
-        &:active,
-        &:focus,
-        &:hover {
-          color: $white;
-          background-color: $black;
-          border-color: $white;
-        }
+        gap: 4px;
         i {
           font-size: 12px;
         }
@@ -317,7 +307,7 @@ header {
     height: 100vh;
     border-radius: 0 !important;
   }
-  
+
   .header {
     width: 100%;
     background: $input_stroke;
@@ -623,6 +613,7 @@ header {
     }
   }
 }
+
 .custom-dropdown-menu {
   border-radius: 16px;
   padding: 10px;
@@ -630,11 +621,12 @@ header {
 
   .dropdown-item {
     display: flex;
-    font-size: 16px;
-    padding: 10px 0px;
+    align-items: center;
+    font-size: 14px;
+    padding: 8px 0px;
 
     i {
-      font-size: 18px;
+      font-size: 14px;
       margin: 0 10px;
       color: $gray;
     }

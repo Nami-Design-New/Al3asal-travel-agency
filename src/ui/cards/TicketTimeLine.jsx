@@ -49,7 +49,9 @@ export default function TicketTimeLine({ flight }) {
                   width: `${width}%`,
                   left: `${left}%`,
                 }}
-              ></div>
+              >
+                <span>{stop?.code}</span>
+              </div>
             </OverlayTrigger>
           );
         })}

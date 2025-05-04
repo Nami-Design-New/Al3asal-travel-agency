@@ -289,6 +289,146 @@ button {
   color: #fff !important;
 }
 
+.react-tel-input {
+  position: relative;
+  display: flex;
+  flex-direction: row-reverse;
+  border: 1px solid #f4f4f4;
+  background: #fafafa;
+  height: 48px;
+  border-radius: 12px;
+  direction: ltr;
+}
+.react-tel-input .form-control {
+  width: 100%;
+  height: 100%;
+  color: #000;
+  font-size: 14px;
+  background: #fafafa;
+  padding: 8px !important;
+  border-radius: 12px;
+  direction: ltr;
+  border: 0 !important;
+}
+.react-tel-input .flag-dropdown {
+  background: transparent;
+  border: none;
+  position: static;
+  border-radius: 12px 0 0 12px;
+  min-width: 52px;
+}
+.react-tel-input .flag-dropdown.open {
+  background: #fafafa;
+  border-radius: 12px;
+}
+.react-tel-input .flag-dropdown.open .selected-flag {
+  border-radius: 12px;
+  background: #fafafa;
+}
+.react-tel-input .selected-flag {
+  background: transparent;
+  padding: 0;
+  width: 100%;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.react-tel-input .selected-flag .arrow {
+  border-top-color: #000;
+}
+.react-tel-input .selected-flag .arrow.up {
+  border-bottom-color: #000;
+}
+.react-tel-input .selected-flag:hover, .react-tel-input .selected-flag:focus {
+  background: #fafafa;
+}
+.react-tel-input .country-list {
+  width: 100%;
+  left: 0;
+  background: #fff;
+  border: 1px solid #f4f4f4;
+  border-radius: 12px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1019607843);
+  margin-top: 4px;
+  scrollbar-width: none;
+}
+.react-tel-input .country-list .search {
+  padding: 8px;
+  background: #fff;
+}
+.react-tel-input .country-list .search input {
+  margin: 0;
+  border: 1px solid #f4f4f4;
+  height: 42px;
+  width: 100%;
+  border-radius: 8px;
+  direction: ltr !important;
+}
+.react-tel-input .country-list .search span {
+  display: none;
+}
+.react-tel-input .country-list .country {
+  color: #000;
+  padding: 8px 10px;
+}
+.react-tel-input .country-list .country:hover {
+  background: #fafafa;
+}
+.react-tel-input .country-list .country.highlight {
+  background: #fafafa;
+}
+.react-tel-input .country-list .dial-code {
+  color: #777;
+}
+
+.ReactFlagsSelect-module_selectBtn__19wW7 {
+  border: 1px solid #f4f4f4 !important;
+  height: 54px;
+  border-radius: 12px !important;
+  box-shadow: none;
+  outline: none;
+  color: #aaaaaa;
+  background: #fafafa !important;
+}
+
+.ReactFlagsSelect-module_filterBox__3m8EU {
+  padding: 8px;
+}
+.ReactFlagsSelect-module_filterBox__3m8EU input {
+  margin: 0;
+}
+
+.ReactFlagsSelect-module_flagsSelect__2pfa2 {
+  padding-bottom: 0;
+}
+
+.ReactFlagsSelect-module_selectOptions__3LNBJ {
+  font-size: 16px !important;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px !important;
+  border: 0 !important;
+  max-height: 208px !important;
+  border-radius: 8px !important;
+  scrollbar-width: none !important;
+}
+.ReactFlagsSelect-module_selectOptions__3LNBJ input {
+  height: 48px !important;
+  border-radius: 8px !important;
+}
+.ReactFlagsSelect-module_selectOptions__3LNBJ::-webkit-scrollbar {
+  display: none !important;
+}
+
+.ReactFlagsSelect-module_filterBox__3m8EU input {
+  border: 1px solid #f4f4f4 !important;
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+.ReactFlagsSelect-module_label__27pw9 {
+  color: #000;
+}
+
 header {
   top: 0;
   width: 100%;
@@ -378,26 +518,18 @@ header nav .actions .login {
   transition: all 0.3s ease-in-out;
   box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.1);
 }
-header nav .actions .rounded_btn {
+header nav .actions .user_dropdown {
+  border: 1px solid #f4f4f4;
+  border-radius: 120px;
+  padding: 8px 20px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.1);
+  cursor: pointer;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 6px 16px;
-  border-radius: 30px;
-  background-color: transparent;
-  border: 1px solid #000;
-  color: #000;
-  font-size: 16px;
-  font-weight: bold;
-  box-shadow: none !important;
+  gap: 4px;
 }
-header nav .actions .rounded_btn:active, header nav .actions .rounded_btn:focus, header nav .actions .rounded_btn:hover {
-  color: #fff;
-  background-color: #000;
-  border-color: #fff;
-}
-header nav .actions .rounded_btn i {
+header nav .actions .user_dropdown i {
   font-size: 12px;
 }
 
@@ -874,11 +1006,12 @@ header nav .actions .rounded_btn i {
 }
 .custom-dropdown-menu .dropdown-item {
   display: flex;
-  font-size: 16px;
-  padding: 10px 0px;
+  align-items: center;
+  font-size: 14px;
+  padding: 8px 0px;
 }
 .custom-dropdown-menu .dropdown-item i {
-  font-size: 18px;
+  font-size: 14px;
   margin: 0 10px;
   color: #777;
 }
@@ -1147,6 +1280,56 @@ header nav .actions .rounded_btn i {
   align-items: center;
   gap: 16px;
   margin-bottom: 16px;
+}
+
+.gender_select {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.gender_select label {
+  font-size: 14px;
+}
+.gender_select .gender_card {
+  display: flex;
+  gap: 8px;
+  background-color: #fff;
+  color: #000;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  border: 1px solid #f4f4f4;
+  padding: 0 16px;
+  height: 48px;
+  transition: 0.3s;
+  cursor: pointer;
+  font-weight: 400 !important;
+  font-size: 14px;
+  width: 100%;
+}
+.gender_select .gender_card img {
+  height: 28px;
+  width: 28px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.gender_select .gender_card:hover {
+  background-color: #f1f9ff;
+}
+.gender_select .gender_card.active {
+  border: 1px solid #54a0c4;
+  background-color: #f1f9ff;
+}
+.gender_select > div {
+  display: flex;
+  gap: 8px;
+}
+.gender_select input {
+  visibility: hidden;
+  display: none;
+}
+.gender_select label {
+  font-weight: 500;
 }
 
 .error-page {
@@ -1893,8 +2076,9 @@ body main .flight_card .flight_info .departure .time span {
 }
 body main .flight_card .flight_info .departure .time_line {
   width: 100%;
-  height: 1px;
+  height: 0;
   background: #aaaaaa;
+  border-top: 1px solid #aaaaaa;
   display: block;
   position: relative;
 }
@@ -1903,13 +2087,21 @@ body main .flight_card .flight_info .departure .time_line .line {
   top: 50%;
   transform: translateY(-50%);
   height: 8px;
-  border: 1px solid #aaaaaa;
+  border: 2px solid #aaaaaa;
   border-radius: 24px;
   background: #fff;
   transition: all 0.3s ease-in-out;
 }
 body main .flight_card .flight_info .departure .time_line .line:hover {
   border-color: #777;
+}
+body main .flight_card .flight_info .departure .time_line .line span {
+  font-size: 8px;
+  color: #777;
+  position: absolute;
+  left: 50%;
+  bottom: -14px;
+  transform: translateX(-50%);
 }
 body main .flight_card .flight_info .departure .time_line::before, body main .flight_card .flight_info .departure .time_line::after {
   content: "";
@@ -2332,6 +2524,150 @@ body main .checkout_section .checkout_form .form_container {
   padding: 16px;
   border: 1px solid #f4f4f4;
   border-radius: 16px;
+}
+body main .checkout_section .checkout_form .form_container h6 {
+  font-size: 14px;
+  color: #777;
+}
+body main .checkout_section .price_details_container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+body main .checkout_section .price_details_container .price_details {
+  border: 1px solid #f4f4f4;
+  padding: 16px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+body main .checkout_section .price_details_container .price_details .total_price {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+body main .checkout_section .price_details_container .price_details .total_price h6 {
+  font-size: 14px;
+  margin-bottom: 0;
+  color: #777;
+}
+body main .checkout_section .price_details_container .price_details .total_price h5 {
+  margin-bottom: 0;
+  font-size: 18px;
+  color: #000;
+}
+body main .checkout_section .price_details_container .price_details .total_price h5 span {
+  font-size: 12px;
+  color: #777;
+}
+body main .checkout_section .price_details_container .price_details .line {
+  border-top: 1px dashed #e6e6e6;
+  width: 100%;
+}
+body main .checkout_section .price_details_container .price_details .ticket_details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+body main .checkout_section .price_details_container .price_details .ticket_details .flight {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fafafa;
+  padding: 12px;
+  border-radius: 12px;
+}
+body main .checkout_section .price_details_container .price_details .ticket_details .flight h6 {
+  margin-bottom: 4px;
+  font-size: 12px;
+  color: #777;
+}
+body main .checkout_section .price_details_container .price_details .ticket_details .flight h5 {
+  margin-bottom: 0;
+  font-size: 14px;
+  color: #000;
+}
+body main .checkout_section .price_details_container .price_details .ticket_details .flight .airlines {
+  display: flex;
+}
+body main .checkout_section .price_details_container .price_details .ticket_details .flight .airlines .img {
+  width: 2.5rem;
+  height: 2.5rem;
+  background: #fff;
+  border-radius: 50%;
+  border: 1px solid #f4f4f4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.035) 0px 2.45093px 8.98675px 0px;
+  margin-left: -14px;
+}
+body main .checkout_section .price_details_container .price_details .ticket_details .flight .airlines .img img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 2rem;
+  height: 2rem;
+}
+body main .checkout_section .price_details_container .price_details .ticket_details .price {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+body main .checkout_section .price_details_container .price_details .ticket_details .price h6 {
+  margin-bottom: 4px;
+  font-size: 14px;
+  color: #000;
+}
+body main .checkout_section .price_details_container .price_details .ticket_details .price h6 span {
+  display: block;
+  font-size: 12px;
+  color: #777;
+}
+body main .checkout_section .price_details_container .price_details .ticket_details .price h5 {
+  margin-bottom: 0;
+  font-size: 16px;
+  color: #000;
+}
+body main .checkout_section .price_details_container .price_details .ticket_details .price h5 span {
+  font-size: 12px;
+  color: #777;
+}
+body main .checkout_section .price_details_container .about_booking {
+  border: 1px solid #f4f4f4;
+  padding: 16px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+body main .checkout_section .price_details_container .about_booking .non_refundable {
+  background: #fdf5cb;
+  padding: 12px;
+  border-radius: 8px;
+  color: #000;
+}
+body main .checkout_section .price_details_container .about_booking .non_refundable h6 {
+  margin: 0;
+  font-size: 12px;
+}
+body main .checkout_section .price_details_container .about_booking button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+body main .checkout_section .price_details_container .about_booking button h6 {
+  color: #000;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+body main .checkout_section .price_details_container .about_booking button span {
+  font-size: 12px;
+  color: #777;
 }
 body main .about-us-section {
   padding: 5rem 0;

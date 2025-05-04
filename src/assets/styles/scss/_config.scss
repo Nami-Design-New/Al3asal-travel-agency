@@ -39,6 +39,7 @@
 }
 
 $main: #54a0c4;
+$main10: #f1f9ff;
 $black: #000;
 $white: #fff;
 $gray: #777;
@@ -122,30 +123,6 @@ button {
   border-radius: 8px;
   text-align: start !important;
   padding: 8px;
-  // span {
-  //   display: block;
-  //   width: 100%;
-  //   height: 1px;
-  //   background: $input_stroke;
-  //   margin: 8px 0;
-  // }
-  // a {
-  //   text-align: start;
-  //   border-radius: 4px;
-  //   padding: 6px 12px;
-  //   font-size: 14px;
-  //   color: $black;
-  //   display: flex;
-  //   margin-bottom: 2px;
-  //   align-items: center;
-  //   gap: 8px;
-  //   &:active {
-  //     background-color: $white !important;
-  //   }
-  //   i {
-  //     width: 18px;
-  //   }
-  // }
 }
 
 .dropdown-toggle::after {
@@ -337,4 +314,148 @@ button {
 .rmdp-selected span {
   background-color: $main !important;
   color: $white !important;
+}
+
+// phone input
+.react-tel-input {
+  position: relative;
+  display: flex;
+  flex-direction: row-reverse;
+  border: 1px solid $input_stroke;
+  background: $input_bg;
+  height: 48px;
+  border-radius: 12px;
+  direction: ltr;
+  .form-control {
+    width: 100%;
+    height: 100%;
+    color: $black;
+    font-size: 14px;
+    background: $input_bg;
+    padding: 8px !important;
+    border-radius: 12px;
+    direction: ltr;
+    border: 0 !important;
+  }
+
+  .flag-dropdown {
+    background: transparent;
+    border: none;
+    position: static;
+    border-radius: 12px 0 0 12px;
+    min-width: 52px;
+    &.open {
+      background: $input_bg;
+      border-radius: 12px;
+      .selected-flag {
+        border-radius: 12px;
+        background: $input_bg;
+      }
+    }
+  }
+
+  .selected-flag {
+    background: transparent;
+    padding: 0;
+    width: 100%;
+    border-radius: 12px;
+    @include centerFlex();
+    .arrow {
+      border-top-color: $black;
+      &.up {
+        border-bottom-color: $black;
+      }
+    }
+    &:hover,
+    &:focus {
+      background: $input_bg;
+    }
+  }
+
+  .country-list {
+    width: 100%;
+    left: 0;
+    background: $white;
+    border: 1px solid $input_stroke;
+    border-radius: 12px;
+    box-shadow: 0px 2px 8px #0000001a;
+    margin-top: 4px;
+    scrollbar-width: none;
+    .search {
+      padding: 8px;
+      input {
+        margin: 0;
+        border: 1px solid $input_stroke;
+        height: 42px;
+        width: 100%;
+        border-radius: 8px;
+        direction: ltr !important;
+      }
+      background: $white;
+      span {
+        display: none;
+      }
+    }
+    .country {
+      color: $black;
+      padding: 8px 10px;
+      &:hover {
+        background: $input_bg;
+      }
+      &.highlight {
+        background: $input_bg;
+      }
+    }
+    .dial-code {
+      color: $gray;
+    }
+  }
+}
+
+// react flags customization
+.ReactFlagsSelect-module_selectBtn__19wW7 {
+  border: 1px solid $input_stroke !important;
+  height: 54px;
+  border-radius: 12px !important;
+  box-shadow: none;
+  outline: none;
+  color: $input_hint;
+  background: $input_bg !important;
+}
+
+.ReactFlagsSelect-module_filterBox__3m8EU {
+  padding: 8px;
+  input {
+    margin: 0;
+  }
+}
+
+.ReactFlagsSelect-module_flagsSelect__2pfa2 {
+  padding-bottom: 0;
+}
+
+.ReactFlagsSelect-module_selectOptions__3LNBJ {
+  font-size: 16px !important;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px !important;
+  border: 0 !important;
+  max-height: 208px !important;
+  border-radius: 8px !important;
+  scrollbar-width: none !important;
+  input {
+    height: 48px !important;
+    border-radius: 8px !important;
+  }
+  &::-webkit-scrollbar {
+    display: none !important;
+  }
+}
+
+.ReactFlagsSelect-module_filterBox__3m8EU input {
+  border: 1px solid $input_stroke !important;
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+.ReactFlagsSelect-module_label__27pw9 {
+  color: $black;
 }

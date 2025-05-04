@@ -347,9 +347,17 @@
     "email": "البريد الالكتروني",
     "enterEmail": "ادخل البريد الالكتروني",
     "phone": "رقم الهاتف",
-    "enterPhone": "ادخل رقم الهاتف",
     "passportNumber": "رقم الجواز",
-    "enterPassportNumber": "ادخل رقم الجواز"
+    "enterPassportNumber": "ادخل رقم الجواز",
+    "contactInfo": "معلومات الاتصال",
+    "dateOfBirth": "تاريخ الميلاد",
+    "passportExpiryDate": "تاريخ انتهاء صلاحية الجواز",
+    "nationality": "الجنسية",
+    "continue": "متابعة",
+    "totalPrice": "السعر الكلي",
+    "bookingFee": "رسوم الحجز",
+    "totaltax": "الضريبة الكلية",
+    "nonRefundable": "الحجز غير قابل للتراجع"
   },
   "profile":{
     "myprofile":"ملفي الشخصي",
@@ -378,8 +386,5 @@
       "noTripsLink": "أين حجزي؟",
       "noTripsButton": "احجز رحلة الآن",
       "noData": "لا يوجد بيانات"
-    
-    
    }
- 
 }

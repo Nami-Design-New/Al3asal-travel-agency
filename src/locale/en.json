@@ -13,7 +13,6 @@
     "contactus": "ContactUs",
     "logout": "Logout",
     "deleteaccount":"Delete Account"
-
   },
   "errorPage": {
     "pageNotFoundTitle": "Page Not Found",
@@ -349,11 +348,18 @@
     "email": "Email",
     "enterEmail": "Enter your email",
     "phone": "Phone Number",
-    "enterPhone": "Enter your phone number",
     "passportNumber": "Passport Number",
-    "enterPassportNumber": "Enter your passport number"
-  },
-  "profile": {
+    "enterPassportNumber": "Enter your passport number",
+    "contactInfo": "Contact Information",
+    "dateOfBirth": "Date of Birth",
+    "passportExpiryDate": "Passport Expiry Date",
+    "nationality": "Nationality",
+    "continue": "Continue",
+    "totalPrice": "Total Price",
+    "bookingFee": "Booking Fee",
+    "totaltax": "Total Tax",
+    "nonRefundable": "Non-refundable Booking"
+  },"profile": {
     "myprofile": "MyProfile",
     "payment": "Payment Methods",
     "mytrips": "My Trips",
