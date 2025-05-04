@@ -90,7 +90,7 @@ export default function ContactForm() {
         </form>
       </div>
 
-      <div className="col-lg-5 col-12 p-2">
+      <div className="col-lg-5 col-12 p-2 d-lg-block d-none">
         <div className="img">
           <img src="/images/contact.jpg" alt="contact" />
         </div>

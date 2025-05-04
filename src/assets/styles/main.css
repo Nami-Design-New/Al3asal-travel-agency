@@ -767,6 +767,11 @@ header nav .actions .user_dropdown i {
   align-items: center;
   gap: 8px;
 }
+@media screen and (max-width: 768px) {
+  .flight_details_modal .modal-body .itinerary .details {
+    flex-direction: column;
+  }
+}
 .flight_details_modal .modal-body .itinerary .details .flight {
   flex: 1;
   background: #fff;
@@ -2177,11 +2182,23 @@ body main .flight_card .flight_info {
   display: flex;
   align-items: center;
 }
+@media screen and (max-width: 768px) {
+  body main .flight_card .flight_info {
+    border-left: 0 !important;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+}
 body main .flight_card .flight_info .departure {
   flex: 1;
   display: flex;
   align-items: center;
   gap: 12px;
+}
+@media screen and (max-width: 768px) {
+  body main .flight_card .flight_info .departure {
+    order: 3;
+  }
 }
 body main .flight_card .flight_info .departure .time {
   display: flex;
@@ -2245,6 +2262,11 @@ body main .flight_card .flight_info .departure .time_line::after {
 body main .flight_card .flight_info .airlines {
   flex: 1;
 }
+@media screen and (max-width: 768px) {
+  body main .flight_card .flight_info .airlines {
+    order: 1;
+  }
+}
 body main .flight_card .flight_info .airlines .content {
   display: flex;
   flex-direction: column;
@@ -2268,6 +2290,11 @@ body main .flight_card .flight_info .duration {
   flex: 1;
   display: flex;
   justify-content: end;
+}
+@media screen and (max-width: 768px) {
+  body main .flight_card .flight_info .duration {
+    order: 2;
+  }
 }
 body main .flight_card .flight_info .duration .content {
   display: flex;
