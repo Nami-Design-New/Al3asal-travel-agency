@@ -4,11 +4,11 @@ import "react-phone-input-2/lib/style.css";
 
 export default function PhoneField({ label, name, error, onChange, ...props }) {
   return (
-    <div className="form_field">
+    <div className="input-field">
       {label && <label htmlFor={props?.id}>{label}</label>}
       <PhoneInput
         {...props}
-        country={"sa"}
+        country={"sy"}
         enableSearch={true}
         onChange={(phone) => {
           onChange({

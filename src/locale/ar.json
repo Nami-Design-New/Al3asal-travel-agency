@@ -10,7 +10,7 @@
     "changeCurrency": "تغيير العملة",
     "myflights": "حجوزات الطيران",
     "Dashboard": "لوحة التحكم",
-    "contactus":"اتصل بنا",
+    "contactus": "اتصل بنا",
     "logout": "تسجيل الخروج"
   },
   "errorPage": {
@@ -346,8 +346,16 @@
     "email": "البريد الالكتروني",
     "enterEmail": "ادخل البريد الالكتروني",
     "phone": "رقم الهاتف",
-    "enterPhone": "ادخل رقم الهاتف",
     "passportNumber": "رقم الجواز",
-    "enterPassportNumber": "ادخل رقم الجواز"
+    "enterPassportNumber": "ادخل رقم الجواز",
+    "contactInfo": "معلومات الاتصال",
+    "dateOfBirth": "تاريخ الميلاد",
+    "passportExpiryDate": "تاريخ انتهاء صلاحية الجواز",
+    "nationality": "الجنسية",
+    "continue": "متابعة",
+    "totalPrice": "السعر الكلي",
+    "bookingFee": "رسوم الحجز",
+    "totaltax": "الضريبة الكلية",
+    "nonRefundable": "الحجز غير قابل للتراجع"
   }
 }
