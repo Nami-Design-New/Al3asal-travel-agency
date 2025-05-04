@@ -7,7 +7,6 @@ export default function CheckoutForm() {
   const { t } = useTranslation();
   const tabs = [
     "passengerDetails",
-    "innsurance",
     "securePayment",
   ];
   const [activeTab, setActiveTab] = useState("tab1");
@@ -33,7 +32,7 @@ export default function CheckoutForm() {
       <div className="form_container">
         {activeTab === "tab1" && <PassengerDetails />}
 
-        {activeTab === "tab3" && <PaymentForm />}
+        {activeTab === "tab2" && <PaymentForm />}
       </div>
     </div>
   );
