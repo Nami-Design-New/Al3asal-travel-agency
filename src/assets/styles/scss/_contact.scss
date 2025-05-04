@@ -75,6 +75,10 @@
 
   .form_ui {
     padding-inline-end: 16px;
+
+    @media screen and (max-width: 768px) {
+      padding-inline-end: 0;
+    }
   }
 
   .form_header {

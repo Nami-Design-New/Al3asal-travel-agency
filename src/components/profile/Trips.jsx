@@ -88,7 +88,19 @@ export default function Trips() {
   };
 
   return (
-    <div className="trips-container p-4">
+    <div className="trips-container p-4 pt-0">
+      <div className="header">
+        <h5>{t("profile.Flightsbookings")}</h5>
+        <div className="search-box">
+          <i className="fa-solid fa-magnifying-glass"></i>
+          <input
+            type="text"
+            className="form-control"
+            placeholder={t("profile.search")}
+          />
+        </div>
+      </div>
+                         
       <div className="tabs">
         <div
           className={`tab ${activeTab === "upcoming" ? "active" : ""}`}

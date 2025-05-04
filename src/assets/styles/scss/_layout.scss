@@ -97,7 +97,6 @@ header {
         padding: 8px 20px;
         transition: $transition;
         box-shadow: $shadow;
-       
       }
 
       .user_dropdown {
@@ -347,6 +346,10 @@ header {
         display: flex;
         align-items: center;
         gap: 8px;
+
+        @media screen and (max-width: 768px) {
+          flex-direction: column;
+        }
 
         .flight {
           flex: 1;
@@ -652,7 +655,7 @@ header {
   left: 0;
   width: 100%;
   z-index: 99;
-  background:$white;
+  background: $white;
   align-items: center;
   box-shadow: $shadow;
   display: none;
@@ -685,12 +688,12 @@ header {
       height: 42px;
       background: $main;
       font-size: 24px;
-      color:$white;
+      color: $white;
       @include centerFlex();
       border-radius: 50%;
 
       i {
-        color:$white;
+        color: $white;
       }
     }
   }

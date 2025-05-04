@@ -767,6 +767,11 @@ header nav .actions .user_dropdown i {
   align-items: center;
   gap: 8px;
 }
+@media screen and (max-width: 768px) {
+  .flight_details_modal .modal-body .itinerary .details {
+    flex-direction: column;
+  }
+}
 .flight_details_modal .modal-body .itinerary .details .flight {
   flex: 1;
   background: #fff;
@@ -1095,6 +1100,11 @@ header nav .actions .user_dropdown i {
   width: 40%;
   position: relative;
 }
+@media screen and (max-width: 768px) {
+  .auth_modal .auth_img {
+    display: none;
+  }
+}
 .auth_modal .auth_img img {
   width: 100%;
   height: 100%;
@@ -1107,6 +1117,11 @@ header nav .actions .user_dropdown i {
   padding: 48px 32px 32px;
   gap: 24px;
   flex-direction: column;
+}
+@media screen and (max-width: 768px) {
+  .auth_modal .auth_form {
+    width: 100%;
+  }
 }
 .auth_modal .auth_form h5 {
   color: #000;
@@ -1351,6 +1366,11 @@ header nav .actions .user_dropdown i {
   align-items: center;
   gap: 16px;
   margin-bottom: 16px;
+}
+@media screen and (max-width: 576px) {
+  .form_group {
+    flex-direction: column;
+  }
 }
 
 .gender_select {
@@ -1652,6 +1672,7 @@ body main .filter_container .flight_specifications {
 @media screen and (max-width: 576px) {
   body main .filter_container .flight_specifications {
     flex-direction: column;
+    align-items: flex-end;
   }
 }
 body main .filter_container .flight_specifications .dropdown {
@@ -2005,6 +2026,11 @@ body main .contact_section .img img {
 body main .contact_section .form_ui {
   padding-inline-end: 16px;
 }
+@media screen and (max-width: 768px) {
+  body main .contact_section .form_ui {
+    padding-inline-end: 0;
+  }
+}
 body main .contact_section .form_header {
   display: flex;
   flex-direction: column;
@@ -2156,11 +2182,23 @@ body main .flight_card .flight_info {
   display: flex;
   align-items: center;
 }
+@media screen and (max-width: 768px) {
+  body main .flight_card .flight_info {
+    border-left: 0 !important;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+}
 body main .flight_card .flight_info .departure {
   flex: 1;
   display: flex;
   align-items: center;
   gap: 12px;
+}
+@media screen and (max-width: 768px) {
+  body main .flight_card .flight_info .departure {
+    order: 3;
+  }
 }
 body main .flight_card .flight_info .departure .time {
   display: flex;
@@ -2224,6 +2262,11 @@ body main .flight_card .flight_info .departure .time_line::after {
 body main .flight_card .flight_info .airlines {
   flex: 1;
 }
+@media screen and (max-width: 768px) {
+  body main .flight_card .flight_info .airlines {
+    order: 1;
+  }
+}
 body main .flight_card .flight_info .airlines .content {
   display: flex;
   flex-direction: column;
@@ -2247,6 +2290,11 @@ body main .flight_card .flight_info .duration {
   flex: 1;
   display: flex;
   justify-content: end;
+}
+@media screen and (max-width: 768px) {
+  body main .flight_card .flight_info .duration {
+    order: 2;
+  }
 }
 body main .flight_card .flight_info .duration .content {
   display: flex;
@@ -3316,7 +3364,7 @@ body main .blog_details_page .recent_blogs ul li a:hover .blog_info h4 {
 body main .profile-container {
   display: flex;
   gap: 30px;
-  padding: 40px 20px;
+  padding: 40px 0;
 }
 @media (max-width: 768px) {
   body main .profile-container {
@@ -3328,6 +3376,9 @@ body main .profile-container {
 body main .profile-container .profile-sidebar {
   min-width: 280px;
   padding: 30px 20px;
+  background: #fafafa;
+  height: 100%;
+  border-radius: 16px;
 }
 @media (max-width: 768px) {
   body main .profile-container .profile-sidebar {
@@ -3367,10 +3418,11 @@ body main .profile-container .profile-sidebar .profile-header h5 {
 body main .profile-container .profile-sidebar .profile-header .email {
   color: #777;
   font-size: 0.9rem;
+  margin: 0;
 }
 body main .profile-container .profile-sidebar .profile-menu {
   list-style: none;
-  padding: 0 1rem;
+  padding: 1rem 0;
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -3385,7 +3437,7 @@ body main .profile-container .profile-sidebar .profile-menu li a {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 12px 15px;
+  padding: 12px;
   border-radius: 6px;
   text-decoration: none;
   color: #333;
@@ -3402,15 +3454,6 @@ body main .profile-container .profile-sidebar .profile-menu li a.active {
 }
 body main .profile-container .profile-sidebar .profile-menu li a.active i {
   color: #54a0c4;
-}
-body main .profile-container .profile-content {
-  flex-grow: 1;
-  padding: 30px;
-}
-@media (max-width: 768px) {
-  body main .profile-container .profile-content {
-    padding: 20px 15px;
-  }
 }
 body main .payment-methods {
   background-color: #f8f9fa;
@@ -3463,8 +3506,41 @@ body main .payment-methods .custom-btn {
     font-size: 0.9rem;
   }
 }
-body main .trips-container {
-  padding: 1.5rem;
+body main .trips-container .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+body main .trips-container .header .search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 50px;
+  padding: 0.3rem 1rem;
+  max-width: 200px;
+}
+body main .trips-container .header .search-box i {
+  color: #999;
+  margin-left: 0.5rem;
+  font-size: 0.9rem;
+}
+body main .trips-container .header .search-box input {
+  border: none;
+  outline: none;
+  box-shadow: none !important;
+  width: 100%;
+  padding: 0.4rem 0;
+  font-size: 0.9rem;
+  background: transparent;
+}
+body main .trips-container .header .search-box input:focus {
+  outline: none;
+  box-shadow: none;
 }
 body main .trips-container .tabs {
   display: flex;
@@ -3579,7 +3655,7 @@ body main .custom-btn:hover {
   cursor: pointer;
 }
 body main .myprofile-container {
-  padding: 1.5rem;
+  padding: 1rem;
 }
 body main .myprofile-container .profile_title {
   margin-bottom: 10px;
