@@ -1893,8 +1893,9 @@ body main .flight_card .flight_info .departure .time span {
 }
 body main .flight_card .flight_info .departure .time_line {
   width: 100%;
-  height: 1px;
+  height: 0;
   background: #aaaaaa;
+  border-top: 1px solid #aaaaaa;
   display: block;
   position: relative;
 }
@@ -1903,13 +1904,21 @@ body main .flight_card .flight_info .departure .time_line .line {
   top: 50%;
   transform: translateY(-50%);
   height: 8px;
-  border: 1px solid #aaaaaa;
+  border: 2px solid #aaaaaa;
   border-radius: 24px;
   background: #fff;
   transition: all 0.3s ease-in-out;
 }
 body main .flight_card .flight_info .departure .time_line .line:hover {
   border-color: #777;
+}
+body main .flight_card .flight_info .departure .time_line .line span {
+  font-size: 8px;
+  color: #777;
+  position: absolute;
+  left: 50%;
+  bottom: -14px;
+  transform: translateX(-50%);
 }
 body main .flight_card .flight_info .departure .time_line::before, body main .flight_card .flight_info .departure .time_line::after {
   content: "";

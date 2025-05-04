@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { Link } from "react-router";
 import FlightDetailsCard from "../cards/FlightDetailsCard";
 
-export default function FlightDetails({ show, setShowModal }) {
+export default function FlightDetails({ show, setShow }) {
   const { t } = useTranslation();
 
   return (
@@ -12,7 +12,7 @@ export default function FlightDetails({ show, setShowModal }) {
       size="lg"
       show={show}
       className="flight_details_modal"
-      onHide={() => setShowModal(false)}
+      onHide={() => setShow(false)}
     >
       <Modal.Header closeButton className="header">
         <h6>{t("flights.flightDetails")}</h6>
