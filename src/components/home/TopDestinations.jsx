@@ -25,7 +25,7 @@ export default function TopDestinations() {
           </div>
 
           {destinations.map((destination, index) => (
-            <div className="col-6 col-md-3 p-2" key={index}>
+            <div className="col-lg-3 col-md-6 col-12 p-2" key={index}>
               <Link
                 to={`/destinations/${destination}`}
                 className="destination_card"

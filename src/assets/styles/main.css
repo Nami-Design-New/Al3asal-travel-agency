@@ -624,6 +624,12 @@ header nav .actions .user_dropdown i {
 .footer .copyrights p {
   margin-bottom: 0;
 }
+@media screen and (max-width: 576px) {
+  .footer .copyrights {
+    flex-direction: column-reverse;
+    gap: 16px;
+  }
+}
 .footer .social-icons {
   display: flex;
   align-items: center;
@@ -645,7 +651,7 @@ header nav .actions .user_dropdown i {
 }
 
 .header-section {
-  padding: 5rem 0;
+  padding: 3rem 0;
   background: linear-gradient(135deg, #54a0c4 0%, #60a0bd 100%);
   position: relative;
   overflow: hidden;
@@ -684,8 +690,6 @@ header nav .actions .user_dropdown i {
   color: #fff;
   font-size: 2.5rem;
   font-weight: 700;
-  margin-bottom: 1rem;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
   letter-spacing: 1px;
 }
 @media (max-width: 576px) {
@@ -699,7 +703,6 @@ header nav .actions .user_dropdown i {
   font-weight: 400;
   max-width: 600px;
   margin: 0 auto;
-  line-height: 1.8;
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
 }
 @media (max-width: 576px) {
@@ -1407,6 +1410,12 @@ body main .hero_section .hero_text h1 {
   margin-bottom: 0;
   font-size: 28px;
 }
+@media screen and (max-width: 576px) {
+  body main .hero_section .hero_text h1 {
+    font-size: 22px;
+    margin-top: 90px;
+  }
+}
 body main .hero_section .hero_text p {
   color: #fff;
   font-size: 16px;
@@ -1415,8 +1424,18 @@ body main .hero_section .hero_text p {
   text-align: center;
   margin: 0 auto;
 }
+@media screen and (max-width: 576px) {
+  body main .hero_section .hero_text p {
+    font-size: 12px;
+  }
+}
 body main .top_destinations {
   padding: 100px 0 80px;
+}
+@media screen and (max-width: 576px) {
+  body main .top_destinations {
+    padding: 240px 0 80px;
+  }
 }
 body main .top_destinations h2 {
   color: #000;
@@ -1524,6 +1543,11 @@ body main .flights_filter {
   width: min(100%, 1100px);
   z-index: 99;
 }
+@media screen and (max-width: 576px) {
+  body main .flights_filter {
+    bottom: -200px;
+  }
+}
 body main .filter_container {
   display: flex;
   flex-direction: column;
@@ -1561,6 +1585,11 @@ body main .filter_container .flight_specifications {
   gap: 16px;
   width: 100%;
 }
+@media screen and (max-width: 576px) {
+  body main .filter_container .flight_specifications {
+    flex-direction: column;
+  }
+}
 body main .filter_container .flight_specifications .dropdown {
   width: 100%;
 }
@@ -1570,6 +1599,11 @@ body main .filter_container .flight_specifications .from_to {
   gap: 16px;
   position: relative;
   min-width: 50%;
+}
+@media screen and (max-width: 576px) {
+  body main .filter_container .flight_specifications .from_to {
+    width: 100%;
+  }
 }
 body main .filter_container .flight_specifications .from_to .swap_button {
   min-width: 32px;
@@ -2981,19 +3015,6 @@ body main .benefits .benefit-title {
 body main .benefits .benefit-description {
   color: #777;
   font-size: 14px;
-}
-@media (max-width: 767.98px) {
-  body main .benefits .benefit-card {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  body main .benefits .benefit-card .benefit-img {
-    margin-bottom: 1rem;
-  }
-  body main .benefits .benefits-shape {
-    display: none;
-  }
 }
 body main .blog_section {
   padding: 60px 0;
