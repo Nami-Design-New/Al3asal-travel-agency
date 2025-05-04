@@ -4,31 +4,33 @@ import { useTranslation } from "react-i18next";
 export default function Trips() {
   const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState("upcoming");
-  // const trips = [
-  // ];
 
   const trips = [
     {
       id: 1,
-      status: "upcoming",
-      destination: "القاهرة",
+      from: "TBS",
+      to: "AMS",
+      departureTime: "04:55",
+      arrivalTime: "09:35",
+      duration: "6h 40",
+      stops: "1 stop",
+      price: "890$",
       date: "2025-06-15",
-      time: "10:00 صباحًا",
+      passengers: 2,
+      status: "upcoming",
     },
-
     {
       id: 2,
-      status: "past",
-      destination: "الإسكندرية",
-      date: "2025-03-10",
-      time: "3:00 مساءً",
-    },
-    {
-      id: 3,
-      status: "cancelled",
-      destination: "أسوان",
-      date: "2025-02-05",
-      time: "9:00 صباحًا",
+      from: "AMS",
+      to: "TBS",
+      departureTime: "19:45",
+      arrivalTime: "04:00",
+      duration: "6h 15",
+      stops: "1 stop",
+      price:" 790$",
+      date: "2025-07-20",
+      passengers: 1,
+      status: "upcoming",
     },
   ];
 
@@ -36,49 +38,47 @@ export default function Trips() {
     const filteredTrips = trips.filter((trip) => trip.status === activeTab);
 
     if (filteredTrips.length === 0) {
-      return activeTab === "upcoming" ? (
-        <div className="no-trips">
-    <img
-      src="/icons/notrip.svg"
-      alt="no trips"
-      className="no-trips__image"
-    />
-    <h5>{t("profile.noTripsTitle")}</h5>
-    <p>{t("profile.noTripsText")}</p>
-    <a href="#" className="no-trips__link">
-      {t("profile.noTripsLink")}
-    </a>
-    <div className="no-trips__button-container">
-      <button className="custom-btn">{t("profile.noTripsButton")}</button>
-    </div>
-  </div>
-) : (
-  <div className="no-data">{t("profile.noData")}</div>
-      );
+      return <div className="no-data">{t("profile.noData")}</div>;
     }
 
     return (
       <div className="trip-list">
         {filteredTrips.map((trip) => (
           <div key={trip.id} className="trip-card">
-            <div className="trip-card__header">
-              <i className="fa-solid fa-location-dot"></i>
-              <h6>{trip.destination}</h6>
-            </div>
-            <div className="trip-card__info">
+            <div className="trip-card__top">
               <div>
-                <i className="fa-solid fa-calendar-days"></i>
-                <span>{trip.date}</span>
+                <i className="fa-solid fa-location-dot"></i>
+                {trip.from} → {trip.to}
+              </div>
+              <div className="trip-card__price">
+               {trip.price}
+              </div>
+            </div>
+
+            <div className="trip-card__times">
+              <div>
+                <i className="fa-solid fa-plane-departure"></i>
+                <strong>{trip.departureTime}</strong>
+              </div>
+              <div className="trip-card__duration">
+                <i className="fa-solid fa-plane"></i>
+                <span>{trip.duration}</span> | <span>{trip.stops}</span>
+
+               
               </div>
               <div>
-                <i className="fa-solid fa-tag"></i>
-                <span>
-                  {trip.status === "upcoming"
-                    ? "قادم"
-                    : trip.status === "past"
-                    ? "سابق"
-                    : "ملغي"}
-                </span>
+                <i className="fa-solid fa-plane-arrival"></i>
+                <strong>{trip.arrivalTime}</strong>
+              </div>
+            </div>
+
+            <div className="trip-card__details">
+              <div>
+                <i className="fa-solid fa-calendar-days"></i> {trip.date}
+              </div>
+              <div>
+                <i className="fa-solid fa-user-group"></i> {trip.passengers}{" "}
+                passengers
               </div>
             </div>
           </div>
@@ -100,7 +100,7 @@ export default function Trips() {
           />
         </div>
       </div>
-
+                         
       <div className="tabs">
         <div
           className={`tab ${activeTab === "upcoming" ? "active" : ""}`}
