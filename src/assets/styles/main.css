@@ -1231,6 +1231,10 @@ header nav .actions .user_dropdown i {
   border-radius: 12px;
   background-color: #54a0c4;
 }
+.form_ui button.success {
+  border-color: #44b50c;
+  background-color: #44b50c;
+}
 
 .otp-container {
   display: flex;
@@ -2492,6 +2496,7 @@ body main .checkout_section .checkout_form .wizard_tabs::after {
 body main .checkout_section .checkout_form .wizard_tabs .wizard_tab {
   background: #fafafa;
   padding: 8px 24px;
+  cursor: pointer;
   z-index: 1;
   display: flex;
   align-items: center;
@@ -2527,6 +2532,21 @@ body main .checkout_section .checkout_form .form_container {
 }
 body main .checkout_section .checkout_form .form_container h6 {
   font-size: 14px;
+  color: #777;
+}
+body main .checkout_section .checkout_form .payment_header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+body main .checkout_section .checkout_form .payment_header .content h6 {
+  margin-bottom: 4px;
+  color: #000;
+  font-size: 14px;
+}
+body main .checkout_section .checkout_form .payment_header .content p {
+  margin: 0;
+  font-size: 12px;
   color: #777;
 }
 body main .checkout_section .price_details_container {

@@ -362,7 +362,12 @@
     "cardHolder": "اسم صاحب البطاقة",
     "expiryDate": "تاريخ انتهاء صلاحية البطاقة",
     "cvv": "CVV",
-    "pay": "ادفع"
+    "pay": "ادفع",
+    "passengerDetails": "تفاصيل المسافرين",
+    "innsurance": "التأمين والخدمات الإضافية",
+    "securePayment": "الدفع",
+    "paymentMethod": "بطاقة الائتمان أو الخصم",
+    "paymentMethodDescription": "رسوم المعالجة من 0 جنيه مصري إلى 2,272.96 جنيه مصري"
   },
   "profile": {
     "myprofile": "ملفي الشخصي",

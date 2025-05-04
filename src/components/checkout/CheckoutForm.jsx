@@ -1,12 +1,13 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import PassengerDetails from "./PassengerDetails";
 import PaymentForm from "./PaymentForm";
 
 export default function CheckoutForm() {
+  const { t } = useTranslation();
   const tabs = [
-    "Passenger details",
-    "Insurance and Extra Services",
-    "Secure Payment",
+    "passengerDetails",
+    "securePayment",
   ];
   const [activeTab, setActiveTab] = useState("tab1");
   return (
@@ -23,7 +24,7 @@ export default function CheckoutForm() {
             <div className="num">
               <span>{index + 1}</span>
             </div>
-            <h6>{tab}</h6>
+            <h6>{t(`checkoutForm.${tab}`)}</h6>
           </div>
         ))}
       </div>
@@ -31,7 +32,7 @@ export default function CheckoutForm() {
       <div className="form_container">
         {activeTab === "tab1" && <PassengerDetails />}
 
-        {activeTab === "tab3" && <PaymentForm />}
+        {activeTab === "tab2" && <PaymentForm />}
       </div>
     </div>
   );
