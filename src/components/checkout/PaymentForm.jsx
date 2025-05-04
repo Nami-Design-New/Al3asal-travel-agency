@@ -8,6 +8,18 @@ export default function PaymentForm() {
     <form className="form_ui">
       <div className="row">
         <div className="col-12 p-2">
+          <div className="payment_header">
+            <div className="icon">
+              <img src="/icons/visa.svg" alt="visa" />
+            </div>
+            <div className="content">
+              <h6>{t("checkoutForm.paymentMethod")}</h6>
+              <p>{t("checkoutForm.paymentMethodDescription")}</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="col-12 p-2">
           <InputField
             label={t("checkoutForm.cardNumber")}
             type="number"
@@ -36,7 +48,10 @@ export default function PaymentForm() {
         </div>
 
         <div className="col-12 p-2 mt-2">
-          <SubmitButton text={t("checkoutForm.pay") + " " + "26,191.01"} />
+          <SubmitButton
+            className="success"
+            text={t("checkoutForm.pay") + " " + "26,191.01 EGP"}
+          />
         </div>
       </div>
     </form>

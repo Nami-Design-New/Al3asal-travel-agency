@@ -39,7 +39,7 @@ export default function WhyChooseUs() {
 
         <div className="row">
           {benefits.map((benefit, index) => (
-            <div key={index} className="col-md-3 mb-4">
+            <div key={index} className="col-lg-3 col-md-6 col-12 p-2">
               <div className="benefit-card h-100 p-4 d-flex align-items-start gap-3">
                 <img
                   src={benefit.image}
