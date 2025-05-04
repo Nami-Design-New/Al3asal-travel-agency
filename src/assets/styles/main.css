@@ -1095,6 +1095,11 @@ header nav .actions .user_dropdown i {
   width: 40%;
   position: relative;
 }
+@media screen and (max-width: 768px) {
+  .auth_modal .auth_img {
+    display: none;
+  }
+}
 .auth_modal .auth_img img {
   width: 100%;
   height: 100%;
@@ -1107,6 +1112,11 @@ header nav .actions .user_dropdown i {
   padding: 48px 32px 32px;
   gap: 24px;
   flex-direction: column;
+}
+@media screen and (max-width: 768px) {
+  .auth_modal .auth_form {
+    width: 100%;
+  }
 }
 .auth_modal .auth_form h5 {
   color: #000;
@@ -1351,6 +1361,11 @@ header nav .actions .user_dropdown i {
   align-items: center;
   gap: 16px;
   margin-bottom: 16px;
+}
+@media screen and (max-width: 576px) {
+  .form_group {
+    flex-direction: column;
+  }
 }
 
 .gender_select {
@@ -1652,6 +1667,7 @@ body main .filter_container .flight_specifications {
 @media screen and (max-width: 576px) {
   body main .filter_container .flight_specifications {
     flex-direction: column;
+    align-items: flex-end;
   }
 }
 body main .filter_container .flight_specifications .dropdown {
@@ -2004,6 +2020,11 @@ body main .contact_section .img img {
 }
 body main .contact_section .form_ui {
   padding-inline-end: 16px;
+}
+@media screen and (max-width: 768px) {
+  body main .contact_section .form_ui {
+    padding-inline-end: 0;
+  }
 }
 body main .contact_section .form_header {
   display: flex;
