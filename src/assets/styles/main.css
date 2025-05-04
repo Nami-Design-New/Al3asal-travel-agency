@@ -3337,7 +3337,7 @@ body main .blog_details_page .recent_blogs ul li a:hover .blog_info h4 {
 body main .profile-container {
   display: flex;
   gap: 30px;
-  padding: 40px 20px;
+  padding: 40px 0;
 }
 @media (max-width: 768px) {
   body main .profile-container {
@@ -3349,6 +3349,9 @@ body main .profile-container {
 body main .profile-container .profile-sidebar {
   min-width: 280px;
   padding: 30px 20px;
+  background: #fafafa;
+  height: 100%;
+  border-radius: 16px;
 }
 @media (max-width: 768px) {
   body main .profile-container .profile-sidebar {
@@ -3388,10 +3391,11 @@ body main .profile-container .profile-sidebar .profile-header h5 {
 body main .profile-container .profile-sidebar .profile-header .email {
   color: #777;
   font-size: 0.9rem;
+  margin: 0;
 }
 body main .profile-container .profile-sidebar .profile-menu {
   list-style: none;
-  padding: 0 1rem;
+  padding: 1rem 0;
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -3406,7 +3410,7 @@ body main .profile-container .profile-sidebar .profile-menu li a {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 12px 15px;
+  padding: 12px;
   border-radius: 6px;
   text-decoration: none;
   color: #333;
@@ -3423,15 +3427,6 @@ body main .profile-container .profile-sidebar .profile-menu li a.active {
 }
 body main .profile-container .profile-sidebar .profile-menu li a.active i {
   color: #54a0c4;
-}
-body main .profile-container .profile-content {
-  flex-grow: 1;
-  padding: 30px;
-}
-@media (max-width: 768px) {
-  body main .profile-container .profile-content {
-    padding: 20px 15px;
-  }
 }
 body main .payment-methods {
   background-color: #f8f9fa;
@@ -3484,9 +3479,6 @@ body main .payment-methods .custom-btn {
     font-size: 0.9rem;
   }
 }
-body main .trips-container {
-  padding: 1.5rem;
-}
 body main .trips-container .header {
   display: flex;
   justify-content: space-between;
@@ -3498,6 +3490,7 @@ body main .trips-container .header .search-box {
   position: relative;
   display: flex;
   align-items: center;
+  gap: 8px;
   background: #fff;
   border: 1px solid #ccc;
   border-radius: 50px;
@@ -3637,7 +3630,7 @@ body main .custom-btn:hover {
   cursor: pointer;
 }
 body main .myprofile-container {
-  padding: 1.5rem;
+  padding: 1rem;
 }
 body main .myprofile-container .profile_title {
   margin-bottom: 10px;

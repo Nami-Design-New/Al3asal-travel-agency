@@ -1,7 +1,7 @@
 .profile-container {
   display: flex;
   gap: 30px;
-  padding: 40px 20px;
+  padding: 40px 0;
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -12,6 +12,9 @@
   .profile-sidebar {
     min-width: 280px;
     padding: 30px 20px;
+    background: $input_bg;
+    height: 100%;
+    border-radius: 16px;
 
     @media (max-width: 768px) {
       width: 100%;
@@ -51,12 +54,13 @@
       .email {
         color: $gray;
         font-size: 0.9rem;
+        margin: 0;
       }
     }
 
     .profile-menu {
       list-style: none;
-      padding: 0 1rem;
+      padding: 1rem 0;
       margin: 0;
       display: flex;
       flex-direction: column;
@@ -68,7 +72,7 @@
         display: flex;
         align-items: center;
         gap: 10px;
-        padding: 12px 15px;
+        padding: 12px;
         border-radius: 6px;
         text-decoration: none;
         color: #333;
@@ -92,18 +96,8 @@
       }
     }
   }
-
-  .profile-content {
-    flex-grow: 1;
-    padding: 30px;
-
-    @media (max-width: 768px) {
-      padding: 20px 15px;
-    }
-  }
 }
 
-////
 .payment-methods {
   background-color: #f8f9fa;
   border-radius: 12px;
@@ -161,10 +155,8 @@
     }
   }
 }
-/////
-.trips-container {
-  padding: 1.5rem;
 
+.trips-container {
   .header {
     display: flex;
     justify-content: space-between;
@@ -172,11 +164,11 @@
     flex-wrap: wrap;
     margin-bottom: 1rem;
 
- 
     .search-box {
       position: relative;
       display: flex;
       align-items: center;
+      gap: 8px;
       background: $white;
       border: 1px solid #ccc;
       border-radius: 50px;
@@ -340,7 +332,7 @@
 }
 
 .myprofile-container {
-  padding: 1.5rem;
+  padding: 1rem;
 
   .profile_title {
     margin-bottom: 10px;
@@ -359,7 +351,7 @@
           background-color: transparent;
           border: none;
         }
-        .card-title{
+        .card-title {
           font-weight: bold;
           color: $main;
           margin-top: 10px;
@@ -374,12 +366,11 @@
           margin-bottom: 1rem;
 
           .lable {
-          font-weight: bold;
+            font-weight: bold;
           }
           input.form-control {
             width: 100%;
           }
-        
         }
       }
     }
