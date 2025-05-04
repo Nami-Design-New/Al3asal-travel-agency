@@ -17,15 +17,15 @@ export default function MyProfile() {
       number: "",
       country: "",
       issueDate: "",
-      expiryDate: ""
-    }
+      expiryDate: "",
+    },
   });
 
   const handleChange = (section, field, value) => {
     if (section === "passport") {
       setProfileData((prev) => ({
         ...prev,
-        passport: { ...prev.passport, [field]: value }
+        passport: { ...prev.passport, [field]: value },
       }));
     } else {
       setProfileData((prev) => ({ ...prev, [field]: value }));
@@ -33,7 +33,7 @@ export default function MyProfile() {
   };
 
   return (
-    <div className="myprofile-container p-4">
+    <div className="myprofile-container">
       <h5 className="profile_title">{t("profile.myprofile")}</h5>
       <div className="profile_content">
         <div className="card mb-4">

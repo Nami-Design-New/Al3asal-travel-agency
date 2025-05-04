@@ -88,7 +88,7 @@ export default function Trips() {
   };
 
   return (
-    <div className="trips-container p-4">
+    <div className="trips-container p-4 pt-0">
       <div className="header">
         <h5>{t("profile.Flightsbookings")}</h5>
         <div className="search-box">

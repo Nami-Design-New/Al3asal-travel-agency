@@ -72,7 +72,7 @@ export default function PaymentMethods() {
         ))}
       </div>
 
-      <button className="custom-btn "> {t("profile.save")}</button>
+      <button className="custom-btn"> {t("profile.save")}</button>
     </div>
   );
 }
