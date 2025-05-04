@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Outlet, useLocation } from "react-router";
 import Header from "../ui/layout/Header";
 import Footer from "./../ui/layout/Footer";
+import ResponsiveNav from "../ui/layout/ResponsiveNav";
 import AuthModal from "../ui/modals/AuthModal";
 
 export default function Layout() {
@@ -18,6 +19,8 @@ export default function Layout() {
         <Outlet />
       </main>
       <Footer />
+      {localStorage.getItem("userType") === "client" && <ResponsiveNav />}
+
       <AuthModal />
     </>
   );

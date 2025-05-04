@@ -468,12 +468,27 @@ header nav .nav_items a {
 header nav .nav_items a:hover, header nav .nav_items a.active {
   color: #54a0c4;
 }
+@media screen and (min-width: 992px) {
+  header nav .nav_items a {
+    display: block;
+  }
+}
+@media screen and (max-width: 992px) {
+  header nav .nav_items a {
+    display: none;
+  }
+}
 header nav .actions {
   flex: 1;
   gap: 16px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
+}
+@media screen and (max-width: 576px) {
+  header nav .actions {
+    flex: 5;
+  }
 }
 header nav .actions .dropdown-toggle {
   background: none;
@@ -1020,6 +1035,55 @@ header nav .actions .user_dropdown i {
 }
 .custom-dropdown-menu .dropdown-item:hover {
   background-color: #f8f9fa;
+}
+
+.small_menu {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+  background: #fff;
+  align-items: center;
+  box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.1);
+  display: none;
+}
+@media screen and (max-width: 991px) {
+  .small_menu {
+    display: flex;
+  }
+}
+.small_menu .menu_item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex: 1;
+  padding: 12px;
+  gap: 8px;
+  font-size: 14px;
+  text-decoration: none;
+}
+.small_menu .menu_item i {
+  font-size: 16px;
+  color: #777;
+}
+.small_menu .menu_item.active i {
+  color: #54a0c4;
+}
+.small_menu .menu_item .center {
+  width: 42px;
+  height: 42px;
+  background: #54a0c4;
+  font-size: 24px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.small_menu .menu_item .center i {
+  color: #fff;
 }
 
 .auth_modal {
@@ -3251,85 +3315,109 @@ body main .blog_details_page .recent_blogs ul li a:hover .blog_info h4 {
 }
 body main .profile-container {
   display: flex;
-  min-height: 100vh;
+  gap: 30px;
+  padding: 40px 20px;
+}
+@media (max-width: 768px) {
+  body main .profile-container {
+    flex-direction: column;
+    padding: 20px 10px;
+    gap: 20px;
+  }
 }
 body main .profile-container .profile-sidebar {
   min-width: 280px;
-  padding: 20px;
-  background-color: #f8f9fa;
-  border-left: 1px solid #e0e0e0;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+  padding: 30px 20px;
 }
-body main .profile-container .profile-sidebar .user-info {
-  text-align: center;
-  margin-bottom: 30px;
+@media (max-width: 768px) {
+  body main .profile-container .profile-sidebar {
+    width: 100%;
+    padding: 20px 15px;
+  }
+}
+body main .profile-container .profile-sidebar .profile-header {
   padding-bottom: 20px;
-  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
 }
-body main .profile-container .profile-sidebar .user-info .avatar {
+@media (max-width: 576px) {
+  body main .profile-container .profile-sidebar .profile-header {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+body main .profile-container .profile-sidebar .profile-header .avatar {
   width: 60px;
   height: 60px;
-  margin: 0 auto 15px;
-  border: 1px solid #54a0c4;
+  border: 2px solid #54a0c4;
   color: #54a0c4;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
-  font-weight: bold;
+  font-size: 1.8rem;
 }
-body main .profile-container .profile-sidebar .user-info h5 {
+body main .profile-container .profile-sidebar .profile-header h5 {
   font-weight: 600;
   color: #333;
   margin-bottom: 5px;
 }
-body main .profile-container .profile-sidebar .user-info .email {
+body main .profile-container .profile-sidebar .profile-header .email {
   color: #777;
   font-size: 0.9rem;
 }
 body main .profile-container .profile-sidebar .profile-menu {
   list-style: none;
-  padding: 0;
+  padding: 0 1rem;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
-body main .profile-container .profile-sidebar .profile-menu li {
-  padding: 12px 15px;
-  margin-bottom: 8px;
-  border-radius: 6px;
-  cursor: pointer;
+@media screen and (max-width: 991px) {
+  body main .profile-container .profile-sidebar .profile-menu {
+    flex-direction: row;
+  }
+}
+body main .profile-container .profile-sidebar .profile-menu li a {
   display: flex;
   align-items: center;
-  transition: all 0.2s ease;
+  gap: 10px;
+  padding: 12px 15px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #333;
 }
-body main .profile-container .profile-sidebar .profile-menu li:hover {
-  background-color: #e9ecef;
+body main .profile-container .profile-sidebar .profile-menu li a i {
+  color: #666;
 }
-body main .profile-container .profile-sidebar .profile-menu li.active {
-  background-color: #e3f2fd;
-  color: #54a0c4;
-}
-body main .profile-container .profile-sidebar .profile-menu li.active i {
-  color: #54a0c4;
-}
-body main .profile-container .profile-sidebar .profile-menu li i {
-  color: #777;
+body main .profile-container .profile-sidebar .profile-menu li a .menu-text {
   font-size: 1rem;
-  margin-left: 10px;
+  font-weight: 500;
 }
-body main .profile-container .profile-sidebar .profile-menu li .menu-text {
-  margin: 0px 5px;
+body main .profile-container .profile-sidebar .profile-menu li a.active {
+  color: #54a0c4;
+}
+body main .profile-container .profile-sidebar .profile-menu li a.active i {
+  color: #54a0c4;
 }
 body main .profile-container .profile-content {
   flex-grow: 1;
   padding: 30px;
-  background-color: #fff;
+}
+@media (max-width: 768px) {
+  body main .profile-container .profile-content {
+    padding: 20px 15px;
+  }
 }
 body main .payment-methods {
+  background-color: #f8f9fa;
+  border-radius: 12px;
   padding: 1.5rem;
 }
 body main .payment-methods .payment_title {
-  font-weight: bold;
   margin-bottom: 10px;
 }
 body main .payment-methods .payment_subtitle {
@@ -3384,9 +3472,6 @@ body main .trips-container .header {
   align-items: center;
   flex-wrap: wrap;
   margin-bottom: 1rem;
-}
-body main .trips-container .header h4 {
-  font-weight: bold;
 }
 body main .trips-container .header .search-box {
   position: relative;
@@ -3534,7 +3619,6 @@ body main .myprofile-container {
   padding: 1.5rem;
 }
 body main .myprofile-container .profile_title {
-  font-weight: bold;
   margin-bottom: 10px;
 }
 body main .myprofile-container .profile_content {

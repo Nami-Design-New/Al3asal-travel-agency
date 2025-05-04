@@ -47,7 +47,7 @@ export default function PaymentMethods() {
 
   return (
     <div className="payment-methods p-4">
-      <h4 className="payment_title">{t("profile.payment")}</h4>
+      <h5 className="payment_title">{t("profile.payment")}</h5>
       <p className="payment_subtitle">{t("profile.paymentsubtitle")}</p>
 
       <div className="methods-grid row">

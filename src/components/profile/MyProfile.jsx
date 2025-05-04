@@ -34,11 +34,10 @@ export default function MyProfile() {
 
   return (
     <div className="myprofile-container p-4">
-      <h4 className="profile_title">{t("profile.myprofile")}</h4>
+      <h5 className="profile_title">{t("profile.myprofile")}</h5>
       <div className="profile_content">
-        {/* Personal Info Card */}
         <div className="card mb-4">
-          <div className="card-header d-flex justify-content-between align-items-center">
+          <div className="card-header">
             <span className="card-title">{t("profile.personalDetails")}</span>
             <button
               className="btn btn-light"
