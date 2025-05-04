@@ -6,7 +6,7 @@ export default function UserDropDown() {
   const userName = "Mariam Samir";
 
   return (
-    <Dropdown>
+    <Dropdown className="d-lg-block d-none">
       <Dropdown.Toggle className="user_dropdown">
         <span>{userName}</span>
         <i className="fa fa-chevron-down"></i>

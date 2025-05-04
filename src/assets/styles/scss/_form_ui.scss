@@ -145,6 +145,10 @@
   align-items: center;
   gap: 16px;
   margin-bottom: 16px;
+
+  @media screen and (max-width: 576px) {
+    flex-direction: column;
+  }
 }
 
 .gender_select {
