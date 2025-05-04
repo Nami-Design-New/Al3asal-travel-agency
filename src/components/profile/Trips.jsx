@@ -4,33 +4,33 @@ import { useTranslation } from "react-i18next";
 export default function Trips() {
   const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState("upcoming");
-  const trips = [
-  ];
-
   // const trips = [
-  //   {
-  //     id: 1,
-  //     status: "upcoming",
-  //     destination: "القاهرة",
-  //     date: "2025-06-15",
-  //     time: "10:00 صباحًا",
-  //   },
-
-  //   {
-  //     id: 2,
-  //     status: "past",
-  //     destination: "الإسكندرية",
-  //     date: "2025-03-10",
-  //     time: "3:00 مساءً",
-  //   },
-  //   {
-  //     id: 3,
-  //     status: "cancelled",
-  //     destination: "أسوان",
-  //     date: "2025-02-05",
-  //     time: "9:00 صباحًا",
-  //   },
   // ];
+
+  const trips = [
+    {
+      id: 1,
+      status: "upcoming",
+      destination: "القاهرة",
+      date: "2025-06-15",
+      time: "10:00 صباحًا",
+    },
+
+    {
+      id: 2,
+      status: "past",
+      destination: "الإسكندرية",
+      date: "2025-03-10",
+      time: "3:00 مساءً",
+    },
+    {
+      id: 3,
+      status: "cancelled",
+      destination: "أسوان",
+      date: "2025-02-05",
+      time: "9:00 صباحًا",
+    },
+  ];
 
   const renderContent = () => {
     const filteredTrips = trips.filter((trip) => trip.status === activeTab);

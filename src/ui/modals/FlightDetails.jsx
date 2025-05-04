@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { Link } from "react-router";
 import FlightDetailsCard from "../cards/FlightDetailsCard";
 
-export default function FlightDetails({ show, setShow }) {
+export default function FlightDetails({ show, setShow, page }) {
   const { t } = useTranslation();
 
   return (
@@ -25,19 +25,20 @@ export default function FlightDetails({ show, setShow }) {
             <FlightDetailsCard type={t("flights.departure")} />
             <FlightDetailsCard type={t("flights.arrival")} />
           </div>
+          {page !== "checkout" && (
+            <div className="price mt-4">
+              <h5>
+                {t("flights.totalPrice")}:
+                <div>
+                  240000 <span>EGP</span>
+                </div>
+              </h5>
 
-          <div className="price mt-4">
-            <h5>
-              {t("flights.totalPrice")}:
-              <div>
-                240000 <span>EGP</span>
-              </div>
-            </h5>
-
-            <Link to="/checkout" className="bookNow">
-              {t("flights.bookNow")}
-            </Link>
-          </div>
+              <Link to="/checkout" className="bookNow">
+                {t("flights.bookNow")}
+              </Link>
+            </div>
+          )}
         </div>
       </Modal.Body>
     </Modal>
