@@ -211,6 +211,10 @@ header {
     p {
       margin-bottom: 0;
     }
+    @media screen and (max-width: 576px) {
+      flex-direction: column-reverse;
+      gap: 16px;
+    }
   }
 
   .social-icons {
