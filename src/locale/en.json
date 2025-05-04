@@ -363,7 +363,12 @@
     "cardHolder": "Card Holder",
     "expiryDate": "Expiry Date",
     "cvv": "CVV",
-    "pay": "Pay"
+    "pay": "Pay",
+    "passengerDetails": "Passenger Details",
+    "innsurance": "Insurance and Extra Services",
+    "securePayment": "Secure Payment",
+    "paymentMethod": "Credit or Debit Card",
+    "paymentMethodDescription": "Processing fee from EGP 0 - EGP 2,272.96"
   },
   "profile": {
     "myprofile": "MyProfile",

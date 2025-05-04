@@ -94,7 +94,7 @@ export default function FilterFlights() {
           </Dropdown.Toggle>
           <Dropdown.Menu className="travelers_menu">
             <div className="calender_wrapper">
-              <Calendar numberOfMonths={2} minDate={new Date()} />
+              <Calendar numberOfMonths={2} minDate={new Date()}/>
             </div>
           </Dropdown.Menu>
         </Dropdown>
