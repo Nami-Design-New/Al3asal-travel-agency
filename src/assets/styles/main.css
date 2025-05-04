@@ -1412,7 +1412,7 @@ body main .hero_section .hero_text h1 {
 }
 @media screen and (max-width: 576px) {
   body main .hero_section .hero_text h1 {
-    font-size: 20px;
+    font-size: 22px;
     margin-top: 90px;
   }
 }
@@ -1431,6 +1431,11 @@ body main .hero_section .hero_text p {
 }
 body main .top_destinations {
   padding: 100px 0 80px;
+}
+@media screen and (max-width: 576px) {
+  body main .top_destinations {
+    padding: 240px 0 80px;
+  }
 }
 body main .top_destinations h2 {
   color: #000;
@@ -1538,6 +1543,11 @@ body main .flights_filter {
   width: min(100%, 1100px);
   z-index: 99;
 }
+@media screen and (max-width: 576px) {
+  body main .flights_filter {
+    bottom: -200px;
+  }
+}
 body main .filter_container {
   display: flex;
   flex-direction: column;
@@ -1575,6 +1585,11 @@ body main .filter_container .flight_specifications {
   gap: 16px;
   width: 100%;
 }
+@media screen and (max-width: 576px) {
+  body main .filter_container .flight_specifications {
+    flex-direction: column;
+  }
+}
 body main .filter_container .flight_specifications .dropdown {
   width: 100%;
 }
@@ -1584,6 +1599,11 @@ body main .filter_container .flight_specifications .from_to {
   gap: 16px;
   position: relative;
   min-width: 50%;
+}
+@media screen and (max-width: 576px) {
+  body main .filter_container .flight_specifications .from_to {
+    width: 100%;
+  }
 }
 body main .filter_container .flight_specifications .from_to .swap_button {
   min-width: 32px;

@@ -18,7 +18,7 @@
       font-size: 28px;
 
       @media screen and (max-width: 576px) {
-        font-size: 20px;
+        font-size: 22px;
         margin-top: 90px;
       }
     }
@@ -40,6 +40,10 @@
 
 .top_destinations {
   padding: 100px 0 80px;
+
+  @media screen and (max-width: 576px) {
+    padding: 240px 0 80px;
+  }
   h2 {
     color: $black;
     font-size: 28px;
@@ -154,6 +158,10 @@
   transform: translateX(-50%);
   width: min(100%, 1100px);
   z-index: 99;
+
+  @media screen and (max-width: 576px) {
+    bottom: -200px;
+  }
 }
 
 .filter_container {
@@ -193,6 +201,10 @@
     gap: 16px;
     width: 100%;
 
+    @media screen and (max-width: 576px) {
+      flex-direction: column;
+    }
+
     .dropdown {
       width: 100%;
     }
@@ -203,6 +215,10 @@
       gap: 16px;
       position: relative;
       min-width: 50%;
+
+      @media screen and (max-width: 576px) {
+        width: 100%;
+      }
 
       .swap_button {
         min-width: 32px;
