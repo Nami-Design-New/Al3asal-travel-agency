@@ -3466,140 +3466,103 @@ body main .payment-methods .custom-btn {
 body main .trips-container {
   padding: 1.5rem;
 }
-body main .trips-container .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  margin-bottom: 1rem;
-}
-body main .trips-container .header .search-box {
-  position: relative;
-  display: flex;
-  align-items: center;
-  background: #fff;
-  border: 1px solid #ccc;
-  border-radius: 50px;
-  padding: 0.3rem 1rem;
-  max-width: 200px;
-}
-body main .trips-container .header .search-box i {
-  color: #999;
-  margin-left: 0.5rem;
-  font-size: 0.9rem;
-}
-body main .trips-container .header .search-box input {
-  border: none;
-  outline: none;
-  box-shadow: none !important;
-  width: 100%;
-  padding: 0.4rem 0;
-  font-size: 0.9rem;
-  background: transparent;
-}
-body main .trips-container .header .search-box input:focus {
-  outline: none;
-  box-shadow: none;
-}
 body main .trips-container .tabs {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin: 2rem 0rem;
-  border-bottom: 1px solid #dee2e6;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 1.5rem;
 }
 body main .trips-container .tabs .tab {
-  width: 50%;
-  padding-bottom: 10px;
+  flex: 1;
+  padding: 0.5rem;
+  text-align: center;
+  font-weight: 500;
   cursor: pointer;
   color: #777;
-  font-weight: 500;
-  position: relative;
-  text-align: center;
 }
 body main .trips-container .tabs .tab.active {
   color: #54a0c4;
-  font-weight: bold;
-}
-body main .trips-container .tabs .tab.active::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  height: 3px;
-  width: 100%;
-  background-color: #54a0c4;
-}
-body main .trips-container .no-trips {
-  text-align: center;
-  margin-top: 3rem;
-}
-body main .trips-container .no-trips__image {
-  width: 120px;
-  height: auto;
-}
-body main .trips-container .no-trips h5 {
-  font-weight: bold;
-  margin-top: 1rem;
-}
-body main .trips-container .no-trips p {
-  color: #777;
-  margin-bottom: 0.5rem;
-}
-body main .trips-container .no-trips__link {
-  color: #54a0c4;
-  font-weight: 500;
-  text-decoration: none;
-}
-body main .trips-container .no-trips__link:hover {
-  text-decoration: underline;
-}
-body main .trips-container .no-trips__button-container {
-  margin-top: 1rem;
-}
-body main .trips-container .no-data {
-  text-align: center;
-  color: #777;
-  margin-top: 1.5rem;
+  border-bottom: 3px solid #54a0c4;
 }
 body main .trips-container .trip-list {
-  margin-top: 20px;
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 body main .trips-container .trip-card {
-  background-color: #fff;
+  background: #fff;
   border: 1px solid #ddd;
-  border-radius: 10px;
-  padding: 15px;
+  border-radius: 12px;
+  padding: 1rem;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-  transition: 0.3s ease;
-}
-body main .trips-container .trip-card:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-body main .trips-container .trip-card__header {
   display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 10px;
-  font-size: 18px;
-  color: #333;
+  flex-direction: column;
+  gap: 0.8rem;
 }
-body main .trips-container .trip-card__header i {
-  color: #54a0c4;
-}
-body main .trips-container .trip-card__info {
+body main .trips-container .trip-card__top {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
-  font-size: 14px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+}
+body main .trips-container .trip-card__top i {
+  margin: 0px 10px;
+  color: #777;
+}
+body main .trips-container .trip-card__times {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+body main .trips-container .trip-card__times div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+body main .trips-container .trip-card__times div i {
+  color: #54a0c4;
+  font-size: 18px;
+}
+body main .trips-container .trip-card__times div strong {
+  font-size: 17px;
+  color: #333;
+}
+body main .trips-container .trip-card__duration {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+body main .trips-container .trip-card__duration i {
+  font-size: 16px;
+  color: #777;
+}
+body main .trips-container .trip-card__duration span {
+  font-size: 12px;
   color: #666;
 }
-body main .trips-container .trip-card__info i {
-  margin-left: 5px;
+body main .trips-container .trip-card__details {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #555;
+}
+body main .trips-container .trip-card__details i {
+  margin-right: 6px;
+  color: #777;
+}
+body main .trips-container .trip-card__price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #222;
+}
+body main .trips-container .no-data {
+  text-align: center;
   color: #888;
+  margin-top: 2rem;
 }
 body main .custom-btn {
   font-weight: bold;

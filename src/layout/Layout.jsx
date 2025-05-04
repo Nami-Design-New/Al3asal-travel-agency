@@ -19,7 +19,7 @@ export default function Layout() {
         <Outlet />
       </main>
       <Footer />
-      {localStorage.getItem("userType") === "client" && <ResponsiveNav />}
+     <ResponsiveNav />
 
       <AuthModal />
     </>
