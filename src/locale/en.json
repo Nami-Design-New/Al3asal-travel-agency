@@ -11,7 +11,8 @@
     "Dashboard": "Dashboard",
     "myflights": "Flight Bookings",
     "contactus": "ContactUs",
-    "logout": "Logout"
+    "logout": "Logout",
+    "deleteaccount":"Delete Account"
   },
   "errorPage": {
     "pageNotFoundTitle": "Page Not Found",
@@ -358,5 +359,32 @@
     "bookingFee": "Booking Fee",
     "totaltax": "Total Tax",
     "nonRefundable": "Non-refundable Booking"
+  },"profile": {
+    "myprofile": "MyProfile",
+    "payment": "Payment Methods",
+    "mytrips": "My Trips",
+    "payment_subtitle":"By selecting one or more payment methods (up to 10), prices will appear with the minimum possible fees. Please note that some of our partners may not support all payment methods.",
+    "save":"save",
+    "Flightsbookings":"Flights bookings",
+    "Upcoming":"Upcoming",
+    "Past":"Past",
+    "Cancelled":"Cancelled",
+    "personalDetails":"personal Details",
+    "passportInfo":"passport Info",
+    "edit":"Edit",
+    "name":"Name",
+    "birthdate": "Birthdate",
+    "email":"Email",
+    "passportNumber": "Passport Number",
+    "issueCountry": "Issuing Country",
+    "issueDate": "Issue Date",
+    "expiryDate": "Expiry Date",
+    "notProvided": "--",
+    "search":"Search for booking ",
+      "noTripsTitle": "No upcoming trips found",
+      "noTripsText": "Once you book any trips, you will see them here.",
+      "noTripsLink": "Where's my booking?",
+      "noTripsButton": "Book a trip now",
+      "noData": "No data available"
   }
 }

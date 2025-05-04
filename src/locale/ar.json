@@ -10,8 +10,9 @@
     "changeCurrency": "تغيير العملة",
     "myflights": "حجوزات الطيران",
     "Dashboard": "لوحة التحكم",
-    "contactus": "اتصل بنا",
-    "logout": "تسجيل الخروج"
+    "contactus":"اتصل بنا",
+    "logout": "تسجيل الخروج",
+    "deleteaccount":"حذف الحساب"
   },
   "errorPage": {
     "pageNotFoundTitle": "الصفحة غير موجودة",
@@ -357,5 +358,33 @@
     "bookingFee": "رسوم الحجز",
     "totaltax": "الضريبة الكلية",
     "nonRefundable": "الحجز غير قابل للتراجع"
-  }
+  },
+  "profile":{
+    "myprofile":"ملفي الشخصي",
+    "payment":"طرق الدفع",
+     "mytrips":"رحلاتي",
+     "paymentsubtitle":"عند اختيارك واحدة أو أكثر من طرق الدفع (10 على الأكثر)، ستظهر الأسعار بالحد الأدنى من الرسوم. الرجاء الانتباه إلى أن بعض شركاتنا لا يدعمن جميع طرق الدفع.",
+     "save":"حفظ",
+     "Flightsbookings":"حجوزات الرحلات",
+     "Upcoming":"الحجوزات المقبلة",
+     "Past":"ماضي",
+     "Cancelled":"الرحلات الملغية",
+     "personalDetails":"تفاصيل شخصية",
+     "passportInfo":"معلومات عن جواز السفر",
+     "edit":"تعديل",
+     "name":"الاسم",
+     "birthdate": "تاريخ الميلاد",
+     "email":"البريد الالكتروني",
+     "passportNumber": "رقم جواز السفر",
+     "issueCountry": "بلد الإصدار",
+     "issueDate": "تاريخ الإصدار",
+     "expiryDate": "تاريخ الانتهاء",
+     "notProvided": "--",
+     "search":"ابحث عن الحجز",
+      "noTripsTitle": "لم نعثر على رحلات قريبة مقبلة",
+      "noTripsText": "بمجرد حجزك لأي رحلات، ستراهم هنا.",
+      "noTripsLink": "أين حجزي؟",
+      "noTripsButton": "احجز رحلة الآن",
+      "noData": "لا يوجد بيانات"
+   }
 }

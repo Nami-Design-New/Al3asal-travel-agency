@@ -1,24 +1,42 @@
-import { useState } from 'react';
+import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const paymentOptions = [
-  { id: 'visa', label: 'فيزا كريدت (البطاقة الائتمانية)', icon: 'visa.png' },
-  { id: 'mastercard', label: 'ماستر كارد كريدت (البطاقة الائتمانية)', icon: 'mastercard.png' },
-  { id: 'bank_transfer', label: 'حوالة مصرفية', icon: 'bank.png' },
-  { id: 'amex', label: 'أمريكان إكسبريس', icon: 'amex.png' },
-  { id: 'maestro', label: 'ماستر كارد سيوروس', icon: 'maestro.png' },
-  { id: 'paypal', label: 'باي بال', icon: 'paypal.png' },
-  { id: 'diners', label: 'داينرز كلوب', icon: 'diners.png' },
-  { id: 'cod', label: 'الدفع نقداً', icon: 'cod.png' },
-  { id: 'bitcoin', label: 'بيتكوين (bitcoin)', icon: 'bitcoin.png' },
-  { id: 'apple_pay', label: 'Apple Pay', icon: 'applepay.png' },
-  { id: 'debit_master', label: 'ماستر كارد ديبيت (بطاقة الخصم المباشر)', icon: 'mastercard.png' },
-  { id: 'debit_visa', label: 'فيزا ديبيت (بطاقة الخصم المباشر)', icon: 'visa.png' },
-  { id: 'western_union', label: 'ويسترن يونيون', icon: 'wu.png' },
-  { id: 'fawry', label: 'Fawry Pay', icon: 'fawry.png' },
-  { id: 'installments', label: 'Card Installments', icon: 'installments.png' },
+  {
+    id: "visa",
+    label: "فيزا كريدت (البطاقة الائتمانية)",
+    icon: "mastercard.png",
+  },
+  {
+    id: "mastercard",
+    label: "ماستر كارد كريدت (البطاقة الائتمانية)",
+    icon: "visa.png",
+  },
+  { id: "bank_transfer", label: "حوالة مصرفية", icon: "mastercard.png" },
+  { id: "amex", label: "أمريكان إكسبريس", icon: "mastercard.png" },
+  { id: "maestro", label: "ماستر كارد سيوروس", icon: "mastercard.png" },
+  { id: "paypal", label: "باي بال", icon: "mastercard.png" },
+  { id: "diners", label: "داينرز كلوب", icon: "mastercard.png" },
+  { id: "cod", label: "الدفع نقداً", icon: "mastercard.png" },
+  { id: "bitcoin", label: "بيتكوين (bitcoin)", icon: "mastercard.png" },
+  { id: "apple_pay", label: "Apple Pay", icon: "mastercard.png" },
+  {
+    id: "debit_master",
+    label: "ماستر كارد ديبيت (بطاقة الخصم المباشر)",
+    icon: "mastercard.png",
+  },
+  {
+    id: "debit_visa",
+    label: "فيزا ديبيت (بطاقة الخصم المباشر)",
+    icon: "mastercard.png",
+  },
+  { id: "western_union", label: "ويسترن يونيون", icon: "mastercard.png" },
+  { id: "fawry", label: "Fawry Pay", icon: "mastercard.png" },
+  { id: "installments", label: "Card Installments", icon: "mastercard.png" },
 ];
 
 export default function PaymentMethods() {
+  const { t } = useTranslation();
   const [selected, setSelected] = useState([]);
 
   const toggleOption = (id) => {
@@ -28,15 +46,13 @@ export default function PaymentMethods() {
   };
 
   return (
-    <div className="payment-methods card p-4">
-      <h4 className="fw-bold mb-3">طرق الدفع</h4>
-      <p className="mb-4 text-muted">
-        عند اختيارك واحدة أو أكثر من طرق الدفع (10 على الأكثر)، ستظهر الأسعار على جدول خاص بالحد الأدنى من الرسوم. الرجاء الانتباه إلى أن بعض شركاتنا لا يدعمن جميع طرق الدفع.
-      </p>
+    <div className="payment-methods p-4">
+      <h4 className="payment_title">{t("profile.payment")}</h4>
+      <p className="payment_subtitle">{t("profile.paymentsubtitle")}</p>
 
       <div className="methods-grid row">
         {paymentOptions.map((option) => (
-          <div key={option.id} className="col-md-6 mb-3 d-flex align-items-center">
+          <div key={option.id} className="col-md-6 mb-3 method">
             <input
               type="checkbox"
               id={option.id}
@@ -45,14 +61,18 @@ export default function PaymentMethods() {
               className="form-check-input me-2"
             />
             <label htmlFor={option.id} className="form-check-label">
-              <img src={`/icons/${option.icon}`} alt={option.label} className="me-2 icon" />
+              <img
+                src={`/icons/${option.icon}`}
+                alt={option.label}
+                className="me-2 icon"
+              />
               {option.label}
             </label>
           </div>
         ))}
       </div>
 
-      <button className="btn btn-primary w-100 mt-4">حفظ</button>
+      <button className="custom-btn "> {t("profile.save")}</button>
     </div>
   );
 }
