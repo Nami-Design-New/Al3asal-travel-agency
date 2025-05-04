@@ -1,5 +1,6 @@
 import { useState } from "react";
 import PassengerDetails from "./PassengerDetails";
+import PaymentForm from "./PaymentForm";
 
 export default function CheckoutForm() {
   const tabs = [
@@ -29,6 +30,8 @@ export default function CheckoutForm() {
 
       <div className="form_container">
         {activeTab === "tab1" && <PassengerDetails />}
+
+        {activeTab === "tab3" && <PaymentForm />}
       </div>
     </div>
   );

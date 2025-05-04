@@ -120,7 +120,8 @@ export default function PriceDetailes() {
           </h5>
         </div>
       </div>
-      <FlightDetails show={showModal} setShow={setShowModal} />
+
+      <FlightDetails show={showModal} setShow={setShowModal} page="checkout" />
     </div>
   );
 }

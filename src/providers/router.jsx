@@ -15,6 +15,8 @@ import Profile from "../routes/Profile";
 // import PaymentMethods from "../components/profile/PaymentMethods";
 import Trips from "../components/profile/Trips";
 // import MyProfile from "../components/profile/MyProfile";
+import MyProfile from "./../components/profile/MyProfile";
+import PaymentMethods from "./../components/profile/PaymentMethods";
 
 export const router = createBrowserRouter([
   {
@@ -65,8 +67,6 @@ export const router = createBrowserRouter([
             path: ":id",
             element: <BlogDetails />,
           },
-        
-          
         ],
       },
       {
@@ -77,9 +77,16 @@ export const router = createBrowserRouter([
             path: "my-trips",
             element: <Trips />,
           },
+          {
+            path: "payment-methods",
+            element: <PaymentMethods />,
+          },
+          {
+            path: "my-profile",
+            element: <MyProfile />,
+          },
         ],
-      }
-      
+      },
     ],
   },
 ]);
