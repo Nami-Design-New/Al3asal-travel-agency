@@ -90,7 +90,7 @@ export default function Trips() {
   return (
     <div className="trips-container p-4">
       <div className="header">
-        <h4>{t("profile.Flightsbookings")}</h4>
+        <h5>{t("profile.Flightsbookings")}</h5>
         <div className="search-box">
           <i className="fa-solid fa-magnifying-glass"></i>
           <input
