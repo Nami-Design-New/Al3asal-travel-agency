@@ -7,24 +7,18 @@ export default function UserDropDown() {
 
   return (
     <Dropdown>
-      <Dropdown.Toggle className="rounded_btn" id="dropdown-custom-components">
-        <span className="fw-bold">{userName}</span>
+      <Dropdown.Toggle className="user_dropdown">
+        <span>{userName}</span>
         <i className="fa fa-chevron-down"></i>
       </Dropdown.Toggle>
 
       <Dropdown.Menu className="custom-dropdown-menu text-end">
-      {/* <Dropdown.Item href="/profile/payment-methods">
-  <i className="fa fa-th-large"></i>
-  {t("header.Dashboard")}
-</Dropdown.Item> */}
-<Dropdown.Item href="/profile">
-  <i className="fa fa-th-large "></i>
-  {t("header.Dashboard")}
-</Dropdown.Item>
-
-
-
         <Dropdown.Item href="/profile">
+          <i className="fa fa-th-large "></i>
+          {t("header.Dashboard")}
+        </Dropdown.Item>
+
+        <Dropdown.Item as="Link" href="/profile">
           <i className="fa fa-plane"></i>
           {t("header.myflights")}
         </Dropdown.Item>

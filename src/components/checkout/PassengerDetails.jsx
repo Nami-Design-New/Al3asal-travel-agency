@@ -1,5 +1,8 @@
 import { useTranslation } from "react-i18next";
 import InputField from "./../../ui/forms/InputField";
+import PhoneField from "../../ui/forms/PhoneField";
+import SubmitButton from "./../../ui/forms/SubmitButton";
+import TravelerForm from "./TravelerForm";
 
 export default function PassengerDetails() {
   const { t } = useTranslation();
@@ -7,11 +10,8 @@ export default function PassengerDetails() {
   return (
     <form className="form_ui">
       <div className="row">
-        <div className="col-lg-6 col-12 p-2">
-          <InputField
-            label={t("checkoutForm.fullName")}
-            placeholder={t("checkoutForm.enterName")}
-          />
+        <div className="col-12 p-2">
+          <h6>{t("checkoutForm.contactInfo")}</h6>
         </div>
 
         <div className="col-lg-6 col-12 p-2">
@@ -23,19 +23,16 @@ export default function PassengerDetails() {
         </div>
 
         <div className="col-lg-6 col-12 p-2">
-          <InputField
-            type="number"
-            label={t("checkoutForm.passportNumber")}
-            placeholder={t("checkoutForm.enterPassportNumber")}
+          <PhoneField
+            label={t("checkoutForm.phone")}
+            placeholder={t("checkoutForm.enterPhone")}
           />
         </div>
 
-        <div className="col-lg-6 col-12 p-2">
-          <InputField
-            type="date"
-            label={t("checkoutForm.passportNumber")}
-            placeholder={t("checkoutForm.enterPassportNumber")}
-          />
+        <TravelerForm />
+
+        <div className="col-12 p-2 mt-2">
+          <SubmitButton text={t("checkoutForm.continue")} />
         </div>
       </div>
     </form>

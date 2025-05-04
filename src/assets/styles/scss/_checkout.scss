@@ -66,6 +66,153 @@
       padding: 16px;
       border: 1px solid $input_stroke;
       border-radius: 16px;
+
+      h6 {
+        font-size: 14px;
+        color: $gray;
+      }
+    }
+  }
+
+  .price_details_container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .price_details {
+      border: 1px solid $input_stroke;
+      padding: 16px;
+      border-radius: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      .total_price {
+        @include space-between();
+        h6 {
+          font-size: 14px;
+          margin-bottom: 0;
+          color: $gray;
+        }
+        h5 {
+          margin-bottom: 0;
+          font-size: 18px;
+          color: $black;
+
+          span {
+            font-size: 12px;
+            color: $gray;
+          }
+        }
+      }
+
+      .line {
+        border-top: 1px dashed #e6e6e6;
+        width: 100%;
+      }
+
+      .ticket_details {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        .flight {
+          @include space-between();
+          background: $input_bg;
+          padding: 12px;
+          border-radius: 12px;
+          h6 {
+            margin-bottom: 4px;
+            font-size: 12px;
+            color: $gray;
+          }
+          h5 {
+            margin-bottom: 0;
+            font-size: 14px;
+            color: $black;
+          }
+
+          .airlines {
+            display: flex;
+            .img {
+              width: 2.5rem;
+              height: 2.5rem;
+              background: $white;
+              border-radius: 50%;
+              border: 1px solid $input_stroke;
+              @include centerFlex();
+              box-shadow: rgba(0, 0, 0, 0.035) 0px 2.45093px 8.98675px 0px;
+              margin-left: -14px;
+              img {
+                object-fit: contain;
+                width: 2rem;
+                height: 2rem;
+              }
+            }
+          }
+        }
+
+        .price {
+          @include space-between();
+          h6 {
+            margin-bottom: 4px;
+            font-size: 14px;
+            color: $black;
+            span {
+              display: block;
+              font-size: 12px;
+              color: $gray;
+            }
+          }
+
+          h5 {
+            margin-bottom: 0;
+            font-size: 16px;
+            color: $black;
+            span {
+              font-size: 12px;
+              color: $gray;
+            }
+          }
+        }
+      }
+    }
+
+    .about_booking {
+      border: 1px solid $input_stroke;
+      padding: 16px;
+      border-radius: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      .non_refundable {
+        background: #fdf5cb;
+        padding: 12px;
+        border-radius: 8px;
+        color: $black;
+        h6 {
+          margin: 0;
+          font-size: 12px;
+        }
+      }
+
+      button {
+        width: 100%;
+        @include space-between();
+        h6 {
+          color: $black;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          font-size: 14px;
+          margin-bottom: 4px;
+        }
+        span {
+          font-size: 12px;
+          color: $gray;
+        }
+      }
     }
   }
 }

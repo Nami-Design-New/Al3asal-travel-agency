@@ -1,10 +1,13 @@
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import FilterFlights from "../components/home/FilterFlights";
 import FlightCard from "../ui/cards/FlightCard";
 import SortingFilter from "../components/flights/SortingFilter";
+import FlightDetails from "../ui/modals/FlightDetails";
 
 export default function Flights() {
   const { t } = useTranslation();
+  const [showFlightDetails, setShowFlightDetails] = useState(false);
 
   const flightsDefaults = [
     {
@@ -60,7 +63,12 @@ export default function Flights() {
       price: 25000,
       duration: "10h 30m",
       stops: [
-        { name: "Abu Dhabi", code: "AUH", duration: "2h 30m", startTime: "07:30" },
+        {
+          name: "Abu Dhabi",
+          code: "AUH",
+          duration: "2h 30m",
+          startTime: "07:30",
+        },
         { name: "Dammam", code: "DMM", duration: "1h 30m", startTime: "13:30" },
       ],
       airlines: [
@@ -123,12 +131,18 @@ export default function Flights() {
               <SortingFilter />
 
               {flightsDefaults.map((flight, index) => (
-                <FlightCard key={index} flight={flight} />
+                <FlightCard
+                  key={index}
+                  flight={flight}
+                  setShow={setShowFlightDetails}
+                />
               ))}
             </div>
           </div>
         </div>
       </div>
+
+      <FlightDetails show={showFlightDetails} setShow={setShowFlightDetails} />
     </section>
   );
 }
