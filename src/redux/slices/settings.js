@@ -10,7 +10,7 @@ const getLocalStorageItem = (key, defaultValue) => {
 const settings = createSlice({
   name: "settings",
   initialState: {
-    lang: getLocalStorageItem("lang", "ar"),
+    lang: getLocalStorageItem("lang", "en"),
     currency: getLocalStorageItem("currency", "USD"),
   },
 
