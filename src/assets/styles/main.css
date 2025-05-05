@@ -1041,6 +1041,9 @@ header nav .actions .user_dropdown i {
 .custom-dropdown-menu .dropdown-item:hover {
   background-color: #f8f9fa;
 }
+.custom-dropdown-menu .dropdown-item:active {
+  color: #000;
+}
 
 .small_menu {
   position: fixed;

@@ -647,6 +647,10 @@ header {
     &:hover {
       background-color: #f8f9fa;
     }
+
+    &:active {
+      color: $black;
+    }
   }
 }
 .small_menu {
