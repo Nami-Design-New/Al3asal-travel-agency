@@ -11,12 +11,10 @@ import Blogs from "../routes/Blogs";
 import BlogDetails from "../routes/BlogDetails";
 import FAQ from "../routes/Faq";
 import Checkout from "../routes/Checkout";
-import Profile from "../routes/Profile";
-// import PaymentMethods from "../components/profile/PaymentMethods";
-import Trips from "../components/profile/Trips";
-// import MyProfile from "../components/profile/MyProfile";
-import MyProfile from "./../components/profile/MyProfile";
-import PaymentMethods from "./../components/profile/PaymentMethods";
+import MyProfile from "../routes/MyProfile";
+import MyWallet from "../routes/MyWallet";
+import Trips from "../routes/Trips";
+
 
 export const router = createBrowserRouter([
   {
@@ -70,23 +68,35 @@ export const router = createBrowserRouter([
         ],
       },
       {
-        path: "profile",
-        element: <Profile />,
-        children: [
-          {
-            index: true,
-            element: <MyProfile />,
-          },
-          {
-            path: "my-trips",
-            element: <Trips />,
-          },
-          {
-            path: "payment-methods",
-            element: <PaymentMethods />,
-          },
-        ],
+        path: "my-profile",
+        element: <MyProfile />,
       },
+      {
+        path: "my-wallet",
+        element: <MyWallet />,
+      },
+      {
+        path: "my-trips",
+        element: <Trips />,
+      },
+      // {
+      //   path: "profile",
+      //   element: <Profile />,
+      //   children: [
+      //     {
+      //       index: true,
+      //       element: <MyProfile />,
+      //     },
+      //     {
+      //       path: "my-trips",
+      //       element: <Trips />,
+      //     },
+      //     {
+      //       path: "payment-methods",
+      //       element: <PaymentMethods />,
+      //     },
+      //   ],
+      // },
     ],
   },
 ]);

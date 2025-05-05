@@ -33,7 +33,7 @@ export default function MyProfile() {
   };
 
   return (
-    <div className="myprofile-container">
+    <div className="myprofile container">
       <h5 className="profile_title">{t("profile.myprofile")}</h5>
       <div className="profile_content">
         <div className="card mb-4">

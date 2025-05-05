@@ -12,7 +12,8 @@
     "myflights": "My Bookings",
     "contactus": "ContactUs",
     "logout": "Logout",
-    "deleteaccount": "Delete Account"
+    "deleteaccount": "Delete Account",
+    "wallet":"My Wallet"
   },
   "errorPage": {
     "pageNotFoundTitle": "Page Not Found",
@@ -396,6 +397,15 @@
     "noTripsText": "Once you book any trips, you will see them here.",
     "noTripsLink": "Where's my booking?",
     "noTripsButton": "Book a trip now",
-    "noData": "No data available"
+    "noData": "No data available",
+    "account": "Your Current Balance",
+    "withdrawBalance": "Withdraw Balance",
+    "rechargeBalance": "Recharge Balance",
+    "transactions": "Transaction History",
+    "amount": "Amount",
+    "confirm": "Confirm",
+    "placeholder": "Enter amount in USD",
+    "ShowDetails":"Show Details ",
+    "Details":"Trip Details"
   }
 }

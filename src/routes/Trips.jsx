@@ -1,9 +1,12 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import TripModal from ".././ui/modals/MyTrip"; 
 
 export default function Trips() {
   const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState("upcoming");
+  const [showModal, setShowModal] = useState(false);
+  const [selectedTrip, setSelectedTrip] = useState(null);
 
   const trips = [
     {
@@ -27,7 +30,7 @@ export default function Trips() {
       arrivalTime: "04:00",
       duration: "6h 15",
       stops: "1 stop",
-      price:" 790$",
+      price: "790$",
       date: "2025-07-20",
       passengers: 1,
       status: "upcoming",
@@ -50,9 +53,7 @@ export default function Trips() {
                 <i className="fa-solid fa-location-dot"></i>
                 {trip.from} → {trip.to}
               </div>
-              <div className="trip-card__price">
-               {trip.price}
-              </div>
+              <div className="trip-card__price">{trip.price}</div>
             </div>
 
             <div className="trip-card__times">
@@ -63,8 +64,6 @@ export default function Trips() {
               <div className="trip-card__duration">
                 <i className="fa-solid fa-plane"></i>
                 <span>{trip.duration}</span> | <span>{trip.stops}</span>
-
-               
               </div>
               <div>
                 <i className="fa-solid fa-plane-arrival"></i>
@@ -81,14 +80,31 @@ export default function Trips() {
                 passengers
               </div>
             </div>
+
+            <button
+              className="custom-btn"
+              onClick={() => openModal(trip)}
+            >
+              {t("profile.ShowDetails")}
+            </button>
           </div>
         ))}
       </div>
     );
   };
 
+  const openModal = (trip) => {
+    setSelectedTrip(trip);
+    setShowModal(true);
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+    setSelectedTrip(null);
+  };
+
   return (
-    <div className="trips-container p-4 pt-0">
+    <div className="trips container">
       <div className="header">
         <h5>{t("profile.Flightsbookings")}</h5>
         <div className="search-box">
@@ -100,7 +116,7 @@ export default function Trips() {
           />
         </div>
       </div>
-                         
+
       <div className="tabs">
         <div
           className={`tab ${activeTab === "upcoming" ? "active" : ""}`}
@@ -123,6 +139,14 @@ export default function Trips() {
       </div>
 
       {renderContent()}
+
+      {showModal && selectedTrip && (
+        <TripModal
+          trip={selectedTrip}
+          closeModal={closeModal}
+          t={t}
+        />
+      )}
     </div>
   );
 }

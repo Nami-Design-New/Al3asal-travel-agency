@@ -3369,159 +3369,196 @@ body main .blog_details_page .recent_blogs ul li a .blog_item .blog_info .date {
 body main .blog_details_page .recent_blogs ul li a:hover .blog_info h4 {
   color: #54a0c4;
 }
-body main .profile-container {
-  display: flex;
-  gap: 30px;
-  padding: 40px 0;
+body main .myprofile {
+  padding: 1rem;
 }
-@media (max-width: 768px) {
-  body main .profile-container {
-    flex-direction: column;
-    padding: 20px 10px;
-    gap: 20px;
-  }
-}
-body main .profile-container .profile-sidebar {
-  min-width: 280px;
-  padding: 30px 20px;
-  background: #fafafa;
-  height: 100%;
-  border-radius: 16px;
-}
-@media (max-width: 768px) {
-  body main .profile-container .profile-sidebar {
-    width: 100%;
-    padding: 20px 15px;
-  }
-}
-body main .profile-container .profile-sidebar .profile-header {
-  padding-bottom: 20px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 15px;
-}
-@media (max-width: 576px) {
-  body main .profile-container .profile-sidebar .profile-header {
-    flex-direction: column;
-    text-align: center;
-  }
-}
-body main .profile-container .profile-sidebar .profile-header .avatar {
-  width: 60px;
-  height: 60px;
-  border: 2px solid #54a0c4;
-  color: #54a0c4;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.8rem;
-}
-body main .profile-container .profile-sidebar .profile-header h5 {
-  font-weight: 600;
-  color: #333;
-  margin-bottom: 5px;
-}
-body main .profile-container .profile-sidebar .profile-header .email {
-  color: #777;
-  font-size: 0.9rem;
-  margin: 0;
-}
-body main .profile-container .profile-sidebar .profile-menu {
-  list-style: none;
-  padding: 1rem 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-@media screen and (max-width: 991px) {
-  body main .profile-container .profile-sidebar .profile-menu {
-    flex-direction: row;
-  }
-}
-body main .profile-container .profile-sidebar .profile-menu li a {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 12px;
-  border-radius: 6px;
-  text-decoration: none;
-  color: #333;
-}
-body main .profile-container .profile-sidebar .profile-menu li a i {
-  color: #666;
-}
-body main .profile-container .profile-sidebar .profile-menu li a .menu-text {
-  font-size: 1rem;
-  font-weight: 500;
-}
-body main .profile-container .profile-sidebar .profile-menu li a.active {
-  color: #54a0c4;
-}
-body main .profile-container .profile-sidebar .profile-menu li a.active i {
-  color: #54a0c4;
-}
-body main .payment-methods {
-  background-color: #f8f9fa;
-  border-radius: 12px;
-  padding: 1.5rem;
-}
-body main .payment-methods .payment_title {
+body main .myprofile .profile_title {
   margin-bottom: 10px;
 }
-body main .payment-methods .payment_subtitle {
-  color: #777;
-  margin-bottom: 18px;
-  font-size: 14px;
+body main .myprofile .profile_content {
+  margin-top: 30px;
 }
-body main .payment-methods .methods-grid .icon {
-  width: 30px;
-  height: 30px;
-  -o-object-fit: contain;
-     object-fit: contain;
-  margin: 0 10px;
+body main .myprofile .profile_content .card {
+  margin-bottom: 1.5rem;
 }
-body main .payment-methods .methods-grid .method {
+body main .myprofile .profile_content .card .card-header {
   display: flex;
-  align-items: center;
+  justify-content: space-between;
 }
-body main .payment-methods .methods-grid .form-check-input {
-  cursor: pointer;
-  transition: all 0.3s ease;
+body main .myprofile .profile_content .card .card-header button {
+  background-color: transparent;
+  border: none;
 }
-body main .payment-methods .methods-grid .form-check-input:checked {
-  background-color: #54a0c4;
-  border-color: #54a0c4;
+body main .myprofile .profile_content .card .card-header .card-title {
+  font-weight: bold;
+  color: #54a0c4;
+  margin-top: 10px;
 }
-body main .payment-methods .methods-grid .form-check-label {
-  cursor: pointer;
-  font-weight: 500;
-  font-size: 1rem;
+body main .myprofile .profile_content .card .card-body {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
 }
-body main .payment-methods .custom-btn {
-  display: block;
-  margin: 30px auto 0 auto;
+body main .myprofile .profile_content .card .card-body .col-md-6 {
+  margin-bottom: 1rem;
+}
+body main .myprofile .profile_content .card .card-body .col-md-6 .lable {
+  font-weight: bold;
+}
+body main .myprofile .profile_content .card .card-body .col-md-6 input.form-control {
+  width: 100%;
+}
+body main .wallet {
+  padding: 1.5rem;
+}
+body main .wallet .wallet-header {
+  margin-bottom: 20px;
+}
+body main .wallet .wallet-balance {
+  position: relative;
+  text-align: center;
+  background: #54a0c4;
+  color: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+body main .wallet .wallet-balance .shape-left,
+body main .wallet .wallet-balance .shape-right {
+  position: absolute;
+  width: 150px;
+  transform: translateY(-50%);
+  z-index: 1;
 }
 @media (max-width: 576px) {
-  body main .payment-methods {
-    padding: 1rem;
-  }
-  body main .methods-grid .form-check-label {
-    font-size: 0.9rem;
+  body main .wallet .wallet-balance .shape-left,
+  body main .wallet .wallet-balance .shape-right {
+    width: 80px;
   }
 }
-body main .trips-container .header {
+body main .wallet .wallet-balance .shape-left img,
+body main .wallet .wallet-balance .shape-right img {
+  width: 100%;
+  filter: brightness(0) invert(1);
+  opacity: 0.5;
+}
+body main .wallet .wallet-balance .shape-left {
+  top: 60%;
+  left: -70px;
+}
+@media (max-width: 576px) {
+  body main .wallet .wallet-balance .shape-left {
+    left: -30px;
+  }
+}
+body main .wallet .wallet-balance .shape-right {
+  top: 30%;
+  right: -15px;
+}
+body main .wallet .wallet-balance p {
+  margin: 0;
+  font-size: 16px;
+}
+body main .wallet .wallet-balance h1 {
+  font-size: 36px;
+  margin: 10px 0;
+}
+body main .wallet .wallet-balance .wallet-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 1rem;
+}
+body main .wallet .wallet-balance .wallet-buttons .btn {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.3s ease;
+}
+body main .wallet .wallet-balance .wallet-buttons .withdraw {
+  background: #ef5350;
+  color: #fff;
+}
+body main .wallet .wallet-balance .wallet-buttons .withdraw:hover {
+  background: #e53935;
+}
+body main .wallet .wallet-balance .wallet-buttons .recharge {
+  background: #66bb6a;
+  color: #fff;
+}
+body main .wallet .wallet-balance .wallet-buttons .recharge:hover {
+  background: #43a047;
+}
+body main .wallet .wallet-history h3 {
+  font-size: 20px;
+  margin-bottom: 1rem;
+  color: #333;
+}
+body main .wallet .wallet-history .transaction {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 12px;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  align-items: center;
+}
+body main .wallet .wallet-history .transaction .icon {
+  font-size: 20px;
+  width: 30px;
+  text-align: center;
+  color: #777;
+}
+body main .wallet .wallet-history .transaction .details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+body main .wallet .wallet-history .transaction .details .top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body main .wallet .wallet-history .transaction .details .top-row .type {
+  font-weight: 600;
+  color: #333;
+}
+body main .wallet .wallet-history .transaction .details .top-row .amount {
+  font-size: 16px;
+  font-weight: bold;
+  color: #000;
+}
+body main .wallet .wallet-history .transaction .details .bottom-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #777;
+}
+body main .wallet .wallet-history .transaction .details .bottom-row .order {
+  font-style: italic;
+}
+body main .wallet .wallet-history .no-transactions {
+  text-align: center;
+  color: #999;
+  font-size: 16px;
+}
+body main .trips {
+  padding: 1.5rem;
+}
+body main .trips .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   margin-bottom: 1rem;
 }
-body main .trips-container .header .search-box {
+body main .trips .header .search-box {
   position: relative;
   display: flex;
   align-items: center;
@@ -3532,12 +3569,12 @@ body main .trips-container .header .search-box {
   padding: 0.3rem 1rem;
   max-width: 200px;
 }
-body main .trips-container .header .search-box i {
+body main .trips .header .search-box i {
   color: #999;
   margin-left: 0.5rem;
   font-size: 0.9rem;
 }
-body main .trips-container .header .search-box input {
+body main .trips .header .search-box input {
   border: none;
   outline: none;
   box-shadow: none !important;
@@ -3546,17 +3583,17 @@ body main .trips-container .header .search-box input {
   font-size: 0.9rem;
   background: transparent;
 }
-body main .trips-container .header .search-box input:focus {
+body main .trips .header .search-box input:focus {
   outline: none;
   box-shadow: none;
 }
-body main .trips-container .tabs {
+body main .trips .tabs {
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid #ddd;
   margin-bottom: 1.5rem;
 }
-body main .trips-container .tabs .tab {
+body main .trips .tabs .tab {
   flex: 1;
   padding: 0.5rem;
   text-align: center;
@@ -3564,16 +3601,16 @@ body main .trips-container .tabs .tab {
   cursor: pointer;
   color: #777;
 }
-body main .trips-container .tabs .tab.active {
+body main .trips .tabs .tab.active {
   color: #54a0c4;
   border-bottom: 3px solid #54a0c4;
 }
-body main .trips-container .trip-list {
+body main .trips .trip-list {
   display: flex;
-  flex-direction: column;
-  gap: 15px;
+  flex-wrap: wrap;
+  gap: 20px;
 }
-body main .trips-container .trip-card {
+body main .trips .trip-card {
   background: #fff;
   border: 1px solid #ddd;
   border-radius: 12px;
@@ -3582,74 +3619,145 @@ body main .trips-container .trip-card {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
+  flex: 1 1 48%;
 }
-body main .trips-container .trip-card__top {
+body main .trips .trip-card__top {
   display: flex;
   justify-content: space-between;
   font-size: 16px;
   font-weight: 500;
   color: #333;
 }
-body main .trips-container .trip-card__top i {
+body main .trips .trip-card__top i {
   margin: 0px 10px;
   color: #777;
 }
-body main .trips-container .trip-card__times {
+body main .trips .trip-card__times {
   display: flex;
   justify-content: space-between;
   align-items: center;
   text-align: center;
 }
-body main .trips-container .trip-card__times div {
+body main .trips .trip-card__times div {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 5px;
 }
-body main .trips-container .trip-card__times div i {
+body main .trips .trip-card__times div i {
   color: #54a0c4;
   font-size: 18px;
 }
-body main .trips-container .trip-card__times div strong {
+body main .trips .trip-card__times div strong {
   font-size: 17px;
   color: #333;
 }
-body main .trips-container .trip-card__duration {
+body main .trips .trip-card__duration {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 4px;
 }
-body main .trips-container .trip-card__duration i {
+body main .trips .trip-card__duration i {
   font-size: 16px;
   color: #777;
 }
-body main .trips-container .trip-card__duration span {
+body main .trips .trip-card__duration span {
   font-size: 12px;
   color: #666;
 }
-body main .trips-container .trip-card__details {
+body main .trips .trip-card__details {
   display: flex;
   justify-content: space-between;
   font-size: 14px;
   color: #555;
 }
-body main .trips-container .trip-card__details i {
+body main .trips .trip-card__details i {
   margin-right: 6px;
   color: #777;
 }
-body main .trips-container .trip-card__price {
+body main .trips .trip-card__price {
   font-size: 18px;
   font-weight: bold;
   color: #222;
 }
-body main .trips-container .no-data {
+body main .trips .no-data {
   text-align: center;
   color: #888;
   margin-top: 2rem;
 }
+@media (max-width: 768px) {
+  body main .trips .trip-card {
+    flex: 1 1 100%;
+  }
+}
+body main .modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+body main .modal-overlay .modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow-y: auto; /* Scroll in case content overflows */
+}
+body main .modal-overlay .modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 10px;
+}
+body main .modal-overlay .modal-header h4 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+}
+body main .modal-overlay .close-btn {
+  background: transparent;
+  border: none;
+  font-size: 28px;
+  color: #999;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+body main .modal-overlay .close-btn:hover {
+  color: #000;
+}
+body main .modal-overlay .modal-body {
+  margin-top: 15px;
+}
+body main .modal-overlay .modal-info p {
+  font-size: 16px;
+  margin-bottom: 12px;
+  color: #444;
+  line-height: 1.5;
+}
+body main .modal-overlay .modal-info p strong {
+  font-weight: 700;
+  color: #333;
+}
+body main .modal-overlay .close-btn {
+  border-radius: 50%;
+  padding: 5px 10px;
+  font-size: 24px;
+  transition: all 0.3s ease;
+}
+body main .modal-overlay .close-btn:hover {
+  background-color: #f2f2f2;
+}
 body main .custom-btn {
-  font-weight: bold;
   font-size: 1.1rem;
   padding: 0.75rem 1.5rem;
   background-color: #54a0c4;
@@ -3661,44 +3769,6 @@ body main .custom-btn {
 body main .custom-btn:hover {
   opacity: 0.9;
   cursor: pointer;
-}
-body main .myprofile-container {
-  padding: 1rem;
-}
-body main .myprofile-container .profile_title {
-  margin-bottom: 10px;
-}
-body main .myprofile-container .profile_content {
-  margin-top: 30px;
-}
-body main .myprofile-container .profile_content .card {
-  margin-bottom: 1.5rem;
-}
-body main .myprofile-container .profile_content .card .card-header {
-  display: flex;
-  justify-content: space-between;
-}
-body main .myprofile-container .profile_content .card .card-header button {
-  background-color: transparent;
-  border: none;
-}
-body main .myprofile-container .profile_content .card .card-header .card-title {
-  font-weight: bold;
-  color: #54a0c4;
-  margin-top: 10px;
-}
-body main .myprofile-container .profile_content .card .card-body {
-  display: flex;
-  flex-wrap: wrap;
-}
-body main .myprofile-container .profile_content .card .card-body .col-md-6 {
-  margin-bottom: 1rem;
-}
-body main .myprofile-container .profile_content .card .card-body .col-md-6 .lable {
-  font-weight: bold;
-}
-body main .myprofile-container .profile_content .card .card-body .col-md-6 input.form-control {
-  width: 100%;
 }
 body.en {
   font-family: "Outfit", sans-serif;

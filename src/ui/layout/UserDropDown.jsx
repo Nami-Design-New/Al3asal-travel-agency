@@ -7,40 +7,48 @@ export default function UserDropDown() {
   const userName = "Mariam Samir";
 
   return (
-    <Dropdown className="d-lg-block d-none">
-      <Dropdown.Toggle className="user_dropdown">
-        <span>{userName}</span>
-        <i className="fa fa-chevron-down"></i>
-      </Dropdown.Toggle>
+    <>
+      <Dropdown className="d-lg-block d-none">
+        <Dropdown.Toggle className="user_dropdown">
+          <span>{userName}</span>
+          <i className="fa fa-chevron-down"></i>
+        </Dropdown.Toggle>
 
-      <Dropdown.Menu className="custom-dropdown-menu text-end">
-        <Dropdown.Item as={Link} to="/profile">
-          <i className="fa fa-th-large "></i>
-          {t("header.Dashboard")}
-        </Dropdown.Item>
+        <Dropdown.Menu className="custom-dropdown-menu text-end">
+          <Dropdown.Item href="/my-trips">
+            <i className="fa fa-plane"></i>
+            {t("header.myflights")}
+          </Dropdown.Item>
 
-        <Dropdown.Item as={Link} to="/profile/my-trips">
-          <i className="fa fa-plane"></i>
-          {t("header.myflights")}
-        </Dropdown.Item>
+          <Dropdown.Item href="/my-wallet">
+            <i className="fa-solid fa-wallet"></i>
+            {t("header.wallet")}
+          </Dropdown.Item>
 
-        <Dropdown.Item as={Link} to="/contact">
-          <i className="fa fa-phone"></i>
-          {t("header.contactus")}
-        </Dropdown.Item>
+          <Dropdown.Item href="/contact">
+            <i className="fa fa-phone"></i>
+            {t("header.contactus")}
+          </Dropdown.Item>
 
-        <Dropdown.Divider />
+          <Dropdown.Divider />
 
-        <Dropdown.Item>
-          <i className="fa fa-sign-out-alt"></i>
-          {t("header.logout")}
-        </Dropdown.Item>
+          <Dropdown.Item href="/my-profile">
+            <i className="fa-regular fa-user"></i>
+            {t("profile.myprofile")}
+          </Dropdown.Item>
 
-        <Dropdown.Item>
-          <i className="fa-regular fa-trash-can"></i>
-          {t("header.deleteaccount")}
-        </Dropdown.Item>
-      </Dropdown.Menu>
-    </Dropdown>
+          <Dropdown.Item href="/logout">
+            <i className="fa fa-sign-out-alt"></i>
+            {t("header.logout")}
+          </Dropdown.Item>
+
+          <Dropdown.Item>
+            <i className="fa-regular fa-trash-can"></i>
+            {t("header.deleteaccount")}
+          </Dropdown.Item>
+        </Dropdown.Menu>
+      </Dropdown>
+
+    </>
   );
 }
