@@ -37,7 +37,7 @@ export default function UserDropDown() {
             {t("profile.myprofile")}
           </Dropdown.Item>
 
-          <Dropdown.Item as={Link} to="/logout">
+          <Dropdown.Item>
             <i className="fa fa-sign-out-alt"></i>
             {t("header.logout")}
           </Dropdown.Item>
