@@ -4,9 +4,11 @@ import { flightLevels } from "../../utils/constants";
 import { Calendar } from "react-multi-date-picker";
 import Select from "react-select";
 import CheckField from "../../ui/forms/CheckField";
+import { useState } from "react";
 
 export default function FilterFlights() {
   const { t } = useTranslation();
+  const [flightType, setFlightType] = useState("one-way");
 
   return (
     <form className="filter_container">
@@ -15,13 +17,16 @@ export default function FilterFlights() {
           id="one-way"
           name="flight-type"
           text={t("flights.oneWay")}
-          checked={true}
+          checked={flightType === "one-way"}
+          onChange={() => setFlightType("one-way")}
         />
 
         <CheckField
           id="round-trip"
           name="flight-type"
           text={t("flights.roundTrip")}
+          checked={flightType === "round-trip"}
+          onChange={() => setFlightType("round-trip")}
         />
 
         <Select
@@ -94,7 +99,16 @@ export default function FilterFlights() {
           </Dropdown.Toggle>
           <Dropdown.Menu className="travelers_menu">
             <div className="calender_wrapper">
-              <Calendar numberOfMonths={2} minDate={new Date()}/>
+              <Calendar
+                numberOfMonths={flightType === "round-trip" ? 2 : 1}
+                value={
+                  flightType === "round-trip"
+                    ? [new Date(), new Date()]
+                    : new Date()
+                }
+                minDate={new Date()}
+                range={flightType === "round-trip"}
+              />
             </div>
           </Dropdown.Menu>
         </Dropdown>

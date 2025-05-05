@@ -11,8 +11,11 @@
     @include centerFlex();
     flex-direction: column;
     gap: 12px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -80%);
     h1 {
-      margin-top: 100px;
       color: $white;
       margin-bottom: 0;
       font-size: 28px;
