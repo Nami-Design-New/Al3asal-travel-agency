@@ -27,7 +27,7 @@ export default function TopDestinations() {
           {destinations.map((destination, index) => (
             <div className="col-lg-3 col-md-6 col-12 p-2" key={index}>
               <Link
-                to={`/destinations/${destination}`}
+                to={`/flights?destination=${destination}`}
                 className="destination_card"
               >
                 <div className="img">
