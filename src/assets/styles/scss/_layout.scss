@@ -221,7 +221,8 @@ header {
     }
     @media screen and (max-width: 576px) {
       flex-direction: column-reverse;
-      gap: 16px;
+      gap: 24px;
+      margin-bottom: 52px;
     }
   }
 

@@ -642,7 +642,8 @@ header nav .actions .user_dropdown i {
 @media screen and (max-width: 576px) {
   .footer .copyrights {
     flex-direction: column-reverse;
-    gap: 16px;
+    gap: 24px;
+    margin-bottom: 52px;
   }
 }
 .footer .social-icons {
