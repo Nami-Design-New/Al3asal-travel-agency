@@ -12,7 +12,8 @@
     "Dashboard": "لوحة التحكم",
     "contactus": "اتصل بنا",
     "logout": "تسجيل الخروج",
-    "deleteaccount": "حذف الحساب"
+    "deleteaccount": "حذف الحساب",
+    "wallet": "محفظتي"
   },
   "errorPage": {
     "pageNotFoundTitle": "الصفحة غير موجودة",
@@ -370,7 +371,7 @@
     "paymentMethodDescription": "رسوم المعالجة من 0 جنيه مصري إلى 2,272.96 جنيه مصري"
   },
   "profile": {
-    "myprofile": "ملفي الشخصي",
+    "myprofile": "حسابي",
     "payment": "طرق الدفع",
     "mytrips": "رحلاتي",
     "paymentsubtitle": "عند اختيارك واحدة أو أكثر من طرق الدفع (10 على الأكثر)، ستظهر الأسعار بالحد الأدنى من الرسوم. الرجاء الانتباه إلى أن بعض شركاتنا لا يدعمن جميع طرق الدفع.",
@@ -395,6 +396,15 @@
     "noTripsText": "بمجرد حجزك لأي رحلات، ستراهم هنا.",
     "noTripsLink": "أين حجزي؟",
     "noTripsButton": "احجز رحلة الآن",
-    "noData": "لا يوجد بيانات"
+    "noData": "لا يوجد بيانات",
+    "account": " رصيدك الحالي",
+    "withdrawBalance": "سحب رصيد",
+    "rechargeBalance": "إعادة شحن",
+    "transactions": "سجل التحويلات",
+    "amount": "المبلغ",
+    "confirm": "تأكيد",
+    "placeholder": "أدخل المبلغ بالدولار",
+    "ShowDetails": "عرض التفاصيل",
+    "Details": " تفاصيل الرحلة"
   }
 }
