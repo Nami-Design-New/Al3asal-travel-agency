@@ -3408,7 +3408,7 @@ body main .myprofile .profile_content .card .card-body .col-md-6 input.form-cont
   width: 100%;
 }
 body main .wallet {
-  padding: 1.5rem;
+  padding: 40px 0;
 }
 body main .wallet .wallet-header {
   margin-bottom: 20px;
@@ -3549,14 +3549,17 @@ body main .wallet .wallet-history .no-transactions {
   font-size: 16px;
 }
 body main .trips {
-  padding: 1.5rem;
+  padding: 40px 0;
 }
 body main .trips .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+body main .trips .header h5 {
+  margin: 0;
 }
 body main .trips .header .search-box {
   position: relative;
@@ -3590,7 +3593,7 @@ body main .trips .header .search-box input:focus {
 body main .trips .tabs {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 2px solid #ddd;
   margin-bottom: 1.5rem;
 }
 body main .trips .tabs .tab {
@@ -3599,16 +3602,30 @@ body main .trips .tabs .tab {
   text-align: center;
   font-weight: 500;
   cursor: pointer;
-  color: #777;
+  color: #000;
+  position: relative;
+}
+body main .trips .tabs .tab::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #54a0c4;
+  transition: width 0.3s ease;
+  transform: skew(-20deg) translateX(-50%);
 }
 body main .trips .tabs .tab.active {
   color: #54a0c4;
-  border-bottom: 3px solid #54a0c4;
+}
+body main .trips .tabs .tab.active::after {
+  width: 100%;
 }
 body main .trips .trip-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 16px;
 }
 body main .trips .trip-card {
   background: #fff;
@@ -3620,6 +3637,7 @@ body main .trips .trip-card {
   flex-direction: column;
   gap: 0.8rem;
   flex: 1 1 48%;
+  cursor: pointer;
 }
 body main .trips .trip-card__top {
   display: flex;
