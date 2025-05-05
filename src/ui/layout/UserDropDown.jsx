@@ -15,29 +15,29 @@ export default function UserDropDown() {
         </Dropdown.Toggle>
 
         <Dropdown.Menu className="custom-dropdown-menu text-end">
-          <Dropdown.Item href="/my-trips">
+          <Dropdown.Item as={Link} to="/my-trips">
             <i className="fa fa-plane"></i>
             {t("header.myflights")}
           </Dropdown.Item>
 
-          <Dropdown.Item href="/my-wallet">
+          <Dropdown.Item as={Link} to="/my-wallet">
             <i className="fa-solid fa-wallet"></i>
             {t("header.wallet")}
           </Dropdown.Item>
 
-          <Dropdown.Item href="/contact">
+          <Dropdown.Item as={Link} to="/contact">
             <i className="fa fa-phone"></i>
             {t("header.contactus")}
           </Dropdown.Item>
 
           <Dropdown.Divider />
 
-          <Dropdown.Item href="/my-profile">
+          <Dropdown.Item as={Link} to="/my-profile">
             <i className="fa-regular fa-user"></i>
             {t("profile.myprofile")}
           </Dropdown.Item>
 
-          <Dropdown.Item href="/logout">
+          <Dropdown.Item as={Link} to="/logout">
             <i className="fa fa-sign-out-alt"></i>
             {t("header.logout")}
           </Dropdown.Item>
@@ -48,7 +48,6 @@ export default function UserDropDown() {
           </Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
-
     </>
   );
 }
