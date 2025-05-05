@@ -15,7 +15,6 @@ import MyProfile from "../routes/MyProfile";
 import MyWallet from "../routes/MyWallet";
 import Trips from "../routes/Trips";
 
-
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -78,25 +77,7 @@ export const router = createBrowserRouter([
       {
         path: "my-trips",
         element: <Trips />,
-      },
-      // {
-      //   path: "profile",
-      //   element: <Profile />,
-      //   children: [
-      //     {
-      //       index: true,
-      //       element: <MyProfile />,
-      //     },
-      //     {
-      //       path: "my-trips",
-      //       element: <Trips />,
-      //     },
-      //     {
-      //       path: "payment-methods",
-      //       element: <PaymentMethods />,
-      //     },
-      //   ],
-      // },
+      }
     ],
   },
 ]);
