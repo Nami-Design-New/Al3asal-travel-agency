@@ -97,6 +97,7 @@ header {
         padding: 8px 20px;
         transition: $transition;
         box-shadow: $shadow;
+        white-space: nowrap;
       }
 
       .user_dropdown {
