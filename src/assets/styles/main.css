@@ -2079,6 +2079,17 @@ body main .flights .sorting_header {
   border-radius: 8px;
   display: flex;
 }
+body main .flights .sorting_header .sorting_btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 0;
+  background: #000;
+}
 body main .flights .sorting_header .block {
   flex: 1;
   display: flex;
@@ -2086,6 +2097,11 @@ body main .flights .sorting_header .block {
   justify-content: end;
   gap: 16px;
   padding: 0 12px;
+}
+@media screen and (max-width: 768px) {
+  body main .flights .sorting_header .block {
+    display: none;
+  }
 }
 body main .flights .sorting_header .block h6 {
   margin: 0;
@@ -2132,7 +2148,7 @@ body main .flights .round_trip_flight {
   position: relative;
 }
 body main .flights .round_trip_flight .num {
-  width: 28px;
+  min-width: 28px;
   height: 28px;
   border-radius: 50%;
   background: #54a0c4;
@@ -2141,10 +2157,22 @@ body main .flights .round_trip_flight .num {
   align-items: center;
   justify-content: center;
 }
+@media screen and (max-width: 768px) {
+  body main .flights .round_trip_flight .num {
+    min-width: 24px;
+    height: 24px;
+    font-size: 14px;
+  }
+}
 body main .flights .round_trip_flight .content h3 {
   font-size: 16px;
   color: #000;
   margin-bottom: 2px;
+}
+@media screen and (max-width: 768px) {
+  body main .flights .round_trip_flight .content h3 {
+    font-size: 12px;
+  }
 }
 body main .flights .round_trip_flight .content p {
   font-size: 12px;
@@ -2154,6 +2182,12 @@ body main .flights .round_trip_flight .content p {
 body main .flights .round_trip_flight .departing_flight {
   -webkit-clip-path: polygon(100% 0%, 2% 0%, 0% 50%, 2% 100%, 100% 100%);
           clip-path: polygon(100% 0%, 2% 0%, 0% 50%, 2% 100%, 100% 100%);
+}
+@media screen and (max-width: 768px) {
+  body main .flights .round_trip_flight .departing_flight {
+    -webkit-clip-path: polygon(0% 0%, 95% 0%, 100% 50%, 95% 100%, 0% 100%) !important;
+            clip-path: polygon(0% 0%, 95% 0%, 100% 50%, 95% 100%, 0% 100%) !important;
+  }
 }
 body main .flights .round_trip_flight .departing_flight,
 body main .flights .round_trip_flight .return_flight {
@@ -2166,6 +2200,13 @@ body main .flights .round_trip_flight .return_flight {
 body main .flights .round_trip_flight .departing_flight.active,
 body main .flights .round_trip_flight .return_flight.active {
   background: rgba(84, 160, 196, 0.2196078431);
+}
+@media screen and (max-width: 768px) {
+  body main .flights .round_trip_flight .departing_flight,
+  body main .flights .round_trip_flight .return_flight {
+    gap: 8px;
+    padding: 14px;
+  }
 }
 body main .flights .round_trip_flight .return_flight {
   opacity: 0.5;
@@ -2310,6 +2351,11 @@ body main .flight_card .flight_info .duration .content {
   gap: 8px;
   width: 100px;
 }
+@media screen and (max-width: 768px) {
+  body main .flight_card .flight_info .duration .content {
+    align-items: end;
+  }
+}
 body main .flight_card .flight_info .duration .content h6 {
   margin: 0;
   display: flex;
@@ -2338,11 +2384,22 @@ body main .flight_card .price h5 {
   color: #000;
   font-weight: 600;
   margin-bottom: 0;
+  white-space: nowrap;
+}
+@media screen and (max-width: 768px) {
+  body main .flight_card .price h5 {
+    font-size: 16px;
+  }
 }
 body main .flight_card .price h5 span {
   color: #777;
   font-weight: normal;
   font-size: 12px;
+}
+@media screen and (max-width: 768px) {
+  body main .flight_card .price h5 span {
+    font-size: 10px;
+  }
 }
 body main .flight_review {
   padding: 40px 0;
