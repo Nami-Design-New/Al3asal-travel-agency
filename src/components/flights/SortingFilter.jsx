@@ -1,3 +1,4 @@
+import { Dropdown } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 
 export default function SortingFilter() {
@@ -5,6 +6,19 @@ export default function SortingFilter() {
 
   return (
     <div className="sorting_header">
+      <Dropdown>
+        <Dropdown.Toggle className="sorting_btn">
+          <i className="fa-regular fa-sliders"></i> {t("flights.sortBy")}
+        </Dropdown.Toggle>
+
+        <Dropdown.Menu>
+          <Dropdown.Item as="div">{t("flights.recommended")}</Dropdown.Item>
+          <Dropdown.Item as="div">{t("flights.departureTime")}</Dropdown.Item>
+          <Dropdown.Item as="div">{t("flights.duration")}</Dropdown.Item>
+          <Dropdown.Item as="div">{t("flights.price")}</Dropdown.Item>
+        </Dropdown.Menu>
+      </Dropdown>
+
       <div className="block">
         <h6>{t("flights.sortBy")} :</h6>
 

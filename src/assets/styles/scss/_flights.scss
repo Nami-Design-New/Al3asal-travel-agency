@@ -23,6 +23,19 @@
     padding: 12px;
     border-radius: 8px;
     display: flex;
+
+    .sorting_btn {
+      padding: 8px 16px;
+      border-radius: 8px;
+      background: $white;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border: 0;
+      background: $black;
+    }
+
     .block {
       flex: 1;
       display: flex;
@@ -30,6 +43,9 @@
       justify-content: end;
       gap: 16px;
       padding: 0 12px;
+      @media screen and (max-width: 768px) {
+        display: none;
+      }
       h6 {
         margin: 0;
         font-size: 14px;
@@ -82,12 +98,18 @@
     position: relative;
 
     .num {
-      width: 28px;
+      min-width: 28px;
       height: 28px;
       border-radius: 50%;
       background: $main;
       color: $white;
       @include centerFlex();
+
+      @media screen and (max-width: 768px) {
+        min-width: 24px;
+        height: 24px;
+        font-size: 14px;
+      }
     }
 
     .content {
@@ -95,6 +117,9 @@
         font-size: 16px;
         color: $black;
         margin-bottom: 2px;
+        @media screen and (max-width: 768px) {
+          font-size: 12px;
+        }
       }
       p {
         font-size: 12px;
@@ -105,6 +130,16 @@
 
     .departing_flight {
       clip-path: polygon(100% 0%, 2% 0%, 0% 50%, 2% 100%, 100% 100%);
+
+      @media screen and (max-width: 768px) {
+        clip-path: polygon(
+          0% 0%,
+          95% 0%,
+          100% 50%,
+          95% 100%,
+          0% 100%
+        ) !important;
+      }
     }
 
     .departing_flight,
@@ -116,6 +151,10 @@
       gap: 16px;
       &.active {
         background: #54a0c438;
+      }
+      @media screen and (max-width: 768px) {
+        gap: 8px;
+        padding: 14px;
       }
     }
 
@@ -270,6 +309,10 @@
         flex-direction: column;
         gap: 8px;
         width: 100px;
+
+        @media screen and (max-width: 768px) {
+          align-items: end;
+        }
         h6 {
           margin: 0;
           display: flex;
@@ -300,11 +343,19 @@
       color: $black;
       font-weight: 600;
       margin-bottom: 0;
+      white-space: nowrap;
+      @media screen and (max-width: 768px) {
+        font-size: 16px;
+      }
 
       span {
         color: $gray;
         font-weight: normal;
         font-size: 12px;
+
+        @media screen and (max-width: 768px) {
+          font-size: 10px;
+        }
       }
     }
   }
