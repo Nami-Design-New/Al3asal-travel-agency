@@ -5,51 +5,52 @@ export default function Profile() {
   const { t } = useTranslation();
 
   return (
-    <div className="profile-container">
+    <section className="my_profile">
       <div className="container">
         <div className="row">
-          <div className="col-lg-3 col-12 p-2">
-            <div className="profile-sidebar">
-              <div className="profile-header">
-                <div className="avatar">MS</div>
-                <div>
-                  <h5>Mariam Samir</h5>
-                  <p className="email">mariam77@gmail.com</p>
+          <div className="col-lg-4 col-md-4 col-12 p-2">
+            <div className="profile_sidebar">
+              <div className="user">
+                <div className="avatar">AE</div>
+                <div className="content">
+                  <h6>Ahmed Elsayed</h6>
+                  <span>ahmedelsayed2102@icloud.com</span>
                 </div>
               </div>
 
-              <ul className="profile-menu">
-                <li>
-                  <NavLink to="" end>
-                    <i className="fa-regular fa-user"></i>
-                    <span className="menu-text">{t("profile.myprofile")}</span>
-                  </NavLink>
-                </li>
+              <div className="nav_links">
+                <NavLink to="" end className="nav_link">
+                  <i className="fa-regular fa-user-pen"></i>
+                  {t("profile.PersonalInformation")}
+                </NavLink>
 
-                <li>
-                  <NavLink to="payment-methods">
-                    <i className="fa-regular fa-credit-card"></i>
-                    <span className="menu-text">{t("profile.payment")}</span>
-                  </NavLink>
-                </li>
+                <NavLink to="bookings" className="nav_link">
+                  <i className="fa-regular fa-plane"></i>
+                  {t("profile.MyBookings")}
+                </NavLink>
 
-                <li>
-                  <NavLink to="my-trips">
-                    <i className="fa fa-plane"></i>
-                    <span className="menu-text">{t("profile.mytrips")}</span>
-                  </NavLink>
-                </li>
-              </ul>
+                <NavLink to="/contact" className="nav_link">
+                  <i className="fa-regular fa-circle-info"></i>
+                  {t("profile.helpSupport")}
+                </NavLink>
+
+                <NavLink to="/home" className="nav_link">
+                  <i className="fa-regular fa-sign-out-alt"></i>
+                  {t("profile.logout")}
+                </NavLink>
+
+                <NavLink to="/home" className="nav_link danger">
+                  <i className="fa-regular fa-trash"></i>
+                  {t("profile.deleteAccount")}
+                </NavLink>
+              </div>
             </div>
           </div>
-
-          <div className="col-lg-9 col-12 p-2">
-            <div className="profile-content">
-              <Outlet />
-            </div>
+          <div className="col-lg-8 col-md-4 col-12 p-2">
+            <Outlet />
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

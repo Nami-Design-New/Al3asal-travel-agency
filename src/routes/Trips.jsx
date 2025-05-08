@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import MyTicket from "../ui/cards/MyTicket";
 import FlightDetails from "../ui/modals/FlightDetails";
+import { Link } from "react-router";
 
 export default function Trips() {
   const { t } = useTranslation();
@@ -41,7 +42,7 @@ export default function Trips() {
     <div className="trips">
       <div className="container">
         <div className="header">
-          <h5>{t("profile.Flightsbookings")}</h5>
+          <h5>{t("profile.MyBookings")}</h5>
           <div className="search-box">
             <i className="fa-solid fa-magnifying-glass"></i>
             <input
@@ -81,7 +82,12 @@ export default function Trips() {
             ))}
 
           {trips.filter((trip) => trip.status === activeTab).length === 0 && (
-            <div className="no-data">{t("profile.noData")}</div>
+            <div className="no-data">
+              <img src="/icons/noData.svg" alt="" />
+              <h6>{t("profile.noData")}</h6>
+              <p>{t("profile.noDataText")}</p>
+              <Link to="/flights">{t("profile.bookNow")}</Link>
+            </div>
           )}
         </div>
       </div>

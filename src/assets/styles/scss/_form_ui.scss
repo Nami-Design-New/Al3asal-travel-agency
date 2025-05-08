@@ -153,6 +153,7 @@
 
 .gender_select {
   display: flex;
+  width: 100%;
   flex-direction: column;
   gap: 6px;
   label {
@@ -197,5 +198,17 @@
   }
   label {
     font-weight: 500;
+  }
+}
+
+.form-switch {
+  label {
+    color: $black;
+    font-weight: 500;
+    font-size: 14px;
+  }
+  .form-check-input:checked {
+    background-color: $main !important;
+    border-color: $main !important;
   }
 }

@@ -13,16 +13,16 @@ function ResponsiveNav() {
 
       <NavLink
         aria-label="Flight Booking"
-        to="my-trips"
+        to="/profile/bookings"
         className="menu_item"
       >
         <i className="fa-regular fa-calendar-range"></i>
         <span>{t("header.myflights")}</span>
       </NavLink>
 
-      <NavLink aria-label="My Profile" to="/my-profile" className="menu_item" end>
+      <NavLink aria-label="My Profile" to="/profile" className="menu_item" end>
         <i className="fa-regular fa-user"></i>
-        <span>{t("profile.myprofile")}</span>
+        <span>{t("header.myprofile")}</span>
       </NavLink>
     </div>
   );

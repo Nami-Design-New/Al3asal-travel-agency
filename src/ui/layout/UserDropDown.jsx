@@ -4,47 +4,36 @@ import { Link } from "react-router";
 
 export default function UserDropDown() {
   const { t } = useTranslation();
-  const userName = "Mariam Samir";
 
   return (
     <>
       <Dropdown className="d-lg-block d-none">
         <Dropdown.Toggle className="user_dropdown">
-          <span>{userName}</span>
+          <span>Ahmed Elsayed</span>
           <i className="fa fa-chevron-down"></i>
         </Dropdown.Toggle>
 
         <Dropdown.Menu className="custom-dropdown-menu text-end">
-          <Dropdown.Item as={Link} to="/my-trips">
-            <i className="fa fa-plane"></i>
+          <Dropdown.Item as={Link} to="/profile/bookings">
+            <i className="fa-regular fa-plane"></i>
             {t("header.myflights")}
           </Dropdown.Item>
 
-          <Dropdown.Item as={Link} to="/my-wallet">
-            <i className="fa-solid fa-wallet"></i>
-            {t("header.wallet")}
-          </Dropdown.Item>
-
-          <Dropdown.Item as={Link} to="/contact">
-            <i className="fa fa-phone"></i>
-            {t("header.contactus")}
+          <Dropdown.Item as={Link} to="/profile">
+            <i className="fa-regular fa-user"></i>
+            {t("header.myprofile")}
           </Dropdown.Item>
 
           <Dropdown.Divider />
 
-          <Dropdown.Item as={Link} to="/my-profile">
-            <i className="fa-regular fa-user"></i>
-            {t("profile.myprofile")}
+          <Dropdown.Item as={Link} to="/contact">
+            <i className="fa-regular fa-phone"></i>
+            {t("header.contactus")}
           </Dropdown.Item>
 
           <Dropdown.Item>
-            <i className="fa fa-sign-out-alt"></i>
+            <i className="fa-regular fa-sign-out-alt"></i>
             {t("header.logout")}
-          </Dropdown.Item>
-
-          <Dropdown.Item>
-            <i className="fa-regular fa-trash-can"></i>
-            {t("header.deleteaccount")}
           </Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
