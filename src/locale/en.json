@@ -107,7 +107,9 @@
     "itinerary": "Itinerary",
     "totalPrice": "Total Price",
     "departure": "Depart",
-    "arrival": "Return"
+    "arrival": "Return",
+    "receipt": "Receipt",
+    "print": "Print"
   },
   "home": {
     "welcome": "Welcome to Al3asal Travel & Tourism",
@@ -400,10 +402,31 @@
     "confirmPassword": "Confirm Password",
     "wantChangePassword": "Want to change your password?",
     "passport": "Passport Info",
-    "passportNumber":"Passport Number",
-    "passportExpiryDate":"Passport Expiry Date",
-    "passportHolder":"Passport Holder Name",
+    "passportNumber": "Passport Number",
+    "passportExpiryDate": "Passport Expiry Date",
+    "passportHolder": "Passport Holder Name",
     "passportIssueDate": "Passport Issue Date",
     "passportIssueCountry": "Passport Issue Country"
+  },
+  "receipt": {
+    "al3asal": "Al3asal Travel & Tourism",
+    "flightNumber": "Flight Number",
+    "flightDetails": "Flight Details",
+    "issueDate": "Issue Date",
+    "passport": "Passport Number",
+    "name": "Passenger Name",
+    "ticketNumber": "Ticket Number",
+    "seatNumber": " Seat Number",
+    "departure": "Departure",
+    "arrival": "Arrival",
+    "airLine": "Airline",
+    "cabinClass": "Cabin Class",
+    "numberOfPassengers": "Number of Passengers",
+    "duration": "Duration",
+    "baggageAllowance": "Baggage Allowance",
+    "aircraft": "Aircraft",
+    "price": "Price",
+    "tax": "Tax",
+    "total": "Total"
   }
 }
