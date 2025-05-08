@@ -34,12 +34,12 @@ export default function Profile() {
                   {t("profile.helpSupport")}
                 </NavLink>
 
-                <NavLink to="/home" className="nav_link">
+                <NavLink to="/" className="nav_link">
                   <i className="fa-regular fa-sign-out-alt"></i>
                   {t("profile.logout")}
                 </NavLink>
 
-                <NavLink to="/home" className="nav_link danger">
+                <NavLink to="/" className="nav_link danger">
                   <i className="fa-regular fa-trash"></i>
                   {t("profile.deleteAccount")}
                 </NavLink>

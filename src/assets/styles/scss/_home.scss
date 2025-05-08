@@ -45,7 +45,7 @@
   padding: 100px 0 80px;
 
   @media screen and (max-width: 576px) {
-    padding: 240px 0 80px;
+    padding: 280px 0 80px;
   }
   h2 {
     color: $black;
@@ -163,7 +163,7 @@
   z-index: 99;
 
   @media screen and (max-width: 576px) {
-    bottom: -200px;
+    bottom: -232px;
   }
 }
 
@@ -275,7 +275,6 @@
       inset: none !important;
       left: 50% !important;
       transform: translateX(-50%) !important;
-      top: 32px;
       @media screen and (max-width: 576px) {
         .rmdp-week {
           justify-content: unset !important;
@@ -528,5 +527,12 @@
     border-radius: 50%;
     width: 40px;
     height: 40px;
+  }
+}
+
+@media  (max-width: 450px) {
+  .rmdp-header,
+  .rmdp-month-name {
+    font-size: 16px;
   }
 }
