@@ -629,6 +629,215 @@ header {
   }
 }
 
+.receipt_modal {
+  .modal-dialog {
+    margin: 0 auto !important;
+  }
+
+  .modal-content {
+    min-height: 100vh;
+    border-radius: 0 !important;
+  }
+
+  .header {
+    width: 100%;
+    background: $input_stroke;
+    padding: 12px 16px;
+    @include space-between();
+    h6 {
+      font-size: 16px;
+      margin-bottom: 0;
+    }
+  }
+
+  .modal-body {
+    padding: 0 !important;
+    background: $input_bg;
+  }
+
+  .receipt_container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    height: 100%;
+    padding: 12px;
+    .print {
+      display: flex;
+      justify-content: end;
+      button {
+        background: $black;
+        color: $white;
+        padding: 8px 32px;
+        border-radius: 8px;
+      }
+    }
+  }
+}
+
+.receipt {
+  height: 100%;
+  width: 100%;
+  background: $white;
+  border: 1px solid $input_stroke;
+
+  .header {
+    background: $input_bg;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 12px 16px;
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    img {
+      height: 42px;
+    }
+    h2 {
+      font-size: 16px;
+      margin: 0;
+    }
+
+    .contact {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      p {
+        margin: 0;
+        font-size: 14px;
+        color: $black;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .about_flight {
+    padding: 24px;
+    .head {
+      @include space-between();
+      h6 {
+        font-size: 16px;
+        color: $black;
+        margin-bottom: 0;
+
+        span {
+          font-size: 18px;
+          color: $main;
+        }
+      }
+    }
+
+    .flight_info {
+      margin-top: 32px;
+      @include space-between();
+
+      .airport {
+        max-width: 250px;
+      }
+
+      h6 {
+        color: $black;
+        font-size: 14px;
+        font-weight: 500;
+      }
+      p {
+        color: $gray;
+        font-size: 14px;
+      }
+      span {
+        color: $black;
+        font-size: 14px;
+        font-weight: 600;
+      }
+    }
+
+    .flight_details {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 16px;
+
+      li {
+        background: $input_bg;
+        padding: 8px 12px;
+        border-radius: 8px;
+        font-size: 14px;
+        color: $gray;
+        font-weight: 400;
+        span {
+          font-size: 14px;
+          font-weight: 600;
+          color: $black;
+        }
+      }
+    }
+  }
+
+  .price {
+    padding: 24px;
+    border-top: 1px solid $input_stroke;
+    ul {
+      width: 50%;
+      margin-inline-start: auto;
+      li {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 16px;
+        span {
+          color: $black;
+          font-size: 14px;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  .protection_note {
+    padding: 24px;
+    .note {
+      padding: 16px;
+      border-radius: 16px;
+      background: $input_bg;
+      p {
+        color: $gray;
+        font-size: 14px;
+        margin: 0;
+      }
+      span {
+        text-decoration: underline;
+        color: #0d38c3;
+      }
+    }
+  }
+
+  .passengers {
+    padding: 24px;
+
+    table {
+      width: 100%;
+      thead {
+        background: $input_bg;
+      }
+      th,
+      td {
+        padding: 12px;
+        font-size: 14px;
+      }
+
+      tr {
+        border-bottom: 1px dashed $input_stroke;
+
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+}
+
 .custom-dropdown-menu {
   border-radius: 16px;
   padding: 10px;
