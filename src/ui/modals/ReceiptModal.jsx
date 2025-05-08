@@ -188,7 +188,7 @@ export default function ReceiptModal({ show, setShow }) {
                   policy and, where your booking is made via a reservation
                   system provider (&quot;GDS&quot;), with its privacy policy.
                   These are available at{" "}
-                  <span>http://www.iatatravelcentre.com/privacy.html</span> or
+                  <span>https://al3asal-travel-agency.vercel.app/privacy</span> or
                   from the carrier or GDS directly. You should read this
                   documentation, which applies to your booking and specifies,
                   for example, how your personal data is collected, stored,
