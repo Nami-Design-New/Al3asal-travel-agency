@@ -38,14 +38,10 @@ export default function Profile() {
                   <i className="fa-regular fa-sign-out-alt"></i>
                   {t("profile.logout")}
                 </NavLink>
-
-                <NavLink to="/" className="nav_link danger">
-                  <i className="fa-regular fa-trash"></i>
-                  {t("profile.deleteAccount")}
-                </NavLink>
               </div>
             </div>
           </div>
+
           <div className="col-lg-8 col-md-4 col-12 p-2">
             <Outlet />
           </div>

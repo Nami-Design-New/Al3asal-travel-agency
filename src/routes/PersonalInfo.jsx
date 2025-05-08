@@ -103,7 +103,7 @@ export default function PersonalInfo() {
               <ReactFlagsSelect selected="SY" />
             </div>
           </div>
-          
+
           <div className="form_group">
             <InputField
               label={t("profile.passportNumber")}
@@ -132,6 +132,11 @@ export default function PersonalInfo() {
           <SubmitButton text={t("profile.save")} />
         </form>
       </div>
+
+      <button className="delete_account">
+        <i className="fa-regular fa-trash"></i>
+        {t("profile.deleteAccount")}
+      </button>
     </>
   );
 }
