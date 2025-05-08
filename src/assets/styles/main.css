@@ -1054,9 +1054,19 @@ header nav .actions .user_dropdown i {
   height: 100%;
   padding: 12px;
 }
+@media screen and (max-width: 576px) {
+  .receipt_modal .receipt_container {
+    overflow-x: scroll !important;
+  }
+}
 .receipt_modal .receipt_container .print {
   display: flex;
   justify-content: end;
+}
+@media screen and (max-width: 576px) {
+  .receipt_modal .receipt_container .print {
+    width: 200vw !important;
+  }
 }
 .receipt_modal .receipt_container .print button {
   background: #000;
@@ -1070,6 +1080,11 @@ header nav .actions .user_dropdown i {
   width: 100%;
   background: #fff;
   border: 1px solid #f4f4f4;
+}
+@media screen and (max-width: 576px) {
+  .receipt {
+    width: 200vw !important;
+  }
 }
 .receipt .header {
   background: #fafafa;

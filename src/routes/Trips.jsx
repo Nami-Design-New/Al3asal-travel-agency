@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import MyTicket from "../ui/cards/MyTicket";
-import FlightDetails from "../ui/modals/FlightDetails";
 import { Link } from "react-router";
+import MyTicket from "../ui/cards/MyTicket";
+import ReceiptModal from "../ui/modals/ReceiptModal";
 
 export default function Trips() {
   const { t } = useTranslation();
@@ -92,7 +92,7 @@ export default function Trips() {
         </div>
       </div>
 
-      <FlightDetails show={show} setShow={setShow} page="checkout" />
+      <ReceiptModal show={show} setShow={setShow} page="checkout" />
     </div>
   );
 }
