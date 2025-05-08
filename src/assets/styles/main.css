@@ -1380,6 +1380,7 @@ header nav .actions .user_dropdown i {
 
 .gender_select {
   display: flex;
+  width: 100%;
   flex-direction: column;
   gap: 6px;
 }
@@ -1426,6 +1427,16 @@ header nav .actions .user_dropdown i {
 }
 .gender_select label {
   font-weight: 500;
+}
+
+.form-switch label {
+  color: #000;
+  font-weight: 500;
+  font-size: 14px;
+}
+.form-switch .form-check-input:checked {
+  background-color: #54a0c4 !important;
+  border-color: #54a0c4 !important;
 }
 
 .error-page {
@@ -1512,7 +1523,7 @@ body main .hero_section .hero_text p {
   color: #fff;
   font-size: 16px;
   margin-bottom: 0;
-  width: min(100% - 24px, 700px);
+  width: min(100% - 24px, 900px);
   text-align: center;
   margin: 0 auto;
 }
@@ -1632,7 +1643,7 @@ body main .flights_filter {
   bottom: -50px;
   left: 50%;
   transform: translateX(-50%);
-  width: min(100%, 1100px);
+  width: min(100%, 1290px);
   z-index: 99;
 }
 @media screen and (max-width: 576px) {
@@ -1691,7 +1702,7 @@ body main .filter_container .flight_specifications .from_to {
   align-items: center;
   gap: 16px;
   position: relative;
-  min-width: 50%;
+  min-width: 45%;
 }
 @media screen and (max-width: 576px) {
   body main .filter_container .flight_specifications .from_to {
@@ -1745,6 +1756,15 @@ body main .filter_container .flight_specifications .travelers_menu {
   min-width: 18rem;
   padding: 16px;
   z-index: 99;
+}
+@media screen and (max-width: 576px) {
+  body main .filter_container .flight_specifications .travelers_menu {
+    width: 100vw;
+  }
+  body main .filter_container .flight_specifications .travelers_menu .rmdp-day-picker {
+    gap: 24px;
+    flex-direction: column !important;
+  }
 }
 body main .filter_container .flight_specifications .travelers_menu .travelers_menu_content {
   gap: 16px;
@@ -3432,43 +3452,67 @@ body main .blog_details_page .recent_blogs ul li a .blog_item .blog_info .date {
 body main .blog_details_page .recent_blogs ul li a:hover .blog_info h4 {
   color: #54a0c4;
 }
-body main .myprofile {
-  padding: 1rem;
+body main .my_profile {
+  padding: 60px 0;
 }
-body main .myprofile .profile_title {
-  margin-bottom: 10px;
+body main .my_profile .profile_sidebar {
+  border: 1px solid #f4f4f4;
+  padding: 24px;
+  position: sticky;
+  top: 150.8px;
+  border-radius: 12px;
 }
-body main .myprofile .profile_content {
-  margin-top: 30px;
-}
-body main .myprofile .profile_content .card {
-  margin-bottom: 1.5rem;
-}
-body main .myprofile .profile_content .card .card-header {
+body main .my_profile .profile_sidebar .user {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #f4f4f4;
 }
-body main .myprofile .profile_content .card .card-header button {
-  background-color: transparent;
-  border: none;
-}
-body main .myprofile .profile_content .card .card-header .card-title {
-  font-weight: bold;
+body main .my_profile .profile_sidebar .user .avatar {
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
   color: #54a0c4;
-  margin-top: 10px;
-}
-body main .myprofile .profile_content .card .card-body {
+  font-size: 18px;
+  border: 1px solid #f4f4f4;
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
 }
-body main .myprofile .profile_content .card .card-body .col-md-6 {
-  margin-bottom: 1rem;
+body main .my_profile .profile_sidebar .user .content h6 {
+  font-size: 18px;
+  color: #000;
+  margin-bottom: 2px;
 }
-body main .myprofile .profile_content .card .card-body .col-md-6 .lable {
-  font-weight: bold;
+body main .my_profile .profile_sidebar .user .content span {
+  font-size: 14px;
+  color: #777;
 }
-body main .myprofile .profile_content .card .card-body .col-md-6 input.form-control {
-  width: 100%;
+body main .my_profile .profile_sidebar .nav_links {
+  display: flex;
+  flex-direction: column;
+  margin-top: 24px;
+  gap: 12px;
+}
+body main .my_profile .profile_sidebar .nav_links .nav_link {
+  padding: 12px 24px;
+  background: #fafafa;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: #000;
+  transition: 0.3s ease-in-out;
+  font-size: 14px;
+}
+body main .my_profile .profile_sidebar .nav_links .nav_link.danger {
+  color: #ff0000;
+}
+body main .my_profile .profile_sidebar .nav_links .nav_link.active {
+  background: #f1f9ff;
+  color: #000;
 }
 body main .wallet {
   padding: 40px 0;
@@ -3611,9 +3655,6 @@ body main .wallet .wallet-history .no-transactions {
   color: #999;
   font-size: 16px;
 }
-body main .trips {
-  padding: 40px 0;
-}
 body main .trips .header {
   display: flex;
   justify-content: space-between;
@@ -3655,12 +3696,11 @@ body main .trips .header .search-box input:focus {
 }
 body main .trips .tabs {
   display: flex;
-  justify-content: space-between;
+  gap: 2rem;
   border-bottom: 2px solid #ddd;
   margin-bottom: 1.5rem;
 }
 body main .trips .tabs .tab {
-  flex: 1;
   padding: 0.5rem;
   text-align: center;
   font-weight: 500;
@@ -3763,93 +3803,42 @@ body main .trips .trip-card__price {
   color: #222;
 }
 body main .trips .no-data {
-  text-align: center;
-  color: #888;
-  margin-top: 2rem;
+  width: 100%;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: center;
+}
+body main .trips .no-data h6 {
+  font-size: 14px;
+  color: #000;
+}
+body main .trips .no-data p {
+  font-size: 14px;
+  color: #777;
+}
+body main .trips .no-data a {
+  color: #54a0c4 !important;
+  font-weight: 500 !important;
+  text-decoration: underline !important;
+  font-size: 14px !important;
 }
 @media (max-width: 768px) {
   body main .trips .trip-card {
     flex: 1 1 100%;
   }
 }
-body main .modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
+body main .personal_info {
+  border: 1px solid #f4f4f4;
   width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
+  padding: 16px;
+  border-radius: 16px;
 }
-body main .modal-overlay .modal-content {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 12px;
-  max-width: 600px;
-  width: 90%;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  overflow-y: auto; /* Scroll in case content overflows */
-}
-body main .modal-overlay .modal-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 2px solid #f0f0f0;
-  padding-bottom: 10px;
-}
-body main .modal-overlay .modal-header h4 {
-  font-size: 20px;
-  font-weight: 600;
-  color: #333;
-}
-body main .modal-overlay .close-btn {
-  background: transparent;
-  border: none;
-  font-size: 28px;
-  color: #999;
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-body main .modal-overlay .close-btn:hover {
-  color: #000;
-}
-body main .modal-overlay .modal-body {
-  margin-top: 15px;
-}
-body main .modal-overlay .modal-info p {
-  font-size: 16px;
-  margin-bottom: 12px;
-  color: #444;
-  line-height: 1.5;
-}
-body main .modal-overlay .modal-info p strong {
-  font-weight: 700;
-  color: #333;
-}
-body main .modal-overlay .close-btn {
-  border-radius: 50%;
-  padding: 5px 10px;
-  font-size: 24px;
-  transition: all 0.3s ease;
-}
-body main .modal-overlay .close-btn:hover {
-  background-color: #f2f2f2;
-}
-body main .custom-btn {
-  font-size: 1.1rem;
-  padding: 0.75rem 1.5rem;
-  background-color: #54a0c4;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  transition: all 0.3s ease;
-}
-body main .custom-btn:hover {
-  opacity: 0.9;
-  cursor: pointer;
+body main .personal_info h6 {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 32px;
 }
 body.en {
   font-family: "Outfit", sans-serif;

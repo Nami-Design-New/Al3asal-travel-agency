@@ -30,7 +30,7 @@
       color: $white;
       font-size: 16px;
       margin-bottom: 0;
-      width: min(100% - 24px, 700px);
+      width: min(100% - 24px, 900px);
       text-align: center;
       margin: 0 auto;
 
@@ -159,7 +159,7 @@
   bottom: -50px;
   left: 50%;
   transform: translateX(-50%);
-  width: min(100%, 1100px);
+  width: min(100%, 1290px);
   z-index: 99;
 
   @media screen and (max-width: 576px) {
@@ -218,7 +218,7 @@
       align-items: center;
       gap: 16px;
       position: relative;
-      min-width: 50%;
+      min-width: 45%;
 
       @media screen and (max-width: 576px) {
         width: 100%;
@@ -272,6 +272,13 @@
       min-width: 18rem;
       padding: 16px;
       z-index: 99;
+      @media screen and (max-width: 576px) {
+        width: 100vw;
+        .rmdp-day-picker {
+          gap: 24px;
+          flex-direction: column !important;
+        }
+      }
 
       .travelers_menu_content {
         gap: 16px;
