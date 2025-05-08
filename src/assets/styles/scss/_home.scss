@@ -272,8 +272,14 @@
       min-width: 18rem;
       padding: 16px;
       z-index: 99;
+      inset: none !important;
+      left: 50% !important;
+      transform: translateX(-50%) !important;
+      top: 32px;
       @media screen and (max-width: 576px) {
-        width: 100vw;
+        .rmdp-week {
+          justify-content: unset !important;
+        }
         .rmdp-day-picker {
           gap: 24px;
           flex-direction: column !important;

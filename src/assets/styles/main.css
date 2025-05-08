@@ -181,8 +181,8 @@ button {
 }
 
 .rmdp-day {
-  width: 52px !important;
-  height: 52px !important;
+  width: 48px !important;
+  height: 48px !important;
   font-size: 16px !important;
   color: #000 !important;
   transition: all 0.3s ease-in-out;
@@ -277,7 +277,7 @@ button {
 }
 
 .rmdp-week-day {
-  width: 52px !important;
+  width: 48px !important;
 }
 
 .form-switch input {
@@ -1756,10 +1756,14 @@ body main .filter_container .flight_specifications .travelers_menu {
   min-width: 18rem;
   padding: 16px;
   z-index: 99;
+  inset: none !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  top: 32px;
 }
 @media screen and (max-width: 576px) {
-  body main .filter_container .flight_specifications .travelers_menu {
-    width: 100vw;
+  body main .filter_container .flight_specifications .travelers_menu .rmdp-week {
+    justify-content: unset !important;
   }
   body main .filter_container .flight_specifications .travelers_menu .rmdp-day-picker {
     gap: 24px;
