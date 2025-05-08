@@ -137,6 +137,9 @@ export default function ReceiptModal({ show, setShow }) {
                 <li>
                   {t("receipt.aircraft")} : <span>Boeing 747</span>
                 </li>
+                <li>
+                  {t("receipt.gate")} : <span>A3</span>
+                </li>
               </ul>
             </div>
 

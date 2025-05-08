@@ -427,6 +427,7 @@
     "aircraft": "Aircraft",
     "price": "Price",
     "tax": "Tax",
-    "total": "Total"
+    "total": "Total",
+    "gate": "Gate Number"
   }
 }
