@@ -661,9 +661,15 @@ header {
     gap: 12px;
     height: 100%;
     padding: 12px;
+    @media screen and (max-width: 576px) {
+      overflow-x: scroll !important;
+    }
     .print {
       display: flex;
       justify-content: end;
+      @media screen and (max-width: 576px) {
+        width: 200vw !important;
+      }
       button {
         background: $black;
         color: $white;
@@ -679,6 +685,10 @@ header {
   width: 100%;
   background: $white;
   border: 1px solid $input_stroke;
+
+  @media screen and (max-width: 576px) {
+    width: 200vw !important;
+  }
 
   .header {
     background: $input_bg;
@@ -864,6 +874,7 @@ header {
     }
   }
 }
+
 .small_menu {
   position: fixed;
   bottom: 0;
