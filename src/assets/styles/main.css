@@ -3850,6 +3850,19 @@ body main .personal_info h6 {
   color: #777;
   margin-bottom: 32px;
 }
+body main .delete_account {
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 12px 32px;
+  border-radius: 12px;
+  background-color: red;
+  color: #fff;
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
 body.en {
   font-family: "Outfit", sans-serif;
   direction: ltr;

@@ -60,7 +60,7 @@
           color: #ff0000;
         }
 
-        &.active{
+        &.active {
           background: $main10;
           color: $black;
         }
@@ -445,4 +445,17 @@
     color: $gray;
     margin-bottom: 32px;
   }
+}
+
+.delete_account {
+  width: fit-content;
+  padding: 12px 32px;
+  border-radius: 12px;
+  background-color: red;
+  color: $white;
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
 }
