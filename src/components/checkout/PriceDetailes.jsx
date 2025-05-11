@@ -22,7 +22,7 @@ export default function PriceDetailes() {
 
             <span>Tue, 15 Jul - Fri, 22 Aug · 2 passengers</span>
           </div>
-          <i className="fa-regular fa-chevron-right"></i>
+          <i className="fa-regular fa-chevron-left"></i>
         </button>
       </div>
 
@@ -66,6 +66,28 @@ export default function PriceDetailes() {
           </div>
 
           <div className="price">
+            <h6>
+              2 children, Economy
+              <span>2 x 1,740.53 EGP</span>
+            </h6>
+
+            <h5>
+              3,481.07 <span>EGP</span>
+            </h5>
+          </div>
+
+          <div className="price">
+            <h6>
+              1 Infant, Class
+              <span>1 x 1,740.53 EGP</span>
+            </h6>
+
+            <h5>
+              1,740.53 <span>EGP</span>
+            </h5>
+          </div>
+
+          <div className="price">
             <h6>{t("checkoutForm.totaltax")}</h6>
 
             <h5>
@@ -79,7 +101,7 @@ export default function PriceDetailes() {
         <div className="ticket_details">
           <div className="flight">
             <div className="path">
-              <h6>{t("flights.departure")}</h6>
+              <h6>{t("flights.arrival")}</h6>
               <h5>
                 SPX <i className="fa-regular fa-arrow-right-long"></i> RUH
               </h5>
@@ -99,6 +121,28 @@ export default function PriceDetailes() {
 
             <h5>
               3,481.07 <span>EGP</span>
+            </h5>
+          </div>
+
+          <div className="price">
+            <h6>
+              2 children, Economy
+              <span>2 x 1,740.53 EGP</span>
+            </h6>
+
+            <h5>
+              3,481.07 <span>EGP</span>
+            </h5>
+          </div>
+
+          <div className="price">
+            <h6>
+              1 Infant, Class
+              <span>1 x 1,740.53 EGP</span>
+            </h6>
+
+            <h5>
+              1,740.53 <span>EGP</span>
             </h5>
           </div>
 

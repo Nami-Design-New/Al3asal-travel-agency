@@ -371,7 +371,9 @@
     "innsurance": "التأمين والخدمات الإضافية",
     "securePayment": "الدفع",
     "paymentMethod": "بطاقة الائتمان أو الخصم",
-    "paymentMethodDescription": "رسوم المعالجة من 0 جنيه مصري إلى 2,272.96 جنيه مصري"
+    "paymentMethodDescription": "رسوم المعالجة من 0 جنيه مصري إلى 2,272.96 جنيه مصري",
+    "nextTraveler": "المسافر التالى",
+    "edit": "تعديل"
   },
   "profile": {
     "PersonalInformation": "المعلومات الشخصية",

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import InputField from "./../../ui/forms/InputField";
 import PhoneField from "../../ui/forms/PhoneField";
@@ -6,6 +7,9 @@ import TravelerForm from "./TravelerForm";
 
 export default function PassengerDetails() {
   const { t } = useTranslation();
+
+  const passengers = ["Adult 1", "Adult 2", "Child 1", "Child 2", "Infant 1"];
+  const [active, setActive] = useState(0);
 
   return (
     <form className="form_ui">
@@ -29,11 +33,22 @@ export default function PassengerDetails() {
           />
         </div>
 
-        <TravelerForm />
+        {passengers.map((passenger, index) => (
+          <TravelerForm
+            key={index}
+            title={passenger}
+            index={index}
+            setActive={setActive}
+            active={active}
+            isLast={active === passengers.length - 1}
+          />
+        ))}
 
-        <div className="col-12 p-2 mt-2">
-          <SubmitButton text={t("checkoutForm.continue")} />
-        </div>
+        {active === passengers.length - 1 && (
+          <div className="col-12 p-2 mt-2">
+            <SubmitButton text={t("checkoutForm.continue")} />
+          </div>
+        )}
       </div>
     </form>
   );

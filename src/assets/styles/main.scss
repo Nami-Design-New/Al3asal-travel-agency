@@ -103,5 +103,9 @@ body {
         border-radius: 0 8px 8px 0 !important;
       }
     }
+
+    main .checkout_section .price_details_container .about_booking button i {
+      transform: scale(-1) !important;
+    }
   }
 }

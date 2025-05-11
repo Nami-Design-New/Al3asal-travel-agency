@@ -372,7 +372,9 @@
     "innsurance": "Insurance and Extra Services",
     "securePayment": "Secure Payment",
     "paymentMethod": "Credit or Debit Card",
-    "paymentMethodDescription": "Processing fee from EGP 0 - EGP 2,272.96"
+    "paymentMethodDescription": "Processing fee from EGP 0 - EGP 2,272.96",
+    "nextTraveler": "Next Traveler",
+    "edit": "Edit"
   },
   "profile": {
     "PersonalInformation": "Personal Information",
