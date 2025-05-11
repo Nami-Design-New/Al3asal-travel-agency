@@ -2983,9 +2983,24 @@ body main .checkout_section .checkout_form .form_container {
   border: 1px solid #f4f4f4;
   border-radius: 16px;
 }
+body main .checkout_section .checkout_form .form_container .title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+body main .checkout_section .checkout_form .form_container .title span {
+  cursor: pointer;
+  color: #54a0c4;
+  font-size: 14px;
+  text-decoration: underline;
+}
 body main .checkout_section .checkout_form .form_container h6 {
   font-size: 14px;
   color: #777;
+}
+body main .checkout_section .checkout_form .form_container .line {
+  border-top: 1px solid #f4f4f4;
+  margin: 16px 0;
 }
 body main .checkout_section .checkout_form .payment_header {
   display: flex;
@@ -4126,4 +4141,7 @@ body.en .flight_details_modal .modal-body .itinerary .details .flight .time_line
 }
 body.en .flight_details_modal .modal-body .itinerary .details .flight .time_line .stop_over span {
   border-radius: 0 8px 8px 0 !important;
+}
+body.en main .checkout_section .price_details_container .about_booking button i {
+  transform: scale(-1) !important;
 }/*# sourceMappingURL=main.css.map */

@@ -68,9 +68,25 @@
       border: 1px solid $input_stroke;
       border-radius: 16px;
 
+      .title {
+        @include space-between();
+
+        span {
+          cursor: pointer;
+          color: $main;
+          font-size: 14px;
+          text-decoration: underline;
+        }
+      }
+
       h6 {
         font-size: 14px;
         color: $gray;
+      }
+
+      .line {
+        border-top: 1px solid $input_stroke;
+        margin: 16px 0;
       }
     }
 
