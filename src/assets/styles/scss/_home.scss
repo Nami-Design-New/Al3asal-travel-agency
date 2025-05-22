@@ -272,7 +272,7 @@
       min-width: 18rem;
       padding: 16px;
       z-index: 99;
-      inset: none !important;
+      inset: unset !important;
       left: 50% !important;
       transform: translateX(-50%) !important;
       @media screen and (max-width: 576px) {

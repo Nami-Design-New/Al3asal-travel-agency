@@ -1963,7 +1963,7 @@ body main .filter_container .flight_specifications .travelers_menu {
   min-width: 18rem;
   padding: 16px;
   z-index: 99;
-  inset: none !important;
+  inset: unset !important;
   left: 50% !important;
   transform: translateX(-50%) !important;
 }
