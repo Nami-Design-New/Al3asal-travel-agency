@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import FilterFlights from "../components/home/FilterFlights";
+import FilterFlights from "../components/filter/FilterFlights";
 import FlightCard from "../ui/cards/FlightCard";
 import SortingFilter from "../components/flights/SortingFilter";
 import FlightDetails from "../ui/modals/FlightDetails";

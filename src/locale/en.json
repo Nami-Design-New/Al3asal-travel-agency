@@ -91,7 +91,7 @@
     "adults": "Adults",
     "children": "Children",
     "infants": "Infants",
-    "searchByCityOrAirPort": "Search by city or airport",
+    "searchByCityOrAirPort": "Search by country or ciry or airport",
     "direct": "Direct Flight",
     "in": "In",
     "stops": "Stops",
@@ -109,7 +109,9 @@
     "departure": "Depart",
     "arrival": "Return",
     "receipt": "Receipt",
-    "print": "Print"
+    "print": "Print",
+    "ECONOMY": "Economy",
+    "BUSINESS": "Business Class"
   },
   "home": {
     "welcome": "Welcome to Al3asal Travel & Tourism",

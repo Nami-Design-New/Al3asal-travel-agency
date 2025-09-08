@@ -1,15 +1,14 @@
 import { useTranslation } from "react-i18next";
-import { useDispatch } from "react-redux";
-import { setStep } from "../../redux/slices/auth";
 import PasswordField from "./../../ui/forms/PasswordField";
 import SubmitButton from "../../ui/forms/SubmitButton";
+import useAuthStore from "../../stores/authStore";
 
 export default function ResetPassword3() {
   const { t } = useTranslation();
-  const dispatch = useDispatch();
+  const { setStep } = useAuthStore();
 
   const handleBack = () => {
-    dispatch(setStep("reset2"));
+    setStep("reset2");
   };
 
   return (

@@ -1,19 +1,16 @@
 import { Modal } from "react-bootstrap";
-import { useDispatch, useSelector } from "react-redux";
-import { closeAuthModal } from "../../redux/slices/auth";
 import Login from "../../components/auth/Login";
 import Register from "../../components/auth/Register";
 import ResetPassword1 from "../../components/auth/ResetPassword1";
 import ResetPassword2 from "../../components/auth/ResetPassword2";
 import ResetPassword3 from "../../components/auth/ResetPassword3";
+import useAuthStore from "../../stores/authStore";
 
 export default function AuthModal() {
-  const { show } = useSelector((state) => state.auth);
-  const { step } = useSelector((state) => state.auth);
-  const dispatch = useDispatch();
+  const { show, step, closeAuthModal } = useAuthStore();
 
   const handleClose = () => {
-    dispatch(closeAuthModal());
+    closeAuthModal();
   };
 
   return (
