@@ -11,18 +11,20 @@ export default function AirportsMenu({ direction }) {
   const { flightsFilter, updateFilter } = useSearchStore();
 
   const [show, setShow] = useState(false);
-  const [search, setSearch] = useState(
-    flightsFilter[`${direction}_airport`]?.name || ""
-  );
-  const [selectedAirPort, setSelectedAirPort] = useState(
-    flightsFilter[`${direction}_airport`] || {}
-  );
+  const [search, setSearch] = useState();
+  const [selectedAirPort, setSelectedAirPort] = useState({});
+
+  useEffect(() => {
+    setSelectedAirPort(flightsFilter[`${direction}_airport`] || {});
+    setSearch(flightsFilter[`${direction}_airport`]?.name || "");
+  }, [direction, flightsFilter]);
 
   const debouncedSearch = useDebounce(search, 500);
 
   const { data, fetchNextPage, hasNextPage, isFetchingNextPage } =
     useGetAirports(debouncedSearch);
 
+  // fetch airports on scroll
   useEffect(() => {
     const list = listRef.current;
     if (!list) return;
@@ -69,7 +71,8 @@ export default function AirportsMenu({ direction }) {
 
           {selectedAirPort?.iata_code && (
             <span>
-              {selectedAirPort.name} ({selectedAirPort.iata_code})
+              {selectedAirPort.city.name}, {selectedAirPort.country.name}, (
+              {selectedAirPort.iata_code})
             </span>
           )}
         </p>

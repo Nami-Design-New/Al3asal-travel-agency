@@ -11,7 +11,7 @@ const useSearchStore = create(
         },
 
         to_destination: {
-          city: true,
+          city: false,
           code: "",
         },
 

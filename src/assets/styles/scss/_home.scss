@@ -198,7 +198,7 @@
     }
   }
 
-  select {
+  .flights_level {
     background: $input_bg;
     padding: 10px 16px;
     border-radius: 8px;
@@ -272,7 +272,8 @@
     }
 
     .search {
-      padding: 10px 16px;
+      padding: 10px 24px;
+      height: 62px;
       color: $white;
       background: $main;
       box-shadow: $shadow;
@@ -283,7 +284,8 @@
       gap: 8px;
     }
 
-    .travelers_menu {
+    .travelers_menu,
+    .dates_menu {
       width: 100%;
       padding: 16px;
       z-index: 99;
@@ -343,6 +345,10 @@
       }
     }
 
+    .dates_menu {
+      width: fit-content;
+    }
+
     .places_menu {
       width: 100%;
       min-height: 12rem;
@@ -372,7 +378,7 @@
         flex-direction: column;
         position: relative;
 
-        .clear_btn{
+        .clear_btn {
           position: absolute;
           top: 16px;
           right: 16px;

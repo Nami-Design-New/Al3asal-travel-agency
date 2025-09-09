@@ -167,127 +167,6 @@ button {
   border-radius: 8px !important;
 }
 
-.calender_modal .rmdp-calendar {
-  border: none;
-  box-shadow: none;
-  border-radius: 0;
-  padding: 8px;
-  background: #fff;
-}
-
-.rmdp-wrapper {
-  background: #fff !important;
-}
-
-.rmdp-day {
-  width: 48px !important;
-  height: 48px !important;
-  font-size: 16px !important;
-  color: #000 !important;
-  transition: all 0.3s ease-in-out;
-}
-.rmdp-day span:hover {
-  background-color: #fafafa !important;
-  color: #54a0c4 !important;
-}
-.rmdp-day.rmdp-today span {
-  background-color: #fafafa !important;
-  color: #54a0c4 !important;
-}
-.rmdp-day.rmdp-disabled {
-  color: #777 !important;
-  cursor: not-allowed !important;
-}
-.rmdp-day.rmdp-disabled span {
-  text-decoration: line-through !important;
-  cursor: not-allowed !important;
-}
-.rmdp-day.rmdp-disabled span:hover {
-  background-color: transparent !important;
-  color: #777 !important;
-}
-
-.rmdp-arrow-container {
-  width: 24px !important;
-  height: 24px !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-.rmdp-arrow-container i {
-  display: none;
-}
-.rmdp-arrow-container::before {
-  font-family: "Font Awesome 6 Pro";
-  content: "\f104";
-  font-size: 14px;
-  color: #54a0c4;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.rmdp-arrow-container.rmdp-right::before {
-  content: "\f105";
-}
-.rmdp-arrow-container:hover {
-  background: #fafafa !important;
-  box-shadow: none !important;
-}
-.rmdp-arrow-container.disabled {
-  cursor: not-allowed !important;
-}
-.rmdp-arrow-container.disabled::before {
-  color: #aaaaaa !important;
-}
-.rmdp-arrow-container.disabled:hover {
-  background: transparent !important;
-  box-shadow: none !important;
-}
-
-.rmdp-range {
-  background: #54a0c4 !important;
-  box-shadow: none !important;
-  color: #fff !important;
-}
-.rmdp-range.rmdp-today span {
-  background: #54a0c4 !important;
-  color: #fff !important;
-}
-
-.rmdp-week:first-child {
-  margin-bottom: 16px;
-}
-.rmdp-week:first-child .rmdp-week-day {
-  color: #54a0c4 !important;
-}
-
-.rmdp-header-values {
-  color: #54a0c4 !important;
-}
-
-.rmdp-shadow {
-  box-shadow: none !important;
-}
-
-.calender_wrapper {
-  min-height: 384px;
-}
-
-.rmdp-week-day {
-  width: 48px !important;
-}
-
-.form-switch input {
-  box-shadow: none !important;
-}
-
-.rmdp-selected span {
-  background-color: #54a0c4 !important;
-  color: #fff !important;
-}
-
 .react-tel-input {
   position: relative;
   display: flex;
@@ -1884,7 +1763,7 @@ body main .filter_container .flight_type label span {
   font-size: 14px;
   border: 1px solid #f4f4f4;
 }
-body main .filter_container select {
+body main .filter_container .flights_level {
   background: #fafafa;
   padding: 10px 16px;
   border-radius: 8px;
@@ -1957,7 +1836,8 @@ body main .filter_container .flight_specifications .filter_btn .sm_title {
   color: #777;
 }
 body main .filter_container .flight_specifications .search {
-  padding: 10px 16px;
+  padding: 10px 24px;
+  height: 62px;
   color: #fff;
   background: #54a0c4;
   box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.1);
@@ -1967,7 +1847,8 @@ body main .filter_container .flight_specifications .search {
   align-items: center;
   gap: 8px;
 }
-body main .filter_container .flight_specifications .travelers_menu {
+body main .filter_container .flight_specifications .travelers_menu,
+body main .filter_container .flight_specifications .dates_menu {
   width: 100%;
   padding: 16px;
   z-index: 99;
@@ -1976,39 +1857,47 @@ body main .filter_container .flight_specifications .travelers_menu {
   transform: translateX(-50%) !important;
 }
 @media screen and (max-width: 576px) {
-  body main .filter_container .flight_specifications .travelers_menu .rmdp-week {
+  body main .filter_container .flight_specifications .travelers_menu .rmdp-week,
+  body main .filter_container .flight_specifications .dates_menu .rmdp-week {
     justify-content: unset !important;
   }
-  body main .filter_container .flight_specifications .travelers_menu .rmdp-day-picker {
+  body main .filter_container .flight_specifications .travelers_menu .rmdp-day-picker,
+  body main .filter_container .flight_specifications .dates_menu .rmdp-day-picker {
     gap: 24px;
     flex-direction: column !important;
   }
 }
-body main .filter_container .flight_specifications .travelers_menu .travelers_menu_content {
+body main .filter_container .flight_specifications .travelers_menu .travelers_menu_content,
+body main .filter_container .flight_specifications .dates_menu .travelers_menu_content {
   gap: 24px;
   display: flex;
   flex-direction: column;
 }
-body main .filter_container .flight_specifications .travelers_menu .section {
+body main .filter_container .flight_specifications .travelers_menu .section,
+body main .filter_container .flight_specifications .dates_menu .section {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-body main .filter_container .flight_specifications .travelers_menu .section h6 {
+body main .filter_container .flight_specifications .travelers_menu .section h6,
+body main .filter_container .flight_specifications .dates_menu .section h6 {
   margin: 0;
   font-size: 14px;
 }
-body main .filter_container .flight_specifications .travelers_menu .section h6 strong {
+body main .filter_container .flight_specifications .travelers_menu .section h6 strong,
+body main .filter_container .flight_specifications .dates_menu .section h6 strong {
   font-size: 10px;
   font-weight: 400;
   color: #aaaaaa;
 }
-body main .filter_container .flight_specifications .travelers_menu .section .btns {
+body main .filter_container .flight_specifications .travelers_menu .section .btns,
+body main .filter_container .flight_specifications .dates_menu .section .btns {
   display: flex;
   align-items: center;
   gap: 12px;
 }
-body main .filter_container .flight_specifications .travelers_menu .section .btns .btn {
+body main .filter_container .flight_specifications .travelers_menu .section .btns .btn,
+body main .filter_container .flight_specifications .dates_menu .section .btns .btn {
   width: 28px;
   height: 28px;
   background: #f4f4f4;
@@ -2019,9 +1908,14 @@ body main .filter_container .flight_specifications .travelers_menu .section .btn
   align-items: center;
   justify-content: center;
 }
-body main .filter_container .flight_specifications .travelers_menu .section .btns .num {
+body main .filter_container .flight_specifications .travelers_menu .section .btns .num,
+body main .filter_container .flight_specifications .dates_menu .section .btns .num {
   font-size: 14px;
   color: #000;
+}
+body main .filter_container .flight_specifications .dates_menu {
+  width: -moz-fit-content;
+  width: fit-content;
 }
 body main .filter_container .flight_specifications .places_menu {
   width: 100%;

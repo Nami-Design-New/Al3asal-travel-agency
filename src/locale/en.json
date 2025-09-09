@@ -111,7 +111,9 @@
     "receipt": "Receipt",
     "print": "Print",
     "ECONOMY": "Economy",
-    "BUSINESS": "Business Class"
+    "BUSINESS": "Business Class",
+    "select_departure": "Select departure date",
+    "select_departure_return": "Select departure & return dates"
   },
   "home": {
     "welcome": "Welcome to Al3asal Travel & Tourism",

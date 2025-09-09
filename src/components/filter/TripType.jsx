@@ -28,6 +28,7 @@ export default function TripType() {
       <select
         name="flight-level"
         id="flight-level"
+        className="flights_level"
         value={flightsFilter.cabin_type || "ECONOMY"}
         onChange={(e) => updateFilter({ cabin_type: e.target.value })}
       >
