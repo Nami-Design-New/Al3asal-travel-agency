@@ -1,9 +1,9 @@
 import AirportsMenu from "./AirportsMenu";
 
-export default function FromToAirport({ handleSelectAirport }) {
+export default function FromToAirport() {
   return (
     <div className="from_to">
-      <AirportsMenu direction="from" handleSelectAirport={handleSelectAirport} />
+      <AirportsMenu direction="from" />
 
       <button className="swap_button" type="button">
         <i className="fa-regular fa-arrow-right-arrow-left"></i>

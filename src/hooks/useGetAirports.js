@@ -1,6 +1,6 @@
 import { useInfiniteQuery } from "@tanstack/react-query";
-import useSettingsStore from "../../../stores/settingsStore";
-import axiosInstance from "../../../utils/axiosInstance";
+import useSettingsStore from "../stores/settingsStore";
+import axiosInstance from "../utils/axiosInstance";
 
 function useGetAirports(search) {
   const { lang } = useSettingsStore();

@@ -1946,9 +1946,15 @@ body main .filter_container .flight_specifications .filter_btn {
   gap: 12px;
   font-size: 14px;
   padding: 10px 16px;
+  min-height: 62px;
 }
 body main .filter_container .flight_specifications .filter_btn i {
   color: #aaaaaa;
+  font-size: 18px;
+}
+body main .filter_container .flight_specifications .filter_btn .sm_title {
+  font-size: 12px;
+  color: #777;
 }
 body main .filter_container .flight_specifications .search {
   padding: 10px 16px;
@@ -2043,6 +2049,14 @@ body main .filter_container .flight_specifications .places_menu .places_menu_con
   display: flex;
   height: 100%;
   flex-direction: column;
+  position: relative;
+}
+body main .filter_container .flight_specifications .places_menu .places_menu_content .clear_btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 14px;
+  z-index: 999;
 }
 body main .filter_container .flight_specifications .places_menu .places_menu_content h6 {
   width: 100%;

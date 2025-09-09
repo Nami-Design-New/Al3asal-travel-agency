@@ -4,7 +4,7 @@ import { persist } from "zustand/middleware";
 const useSearchStore = create(
   persist(
     (set) => ({
-      flights_filter: {
+      flightsFilter: {
         from_destination: {
           city: false,
           code: "",
@@ -26,15 +26,18 @@ const useSearchStore = create(
         return_date: "",
         accept_pending: true,
         cabin_type: "ECONOMY",
-        
+
         trip_type: "ONE_WAY",
         from_airport: {},
         to_airport: {},
       },
 
-      setFlightsFilter: (flights_filter) =>
-        set(() => ({
-          flights_filter,
+      updateFilter: (newValues) =>
+        set((state) => ({
+          flightsFilter: {
+            ...state.flightsFilter,
+            ...newValues,
+          },
         })),
     }),
     {
