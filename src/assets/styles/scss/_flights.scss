@@ -44,7 +44,7 @@
       flex: 1;
       display: flex;
       align-items: center;
-      justify-content: end;
+      justify-content: start;
       gap: 16px;
       padding: 0 12px;
       @media screen and (max-width: 768px) {
@@ -282,17 +282,18 @@
       .content {
         display: flex;
         flex-direction: column;
+        gap: 4px;
         .images {
           display: flex;
+          gap: 12px;
           img {
-            width: 2.5rem;
-            height: 2.5rem;
+            height: 16px;
             object-fit: contain;
           }
         }
 
         h6 {
-          font-size: 14px;
+          font-size: 12px;
           color: $black;
           margin: 0;
           font-weight: 400;

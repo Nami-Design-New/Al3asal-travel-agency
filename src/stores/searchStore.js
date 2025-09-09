@@ -1,4 +1,5 @@
 import { create } from "zustand";
+import { format } from "date-fns";
 import { persist } from "zustand/middleware";
 
 const useSearchStore = create(
@@ -30,7 +31,10 @@ const useSearchStore = create(
           },
         ],
 
-        departure_date: "",
+        departure_date: format(
+          new Date(new Date().setDate(new Date().getDate() + 1)),
+          "dd MMM yyyy"
+        ),
         return_date: "",
         accept_pending: true,
         cabin_type: "ECONOMY",

@@ -1,18 +1,23 @@
-export function durationToMinutes(durationStr) {
-  const hours = parseInt(durationStr.match(/(\d+)\s*h/)?.[1] || "0", 10);
-  const minutes = parseInt(durationStr.match(/(\d+)\s*m/)?.[1] || "0", 10);
-  return hours * 60 + minutes;
+export function dateTimeDiffCalc(start, end) {
+  const startDate = new Date(start);
+  const endDate = new Date(end);
+
+  const diffMs = endDate - startDate;
+  if (diffMs < 0) return "Invalid: end before start";
+
+  return Math.floor(diffMs / (1000 * 60));
 }
 
-export function getTimeDiffInMinutes(fromTime, toTime) {
-  const [fromHour, fromMinute] = fromTime.split(":").map(Number);
-  const [toHour, toMinute] = toTime.split(":").map(Number);
+export function formatTimeHHMM(dateTimeStr) {
+  if (!dateTimeStr) return "";
+  return dateTimeStr.split(" ")[1]?.slice(0, 5);
+}
 
-  const fromTotal = fromHour * 60 + fromMinute;
-  const toTotal = toHour * 60 + toMinute;
-
-  const diff =
-    toTotal >= fromTotal ? toTotal - fromTotal : toTotal + 1440 - fromTotal;
-
-  return diff;
+export function minutesToHM(minutes) {
+  const h = Math.floor(minutes / 60);
+  const m = minutes % 60;
+  let result = "";
+  if (h > 0) result += `${h}h `;
+  if (m > 0) result += `${m}m`;
+  return result.trim();
 }

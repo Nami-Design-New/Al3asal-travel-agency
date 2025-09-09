@@ -5,7 +5,7 @@ export default function TicketsAirLine({ flight }) {
         <div className="images">
           {flight?.airlines?.map((airline) => (
             <img
-              src={`/airlines/${airline.code}.webp`}
+              src={`http://img.wway.io/pics/root/${airline.code}@svg`}
               alt={airline.name}
               key={airline.code}
             />

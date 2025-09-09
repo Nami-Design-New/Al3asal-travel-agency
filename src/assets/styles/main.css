@@ -2247,7 +2247,7 @@ body main .flights .sorting_header .block {
   flex: 1;
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: start;
   gap: 16px;
   padding: 0 12px;
 }
@@ -2472,18 +2472,19 @@ body main .flight_card .flight_info .airlines {
 body main .flight_card .flight_info .airlines .content {
   display: flex;
   flex-direction: column;
+  gap: 4px;
 }
 body main .flight_card .flight_info .airlines .content .images {
   display: flex;
+  gap: 12px;
 }
 body main .flight_card .flight_info .airlines .content .images img {
-  width: 2.5rem;
-  height: 2.5rem;
+  height: 16px;
   -o-object-fit: contain;
      object-fit: contain;
 }
 body main .flight_card .flight_info .airlines .content h6 {
-  font-size: 14px;
+  font-size: 12px;
   color: #000;
   margin: 0;
   font-weight: 400;

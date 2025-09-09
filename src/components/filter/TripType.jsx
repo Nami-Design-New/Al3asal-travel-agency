@@ -14,7 +14,7 @@ export default function TripType() {
         name="flight-type"
         text={t("flights.oneWay")}
         checked={flightsFilter.trip_type === "ONE_WAY"}
-        onChange={() => updateFilter({ trip_type: "ONE_WAY" })}
+        onChange={() => updateFilter({ trip_type: "ONE_WAY", return_date: "" })}
       />
 
       <CheckField
