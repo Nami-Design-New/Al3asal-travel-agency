@@ -20,6 +20,14 @@ const useSearchStore = create(
             type: "ADULT",
             count: 1,
           },
+          {
+            type: "CHILD",
+            count: 0,
+          },
+          {
+            type: "INFANT",
+            count: 0,
+          },
         ],
 
         departure_date: "",

@@ -43,6 +43,7 @@ export default function AirportsMenu({ direction }) {
     return () => list.removeEventListener("scroll", handleScroll);
   }, [hasNextPage, isFetchingNextPage, fetchNextPage]);
 
+  // choose airport
   const handleSelect = (airport) => {
     setSelectedAirPort(airport);
     setSearch(airport.name);

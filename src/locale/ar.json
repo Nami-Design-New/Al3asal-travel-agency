@@ -113,7 +113,8 @@
     "ECONOMY": "اقتصادي",
     "BUSINESS": "درجة رجال الأعمال",
     "select_departure": "إختر تاريخ الذهاب",
-    "select_departure_return": "اختر تاريخ الذهاب والعودة"
+    "select_departure_return": "اختر تاريخ الذهاب والعودة",
+    "traveler": "مسافر"
   },
   "home": {
     "welcome": "مرحبًا بك في وكالة العسل للسفر والسياحة",
