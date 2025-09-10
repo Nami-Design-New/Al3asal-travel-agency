@@ -22,8 +22,12 @@ export default function DepartFlights({
 
   return (
     <>
-      {flights?.map((flight, index) => (
-        <FlightCard key={index} flight={flight} handleSelect={handleSelect} />
+      {flights?.map((flight) => (
+        <FlightCard
+          key={flight?.package_info?.package_key}
+          flight={flight}
+          handleSelect={handleSelect}
+        />
       ))}
     </>
   );

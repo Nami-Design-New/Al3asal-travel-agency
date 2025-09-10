@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useTranslation } from "react-i18next";
 import FilterFlights from "../components/filter/FilterFlights";
 import SortingFilter from "../components/flights/SortingFilter";
 import FlightDetails from "../ui/modals/FlightDetails";
@@ -8,15 +7,16 @@ import useSearchStore from "../stores/searchStore";
 import FlightsLoader from "../ui/loaders/FlightsLoader";
 import DepartFlights from "../components/flights/DepartFlights";
 import ReturnFlights from "../components/flights/ReturnFlights";
-import dayjs from "dayjs";
+import RoundTrip from "../components/flights/RoundTrip";
 
 export default function Flights() {
-  const { t } = useTranslation();
   const { flightsFilter } = useSearchStore();
   const [showReturnFlights, setShowReturnFlights] = useState(false);
   const [showFlightDetails, setShowFlightDetails] = useState(false);
 
   const { data, isLoading, isFetching } = useGetTickets();
+
+  const isLoadingData = isLoading || isFetching;
 
   return (
     <section className="flights">
@@ -25,43 +25,10 @@ export default function Flights() {
           <div className="col-12 p-2">
             <FilterFlights />
 
-            {flightsFilter.trip_type === "ROUND_TRIP" && (
-              <div className="round_trip_flight">
-                <div
-                  className={`departing_flight ${
-                    !showReturnFlights ? "active" : ""
-                  }`}
-                >
-                  <div className="num">1</div>
-
-                  <div className="content">
-                    <h3>{t("flights.departing")}</h3>
-                    <p>
-                      {dayjs(flightsFilter.departure_date).format(
-                        "ddd, DD MMM YYYY"
-                      )}
-                    </p>
-                  </div>
-                </div>
-                <div className="shape"></div>
-                <div
-                  className={`return_flight  ${
-                    showReturnFlights ? "active" : ""
-                  }`}
-                >
-                  <div className="num">2</div>
-
-                  <div className="content">
-                    <h3>{t("flights.return")}</h3>
-                    <p>
-                      {dayjs(flightsFilter.return_date).format(
-                        "ddd, DD MMM YYYY"
-                      )}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            )}
+            <RoundTrip
+              setShowReturnFlights={setShowReturnFlights}
+              showReturnFlights={showReturnFlights}
+            />
           </div>
         </div>
 
@@ -70,7 +37,8 @@ export default function Flights() {
             <div className="results">
               <SortingFilter />
 
-              {!showReturnFlights && (
+              {/* Depart flights only when not loading */}
+              {!showReturnFlights && !isLoadingData && (
                 <DepartFlights
                   flights={data?.departure_flights}
                   setShow={setShowFlightDetails}
@@ -78,17 +46,21 @@ export default function Flights() {
                 />
               )}
 
+              {/* Return flights only when not loading */}
               {flightsFilter.trip_type === "ROUND_TRIP" &&
-                showReturnFlights && (
+                showReturnFlights &&
+                !isLoadingData && (
                   <ReturnFlights
                     flights={data?.return_flights}
                     setShow={setShowFlightDetails}
                   />
                 )}
 
-              {(isLoading || isFetching) && <FlightsLoader />}
+              {/* Loader */}
+              {isLoadingData && <FlightsLoader />}
 
-              {!data && !isLoading && (
+              {/* No results */}
+              {!data && !isLoadingData && (
                 <div className="no_flights_available">
                   <img src="/icons/no_flights.svg" alt="no-data" />
                   <h2>NO FLIGHTS FOUND!.</h2>

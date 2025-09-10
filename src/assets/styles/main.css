@@ -2333,41 +2333,55 @@ body main .flights .round_trip_flight .content p {
   color: #777;
   margin: 0;
 }
-body main .flights .round_trip_flight .departing_flight {
-  -webkit-clip-path: polygon(100% 0%, 2% 0%, 0% 50%, 2% 100%, 100% 100%);
-          clip-path: polygon(100% 0%, 2% 0%, 0% 50%, 2% 100%, 100% 100%);
+body main .flights .round_trip_flight .center_devider {
+  width: 32px;
+  position: relative;
+  background: #fff;
+  z-index: 1;
+  isolation: isolate;
+  display: block;
 }
-@media screen and (max-width: 768px) {
-  body main .flights .round_trip_flight .departing_flight {
-    -webkit-clip-path: polygon(0% 0%, 95% 0%, 100% 50%, 95% 100%, 0% 100%) !important;
-            clip-path: polygon(0% 0%, 95% 0%, 100% 50%, 95% 100%, 0% 100%) !important;
-  }
+body main .flights .round_trip_flight .center_devider span {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(84, 160, 196, 0.2196078431);
+  -webkit-clip-path: polygon(0% 0%, 50% 50%, 0% 100%);
+          clip-path: polygon(0% 0%, 50% 50%, 0% 100%);
 }
-body main .flights .round_trip_flight .departing_flight,
-body main .flights .round_trip_flight .return_flight {
+body main .flights .round_trip_flight .center_devider.active {
+  background: rgba(84, 160, 196, 0.2196078431);
+}
+body main .flights .round_trip_flight .center_devider.active span {
+  background: #fff;
+}
+body main .flights .departing_flight,
+body main .flights .return_flight {
   flex: 1;
   padding: 16px;
   display: flex;
   align-items: center;
   gap: 16px;
 }
-body main .flights .round_trip_flight .departing_flight.active,
-body main .flights .round_trip_flight .return_flight.active {
+body main .flights .departing_flight.active,
+body main .flights .return_flight.active {
   background: rgba(84, 160, 196, 0.2196078431);
   opacity: 1;
 }
 @media screen and (max-width: 768px) {
-  body main .flights .round_trip_flight .departing_flight,
-  body main .flights .round_trip_flight .return_flight {
+  body main .flights .departing_flight,
+  body main .flights .return_flight {
     gap: 8px;
     padding: 14px;
   }
 }
-body main .flights .round_trip_flight .return_flight {
+body main .flights .return_flight {
   opacity: 0.5;
 }
-body main .flights .round_trip_flight .return_flight .num {
-  background: #777;
+@media screen and (max-width: 768px) {
+  body main .flights .return_flight .num {
+    background: #777;
+  }
 }
 body main .no_flights_available {
   height: 300px;
@@ -4082,10 +4096,6 @@ body.en .auth_modal .modal_close_btn {
   right: 16px !important;
   margin-inline-start: 0 !important;
   margin-inline-end: auto !important;
-}
-body.en main .flights .round_trip_flight .departing_flight {
-  -webkit-clip-path: polygon(0% 0%, 98% 0%, 100% 50%, 98% 100%, 0% 100%);
-          clip-path: polygon(0% 0%, 98% 0%, 100% 50%, 98% 100%, 0% 100%);
 }
 body.en .terms-page .terms-content .term-section .section-content,
 body.en .privacy-policy-page .privacy-policy-content .privacy-policy-section .section-content {

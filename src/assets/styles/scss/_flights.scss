@@ -133,40 +133,51 @@
       }
     }
 
-    .departing_flight {
-      clip-path: polygon(100% 0%, 2% 0%, 0% 50%, 2% 100%, 100% 100%);
+    .center_devider {
+      width: 32px;
+      position: relative;
+      background: #fff;
+      z-index: 1;
+      isolation: isolate;
+      display: block;
 
-      @media screen and (max-width: 768px) {
-        clip-path: polygon(
-          0% 0%,
-          95% 0%,
-          100% 50%,
-          95% 100%,
-          0% 100%
-        ) !important;
+      span {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #54a0c438;
+        clip-path: polygon(0% 0%, 50% 50%, 0% 100%);
       }
-    }
 
-    .departing_flight,
-    .return_flight {
-      flex: 1;
-      padding: 16px;
-      display: flex;
-      align-items: center;
-      gap: 16px;
       &.active {
         background: #54a0c438;
-        opacity: 1;
-      }
-      @media screen and (max-width: 768px) {
-        gap: 8px;
-        padding: 14px;
+        span {
+          background: #fff;
+        }
       }
     }
+  }
 
-    .return_flight {
-      opacity: 0.5;
+  .departing_flight,
+  .return_flight {
+    flex: 1;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    &.active {
+      background: #54a0c438;
+      opacity: 1;
+    }
+    @media screen and (max-width: 768px) {
+      gap: 8px;
+      padding: 14px;
+    }
+  }
 
+  .return_flight {
+    opacity: 0.5;
+    @media screen and (max-width: 768px) {
       .num {
         background: $gray;
       }
