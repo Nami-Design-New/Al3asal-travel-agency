@@ -21,3 +21,9 @@ export function minutesToHM(minutes) {
   if (m > 0) result += `${m}m`;
   return result.trim();
 }
+
+export function diffInDays(date1, date2) {
+  return Math.floor(
+    (new Date(date2) - new Date(date1)) / (1000 * 60 * 60 * 24)
+  );
+}

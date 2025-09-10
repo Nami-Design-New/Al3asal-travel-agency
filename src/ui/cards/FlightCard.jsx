@@ -1,6 +1,5 @@
 import TicketTimeLine from "./TicketTimeLine";
 import TicketsAirLine from "./TicketsAirLine";
-// import TicketDuration from "./TicketDuration";
 
 export default function FlightCard({ flight, setShow }) {
   return (
@@ -8,12 +7,11 @@ export default function FlightCard({ flight, setShow }) {
       <div className="flight_info">
         <TicketsAirLine flight={flight} />
         <TicketTimeLine flight={flight} />
-        {/* <TicketDuration flight={flight} /> */}
       </div>
 
       <div className="price">
         <h5>
-          {flight?.price} <span>USD</span>
+          {flight?.price} <span>USD / Person</span>
         </h5>
       </div>
     </div>

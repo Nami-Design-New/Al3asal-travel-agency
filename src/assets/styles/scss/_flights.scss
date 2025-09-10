@@ -214,6 +214,20 @@
           color: $black;
           font-size: 14px;
           margin: 0;
+          display: flex;
+          align-items: center;
+          gap: 6px;
+
+          span {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+            background: $input_stroke;
+            border: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
         }
         span {
           color: $gray;
@@ -228,6 +242,21 @@
         border-top: 1px solid $input_hint;
         display: block;
         position: relative;
+
+        .flight_d{
+          position: absolute;
+          font-size: 12px;
+          color: #777;
+          left: 50%;
+          bottom: -24px;
+          transform: translateX(-50%);
+
+          &.up{
+            top: -24px;
+            bottom: initial;
+          }
+        }
+
         .line {
           position: absolute;
           top: 50%;
@@ -245,9 +274,18 @@
             font-size: 8px;
             color: $gray;
             position: absolute;
+            font-size: 10px;
             left: 50%;
-            bottom: -14px;
+            bottom: -20px;
             transform: translateX(-50%);
+          }
+
+          .time {
+            bottom: initial;
+            top: -22px;
+            align-items: center;
+            flex-direction: row;
+            white-space: nowrap;
           }
         }
 
@@ -282,18 +320,19 @@
       .content {
         display: flex;
         flex-direction: column;
-        gap: 4px;
+        gap: 12px;
         .images {
           display: flex;
           gap: 12px;
           img {
-            height: 16px;
+            height: 20px;
+            max-width: 80px;
             object-fit: contain;
           }
         }
 
         h6 {
-          font-size: 12px;
+          font-size: 14px;
           color: $black;
           margin: 0;
           font-weight: 400;
@@ -344,7 +383,7 @@
     gap: 12px;
 
     h5 {
-      font-size: 18px;
+      font-size: 24px;
       color: $black;
       font-weight: 600;
       margin-bottom: 0;

@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { mapApiFlightToUI } from "../utils/ticketsResponseMapper";
+import { mapFlightResponse } from "../utils/ticketsResponseMapper";
 import FilterFlights from "../components/filter/FilterFlights";
 import FlightCard from "../ui/cards/FlightCard";
 import SortingFilter from "../components/flights/SortingFilter";
 import FlightDetails from "../ui/modals/FlightDetails";
 import useGetTickets from "../hooks/useGetTickets";
 import useSearchStore from "../stores/searchStore";
+import FlightsLoader from "../ui/loaders/FlightsLoader";
 
 export default function Flights() {
   const { t } = useTranslation();
@@ -15,8 +16,8 @@ export default function Flights() {
 
   const { data, isLoading, isFetching } = useGetTickets();
 
-  const mappedFlights = data?.departure_flights?.map((apiFlight) =>
-    mapApiFlightToUI(apiFlight)
+  const mappedFlights = data?.departure_flights?.map((res) =>
+    mapFlightResponse(res)
   );
 
   return (
@@ -63,7 +64,7 @@ export default function Flights() {
                 />
               ))}
 
-              {(isLoading || isFetching) && <span>Loading ....</span>}
+              {(isLoading || isFetching) && <FlightsLoader />}
             </div>
           </div>
         </div>

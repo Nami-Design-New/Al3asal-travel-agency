@@ -17,8 +17,9 @@ export default function FilterFlights() {
 
     if (location.pathname !== "/flights") {
       await navigate("/flights");
+    } else {
+      window.location.reload();
     }
-
     await refetch();
   };
 
@@ -29,11 +30,7 @@ export default function FilterFlights() {
         <FromToAirport />
         <FlightDates />
         <Travelers />
-        <button
-          type="submit"
-          className="search"
-          disabled={isFetching}
-        >
+        <button type="submit" className="search" disabled={isFetching}>
           {t("flights.search")} <i className="fa-light fa-magnifying-glass"></i>
         </button>
       </div>

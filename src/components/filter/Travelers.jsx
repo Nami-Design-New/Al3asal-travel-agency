@@ -47,7 +47,7 @@ export default function Travelers() {
               <button
                 type="button"
                 className="btn"
-                onClick={() => updateCount("ADULT", -1)}
+                onClick={() => getCount("ADULT") > 1 && updateCount("ADULT", -1)}
               >
                 <i className="fa-regular fa-minus"></i>
               </button>

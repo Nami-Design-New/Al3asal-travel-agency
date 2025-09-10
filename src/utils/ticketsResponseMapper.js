@@ -1,10 +1,10 @@
 import { dateTimeDiffCalc } from "./helpers";
 
-export function mapApiFlightToUI(apiFlight) {
-  const fare = apiFlight.fares[0]?.fare_info?.fare_detail;
+export function mapFlightResponse(flightResponse) {
+  const fare = flightResponse.fares[0]?.fare_info?.fare_detail;
   const totalPrice = fare?.price_info?.total_fare || 0;
 
-  const legs = apiFlight.legs;
+  const legs = flightResponse.legs;
   const firstLeg = legs[0];
   const lastLeg = legs[legs.length - 1];
 
@@ -25,6 +25,7 @@ export function mapApiFlightToUI(apiFlight) {
 
   // build segments
   const segments = [];
+
   legs.forEach((leg, index) => {
     // flight segment
     segments.push({
@@ -59,5 +60,7 @@ export function mapApiFlightToUI(apiFlight) {
     arrival,
     airlines,
     segments,
+    departureDate: departure.time.split(" ")[0],
+    arrivalDate: arrival.time.split(" ")[0],
   };
 }
