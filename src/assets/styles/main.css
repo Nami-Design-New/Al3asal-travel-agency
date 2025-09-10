@@ -640,7 +640,7 @@ header nav .actions .user_dropdown i {
 }
 .flight_details_modal .modal-body .itinerary .details {
   display: flex;
-  align-items: center;
+  align-items: start;
   gap: 8px;
 }
 @media screen and (max-width: 768px) {
