@@ -3,11 +3,21 @@ import {
   dateTimeDiffCalc,
   formatTimeHHMM,
   minutesToHM,
+  diffInDays,
 } from "../../utils/helpers";
 
 export default function TicketTimeLine({ flight }) {
-  console.log("flight depart data =>>>>", flight.departureDate);
-  console.log("flight arrival data =>>>>", flight.arrivalDate);
+  const legs = flight.legs;
+  const firstLeg = legs[0];
+  const lastLeg = legs[legs.length - 1];
+
+  const departureTime = firstLeg?.departure_info?.date;
+  const arrivalTime = lastLeg?.arrival_info?.date;
+  const departureAirport = firstLeg?.departure_info?.airport_code;
+  const arrivalAirport = lastLeg?.arrival_info?.airport_code;
+
+  const totalDuration = dateTimeDiffCalc(departureTime, arrivalTime);
+  const crossDays = diffInDays(departureTime, arrivalTime);
 
   const renderTooltip = (props) => (
     <Tooltip id="button-tooltip" {...props}>
@@ -19,23 +29,26 @@ export default function TicketTimeLine({ flight }) {
     <div className="departure">
       {/* Departure */}
       <div className="time">
-        <h6>{formatTimeHHMM(flight?.departure?.time)}</h6>
-        <span>{flight?.departure?.airport}</span>
+        <h6>{formatTimeHHMM(departureTime)}</h6>
+        <span>{departureAirport}</span>
       </div>
 
       {/* Timeline */}
       <div className="time_line">
-        {flight?.segments
-          ?.filter((seg) => seg.type === "layover")
-          .map((stop, index) => {
-            const stopDurationMinutes = dateTimeDiffCalc(stop.from, stop.to);
-            const offsetInMinutes = dateTimeDiffCalc(
-              flight.departure.time,
-              stop.from
-            );
+        {legs.map((leg, index) => {
+          if (index < legs.length - 1) {
+            const stop = {
+              from: leg.arrival_info.date,
+              to: legs[index + 1].departure_info.date,
+              code: leg.arrival_info.airport_code,
+              name: leg.arrival_info.city_name,
+            };
 
-            const width = (stopDurationMinutes / flight.totalDuration) * 100;
-            const left = (offsetInMinutes / flight.totalDuration) * 100;
+            const stopDurationMinutes = dateTimeDiffCalc(stop.from, stop.to);
+            const offsetInMinutes = dateTimeDiffCalc(departureTime, stop.from);
+
+            const width = (stopDurationMinutes / totalDuration) * 100;
+            const left = (offsetInMinutes / totalDuration) * 100;
 
             return (
               <OverlayTrigger
@@ -45,7 +58,7 @@ export default function TicketTimeLine({ flight }) {
                   content: (
                     <span style={{ fontSize: "12px" }}>
                       {minutesToHM(stopDurationMinutes)} layover at <br />
-                      {stop?.name}
+                      {stop.name}
                     </span>
                   ),
                 })}
@@ -61,18 +74,18 @@ export default function TicketTimeLine({ flight }) {
                     <i className="fa-regular fa-timer"></i>{" "}
                     {minutesToHM(stopDurationMinutes)}
                   </span>
-                  <span>{stop?.code}</span>
+                  <span>{stop.code}</span>
                 </div>
               </OverlayTrigger>
             );
-          })}
+          }
+          return null;
+        })}
 
-        {flight?.segments?.filter((seg) => seg.type === "layover")?.length ===
-          0 && (
+        {legs.length === 1 && (
           <>
             <span className="flight_d up">
-              <i className="fa-regular fa-timer"></i>{" "}
-              {minutesToHM(flight.totalDuration)}
+              <i className="fa-regular fa-timer"></i> {minutesToHM(totalDuration)}
             </span>
             <span className="flight_d">Direct Flight</span>
           </>
@@ -82,33 +95,33 @@ export default function TicketTimeLine({ flight }) {
       {/* Arrival */}
       <div className="time">
         <h6>
-          {formatTimeHHMM(flight?.arrival?.time)}
-
-          {flight.departureDate !== flight.arrivalDate && (
-            <OverlayTrigger
-              placement="bottom"
-              overlay={renderTooltip({
-                content: (
-                  <span style={{ fontSize: "12px" }}>arrives next day</span>
-                ),
-              })}
-            >
-              <span>+1</span>
-            </OverlayTrigger>
-          )}
-
-          {flight.departureDate !== flight.arrivalDate && (
-            <OverlayTrigger
-              placement="bottom"
-              overlay={renderTooltip({
-                content: <span style={{ fontSize: "12px" }}>night flight</span>,
-              })}
-            >
-              <i className="fa-regular fa-moon" style={{ color: "#FFD700" }} />
-            </OverlayTrigger>
+          {formatTimeHHMM(arrivalTime)}
+          {crossDays > 0 && (
+            <>
+              <OverlayTrigger
+                placement="bottom"
+                overlay={renderTooltip({
+                  content: (
+                    <span style={{ fontSize: "12px" }}>
+                      arrives {crossDays} day(s) later
+                    </span>
+                  ),
+                })}
+              >
+                <span>+{crossDays}</span>
+              </OverlayTrigger>
+              <OverlayTrigger
+                placement="bottom"
+                overlay={renderTooltip({
+                  content: <span style={{ fontSize: "12px" }}>night flight</span>,
+                })}
+              >
+                <i className="fa-regular fa-moon" style={{ color: "#FFD700" }} />
+              </OverlayTrigger>
+            </>
           )}
         </h6>
-        <span>{flight?.arrival?.airport}</span>
+        <span>{arrivalAirport}</span>
       </div>
     </div>
   );

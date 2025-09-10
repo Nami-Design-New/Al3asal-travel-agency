@@ -1784,6 +1784,7 @@ body main .filter_container .flight_specifications {
 }
 body main .filter_container .flight_specifications .dropdown {
   width: 100%;
+  min-width: 282px;
 }
 body main .filter_container .flight_specifications .from_to {
   display: flex;
@@ -2247,7 +2248,7 @@ body main .flights .sorting_header .block {
   flex: 1;
   display: flex;
   align-items: center;
-  justify-content: start;
+  justify-content: center;
   gap: 16px;
   padding: 0 12px;
 }
@@ -2353,6 +2354,7 @@ body main .flights .round_trip_flight .return_flight {
 body main .flights .round_trip_flight .departing_flight.active,
 body main .flights .round_trip_flight .return_flight.active {
   background: rgba(84, 160, 196, 0.2196078431);
+  opacity: 1;
 }
 @media screen and (max-width: 768px) {
   body main .flights .round_trip_flight .departing_flight,
@@ -2366,6 +2368,24 @@ body main .flights .round_trip_flight .return_flight {
 }
 body main .flights .round_trip_flight .return_flight .num {
   background: #777;
+}
+body main .no_flights_available {
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 8px;
+}
+body main .no_flights_available p {
+  width: min(100% - 12px, 600px);
+  text-align: center;
+  margin: 0 auto;
+  color: #777;
+  text-wrap: balance;
+}
+body main .no_flights_available img {
+  height: 140px;
 }
 body main .flight_card {
   border-radius: 16px;
@@ -2439,14 +2459,14 @@ body main .flight_card .flight_info .departure .time_line {
 }
 body main .flight_card .flight_info .departure .time_line .flight_d {
   position: absolute;
-  font-size: 12px;
+  font-size: 10px;
   color: #777;
   left: 50%;
-  bottom: -24px;
+  bottom: -20px;
   transform: translateX(-50%);
 }
 body main .flight_card .flight_info .departure .time_line .flight_d.up {
-  top: -24px;
+  top: -20px;
   bottom: initial;
 }
 body main .flight_card .flight_info .departure .time_line .line {

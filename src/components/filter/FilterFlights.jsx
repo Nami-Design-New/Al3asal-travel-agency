@@ -17,9 +17,7 @@ export default function FilterFlights() {
 
     if (location.pathname !== "/flights") {
       await navigate("/flights");
-    } else {
-      window.location.reload();
-    }
+    } 
     await refetch();
   };
 

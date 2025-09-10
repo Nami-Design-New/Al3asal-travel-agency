@@ -1,6 +1,14 @@
 export default function TicketsAirLine({ flight }) {
   const uniqueAirlines = Array.from(
-    new Map(flight?.airlines?.map((a) => [a.code, a])).values()
+    new Map(
+      flight?.legs?.map((leg) => [
+        leg.airline_info.carrier_code,
+        {
+          code: leg.airline_info.carrier_code,
+          name: leg.airline_info.carrier_name,
+        },
+      ])
+    ).values()
   );
 
   return (
@@ -15,7 +23,7 @@ export default function TicketsAirLine({ flight }) {
             />
           ))}
         </div>
-        <h6>{uniqueAirlines.map((airline) => airline.name).join(", ")}</h6>
+        <h6>{uniqueAirlines.map((a) => a.name).join(", ")}</h6>
       </div>
     </div>
   );
