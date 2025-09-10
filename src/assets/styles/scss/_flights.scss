@@ -44,9 +44,10 @@
       flex: 1;
       display: flex;
       align-items: center;
-      justify-content: end;
+      justify-content: center;
       gap: 16px;
       padding: 0 12px;
+
       @media screen and (max-width: 768px) {
         display: none;
       }
@@ -155,6 +156,7 @@
       gap: 16px;
       &.active {
         background: #54a0c438;
+        opacity: 1;
       }
       @media screen and (max-width: 768px) {
         gap: 8px;
@@ -169,6 +171,27 @@
         background: $gray;
       }
     }
+  }
+}
+
+.no_flights_available {
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 8px;
+
+  p {
+    width: min(100% - 12px, 600px);
+    text-align: center;
+    margin: 0 auto;
+    color: #777;
+    text-wrap: balance;
+  }
+
+  img {
+    height: 140px;
   }
 }
 
@@ -214,6 +237,20 @@
           color: $black;
           font-size: 14px;
           margin: 0;
+          display: flex;
+          align-items: center;
+          gap: 6px;
+
+          span {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+            background: $input_stroke;
+            border: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
         }
         span {
           color: $gray;
@@ -228,6 +265,21 @@
         border-top: 1px solid $input_hint;
         display: block;
         position: relative;
+
+        .flight_d {
+          position: absolute;
+          font-size: 10px;
+          color: #777;
+          left: 50%;
+          bottom: -20px;
+          transform: translateX(-50%);
+
+          &.up {
+            top: -20px;
+            bottom: initial;
+          }
+        }
+
         .line {
           position: absolute;
           top: 50%;
@@ -245,9 +297,18 @@
             font-size: 8px;
             color: $gray;
             position: absolute;
+            font-size: 10px;
             left: 50%;
-            bottom: -14px;
+            bottom: -20px;
             transform: translateX(-50%);
+          }
+
+          .time {
+            bottom: initial;
+            top: -22px;
+            align-items: center;
+            flex-direction: row;
+            white-space: nowrap;
           }
         }
 
@@ -282,11 +343,13 @@
       .content {
         display: flex;
         flex-direction: column;
+        gap: 12px;
         .images {
           display: flex;
+          gap: 12px;
           img {
-            width: 2.5rem;
-            height: 2.5rem;
+            height: 20px;
+            max-width: 80px;
             object-fit: contain;
           }
         }
@@ -343,7 +406,7 @@
     gap: 12px;
 
     h5 {
-      font-size: 18px;
+      font-size: 24px;
       color: $black;
       font-weight: 600;
       margin-bottom: 0;

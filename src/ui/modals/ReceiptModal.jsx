@@ -1,13 +1,11 @@
 import { useRef } from "react";
 import { Modal } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
-import { useSelector } from "react-redux";
 import { useReactToPrint } from "react-to-print";
 
 export default function ReceiptModal({ show, setShow }) {
   const { t } = useTranslation();
   const invoiceRef = useRef();
-  const { lang } = useSelector((state) => state.settings);
 
   const handlePrint = useReactToPrint({
     contentRef: invoiceRef,
@@ -69,7 +67,7 @@ export default function ReceiptModal({ show, setShow }) {
           <div
             className="receipt"
             ref={invoiceRef}
-            style={{ direction: lang === "ar" ? "rtl" : "ltr" }}
+            // style={{ direction: lang === "ar" ? "rtl" : "ltr" }}
           >
             {/* header */}
             <div className="header">

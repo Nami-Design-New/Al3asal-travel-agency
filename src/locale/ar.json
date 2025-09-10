@@ -91,7 +91,7 @@
     "adults": "البالغين",
     "children": "الأطفال",
     "infants": "الرضع",
-    "searchByCityOrAirPort": "البحث حسب المدينة أو المطار",
+    "searchByCityOrAirPort": "البحث حسب الدولة أو المدينة أو المطار",
     "direct": "بدون توقفات",
     "in": "فى",
     "stops": "محطات",
@@ -109,7 +109,12 @@
     "departure": "المغادرة",
     "arrival": "الوصول",
     "receipt": "الفاتورة",
-    "print": "طباعة"
+    "print": "طباعة",
+    "ECONOMY": "اقتصادي",
+    "BUSINESS": "درجة رجال الأعمال",
+    "select_departure": "إختر تاريخ الذهاب",
+    "select_departure_return": "اختر تاريخ الذهاب والعودة",
+    "traveler": "مسافر"
   },
   "home": {
     "welcome": "مرحبًا بك في وكالة العسل للسفر والسياحة",

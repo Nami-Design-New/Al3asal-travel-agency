@@ -1,14 +1,13 @@
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { Link, NavLink } from "react-router";
-import { useDispatch } from "react-redux";
-import { setShowAuthModal } from "../../redux/slices/auth";
 import SettingDropDown from "./SettingDropDown";
-import UserDropDown from "./UserDropDown";
+// import UserDropDown from "./UserDropDown";
+import useAuthStore from "../../stores/authStore";
 
 export default function Header() {
   const { t } = useTranslation();
-  const dispatch = useDispatch();
+  const { openAuthModal } = useAuthStore();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,12 +43,12 @@ export default function Header() {
           <SettingDropDown />
           <button
             className="login"
-            onClick={() => dispatch(setShowAuthModal(true))}
+            onClick={() => openAuthModal(true)}
           >
             {t("header.login")}
           </button>
           
-          <UserDropDown />
+          {/* <UserDropDown /> */}
         </div>
       </nav>
     </header>

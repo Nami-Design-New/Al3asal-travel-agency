@@ -1,13 +1,12 @@
 import { useTranslation } from "react-i18next";
-import { useDispatch } from "react-redux";
-import { setStep } from "../../redux/slices/auth";
 import InputField from "./../../ui/forms/InputField";
 import PasswordField from "../../ui/forms/PasswordField";
 import SubmitButton from "./../../ui/forms/SubmitButton";
+import useAuthStore from "../../stores/authStore";
 
 export default function Login() {
   const { t } = useTranslation();
-  const dispatch = useDispatch();
+  const { setStep } = useAuthStore();
 
   return (
     <>
@@ -27,10 +26,7 @@ export default function Login() {
           placeholder={t("auth.enterPassword")}
         />
 
-        <span
-          className="forgot_password"
-          onClick={() => dispatch(setStep("reset1"))}
-        >
+        <span className="forgot_password" onClick={() => setStep("reset1")}>
           {t("auth.forgotPassword")}
         </span>
 
@@ -53,7 +49,7 @@ export default function Login() {
 
         <p className="register_link">
           {t("auth.dontHaveAccount")}{" "}
-          <span onClick={() => dispatch(setStep("register"))}>
+          <span onClick={() => setStep("register")}>
             {t("auth.createAccount")}
           </span>
         </p>

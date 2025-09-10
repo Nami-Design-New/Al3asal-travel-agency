@@ -1,0 +1,214 @@
+{
+  "json": {
+    "provider_key": "GSC B",
+    "package_info": { "packaged": false },
+    "legs": [
+      {
+        "flight_number": "VF248",
+
+        "departure_info": {
+          "airport_code": "CAI",
+          "date": "2025-10-14 04:30:00",
+          "airport_name": "Cairo Intl Arpt",
+          "city_name": "Cairo"
+        },
+
+        "arrival_info": {
+          "airport_code": "SAW",
+          "date": "2025-10-14 06:40:00",
+          "airport_name": "Sabiha Gokcen Arpt",
+          "city_name": "Istanbul"
+        },
+
+        "time_info": {
+          "leg_duration_time_minute": 70,
+          "wait_time_in_minute_before_next_leg": 930,
+          "flight_time_hour": 5,
+          "flight_time_minute": 10,
+          "layover_time_in_minutes": 930,
+          "day_cross": false
+        },
+
+        "airline_info": {
+          "carrier_code": "VF",
+          "carrier_name": "AJET",
+          "operator_code": "VF",
+          "operator_name": "AJET",
+          "operating_airline_code": "VF"
+        },
+
+        "baggages": [
+          {
+            "amount": 0,
+            "type": "KILO",
+            "alternative_type": "K",
+            "class_code": "O",
+            "passenger_type": "ADULT"
+          }
+        ],
+
+        "cabin_baggages": [
+          {
+            "amount": 1,
+            "type": "PIECE",
+            "alternative_type": "P",
+            "class_code": "O",
+            "passenger_type": "ADULT"
+          }
+        ]
+      },
+
+      {
+        "flight_number": "VF189",
+        "departure_info": {
+          "airport_code": "SAW",
+          "date": "2025-10-14 22:10:00",
+          "airport_name": "Sabiha Gokcen Arpt",
+          "city_name": "Istanbul"
+        },
+
+        "arrival_info": {
+          "airport_code": "JED",
+          "date": "2025-10-15 02:10:00",
+          "airport_name": "Jeddah Intl",
+          "city_name": "Jeddah"
+        },
+
+        "time_info": {
+          "leg_duration_time_minute": 240,
+          "wait_time_in_minute_before_next_leg": 0,
+          "flight_time_hour": 5,
+          "flight_time_minute": 10,
+          "layover_time_in_minutes": 930,
+          "day_cross": false
+        },
+
+        "airline_info": {
+          "carrier_code": "VF",
+          "carrier_name": "AJET",
+          "operator_code": "VF",
+          "operator_name": "AJET",
+          "operating_airline_code": "VF"
+        },
+
+        "baggages": [
+          {
+            "amount": 0,
+            "type": "KILO",
+            "alternative_type": "K",
+            "class_code": "O",
+            "passenger_type": "ADULT"
+          }
+        ],
+
+        "cabin_baggages": [
+          {
+            "amount": 1,
+            "type": "PIECE",
+            "alternative_type": "P",
+            "class_code": "O",
+            "passenger_type": "ADULT"
+          }
+        ]
+      }
+    ],
+
+    "fares": [
+      {
+        "fare_key": "eyJzZWFyY2hJZCI6IlM6MDMzNDUxMTQtOWQ1Zi00MDdmLTgxYjItZGJkMjFiN2MzNjhiIiwiaXRpbmVyYXJ5SWQiOiJtOjJ0Y3Q6OXpnMDptZmNoeDYzZjpJVDowMjEwNTNsSnpRSGZoaEpoOjNmOXgiLCJmYXJlVHlwZSI6IkVDT05PTVkiLCJzZWdtZW50cyI6WyJPIiwiTyJdfQ==",
+        "fare_info": {
+          "class_codes": ["O", "O"],
+          "cabin_types": ["ECONOMY", "ECONOMY"],
+
+          "fare_detail": {
+            "currency_code": "USD",
+
+            "price_info": {
+              "total_fare": 302.73,
+              "base_fare": 283.55,
+              "service_fee": 19.18,
+              "agency_commission": 0,
+              "tax": 0,
+              "supplement": 0
+            },
+
+            "pax_fares": [
+              {
+                "currency_code": "USD",
+
+                "price_info": {
+                  "total_fare": 302.73,
+                  "base_fare": 283.55,
+                  "service_fee": 19.18,
+                  "agency_commission": 0,
+                  "tax": 0,
+                  "supplement": 0
+                },
+
+                "pax_type": "ADULT",
+                "number_of_pax": 1,
+
+                "baggage_allowances": [
+                  {
+                    "amount": 0,
+                    "type": "KILO",
+                    "alternative_type": "K",
+                    "class_code": "O",
+                    "departure_airport": "CAI",
+                    "arrival_airport": "SAW",
+                    "carrier": "VF",
+                    "flight_number": "VF248"
+                  },
+
+                  {
+                    "amount": 0,
+                    "type": "KILO",
+                    "alternative_type": "K",
+                    "class_code": "O",
+                    "departure_airport": "SAW",
+                    "arrival_airport": "JED",
+                    "carrier": "VF",
+                    "flight_number": "VF189"
+                  }
+                ],
+
+                "cabin_baggage_allowances": [
+                  {
+                    "amount": 1,
+                    "type": "PIECE",
+                    "alternative_type": "P",
+                    "class_code": "O",
+                    "departure_airport": "CAI",
+                    "arrival_airport": "SAW",
+                    "carrier": "VF",
+                    "flight_number": "VF248"
+                  },
+
+                  {
+                    "amount": 1,
+                    "type": "PIECE",
+                    "alternative_type": "P",
+                    "class_code": "O",
+                    "departure_airport": "SAW",
+                    "arrival_airport": "JED",
+                    "carrier": "VF",
+                    "flight_number": "VF189"
+                  }
+                ]
+              }
+            ]
+          },
+
+          "free_seats": 9
+        }
+      }
+    ],
+
+    "office": { "office_id": 3188, "office_name": "TR - IK Global" },
+
+    "book_type": "DIRECT",
+    "charter": false
+  }
+}
+
+

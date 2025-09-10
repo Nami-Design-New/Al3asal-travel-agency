@@ -69,7 +69,6 @@ $shadow: 0 0 16px 0 rgba(0, 0, 0, 0.1);
 
 ::-webkit-scrollbar-thumb {
   background: $input_hint;
-  height: 300px;
 }
 
 ul {
@@ -200,121 +199,6 @@ button {
   border-radius: 8px !important;
 }
 
-.calender_modal .rmdp-calendar {
-  border: none;
-  box-shadow: none;
-  border-radius: 0;
-  padding: 8px;
-  background: $white;
-}
-
-.rmdp-wrapper {
-  background: $white !important;
-}
-
-.rmdp-day {
-  width: 48px !important;
-  height: 48px !important;
-  font-size: 16px !important;
-  color: $black !important;
-  transition: $transition;
-  span:hover {
-    background-color: $input_bg !important;
-    color: $main !important;
-  }
-  &.rmdp-today span {
-    background-color: $input_bg !important;
-    color: $main !important;
-  }
-  &.rmdp-disabled {
-    color: $gray !important;
-    cursor: not-allowed !important;
-    span {
-      text-decoration: line-through !important;
-      cursor: not-allowed !important;
-      &:hover {
-        background-color: transparent !important;
-        color: $gray !important;
-      }
-    }
-  }
-}
-
-.rmdp-arrow-container {
-  width: 24px !important;
-  height: 24px !important;
-  @include centerFlex();
-  position: relative;
-  i {
-    display: none;
-  }
-  &::before {
-    font-family: "Font Awesome 6 Pro";
-    content: "\f104";
-    font-size: 14px;
-    color: $main;
-    @include centerAbsolute();
-  }
-  &.rmdp-right::before {
-    content: "\f105";
-  }
-  &:hover {
-    background: $input_bg !important;
-    box-shadow: none !important;
-  }
-  &.disabled {
-    cursor: not-allowed !important;
-    &::before {
-      color: $input_hint !important;
-    }
-    &:hover {
-      background: transparent !important;
-      box-shadow: none !important;
-    }
-  }
-}
-
-.rmdp-range {
-  background: $main !important;
-  box-shadow: none !important;
-  color: $white !important;
-  &.rmdp-today span {
-    background: $main !important;
-    color: $white !important;
-  }
-}
-
-.rmdp-week:first-child {
-  margin-bottom: 16px;
-  .rmdp-week-day {
-    color: $main !important;
-  }
-}
-
-.rmdp-header-values {
-  color: $main !important;
-}
-
-.rmdp-shadow {
-  box-shadow: none !important;
-}
-
-.calender_wrapper {
-  min-height: 384px;
-}
-
-.rmdp-week-day {
-  width: 48px !important;
-}
-
-.form-switch input {
-  box-shadow: none !important;
-}
-
-.rmdp-selected span {
-  background-color: $main !important;
-  color: $white !important;
-}
 
 // phone input
 .react-tel-input {

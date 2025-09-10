@@ -1,13 +1,12 @@
 import { useTranslation } from "react-i18next";
-import { useDispatch } from "react-redux";
-import { setStep } from "../../redux/slices/auth";
 import InputField from "../../ui/forms/InputField";
 import PasswordField from "../../ui/forms/PasswordField";
 import SubmitButton from "../../ui/forms/SubmitButton";
+import useAuthStore from "../../stores/authStore";
 
 export default function Register() {
   const { t } = useTranslation();
-  const dispatch = useDispatch();
+  const { setStep } = useAuthStore();
 
   return (
     <>
@@ -51,9 +50,7 @@ export default function Register() {
 
         <p className="register_link">
           {t("auth.alreadyHaveAccount")}{" "}
-          <span onClick={() => dispatch(setStep("login"))}>
-            {t("auth.login")}
-          </span>
+          <span onClick={() => setStep("login")}>{t("auth.login")}</span>
         </p>
       </form>
     </>

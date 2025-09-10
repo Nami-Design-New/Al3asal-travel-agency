@@ -30,7 +30,6 @@
 
 ::-webkit-scrollbar-thumb {
   background: #aaaaaa;
-  height: 300px;
 }
 
 ul {
@@ -166,127 +165,6 @@ button {
   margin: 0 !important;
   margin-inline-end: 4px !important;
   border-radius: 8px !important;
-}
-
-.calender_modal .rmdp-calendar {
-  border: none;
-  box-shadow: none;
-  border-radius: 0;
-  padding: 8px;
-  background: #fff;
-}
-
-.rmdp-wrapper {
-  background: #fff !important;
-}
-
-.rmdp-day {
-  width: 48px !important;
-  height: 48px !important;
-  font-size: 16px !important;
-  color: #000 !important;
-  transition: all 0.3s ease-in-out;
-}
-.rmdp-day span:hover {
-  background-color: #fafafa !important;
-  color: #54a0c4 !important;
-}
-.rmdp-day.rmdp-today span {
-  background-color: #fafafa !important;
-  color: #54a0c4 !important;
-}
-.rmdp-day.rmdp-disabled {
-  color: #777 !important;
-  cursor: not-allowed !important;
-}
-.rmdp-day.rmdp-disabled span {
-  text-decoration: line-through !important;
-  cursor: not-allowed !important;
-}
-.rmdp-day.rmdp-disabled span:hover {
-  background-color: transparent !important;
-  color: #777 !important;
-}
-
-.rmdp-arrow-container {
-  width: 24px !important;
-  height: 24px !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-.rmdp-arrow-container i {
-  display: none;
-}
-.rmdp-arrow-container::before {
-  font-family: "Font Awesome 6 Pro";
-  content: "\f104";
-  font-size: 14px;
-  color: #54a0c4;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.rmdp-arrow-container.rmdp-right::before {
-  content: "\f105";
-}
-.rmdp-arrow-container:hover {
-  background: #fafafa !important;
-  box-shadow: none !important;
-}
-.rmdp-arrow-container.disabled {
-  cursor: not-allowed !important;
-}
-.rmdp-arrow-container.disabled::before {
-  color: #aaaaaa !important;
-}
-.rmdp-arrow-container.disabled:hover {
-  background: transparent !important;
-  box-shadow: none !important;
-}
-
-.rmdp-range {
-  background: #54a0c4 !important;
-  box-shadow: none !important;
-  color: #fff !important;
-}
-.rmdp-range.rmdp-today span {
-  background: #54a0c4 !important;
-  color: #fff !important;
-}
-
-.rmdp-week:first-child {
-  margin-bottom: 16px;
-}
-.rmdp-week:first-child .rmdp-week-day {
-  color: #54a0c4 !important;
-}
-
-.rmdp-header-values {
-  color: #54a0c4 !important;
-}
-
-.rmdp-shadow {
-  box-shadow: none !important;
-}
-
-.calender_wrapper {
-  min-height: 384px;
-}
-
-.rmdp-week-day {
-  width: 48px !important;
-}
-
-.form-switch input {
-  box-shadow: none !important;
-}
-
-.rmdp-selected span {
-  background-color: #54a0c4 !important;
-  color: #fff !important;
 }
 
 .react-tel-input {
@@ -456,14 +334,14 @@ header nav .logo img {
 }
 header nav .nav_items {
   flex: 2;
-  gap: 42px;
+  gap: 52px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 header nav .nav_items a {
   color: #000;
-  font-size: 14px;
+  font-size: 16px;
 }
 header nav .nav_items a:hover, header nav .nav_items a.active {
   color: #54a0c4;
@@ -519,10 +397,6 @@ header nav .actions .input_field select {
   font-size: 14px;
   border: 1px solid #f4f4f4;
   border-radius: 4px;
-}
-header nav .actions .dropdown-menu {
-  min-width: 15rem;
-  padding: 16px;
 }
 header nav .actions .login {
   font-size: 14px;
@@ -1889,6 +1763,13 @@ body main .filter_container .flight_type label span {
   font-size: 14px;
   border: 1px solid #f4f4f4;
 }
+body main .filter_container .flights_level {
+  background: #fafafa;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  border: 1px solid #f4f4f4;
+}
 body main .filter_container .flight_specifications {
   display: flex;
   align-items: center;
@@ -1903,6 +1784,7 @@ body main .filter_container .flight_specifications {
 }
 body main .filter_container .flight_specifications .dropdown {
   width: 100%;
+  min-width: 282px;
 }
 body main .filter_container .flight_specifications .from_to {
   display: flex;
@@ -1944,12 +1826,19 @@ body main .filter_container .flight_specifications .filter_btn {
   gap: 12px;
   font-size: 14px;
   padding: 10px 16px;
+  min-height: 62px;
 }
 body main .filter_container .flight_specifications .filter_btn i {
   color: #aaaaaa;
+  font-size: 18px;
+}
+body main .filter_container .flight_specifications .filter_btn .sm_title {
+  font-size: 12px;
+  color: #777;
 }
 body main .filter_container .flight_specifications .search {
-  padding: 10px 16px;
+  padding: 10px 24px;
+  height: 62px;
   color: #fff;
   background: #54a0c4;
   box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.1);
@@ -1959,8 +1848,9 @@ body main .filter_container .flight_specifications .search {
   align-items: center;
   gap: 8px;
 }
-body main .filter_container .flight_specifications .travelers_menu {
-  min-width: 18rem;
+body main .filter_container .flight_specifications .travelers_menu,
+body main .filter_container .flight_specifications .dates_menu {
+  width: 100%;
   padding: 16px;
   z-index: 99;
   inset: unset !important;
@@ -1968,39 +1858,47 @@ body main .filter_container .flight_specifications .travelers_menu {
   transform: translateX(-50%) !important;
 }
 @media screen and (max-width: 576px) {
-  body main .filter_container .flight_specifications .travelers_menu .rmdp-week {
+  body main .filter_container .flight_specifications .travelers_menu .rmdp-week,
+  body main .filter_container .flight_specifications .dates_menu .rmdp-week {
     justify-content: unset !important;
   }
-  body main .filter_container .flight_specifications .travelers_menu .rmdp-day-picker {
+  body main .filter_container .flight_specifications .travelers_menu .rmdp-day-picker,
+  body main .filter_container .flight_specifications .dates_menu .rmdp-day-picker {
     gap: 24px;
     flex-direction: column !important;
   }
 }
-body main .filter_container .flight_specifications .travelers_menu .travelers_menu_content {
-  gap: 16px;
+body main .filter_container .flight_specifications .travelers_menu .travelers_menu_content,
+body main .filter_container .flight_specifications .dates_menu .travelers_menu_content {
+  gap: 24px;
   display: flex;
   flex-direction: column;
 }
-body main .filter_container .flight_specifications .travelers_menu .section {
+body main .filter_container .flight_specifications .travelers_menu .section,
+body main .filter_container .flight_specifications .dates_menu .section {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-body main .filter_container .flight_specifications .travelers_menu .section h6 {
+body main .filter_container .flight_specifications .travelers_menu .section h6,
+body main .filter_container .flight_specifications .dates_menu .section h6 {
   margin: 0;
   font-size: 14px;
 }
-body main .filter_container .flight_specifications .travelers_menu .section h6 strong {
+body main .filter_container .flight_specifications .travelers_menu .section h6 strong,
+body main .filter_container .flight_specifications .dates_menu .section h6 strong {
   font-size: 10px;
   font-weight: 400;
   color: #aaaaaa;
 }
-body main .filter_container .flight_specifications .travelers_menu .section .btns {
+body main .filter_container .flight_specifications .travelers_menu .section .btns,
+body main .filter_container .flight_specifications .dates_menu .section .btns {
   display: flex;
   align-items: center;
   gap: 12px;
 }
-body main .filter_container .flight_specifications .travelers_menu .section .btns .btn {
+body main .filter_container .flight_specifications .travelers_menu .section .btns .btn,
+body main .filter_container .flight_specifications .dates_menu .section .btns .btn {
   width: 28px;
   height: 28px;
   background: #f4f4f4;
@@ -2011,14 +1909,18 @@ body main .filter_container .flight_specifications .travelers_menu .section .btn
   align-items: center;
   justify-content: center;
 }
-body main .filter_container .flight_specifications .travelers_menu .section .btns .num {
+body main .filter_container .flight_specifications .travelers_menu .section .btns .num,
+body main .filter_container .flight_specifications .dates_menu .section .btns .num {
   font-size: 14px;
   color: #000;
 }
+body main .filter_container .flight_specifications .dates_menu {
+  width: -moz-fit-content;
+  width: fit-content;
+}
 body main .filter_container .flight_specifications .places_menu {
-  min-width: 20rem;
-  min-height: 16rem;
-  max-height: 16rem;
+  width: 100%;
+  min-height: 12rem;
   z-index: 99;
   overflow-y: scroll;
   scrollbar-width: 0;
@@ -2042,10 +1944,19 @@ body main .filter_container .flight_specifications .places_menu .places_menu_con
   display: flex;
   height: 100%;
   flex-direction: column;
+  position: relative;
+}
+body main .filter_container .flight_specifications .places_menu .places_menu_content .clear_btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 14px;
+  z-index: 999;
 }
 body main .filter_container .flight_specifications .places_menu .places_menu_content h6 {
   width: 100%;
   height: 100%;
+  text-align: start;
   font-size: 14px;
   color: #aaaaaa;
   text-align: center;
@@ -2077,6 +1988,7 @@ body main .filter_container .flight_specifications .places_menu .places_menu_con
   color: #000;
   font-size: 14px;
   font-weight: 500;
+  text-align: start;
   margin-bottom: 4px;
 }
 body main .filter_container .flight_specifications .places_menu .places_menu_content .list_ariports button .content p {
@@ -2336,7 +2248,7 @@ body main .flights .sorting_header .block {
   flex: 1;
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: center;
   gap: 16px;
   padding: 0 12px;
 }
@@ -2442,6 +2354,7 @@ body main .flights .round_trip_flight .return_flight {
 body main .flights .round_trip_flight .departing_flight.active,
 body main .flights .round_trip_flight .return_flight.active {
   background: rgba(84, 160, 196, 0.2196078431);
+  opacity: 1;
 }
 @media screen and (max-width: 768px) {
   body main .flights .round_trip_flight .departing_flight,
@@ -2455,6 +2368,24 @@ body main .flights .round_trip_flight .return_flight {
 }
 body main .flights .round_trip_flight .return_flight .num {
   background: #777;
+}
+body main .no_flights_available {
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 8px;
+}
+body main .no_flights_available p {
+  width: min(100% - 12px, 600px);
+  text-align: center;
+  margin: 0 auto;
+  color: #777;
+  text-wrap: balance;
+}
+body main .no_flights_available img {
+  height: 140px;
 }
 body main .flight_card {
   border-radius: 16px;
@@ -2500,6 +2431,19 @@ body main .flight_card .flight_info .departure .time h6 {
   color: #000;
   font-size: 14px;
   margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+body main .flight_card .flight_info .departure .time h6 span {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  background: #f4f4f4;
+  border: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 body main .flight_card .flight_info .departure .time span {
   color: #777;
@@ -2512,6 +2456,18 @@ body main .flight_card .flight_info .departure .time_line {
   border-top: 1px solid #aaaaaa;
   display: block;
   position: relative;
+}
+body main .flight_card .flight_info .departure .time_line .flight_d {
+  position: absolute;
+  font-size: 10px;
+  color: #777;
+  left: 50%;
+  bottom: -20px;
+  transform: translateX(-50%);
+}
+body main .flight_card .flight_info .departure .time_line .flight_d.up {
+  top: -20px;
+  bottom: initial;
 }
 body main .flight_card .flight_info .departure .time_line .line {
   position: absolute;
@@ -2530,9 +2486,17 @@ body main .flight_card .flight_info .departure .time_line .line span {
   font-size: 8px;
   color: #777;
   position: absolute;
+  font-size: 10px;
   left: 50%;
-  bottom: -14px;
+  bottom: -20px;
   transform: translateX(-50%);
+}
+body main .flight_card .flight_info .departure .time_line .line .time {
+  bottom: initial;
+  top: -22px;
+  align-items: center;
+  flex-direction: row;
+  white-space: nowrap;
 }
 body main .flight_card .flight_info .departure .time_line::before, body main .flight_card .flight_info .departure .time_line::after {
   content: "";
@@ -2561,13 +2525,15 @@ body main .flight_card .flight_info .airlines {
 body main .flight_card .flight_info .airlines .content {
   display: flex;
   flex-direction: column;
+  gap: 12px;
 }
 body main .flight_card .flight_info .airlines .content .images {
   display: flex;
+  gap: 12px;
 }
 body main .flight_card .flight_info .airlines .content .images img {
-  width: 2.5rem;
-  height: 2.5rem;
+  height: 20px;
+  max-width: 80px;
   -o-object-fit: contain;
      object-fit: contain;
 }
@@ -2622,7 +2588,7 @@ body main .flight_card .price {
   gap: 12px;
 }
 body main .flight_card .price h5 {
-  font-size: 18px;
+  font-size: 24px;
   color: #000;
   font-weight: 600;
   margin-bottom: 0;

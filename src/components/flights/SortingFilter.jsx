@@ -19,7 +19,7 @@ export default function SortingFilter() {
         </Dropdown.Menu>
       </Dropdown>
 
-      <div className="block">
+      <div className="block justify-content-start">
         <h6>{t("flights.sortBy")} :</h6>
 
         <label htmlFor="recommended" className="check_field">
