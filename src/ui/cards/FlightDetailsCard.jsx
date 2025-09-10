@@ -1,4 +1,37 @@
-export default function FlightDetailsCard({ type }) {
+import {
+  dateTimeDiffCalc,
+  formatTimeHHMM,
+  minutesToHM,
+} from "../../utils/helpers";
+
+export default function FlightDetailsCard({ type, flight }) {
+  const { legs } = flight;
+
+  const firstLeg = legs[0];
+  const lastLeg = legs[legs.length - 1];
+
+  const totalDuration = dateTimeDiffCalc(
+    firstLeg.departure_info.date,
+    lastLeg.arrival_info.date
+  );
+
+  // unique airlines
+  const airPorts = [
+    ...new Set(legs.map((leg) => leg.airline_info.carrier_code)),
+  ];
+
+  // build layovers (transit airports)
+  const layovers = legs.slice(0, -1).map((leg, idx) => {
+    const nextLeg = legs[idx + 1];
+    return {
+      airport_code: leg.arrival_info.airport_code,
+      airport_name: leg.arrival_info.airport_name,
+      duration: minutesToHM(
+        dateTimeDiffCalc(leg.arrival_info.date, nextLeg.departure_info.date)
+      ),
+    };
+  });
+
   return (
     <div className="flight">
       <h6 className="mb-2">{type}</h6>
@@ -6,9 +39,12 @@ export default function FlightDetailsCard({ type }) {
       {/* air ports from to */}
       <div className="airports">
         <div className="airPort">
-          <span>Tue, 1 Jul</span>
-          <h6>SPX 01:40</h6>
-          <span>Sphinx International Airport</span>
+          <span>{new Date(firstLeg.departure_info.date).toDateString()}</span>
+          <h6>
+            {firstLeg.departure_info.airport_code}{" "}
+            {formatTimeHHMM(firstLeg.departure_info.date)}
+          </h6>
+          <span>{firstLeg.departure_info.airport_name}</span>
         </div>
 
         <div className="icon">
@@ -16,9 +52,12 @@ export default function FlightDetailsCard({ type }) {
         </div>
 
         <div className="airPort last">
-          <span>Tue, 1 Jul</span>
-          <h6>RUH 12:15</h6>
-          <span>King Khalid International Airport</span>
+          <span>{new Date(lastLeg.arrival_info.date).toDateString()}</span>
+          <h6>
+            {lastLeg.arrival_info.airport_code}{" "}
+            {formatTimeHHMM(lastLeg.arrival_info.date)}
+          </h6>
+          <span>{lastLeg.arrival_info.airport_name}</span>
         </div>
       </div>
 
@@ -26,136 +65,119 @@ export default function FlightDetailsCard({ type }) {
       <div className="time_airline">
         <div className="time">
           <p>
-            10h 30m <span>via DXB</span>
+            {minutesToHM(totalDuration)}{" "}
+            {layovers.length > 0 && (
+              <span>
+                via{" "}
+                {layovers
+                  .map((layover) => layover.airport_code)
+                  .join(", ")}
+              </span>
+            )}
           </p>
-          <p>
-            <i className="fa-light fa-hourglass-clock"></i> Long Stopover - 04h
-            15m
-          </p>
+
+          {layovers.length > 0 && (
+            <p>
+              <i className="fa-light fa-hourglass-clock"></i>{" "}
+              {layovers.map((layover, i) => (
+                <span key={i}>
+                  Stopover at {layover.airport_code} - {layover.duration}{" "}
+                </span>
+              ))}
+            </p>
+          )}
         </div>
 
         <div className="airlines">
-          <img src="/airlines/E5.webp" alt="e5" />
-          <img src="/airlines/XY.webp" alt="xy" />
+          {airPorts.map((airline, idx) => (
+            <img
+              key={idx}
+              src={`http://img.wway.io/pics/root/${airline}@svg`}
+              alt={airline}
+            />
+          ))}
         </div>
       </div>
 
       {/* time line */}
       <div className="time_line">
-        {/* first segment */}
-        <div className="segment">
-          <div className="timing">
-            <div className="time">
-              <span>1 Jul</span> <b>01:40</b>
-            </div>
+        {legs.map((leg, idx) => {
+          const departure = leg.departure_info;
+          const arrival = leg.arrival_info;
+          const duration = leg.time_info.leg_duration_time_minute;
 
-            <div className="time">
-              <i className="fa-regular fa-stopwatch"></i>
-              <span>03h 45m</span>
-            </div>
-
-            <div className="time">
-              <span>1 Jul</span> <b>05:15</b>
-            </div>
-          </div>
-
-          <div className="line" />
-
-          <div className="segment_info">
-            <div className="title">
-              <h6>SPX</h6>
-              <span>Sphinx International Airport</span>
-            </div>
-
-            <div className="content">
-              <ul>
-                <li>
-                  <div className="airline">
-                    <img src="/airlines/E5.webp" alt="air arabia" />
-                    <h6>Air Arabia</h6>
+          return (
+            <div key={idx}>
+              {/* segment */}
+              <div className="segment">
+                <div className="timing">
+                  <div className="time">
+                    <span>{new Date(departure.date).toLocaleDateString()}</span>{" "}
+                    <b>{formatTimeHHMM(departure.date)}</b>
                   </div>
-                  <p>FZ192 (Boeing 737-200)</p>
-                </li>
 
-                <li>
-                  <p>Economy</p>
-                  <div className="features">
-                    <i className="fa-regular fa-bowl-spoon not_available"></i>
-                    <i className="fa-regular fa-tv"></i>
-                    <i className="fa-regular fa-wifi not_available"></i>
-                    <i className="fa-solid fa-plug"></i>
+                  <div className="time">
+                    <i className="fa-regular fa-stopwatch"></i>
+                    <span>{minutesToHM(duration)}</span>
                   </div>
-                </li>
-              </ul>
-            </div>
 
-            <div className="title">
-              <h6>DXB</h6>
-              <span>King Khalid International Airport</span>
-            </div>
-          </div>
-        </div>
-
-        {/* layover time */}
-        <div className="stop_over">
-          <span>
-            Layover time <b>17h 55m</b>
-          </span>
-        </div>
-
-        {/* second segment */}
-        <div className="segment">
-          <div className="timing">
-            <div className="time">
-              <span>1 Jul</span> <b>01:40</b>
-            </div>
-
-            <div className="time">
-              <i className="fa-regular fa-stopwatch"></i>
-              <span>03h 45m</span>
-            </div>
-
-            <div className="time">
-              <span>1 Jul</span> <b>05:15</b>
-            </div>
-          </div>
-
-          <div className="line" />
-
-          <div className="segment_info">
-            <div className="title">
-              <h6>SPX</h6>
-              <span>Sphinx International Airport</span>
-            </div>
-
-            <div className="content">
-              <ul>
-                <li>
-                  <div className="airline">
-                    <img src="/airlines/XY.webp" alt="air arabia" />
-                    <h6>Flynas</h6>
+                  <div className="time">
+                    <span>{new Date(arrival.date).toLocaleDateString()}</span>{" "}
+                    <b>{formatTimeHHMM(arrival.date)}</b>
                   </div>
-                  <p>FZ192 (Boeing 737-200)</p>
-                </li>
+                </div>
 
-                <li>
-                  <p>Economy</p>
-                  <div className="features">
-                    <i className="fa-regular fa-bowl-spoon"></i>
-                    <i className="fa-regular fa-tv not_available"></i>
-                    <i className="fa-regular fa-wifi "></i>
-                    <i className="fa-solid fa-plug"></i>
+                <div className="line" />
+
+                <div className="segment_info">
+                  <div className="title">
+                    <h6>{departure.airport_code}</h6>
+                    <span>{departure.airport_name}</span>
                   </div>
-                </li>
-              </ul>
-            </div>
 
-            <div className="title">
-              <h6>DXB</h6>
-              <span>King Khalid International Airport</span>
+                  <div className="content">
+                    <ul>
+                      <li>
+                        <div className="airline">
+                          <img
+                            src={`http://img.wway.io/pics/root/${leg.airline_info.carrier_code}@svg`}
+                            alt={leg.airline_info.carrier_name}
+                          />
+                          <h6>{leg.airline_info.carrier_name}</h6>
+                        </div>
+                      </li>
+                      <li>
+                        <p>Economy</p>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div className="title">
+                    <h6>{arrival.airport_code}</h6>
+                    <span>{arrival.airport_name}</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* layover after each leg except last */}
+              {idx < legs.length - 1 && (
+                <div className="stop_over">
+                  <span>
+                    Layover at {legs[idx].arrival_info.airport_code} for{" "}
+                    <b>
+                      {minutesToHM(
+                        dateTimeDiffCalc(
+                          legs[idx].arrival_info.date,
+                          legs[idx + 1].departure_info.date
+                        )
+                      )}
+                    </b>
+                  </span>
+                </div>
+              )}
             </div>
-          </div>
-        </div>
+          );
+        })}
       </div>
     </div>
   );
