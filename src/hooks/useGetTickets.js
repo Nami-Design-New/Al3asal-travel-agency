@@ -25,6 +25,7 @@ export default function useGetTickets() {
   const { data, isLoading, refetch, isFetching } = useQuery({
     queryKey: ["tickets"],
     queryFn: () => getTickets(payload),
+    keepPreviousData: false, 
   });
 
   return { data, isLoading, refetch, isFetching };

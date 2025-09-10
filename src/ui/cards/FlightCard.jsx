@@ -6,7 +6,7 @@ export default function FlightCard({ flight, handleSelect }) {
   const totalPrice = fare?.price_info?.total_fare || 0;
 
   return (
-    <div className="flight_card" onClick={handleSelect}>
+    <div className="flight_card" onClick={() => handleSelect(flight)}>
       <div className="flight_info">
         <TicketsAirLine flight={flight} />
         <TicketTimeLine flight={flight} />
