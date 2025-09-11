@@ -14,7 +14,7 @@ export default function FlightCard({ flight, handleSelect }) {
 
       <div className="price">
         <h5>
-          {totalPrice} <span>USD / Person</span>
+          {totalPrice} <span>USD</span>
         </h5>
       </div>
     </div>
