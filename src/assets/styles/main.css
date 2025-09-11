@@ -307,6 +307,11 @@ button {
   color: #000;
 }
 
+.error {
+  font-size: 14px;
+  color: #dc3545;
+}
+
 header {
   top: 0;
   width: 100%;
