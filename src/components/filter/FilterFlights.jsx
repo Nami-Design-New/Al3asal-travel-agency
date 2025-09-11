@@ -6,7 +6,7 @@ import Travelers from "./Travelers";
 import FromToAirport from "./FromToAirport";
 import useGetTickets from "../../hooks/useGetTickets";
 
-export default function FilterFlights() {
+export default function FilterFlights({ setShowReturnFlights }) {
   const { t } = useTranslation();
   const location = useLocation();
   const navigate = useNavigate();
@@ -19,6 +19,7 @@ export default function FilterFlights() {
       await navigate("/flights");
     }
 
+    setShowReturnFlights(false);
     await refetch();
   };
 
