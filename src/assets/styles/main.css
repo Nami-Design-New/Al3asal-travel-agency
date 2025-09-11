@@ -633,6 +633,8 @@ header nav .actions .user_dropdown i {
   padding: 24px;
   height: calc(100vh - 48px);
   overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
 }
 .flight_details_modal .modal-body .itinerary .title {
   font-size: 14px;
@@ -878,6 +880,7 @@ header nav .actions .user_dropdown i {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: auto;
 }
 .flight_details_modal .modal-body .itinerary .price h5 {
   font-size: 18px;

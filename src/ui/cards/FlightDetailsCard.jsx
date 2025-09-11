@@ -7,27 +7,27 @@ import {
 export default function FlightDetailsCard({ type, flight }) {
   const { legs } = flight;
 
-  const firstLeg = legs[0];
-  const lastLeg = legs[legs.length - 1];
+  const firstLeg = legs?.[0];
+  const lastLeg = legs?.[legs?.length - 1];
 
   const totalDuration = dateTimeDiffCalc(
-    firstLeg.departure_info.date,
-    lastLeg.arrival_info.date
+    firstLeg?.departure_info?.date,
+    lastLeg?.arrival_info?.date
   );
 
   // unique airlines
   const airPorts = [
-    ...new Set(legs.map((leg) => leg.airline_info.carrier_code)),
+    ...new Set(legs?.map((leg) => leg?.airline_info?.carrier_code)),
   ];
 
   // build layovers (transit airports)
-  const layovers = legs.slice(0, -1).map((leg, idx) => {
+  const layovers = legs?.slice(0, -1)?.map((leg, idx) => {
     const nextLeg = legs[idx + 1];
     return {
-      airport_code: leg.arrival_info.airport_code,
-      airport_name: leg.arrival_info.airport_name,
+      airport_code: leg?.arrival_info?.airport_code,
+      airport_name: leg?.arrival_info?.airport_name,
       duration: minutesToHM(
-        dateTimeDiffCalc(leg.arrival_info.date, nextLeg.departure_info.date)
+        dateTimeDiffCalc(leg?.arrival_info?.date, nextLeg?.departure_info?.date)
       ),
     };
   });
@@ -39,12 +39,12 @@ export default function FlightDetailsCard({ type, flight }) {
       {/* air ports from to */}
       <div className="airports">
         <div className="airPort">
-          <span>{new Date(firstLeg.departure_info.date).toDateString()}</span>
+          <span>{new Date(firstLeg?.departure_info?.date)?.toDateString()}</span>
           <h6>
-            {firstLeg.departure_info.airport_code}{" "}
-            {formatTimeHHMM(firstLeg.departure_info.date)}
+            {firstLeg?.departure_info?.airport_code}{" "}
+            {formatTimeHHMM(firstLeg?.departure_info?.date)}
           </h6>
-          <span>{firstLeg.departure_info.airport_name}</span>
+          <span>{firstLeg?.departure_info?.airport_name}</span>
         </div>
 
         <div className="icon">
@@ -52,12 +52,12 @@ export default function FlightDetailsCard({ type, flight }) {
         </div>
 
         <div className="airPort last">
-          <span>{new Date(lastLeg.arrival_info.date).toDateString()}</span>
+          <span>{new Date(lastLeg?.arrival_info?.date)?.toDateString()}</span>
           <h6>
-            {lastLeg.arrival_info.airport_code}{" "}
-            {formatTimeHHMM(lastLeg.arrival_info.date)}
+            {lastLeg?.arrival_info?.airport_code}{" "}
+            {formatTimeHHMM(lastLeg?.arrival_info?.date)}
           </h6>
-          <span>{lastLeg.arrival_info.airport_name}</span>
+          <span>{lastLeg?.arrival_info?.airport_name}</span>
         </div>
       </div>
 
@@ -66,22 +66,22 @@ export default function FlightDetailsCard({ type, flight }) {
         <div className="time">
           <p>
             {minutesToHM(totalDuration)}{" "}
-            {layovers.length > 0 && (
+            {layovers?.length > 0 && (
               <span>
                 via{" "}
                 {layovers
-                  .map((layover) => layover.airport_code)
-                  .join(", ")}
+                  ?.map((layover) => layover?.airport_code)
+                  ?.join(", ")}
               </span>
             )}
           </p>
 
-          {layovers.length > 0 && (
+          {layovers?.length > 0 && (
             <p>
               <i className="fa-light fa-hourglass-clock"></i>{" "}
-              {layovers.map((layover, i) => (
+              {layovers?.map((layover, i) => (
                 <span key={i}>
-                  Stopover at {layover.airport_code} - {layover.duration}{" "}
+                  Stopover at {layover?.airport_code} - {layover?.duration}{" "}
                 </span>
               ))}
             </p>
@@ -89,7 +89,7 @@ export default function FlightDetailsCard({ type, flight }) {
         </div>
 
         <div className="airlines">
-          {airPorts.map((airline, idx) => (
+          {airPorts?.map((airline, idx) => (
             <img
               key={idx}
               src={`http://img.wway.io/pics/root/${airline}@svg`}
@@ -101,10 +101,10 @@ export default function FlightDetailsCard({ type, flight }) {
 
       {/* time line */}
       <div className="time_line">
-        {legs.map((leg, idx) => {
-          const departure = leg.departure_info;
-          const arrival = leg.arrival_info;
-          const duration = leg.time_info.leg_duration_time_minute;
+        {legs?.map((leg, idx) => {
+          const departure = leg?.departure_info;
+          const arrival = leg?.arrival_info;
+          const duration = leg?.time_info?.leg_duration_time_minute;
 
           return (
             <div key={idx}>
@@ -112,8 +112,8 @@ export default function FlightDetailsCard({ type, flight }) {
               <div className="segment">
                 <div className="timing">
                   <div className="time">
-                    <span>{new Date(departure.date).toLocaleDateString()}</span>{" "}
-                    <b>{formatTimeHHMM(departure.date)}</b>
+                    <span>{new Date(departure?.date)?.toLocaleDateString()}</span>{" "}
+                    <b>{formatTimeHHMM(departure?.date)}</b>
                   </div>
 
                   <div className="time">
@@ -122,8 +122,8 @@ export default function FlightDetailsCard({ type, flight }) {
                   </div>
 
                   <div className="time">
-                    <span>{new Date(arrival.date).toLocaleDateString()}</span>{" "}
-                    <b>{formatTimeHHMM(arrival.date)}</b>
+                    <span>{new Date(arrival?.date)?.toLocaleDateString()}</span>{" "}
+                    <b>{formatTimeHHMM(arrival?.date)}</b>
                   </div>
                 </div>
 
@@ -131,8 +131,8 @@ export default function FlightDetailsCard({ type, flight }) {
 
                 <div className="segment_info">
                   <div className="title">
-                    <h6>{departure.airport_code}</h6>
-                    <span>{departure.airport_name}</span>
+                    <h6>{departure?.airport_code}</h6>
+                    <span>{departure?.airport_name}</span>
                   </div>
 
                   <div className="content">
@@ -140,10 +140,10 @@ export default function FlightDetailsCard({ type, flight }) {
                       <li>
                         <div className="airline">
                           <img
-                            src={`http://img.wway.io/pics/root/${leg.airline_info.carrier_code}@svg`}
-                            alt={leg.airline_info.carrier_name}
+                            src={`http://img.wway.io/pics/root/${leg?.airline_info?.carrier_code}@svg`}
+                            alt={leg?.airline_info?.carrier_name}
                           />
-                          <h6>{leg.airline_info.carrier_name}</h6>
+                          <h6>{leg?.airline_info?.carrier_name}</h6>
                         </div>
                       </li>
                       <li>
@@ -153,22 +153,22 @@ export default function FlightDetailsCard({ type, flight }) {
                   </div>
 
                   <div className="title">
-                    <h6>{arrival.airport_code}</h6>
-                    <span>{arrival.airport_name}</span>
+                    <h6>{arrival?.airport_code}</h6>
+                    <span>{arrival?.airport_name}</span>
                   </div>
                 </div>
               </div>
 
               {/* layover after each leg except last */}
-              {idx < legs.length - 1 && (
+              {idx < legs?.length - 1 && (
                 <div className="stop_over">
                   <span>
-                    Layover at {legs[idx].arrival_info.airport_code} for{" "}
+                    Layover at {legs[idx]?.arrival_info?.airport_code} for{" "}
                     <b>
                       {minutesToHM(
                         dateTimeDiffCalc(
-                          legs[idx].arrival_info.date,
-                          legs[idx + 1].departure_info.date
+                          legs[idx]?.arrival_info?.date,
+                          legs[idx + 1]?.departure_info?.date
                         )
                       )}
                     </b>

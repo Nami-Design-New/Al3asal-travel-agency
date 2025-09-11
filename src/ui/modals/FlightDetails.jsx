@@ -10,10 +10,17 @@ export default function FlightDetails({ show, setShow, page }) {
 
   const getTotalPrice = () => {
     const departPrice =
-      dapart_flight?.fares[0]?.fare_info?.fare_detail?.price_info?.total_fare;
+      dapart_flight?.fares?.[0]?.fare_info?.fare_detail?.price_info
+        ?.total_fare || 0;
     const returnPrice =
-      return_flight?.fares[0]?.fare_info?.fare_detail?.price_info?.total_fare;
-    return departPrice + returnPrice;
+      return_flight?.fares?.[0]?.fare_info?.fare_detail?.price_info
+        ?.total_fare || 0;
+
+    if (return_flight) {
+      return departPrice + returnPrice;
+    }
+
+    return departPrice;
   };
 
   return (
@@ -31,20 +38,22 @@ export default function FlightDetails({ show, setShow, page }) {
         <div className="itinerary">
           <h6 className="title">{t("flights.itinerary")}</h6>
 
-          <div className="details">
+          <div className="details mb-5" >
             <FlightDetailsCard
               type={t("flights.departure")}
               flight={dapart_flight}
             />
 
-            <FlightDetailsCard
-              type={t("flights.arrival")}
-              flight={return_flight}
-            />
+            {return_flight?.package_info?.package_key && (
+              <FlightDetailsCard
+                type={t("flights.arrival")}
+                flight={return_flight}
+              />
+            )}
           </div>
 
           {page !== "checkout" && (
-            <div className="price mt-4">
+            <div className="price">
               <h5>
                 {t("flights.totalPrice")}:
                 <div>

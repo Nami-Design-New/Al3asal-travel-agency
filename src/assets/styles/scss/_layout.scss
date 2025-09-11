@@ -333,6 +333,8 @@ header {
       padding: 24px;
       height: calc(100vh - 48px);
       overflow-y: scroll;
+      display: flex;
+      flex-direction: column;
 
       .title {
         font-size: 14px;
@@ -601,6 +603,8 @@ header {
 
       .price {
         @include space-between();
+        margin-top: auto;
+        
         h5 {
           font-size: 18px;
           margin-bottom: 0;

@@ -5,12 +5,14 @@ import FlightDates from "./FlightDates";
 import Travelers from "./Travelers";
 import FromToAirport from "./FromToAirport";
 import useGetTickets from "../../hooks/useGetTickets";
+import useFlightsStore from "../../stores/flightsStore";
 
 export default function FilterFlights({ setShowReturnFlights }) {
   const { t } = useTranslation();
   const location = useLocation();
   const navigate = useNavigate();
   const { refetch, isFetching } = useGetTickets();
+  const { setReturnFlight, setDepartFlight } = useFlightsStore();
 
   const onSubmitFilter = async (e) => {
     e.preventDefault();
@@ -19,6 +21,8 @@ export default function FilterFlights({ setShowReturnFlights }) {
       await navigate("/flights");
     }
 
+    setDepartFlight({});
+    setReturnFlight({});
     setShowReturnFlights(false);
     await refetch();
   };
