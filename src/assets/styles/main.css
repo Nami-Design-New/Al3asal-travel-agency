@@ -1784,6 +1784,7 @@ body main .filter_container .flight_specifications {
 }
 body main .filter_container .flight_specifications .dropdown {
   width: 100%;
+  max-width: 280px;
 }
 body main .filter_container .flight_specifications .from_to {
   display: flex;
