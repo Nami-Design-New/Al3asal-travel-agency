@@ -6,6 +6,9 @@ import "react-phone-input-2/lib/style.css";
 export default function PhoneField({ name, label, error }) {
   const { control } = useFormContext();
 
+  console.log(error);
+  
+
   return (
     <div className="input-field">
       {label && <label>{label}</label>}
@@ -16,18 +19,13 @@ export default function PhoneField({ name, label, error }) {
           <PhoneInput
             country="sy"
             enableSearch
-            value={
-              field.value
-                ? `${field.value.area_code}${field.value.phone_number}`
-                : ""
-            }
+            value={field.value?.raw || ""}
             onChange={(value, country) => {
               const dialCode = `+${country.dialCode}`;
-              const phoneNumber = value.startsWith(dialCode)
-                ? value.slice(dialCode.length)
-                : value;
+              const phoneNumber = value.replace(dialCode, "");
 
               field.onChange({
+                raw: value,
                 country_code: country.countryCode,
                 area_code: dialCode,
                 phone_number: phoneNumber,
@@ -37,6 +35,7 @@ export default function PhoneField({ name, label, error }) {
           />
         )}
       />
+
       {error && (
         <Form.Control.Feedback type="invalid" style={{ display: "block" }}>
           {error}

@@ -20,7 +20,7 @@ export default function PassengerDetails() {
       birthdate: "",
       passportNumber: "",
       passportExpiry: "",
-      nationality: "sa",
+      nationality: "SY",
       gender: "male",
     }))
   );
@@ -99,7 +99,7 @@ export default function PassengerDetails() {
             <PhoneField
               name="contact.phone"
               label="Phone"
-              error={errors.contact?.phone?.message}
+              error={errors.contact?.phone?.phone_number?.message}
             />
           </div>
 

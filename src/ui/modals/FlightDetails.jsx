@@ -38,7 +38,7 @@ export default function FlightDetails({ show, setShow, page }) {
         <div className="itinerary">
           <h6 className="title">{t("flights.itinerary")}</h6>
 
-          <div className="details mb-5" >
+          <div className={`details ${page === "checkout" ? "" : "mb-5"}`} >
             <FlightDetailsCard
               type={t("flights.departure")}
               flight={dapart_flight}

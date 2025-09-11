@@ -20,7 +20,7 @@ export default function TravelerForm({
   } = useFormContext();
 
   const travelerErrors = errors?.pax_list?.[index] || {};
-  
+
   if (active !== index) {
     return (
       <>
@@ -104,6 +104,7 @@ export default function TravelerForm({
         <InputField
           name={`pax_list.${index}.passportNumber`}
           label="Passport Number"
+          placeholder="Passport Number"
           {...register(`pax_list.${index}.passportNumber`)}
           error={travelerErrors?.passportNumber?.message}
         />
