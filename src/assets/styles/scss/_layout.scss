@@ -413,6 +413,7 @@ header {
               align-items: center;
               img {
                 height: 20px;
+                max-width: 80px;
                 object-fit: contain;
               }
             }
@@ -567,6 +568,7 @@ header {
                       margin-bottom: 4px;
                       img {
                         height: 20px;
+                        max-width: 80px;
                         object-fit: contain;
                       }
                       h6 {
@@ -604,7 +606,7 @@ header {
       .price {
         @include space-between();
         margin-top: auto;
-        
+
         h5 {
           font-size: 18px;
           margin-bottom: 0;

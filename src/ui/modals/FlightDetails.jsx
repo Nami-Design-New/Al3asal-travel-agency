@@ -57,7 +57,7 @@ export default function FlightDetails({ show, setShow, page }) {
               <h5>
                 {t("flights.totalPrice")}:
                 <div>
-                  {getTotalPrice().toFixed(2)} <span>USD / Person</span>
+                  {getTotalPrice().toFixed(2)} <span>USD</span>
                 </div>
               </h5>
 
