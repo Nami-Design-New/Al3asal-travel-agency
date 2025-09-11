@@ -633,6 +633,8 @@ header nav .actions .user_dropdown i {
   padding: 24px;
   height: calc(100vh - 48px);
   overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
 }
 .flight_details_modal .modal-body .itinerary .title {
   font-size: 14px;
@@ -707,7 +709,7 @@ header nav .actions .user_dropdown i {
   align-items: center;
 }
 .flight_details_modal .modal-body .itinerary .details .flight .time_airline .airlines img {
-  width: 48px;
+  height: 20px;
   -o-object-fit: contain;
      object-fit: contain;
 }
@@ -847,7 +849,7 @@ header nav .actions .user_dropdown i {
   margin-bottom: 4px;
 }
 .flight_details_modal .modal-body .itinerary .details .flight .time_line .segment_info .content ul li div img {
-  width: 48px;
+  height: 20px;
   -o-object-fit: contain;
      object-fit: contain;
 }
@@ -878,6 +880,7 @@ header nav .actions .user_dropdown i {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: auto;
 }
 .flight_details_modal .modal-body .itinerary .price h5 {
   font-size: 18px;
@@ -1784,7 +1787,7 @@ body main .filter_container .flight_specifications {
 }
 body main .filter_container .flight_specifications .dropdown {
   width: 100%;
-  min-width: 282px;
+  max-width: 280px;
 }
 body main .filter_container .flight_specifications .from_to {
   display: flex;
@@ -2362,6 +2365,7 @@ body main .flights .return_flight {
   display: flex;
   align-items: center;
   gap: 16px;
+  cursor: pointer;
 }
 body main .flights .departing_flight.active,
 body main .flights .return_flight.active {

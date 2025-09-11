@@ -23,7 +23,7 @@ export default function Flights() {
       <div className="container">
         <div className="row">
           <div className="col-12 p-2">
-            <FilterFlights />
+            <FilterFlights setShowReturnFlights={setShowReturnFlights} />
 
             <RoundTrip
               setShowReturnFlights={setShowReturnFlights}

@@ -165,6 +165,7 @@
     display: flex;
     align-items: center;
     gap: 16px;
+    cursor: pointer;
     &.active {
       background: #54a0c438;
       opacity: 1;
