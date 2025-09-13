@@ -6,9 +6,6 @@ import "react-phone-input-2/lib/style.css";
 export default function PhoneField({ name, label, error }) {
   const { control } = useFormContext();
 
-  console.log(error);
-  
-
   return (
     <div className="input-field">
       {label && <label>{label}</label>}

@@ -28,9 +28,12 @@ export default function TravelerForm({
         <div className="col-12 p-2">
           <div className="title">
             <h6 className="mb-0">
-              Traveler {index + 1} ( {type.toLowerCase()} )
+              Traveler {index + 1} ({type.toLowerCase()})
             </h6>
-            <span onClick={() => setActive(index)}>Edit</span>
+
+            {index < active && (
+              <span onClick={() => setActive(index)}>Edit</span>
+            )}
           </div>
         </div>
       </>
@@ -44,7 +47,7 @@ export default function TravelerForm({
       <div className="col-12 p-2">
         <div className="title ">
           <h6 className="mb-0">
-            Traveler {index + 1} ( {type.toLowerCase()} )
+            Traveler {index + 1} ({type.toLowerCase()})
           </h6>
         </div>
       </div>

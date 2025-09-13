@@ -39,7 +39,9 @@ export default function FlightDetailsCard({ type, flight }) {
       {/* air ports from to */}
       <div className="airports">
         <div className="airPort">
-          <span>{new Date(firstLeg?.departure_info?.date)?.toDateString()}</span>
+          <span>
+            {new Date(firstLeg?.departure_info?.date)?.toDateString()}
+          </span>
           <h6>
             {firstLeg?.departure_info?.airport_code}{" "}
             {formatTimeHHMM(firstLeg?.departure_info?.date)}
@@ -69,9 +71,7 @@ export default function FlightDetailsCard({ type, flight }) {
             {layovers?.length > 0 && (
               <span>
                 via{" "}
-                {layovers
-                  ?.map((layover) => layover?.airport_code)
-                  ?.join(", ")}
+                {layovers?.map((layover) => layover?.airport_code)?.join(", ")}
               </span>
             )}
           </p>
@@ -104,7 +104,7 @@ export default function FlightDetailsCard({ type, flight }) {
         {legs?.map((leg, idx) => {
           const departure = leg?.departure_info;
           const arrival = leg?.arrival_info;
-          const duration = leg?.time_info?.leg_duration_time_minute;
+          const duration = dateTimeDiffCalc(departure?.date, arrival?.date);
 
           return (
             <div key={idx}>
@@ -112,7 +112,9 @@ export default function FlightDetailsCard({ type, flight }) {
               <div className="segment">
                 <div className="timing">
                   <div className="time">
-                    <span>{new Date(departure?.date)?.toLocaleDateString()}</span>{" "}
+                    <span>
+                      {new Date(departure?.date)?.toLocaleDateString()}
+                    </span>{" "}
                     <b>{formatTimeHHMM(departure?.date)}</b>
                   </div>
 
@@ -145,9 +147,17 @@ export default function FlightDetailsCard({ type, flight }) {
                           />
                           <h6>{leg?.airline_info?.carrier_name}</h6>
                         </div>
+                        <p>FZ192 (Boeing 737-200)</p>
                       </li>
+
                       <li>
                         <p>Economy</p>
+                        <div className="features">
+                          <i className="fa-regular fa-bowl-spoon not_available"></i>
+                          <i className="fa-regular fa-tv"></i>
+                          <i className="fa-regular fa-wifi not_available"></i>
+                          <i className="fa-solid fa-plug"></i>
+                        </div>
                       </li>
                     </ul>
                   </div>

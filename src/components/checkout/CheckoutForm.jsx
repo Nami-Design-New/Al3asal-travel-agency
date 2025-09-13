@@ -2,12 +2,17 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import PassengerDetails from "./PassengerDetails";
 import PaymentForm from "./PaymentForm";
+import useGetFares from "../../hooks/useGetFares";
 
 export default function CheckoutForm() {
   const { t } = useTranslation();
   const tabs = ["passengerDetails", "securePayment"];
-  const [activeTab, ] = useState("tab1");
+  const [activeTab] = useState("tab1");
+  const { data: fares } = useGetFares();
+
+  console.log(fares);
   
+
   return (
     <div className="checkout_form">
       <div className="wizard_tabs">
