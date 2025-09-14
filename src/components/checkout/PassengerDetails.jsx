@@ -20,8 +20,8 @@ export default function PassengerDetails() {
       birthdate: "",
       passportNumber: "",
       passportExpiry: "",
-      nationality: "",
-      gender: "",
+      nationality: "SY",
+      gender: "male",
     }))
   );
 
@@ -41,7 +41,13 @@ export default function PassengerDetails() {
     mode: "onChange",
   });
 
-  const { handleSubmit, trigger, control } = methods;
+  const {
+    handleSubmit,
+    trigger,
+    control,
+    register,
+    formState: { errors },
+  } = methods;
 
   const { fields } = useFieldArray({
     control,
@@ -49,7 +55,18 @@ export default function PassengerDetails() {
   });
 
   const handleNextTraveler = async (index) => {
-    const valid = await trigger(`pax_list.${index}`);
+    let valid;
+
+    if (index === 0) {
+      valid = await trigger([
+        "contact.email",
+        "contact.phone",
+        `pax_list.${index}`,
+      ]);
+    } else {
+      valid = await trigger(`pax_list.${index}`);
+    }
+
     if (valid) {
       setActive(index + 1);
     }
@@ -65,11 +82,25 @@ export default function PassengerDetails() {
           <div className="col-12 p-2">
             <h6>Contact Info</h6>
           </div>
+
           <div className="col-lg-6 col-12 p-2">
-            <InputField name="contact.email" label="Email" />
+            <InputField
+              name="email"
+              label="Email"
+              type="email"
+              id="email"
+              placeholder="Email"
+              {...register("contact.email")}
+              error={errors.contact?.email?.message}
+            />
           </div>
+
           <div className="col-lg-6 col-12 p-2">
-            <PhoneField name="contact.phone" label="Phone" />
+            <PhoneField
+              name="contact.phone"
+              label="Phone"
+              error={errors.contact?.phone?.phone_number?.message}
+            />
           </div>
 
           {fields.map((field, index) => (

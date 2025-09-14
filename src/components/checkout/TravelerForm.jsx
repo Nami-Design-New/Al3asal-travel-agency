@@ -15,6 +15,7 @@ export default function TravelerForm({
   const {
     watch,
     setValue,
+    register,
     formState: { errors },
   } = useFormContext();
 
@@ -27,9 +28,12 @@ export default function TravelerForm({
         <div className="col-12 p-2">
           <div className="title">
             <h6 className="mb-0">
-              Traveler {index + 1} ( {type} )
+              Traveler {index + 1} ({type.toLowerCase()})
             </h6>
-            <span onClick={() => setActive(index)}>Edit</span>
+
+            {index < active && (
+              <span onClick={() => setActive(index)}>Edit</span>
+            )}
           </div>
         </div>
       </>
@@ -43,7 +47,7 @@ export default function TravelerForm({
       <div className="col-12 p-2">
         <div className="title ">
           <h6 className="mb-0">
-            Traveler {index + 1} ( {type} )
+            Traveler {index + 1} ({type.toLowerCase()})
           </h6>
         </div>
       </div>
@@ -52,6 +56,8 @@ export default function TravelerForm({
         <InputField
           name={`pax_list.${index}.name`}
           label="First Name"
+          placeholder="First Name"
+          {...register(`pax_list.${index}.name`)}
           error={travelerErrors?.name?.message}
         />
       </div>
@@ -60,6 +66,8 @@ export default function TravelerForm({
         <InputField
           name={`pax_list.${index}.lastname`}
           label="Last Name"
+          placeholder="Last Name"
+          {...register(`pax_list.${index}.lastname`)}
           error={travelerErrors?.lastname?.message}
         />
       </div>
@@ -69,28 +77,22 @@ export default function TravelerForm({
           type="date"
           name={`pax_list.${index}.birthdate`}
           label="Birthdate"
+          {...register(`pax_list.${index}.birthdate`)}
           error={travelerErrors?.birthdate?.message}
         />
       </div>
 
       <div className="col-lg-6 col-12 p-2">
-        <InputField
-          name={`pax_list.${index}.passportNumber`}
-          label="Passport Number"
-          error={travelerErrors?.passportNumber?.message}
+        <GenderSelect
+          name={`pax_list.${index}.gender`}
+          label="Gender"
+          value={watch(`pax_list.${index}.gender`)}
+          onChange={(e) => setValue(`pax_list.${index}.gender`, e.target.value)}
+          error={travelerErrors?.gender?.message}
         />
       </div>
 
-      <div className="col-lg-6 col-12 p-2">
-        <InputField
-          type="date"
-          name={`pax_list.${index}.passportExpiry`}
-          label="Passport Expiry"
-          error={travelerErrors?.passportExpiry?.message}
-        />
-      </div>
-
-      <div className="col-lg-6 col-12 p-2">
+      <div className="col-12 p-2">
         <label>Nationality</label>
         <ReactFlagsSelect
           selected={watch(`pax_list.${index}.nationality`)}
@@ -102,9 +104,22 @@ export default function TravelerForm({
       </div>
 
       <div className="col-lg-6 col-12 p-2">
-        <GenderSelect
-          name={`pax_list.${index}.gender`}
-          error={travelerErrors?.gender?.message}
+        <InputField
+          name={`pax_list.${index}.passportNumber`}
+          label="Passport Number"
+          placeholder="Passport Number"
+          {...register(`pax_list.${index}.passportNumber`)}
+          error={travelerErrors?.passportNumber?.message}
+        />
+      </div>
+
+      <div className="col-lg-6 col-12 p-2">
+        <InputField
+          type="date"
+          name={`pax_list.${index}.passportExpiry`}
+          label="Passport Expiry"
+          {...register(`pax_list.${index}.passportExpiry`)}
+          error={travelerErrors?.passportExpiry?.message}
         />
       </div>
 

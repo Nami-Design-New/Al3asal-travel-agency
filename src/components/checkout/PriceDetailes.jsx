@@ -70,7 +70,10 @@ export default function PriceDetails() {
           <h6>{t("checkoutForm.bookingFee")}</h6>
           <h5>
             {getTotalService(departFares, returnFares) !== 0 ? (
-              getTotalService(departFares, returnFares)
+              <>
+                {getTotalService(departFares, returnFares)}
+                <span> USD</span>
+              </>
             ) : (
               <span style={{ color: "#44b50c" }}>Free</span>
             )}

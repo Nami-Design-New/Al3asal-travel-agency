@@ -114,6 +114,8 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
+    position: sticky;
+    top: 130px;
 
     .price_details {
       border: 1px solid $input_stroke;

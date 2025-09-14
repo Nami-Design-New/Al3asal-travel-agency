@@ -5,13 +5,18 @@ export const travelerSchema = yup.object().shape({
   lastname: yup.string().required("Last name is required"),
   birthdate: yup
     .date()
+    .nullable()
+    .transform((value, originalValue) => (originalValue === "" ? null : value))
     .required("Date of birth is required")
     .max(new Date(), "Birthdate cannot be in the future"),
   passportNumber: yup.string().required("Passport number is required"),
   passportExpiry: yup
     .date()
+    .nullable()
+    .transform((value, originalValue) => (originalValue === "" ? null : value))
     .required("Passport expiry is required")
     .min(new Date(), "Passport must be valid in the future"),
+
   nationality: yup.string().required("Nationality is required"),
   gender: yup.string().required("Gender is required"),
 });

@@ -307,6 +307,11 @@ button {
   color: #000;
 }
 
+.error {
+  font-size: 14px;
+  color: #dc3545;
+}
+
 header {
   top: 0;
   width: 100%;
@@ -3007,6 +3012,8 @@ body main .checkout_section .price_details_container {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  position: sticky;
+  top: 130px;
 }
 body main .checkout_section .price_details_container .price_details {
   border: 1px solid #f4f4f4;
