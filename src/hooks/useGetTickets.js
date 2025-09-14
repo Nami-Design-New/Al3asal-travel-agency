@@ -34,7 +34,7 @@ export default function useGetTickets() {
 async function getTickets(payload) {
   const response = await axiosInstance.post("/home/search", payload);
   if (response.data.code === 200) {
-    return response.data.data;
+    return response.data.data.result;
   }
   throw new Error("Failed to fetch tickets");
 }

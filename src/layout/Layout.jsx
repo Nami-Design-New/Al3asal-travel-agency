@@ -8,13 +8,14 @@ export default function Layout() {
   return (
     <>
       <ScrollRestoration />
+
       <Header />
       <main>
         <Outlet />
       </main>
       <Footer />
-      <ResponsiveNav />
 
+      <ResponsiveNav />
       <AuthModal />
     </>
   );
