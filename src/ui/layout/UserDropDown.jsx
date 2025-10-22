@@ -2,14 +2,14 @@ import { Dropdown } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router";
 
-export default function UserDropDown() {
+export default function UserDropDown({ userName }) {
   const { t } = useTranslation();
 
   return (
     <>
       <Dropdown className="d-lg-block d-none">
         <Dropdown.Toggle className="user_dropdown">
-          <span>Ahmed Elsayed</span>
+          <span>{userName}</span>
           <i className="fa fa-chevron-down"></i>
         </Dropdown.Toggle>
 

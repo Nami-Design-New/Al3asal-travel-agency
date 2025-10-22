@@ -25,7 +25,7 @@ export default function useGetTickets() {
   const { data, isLoading, refetch, isFetching } = useQuery({
     queryKey: ["tickets"],
     queryFn: () => getTickets(payload),
-    keepPreviousData: false, 
+    keepPreviousData: false,
   });
 
   return { data, isLoading, refetch, isFetching };
@@ -34,7 +34,7 @@ export default function useGetTickets() {
 async function getTickets(payload) {
   const response = await axiosInstance.post("/home/search", payload);
   if (response.data.code === 200) {
-    return response.data.data.result;
+    return response.data?.data;
   }
   throw new Error("Failed to fetch tickets");
 }

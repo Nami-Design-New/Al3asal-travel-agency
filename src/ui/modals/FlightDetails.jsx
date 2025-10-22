@@ -1,12 +1,29 @@
 import { Modal } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router";
+import { useNavigate } from "react-router";
+import { useMutation } from "@tanstack/react-query";
+import { toast } from "sonner";
 import FlightDetailsCard from "../cards/FlightDetailsCard";
 import useFlightsStore from "../../stores/flightsStore";
+import axiosInstance from "../../utils/axiosInstance";
+import useSearchStore from "../../stores/searchStore";
+import SubmitButton from "../forms/SubmitButton";
 
 export default function FlightDetails({ show, setShow, page }) {
   const { t } = useTranslation();
-  const { dapart_flight, return_flight } = useFlightsStore();
+  const navigate = useNavigate();
+
+  const { dapart_flight, return_flight, setFareDetails } = useFlightsStore();
+  const { flightsFilter } = useSearchStore();
+
+  const departFareKey = dapart_flight?.fares?.[0]?.fare_key;
+  const returnFareKey = return_flight?.fares?.[0]?.fare_key;
+
+  const payload = {
+    pax_list: flightsFilter.pax_list,
+    departure_fare_key: departFareKey,
+    return_fare_key: returnFareKey,
+  };
 
   const getTotalPrice = () => {
     const departPrice =
@@ -23,6 +40,18 @@ export default function FlightDetails({ show, setShow, page }) {
     return departPrice;
   };
 
+  const { mutate: getFareKey, isPending } = useMutation({
+    mutationFn: async () => await axiosInstance.post("/home/fare", payload),
+    onSuccess: (res) => {
+      setFareDetails(res.data?.data);
+      navigate("/checkout");
+    },
+    onError: (res) => {
+      console.error(res);
+      toast.error(t("getFarekeyError"));
+    },
+  });
+
   return (
     <Modal
       centered
@@ -38,7 +67,7 @@ export default function FlightDetails({ show, setShow, page }) {
         <div className="itinerary">
           <h6 className="title">{t("flights.itinerary")}</h6>
 
-          <div className={`details ${page === "checkout" ? "" : "mb-5"}`} >
+          <div className={`details ${page === "checkout" ? "" : "mb-5"}`}>
             <FlightDetailsCard
               type={t("flights.departure")}
               flight={dapart_flight}
@@ -61,9 +90,12 @@ export default function FlightDetails({ show, setShow, page }) {
                 </div>
               </h5>
 
-              <Link to="/checkout" className="bookNow">
-                {t("flights.bookNow")}
-              </Link>
+              <SubmitButton
+                className="bookNow"
+                event={getFareKey}
+                loading={isPending}
+                text={t("flights.bookNow")}
+              />
             </div>
           )}
         </div>

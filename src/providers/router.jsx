@@ -14,6 +14,7 @@ import Checkout from "../routes/Checkout";
 import Profile from "../routes/Profile";
 import Trips from "../routes/Trips";
 import PersonalInfo from "./../routes/PersonalInfo";
+import AuthGuard from "./AuthGuard";
 
 export const router = createBrowserRouter([
   {
@@ -21,63 +22,38 @@ export const router = createBrowserRouter([
     element: <Layout />,
     errorElement: <Error />,
     children: [
-      {
-        index: true,
-        element: <Home />,
-      },
-      {
-        path: "contact",
-        element: <Contact />,
-      },
-      {
-        path: "about",
-        element: <AboutUs />,
-      },
-      {
-        path: "flights",
-        element: <Flights />,
-      },
+      { index: true, element: <Home /> },
+      { path: "contact", element: <Contact /> },
+      { path: "about", element: <AboutUs /> },
+      { path: "flights", element: <Flights /> },
       {
         path: "checkout",
-        element: <Checkout />,
+        element: (
+          <AuthGuard>
+            <Checkout />
+          </AuthGuard>
+        ),
       },
-      {
-        path: "terms",
-        element: <Terms />,
-      },
-      {
-        path: "privacy",
-        element: <Privacy />,
-      },
-      {
-        path: "faq",
-        element: <FAQ />,
-      },
+      { path: "terms", element: <Terms /> },
+      { path: "privacy", element: <Privacy /> },
+      { path: "faq", element: <FAQ /> },
       {
         path: "blogs",
         children: [
-          {
-            index: true,
-            element: <Blogs />,
-          },
-          {
-            path: ":id",
-            element: <BlogDetails />,
-          },
+          { index: true, element: <Blogs /> },
+          { path: ":id", element: <BlogDetails /> },
         ],
       },
       {
         path: "profile",
-        element: <Profile />,
+        element: (
+          <AuthGuard>
+            <Profile />
+          </AuthGuard>
+        ),
         children: [
-          {
-            index: true,
-            element: <PersonalInfo />,
-          },
-          {
-            path: "bookings",
-            element: <Trips />,
-          },
+          { index: true, element: <PersonalInfo /> },
+          { path: "bookings", element: <Trips /> },
         ],
       },
     ],

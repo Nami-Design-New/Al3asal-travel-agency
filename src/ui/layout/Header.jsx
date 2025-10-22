@@ -1,12 +1,14 @@
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import { useAuthedUserStore } from "../../stores/authedUser";
 import { Link, NavLink } from "react-router";
 import SettingDropDown from "./SettingDropDown";
-// import UserDropDown from "./UserDropDown";
+import UserDropDown from "./UserDropDown";
 import useAuthStore from "../../stores/authStore";
 
 export default function Header() {
   const { t } = useTranslation();
+  const { authedUser } = useAuthedUserStore();
   const { openAuthModal } = useAuthStore();
 
   useEffect(() => {
@@ -41,14 +43,13 @@ export default function Header() {
 
         <div className="actions">
           <SettingDropDown />
-          <button
-            className="login"
-            onClick={() => openAuthModal(true)}
-          >
-            {t("header.login")}
-          </button>
-          
-          {/* <UserDropDown /> */}
+          {!authedUser.id && (
+            <button className="login" onClick={() => openAuthModal(true)}>
+              {t("header.login")}
+            </button>
+          )}
+
+          {authedUser?.id && <UserDropDown userName={authedUser?.name} />}
         </div>
       </nav>
     </header>

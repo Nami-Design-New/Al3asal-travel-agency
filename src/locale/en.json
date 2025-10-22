@@ -75,7 +75,9 @@
     "newPassword": "New Password",
     "confirmPassword": "Confirm Password",
     "enterNewPassword": "Enter new password",
-    "enterConfirmPassword": "Enter confirm password"
+    "enterConfirmPassword": "Enter confirm password",
+    "loginSuccess": "Login successful",
+    "loginFailed": "Login failed, please check your credentials"
   },
   "flights": {
     "oneWay": "One Way",
@@ -379,7 +381,8 @@
     "paymentMethod": "Credit or Debit Card",
     "paymentMethodDescription": "Processing fee from EGP 0 - EGP 2,272.96",
     "nextTraveler": "Next Traveler",
-    "edit": "Edit"
+    "edit": "Edit",
+    "getFarekeyError": "Unable to retrieve fare details. Please refresh the page or try again later."
   },
   "profile": {
     "PersonalInformation": "Personal Information",
@@ -436,5 +439,16 @@
     "tax": "Tax",
     "total": "Total",
     "gate": "Gate Number"
+  },
+  "validation": {
+    "required": "This field is required",
+    "email": "Please enter a valid email address",
+    "passwordComplexity": "Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character",
+    "min": "Must be at least {{min}} characters",
+    "max": "Must be no more than {{max}} characters",
+    "passwordMatch": "Passwords do not match",
+    "terms": "You must agree to the terms and conditions",
+    "alphaNumericOnly": "Only letters and numbers are allowed",
+    "numbersOnly": "Only numeric values are allowed"
   }
 }

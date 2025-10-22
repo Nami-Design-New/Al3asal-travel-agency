@@ -3,6 +3,7 @@ import App from "./App";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { CookiesProvider } from "react-cookie";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -22,7 +23,9 @@ import "./assets/styles/all.min.css";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <QueryClientProvider client={queryClient}>
-    <ReactQueryDevtools initialIsOpen={false} />
-    <App />
+    <CookiesProvider>
+      <ReactQueryDevtools initialIsOpen={false} />
+      <App />
+    </CookiesProvider>
   </QueryClientProvider>
 );
