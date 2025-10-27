@@ -1,8 +1,20 @@
 import { useFormContext } from "react-hook-form";
 import InputField from "../../ui/forms/InputField";
-import GenderSelect from "../../ui/forms/GenderSelect";
+import SelectField from "../../ui/forms/SelectField";
 import ReactFlagsSelect from "react-flags-select";
 import SubmitButton from "../../ui/forms/SubmitButton";
+
+const GENDER_OPTIONS = [
+  { value: "MALE", name: "Male" },
+  { value: "FEMALE", name: "Female" },
+];
+
+const IDENTITY_TYPE_OPTIONS = [
+  { value: "PASSPORT", name: "Passport" },
+  { value: "CNIC", name: "CNIC (Pakistan)" },
+  { value: "FOID", name: "Foreign ID" },
+  { value: "TC", name: "TC (Turkey)" },
+];
 
 export default function TravelerForm({
   index,
@@ -20,6 +32,8 @@ export default function TravelerForm({
   } = useFormContext();
 
   const travelerErrors = errors?.pax_list?.[index] || {};
+  const identityType =
+    watch(`pax_list.${index}.identity_info.type`) || "PASSPORT";
 
   if (active !== index) {
     return (
@@ -83,9 +97,11 @@ export default function TravelerForm({
       </div>
 
       <div className="col-lg-6 col-12 p-2">
-        <GenderSelect
+        <SelectField
           name={`pax_list.${index}.gender`}
           label="Gender"
+          options={GENDER_OPTIONS}
+          defaultSelect="Select Gender"
           value={watch(`pax_list.${index}.gender`)}
           onChange={(e) => setValue(`pax_list.${index}.gender`, e.target.value)}
           error={travelerErrors?.gender?.message}
@@ -93,34 +109,177 @@ export default function TravelerForm({
       </div>
 
       <div className="col-12 p-2">
-        <label>Nationality</label>
-        <ReactFlagsSelect
-          selected={watch(`pax_list.${index}.nationality`)}
-          onSelect={(code) => setValue(`pax_list.${index}.nationality`, code)}
-        />
-        {travelerErrors?.nationality?.message && (
-          <span className="error">{travelerErrors.nationality.message}</span>
-        )}
-      </div>
-
-      <div className="col-lg-6 col-12 p-2">
-        <InputField
-          name={`pax_list.${index}.passportNumber`}
-          label="Passport Number"
-          placeholder="Passport Number"
-          {...register(`pax_list.${index}.passportNumber`)}
-          error={travelerErrors?.passportNumber?.message}
+        <label>Identity Document Type</label>
+        <SelectField
+          name={`pax_list.${index}.identity_info.type`}
+          options={IDENTITY_TYPE_OPTIONS}
+          defaultSelect="Select Identity Type"
+          value={identityType}
+          onChange={(e) => {
+            setValue(`pax_list.${index}.identity_info.type`, e.target.value);
+          }}
+          error={travelerErrors?.identity_info?.type?.message}
         />
       </div>
 
-      <div className="col-lg-6 col-12 p-2">
-        <InputField
-          type="date"
-          name={`pax_list.${index}.passportExpiry`}
-          label="Passport Expiry"
-          {...register(`pax_list.${index}.passportExpiry`)}
-          error={travelerErrors?.passportExpiry?.message}
-        />
+      {/* Identity Document Fields */}
+      {identityType === "PASSPORT" && (
+        <>
+          <div className="col-lg-6 col-12 p-2">
+            <InputField
+              name={`pax_list.${index}.identity_info.passport.no`}
+              label="Passport Number"
+              placeholder="Passport Number"
+              {...register(`pax_list.${index}.identity_info.passport.no`)}
+              error={travelerErrors?.identity_info?.passport?.no?.message}
+            />
+          </div>
+
+          <div className="col-lg-6 col-12 p-2">
+            <InputField
+              type="date"
+              name={`pax_list.${index}.identity_info.passport.end_date`}
+              label="Passport Expiry Date"
+              {...register(`pax_list.${index}.identity_info.passport.end_date`)}
+              error={travelerErrors?.identity_info?.passport?.end_date?.message}
+            />
+          </div>
+
+          <div className="col-12 p-2">
+            <label>Citizenship Country</label>
+            <ReactFlagsSelect
+              selected={watch(
+                `pax_list.${index}.identity_info.passport.citizenship_country`
+              )}
+              onSelect={(code) =>
+                setValue(
+                  `pax_list.${index}.identity_info.passport.citizenship_country`,
+                  code
+                )
+              }
+            />
+            {travelerErrors?.identity_info?.passport?.citizenship_country
+              ?.message && (
+              <span className="error">
+                {
+                  travelerErrors.identity_info.passport.citizenship_country
+                    .message
+                }
+              </span>
+            )}
+          </div>
+        </>
+      )}
+
+      {identityType === "CNIC" && (
+        <div className="col-12 p-2">
+          <InputField
+            name={`pax_list.${index}.identity_info.cnic.no`}
+            label="CNIC Number"
+            placeholder="12345-1234567-1"
+            {...register(`pax_list.${index}.identity_info.cnic.no`)}
+            error={travelerErrors?.identity_info?.cnic?.no?.message}
+          />
+        </div>
+      )}
+
+      {identityType === "FOID" && (
+        <>
+          <div className="col-lg-6 col-12 p-2">
+            <InputField
+              name={`pax_list.${index}.identity_info.foid.no`}
+              label="Foreign ID Number"
+              placeholder="Foreign ID Number"
+              {...register(`pax_list.${index}.identity_info.foid.no`)}
+              error={travelerErrors?.identity_info?.foid?.no?.message}
+            />
+          </div>
+
+          <div className="col-12 p-2">
+            <label>Citizenship Country</label>
+            <ReactFlagsSelect
+              selected={watch(
+                `pax_list.${index}.identity_info.foid.citizenship_country`
+              )}
+              onSelect={(code) =>
+                setValue(
+                  `pax_list.${index}.identity_info.foid.citizenship_country`,
+                  code
+                )
+              }
+            />
+            {travelerErrors?.identity_info?.foid?.citizenship_country
+              ?.message && (
+              <span className="error">
+                {travelerErrors.identity_info.foid.citizenship_country.message}
+              </span>
+            )}
+          </div>
+        </>
+      )}
+
+      {identityType === "TC" && (
+        <>
+          <div className="col-lg-6 col-12 p-2">
+            <InputField
+              name={`pax_list.${index}.identity_info.tc.no`}
+              label="TC Number"
+              placeholder="TC Number"
+              type="number"
+              {...register(`pax_list.${index}.identity_info.tc.no`)}
+              error={travelerErrors?.identity_info?.tc?.no?.message}
+            />
+          </div>
+
+          <div className="col-lg-6 col-12 p-2">
+            <InputField
+              name={`pax_list.${index}.identity_info.tc.hes_code`}
+              label="HES Code (Optional)"
+              placeholder="HES Code"
+              {...register(`pax_list.${index}.identity_info.tc.hes_code`)}
+              error={travelerErrors?.identity_info?.tc?.hes_code?.message}
+            />
+          </div>
+        </>
+      )}
+
+      {/* Additional checks for identity type */}
+      <div className="col-12 p-2">
+        <div className="form-check">
+          <input
+            className="form-check-input"
+            type="checkbox"
+            checked={watch(
+              `pax_list.${index}.identity_info.not_turkish_citizen`
+            )}
+            onChange={(e) =>
+              setValue(
+                `pax_list.${index}.identity_info.not_turkish_citizen`,
+                e.target.checked
+              )
+            }
+          />
+          <label className="form-check-label">Not a Turkish citizen</label>
+        </div>
+      </div>
+
+      <div className="col-12 p-2">
+        <div className="form-check">
+          <input
+            className="form-check-input"
+            type="checkbox"
+            checked={watch(
+              `pax_list.${index}.identity_info.not_pakistan_citizen`
+            )}
+            onChange={(e) =>
+              setValue(
+                `pax_list.${index}.identity_info.not_pakistan_citizen`,
+                e.target.checked
+              )
+            }
+          />
+          <label className="form-check-label">Not a Pakistan citizen</label>
+        </div>
       </div>
 
       {!isLast && (

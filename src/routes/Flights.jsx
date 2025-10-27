@@ -14,9 +14,9 @@ export default function Flights() {
   const [showReturnFlights, setShowReturnFlights] = useState(false);
   const [showFlightDetails, setShowFlightDetails] = useState(false);
 
-  const { data, isLoading, isFetching } = useGetTickets();
+  const { data, isLoading } = useGetTickets();
 
-  const isLoadingData = isLoading || isFetching;
+  const isLoadingData = isLoading;
 
   return (
     <section className="flights">

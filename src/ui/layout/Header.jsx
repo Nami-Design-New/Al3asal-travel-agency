@@ -43,7 +43,7 @@ export default function Header() {
 
         <div className="actions">
           <SettingDropDown />
-          {!authedUser.id && (
+          {!authedUser?.id && (
             <button className="login" onClick={() => openAuthModal(true)}>
               {t("header.login")}
             </button>

@@ -43,8 +43,12 @@ export default function FlightDetails({ show, setShow, page }) {
   const { mutate: getFareKey, isPending } = useMutation({
     mutationFn: async () => await axiosInstance.post("/home/fare", payload),
     onSuccess: (res) => {
-      setFareDetails(res.data?.data);
-      navigate("/checkout");
+      if (res.data?.code === 200) {
+        setFareDetails(res.data?.data);
+        navigate("/checkout");
+      } else {
+        toast.error(res.data?.message);
+      }
     },
     onError: (res) => {
       console.error(res);
