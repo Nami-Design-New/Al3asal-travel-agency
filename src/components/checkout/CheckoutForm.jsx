@@ -6,7 +6,7 @@ import PaymentForm from "./PaymentForm";
 export default function CheckoutForm() {
   const { t } = useTranslation();
   const tabs = ["passengerDetails", "securePayment"];
-  const [activeTab] = useState("tab1");
+  const [activeTab, setActiveTab] = useState("tab1");
 
   return (
     <div className="checkout_form">
@@ -27,7 +27,7 @@ export default function CheckoutForm() {
       </div>
 
       <div className="form_container">
-        {activeTab === "tab1" && <PassengerDetails />}
+        {activeTab === "tab1" && <PassengerDetails setActiveTab={setActiveTab} />}
 
         {activeTab === "tab2" && <PaymentForm />}
       </div>

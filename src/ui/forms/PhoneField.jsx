@@ -9,6 +9,7 @@ export default function PhoneField({ name, label, error }) {
   return (
     <div className="input-field">
       {label && <label>{label}</label>}
+
       <Controller
         name={name}
         control={control}
@@ -18,14 +19,14 @@ export default function PhoneField({ name, label, error }) {
             enableSearch
             value={field.value?.raw || ""}
             onChange={(value, country) => {
-              const dialCode = `+${country.dialCode}`;
-              const phoneNumber = value.replace(dialCode, "");
+              const dialCode = country.dialCode;
+              const phoneNumber = value.replace(dialCode, "").replace("+", "");
 
               field.onChange({
                 raw: value,
-                country_code: country.countryCode,
-                area_code: dialCode,
-                phone_number: phoneNumber,
+                country_code: Number(dialCode),
+                area_code: Number(dialCode.slice(-3)) || Number(dialCode),
+                phone_number: Number(phoneNumber) || 0,
               });
             }}
             inputClass={error ? "is-invalid" : ""}

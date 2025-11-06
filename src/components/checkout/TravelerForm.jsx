@@ -186,16 +186,6 @@ export default function TravelerForm({
       {identityType === "FOID" && (
         <>
           <div className="col-lg-6 col-12 p-2">
-            <InputField
-              name={`pax_list.${index}.identity_info.foid.no`}
-              label="Foreign ID Number"
-              placeholder="Foreign ID Number"
-              {...register(`pax_list.${index}.identity_info.foid.no`)}
-              error={travelerErrors?.identity_info?.foid?.no?.message}
-            />
-          </div>
-
-          <div className="col-12 p-2">
             <label>Citizenship Country</label>
             <ReactFlagsSelect
               selected={watch(
@@ -214,6 +204,16 @@ export default function TravelerForm({
                 {travelerErrors.identity_info.foid.citizenship_country.message}
               </span>
             )}
+          </div>
+
+          <div className="col-lg-6 col-12 p-2">
+            <InputField
+              name={`pax_list.${index}.identity_info.foid.no`}
+              label="Foreign ID Number"
+              placeholder="Foreign ID Number"
+              {...register(`pax_list.${index}.identity_info.foid.no`)}
+              error={travelerErrors?.identity_info?.foid?.no?.message}
+            />
           </div>
         </>
       )}

@@ -11,7 +11,7 @@ import useSearchStore from "../../stores/searchStore";
 import useBookFlight from "../../hooks/useBookFlight";
 import useFlightsStore from "../../stores/flightsStore";
 
-export default function PassengerDetails() {
+export default function PassengerDetails({ setActiveTab }) {
   const { flightsFilter } = useSearchStore();
   const { fare_details, dapart_flight, return_flight } = useFlightsStore();
   const { bookFlight, isPending } = useBookFlight();
@@ -196,7 +196,7 @@ export default function PassengerDetails() {
       grand_total: total,
     };
 
-    console.log("Booking payload:", payload);
+    setActiveTab("tab2");
 
     bookFlight(payload);
   };
