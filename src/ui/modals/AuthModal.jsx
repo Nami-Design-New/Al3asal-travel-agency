@@ -1,6 +1,6 @@
 import { Modal } from "react-bootstrap";
 import Login from "../../components/auth/login/Login";
-import Register from "../../components/auth/Register";
+import Register from "../../components/auth/register/Register";
 import ResetPassword1 from "../../components/auth/ResetPassword1";
 import ResetPassword2 from "../../components/auth/ResetPassword2";
 import ResetPassword3 from "../../components/auth/ResetPassword3";

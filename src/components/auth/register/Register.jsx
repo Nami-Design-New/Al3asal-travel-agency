@@ -1,12 +1,14 @@
 import { useTranslation } from "react-i18next";
-import InputField from "../../ui/forms/InputField";
-import PasswordField from "../../ui/forms/PasswordField";
-import SubmitButton from "../../ui/forms/SubmitButton";
-import useAuthStore from "../../stores/authStore";
+import InputField from "../../../ui/forms/InputField";
+import PasswordField from "../../../ui/forms/PasswordField";
+import SubmitButton from "../../../ui/forms/SubmitButton";
+import useAuthStore from "../../../stores/authStore";
+import useRegister from "./useRegister";
 
 export default function Register() {
   const { t } = useTranslation();
   const { setStep } = useAuthStore();
+  const { register, handleSubmit, errors, isLoading } = useRegister(t);
 
   return (
     <>
@@ -15,23 +17,33 @@ export default function Register() {
         <p>{t("auth.registerSubtitle")}</p>
       </div>
 
-      <form className="form_ui">
+      <form className="form_ui" onSubmit={handleSubmit}>
         <InputField
           label={t("auth.fullName")}
           placeholder={t("auth.enterYourName")}
+          {...register("name")}
+          error={errors.name?.message}
         />
 
         <InputField
           label={t("auth.emailAddress")}
           placeholder={t("auth.enterEmailAddress")}
+          {...register("email")}
+          error={errors.email?.message}
         />
 
         <PasswordField
           label={t("auth.password")}
           placeholder={t("auth.enterPassword")}
+          {...register("password")}
+          error={errors.password?.message}
         />
 
-        <SubmitButton className={"mt-2"} text={t("auth.createAccount")} />
+        <SubmitButton
+          className={"mt-2"}
+          loading={isLoading}
+          text={t("auth.createAccount")}
+        />
 
         <div className="or">
           <span>{t("auth.or")}</span>

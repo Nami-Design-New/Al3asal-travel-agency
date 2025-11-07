@@ -1,12 +1,12 @@
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
 import InputField from "./../ui/forms/InputField";
-import PhoneField from "./../ui/forms/PhoneField";
+import { Form } from "react-bootstrap";
+// import PhoneField from "./../ui/forms/PhoneField";
 import GenderSelect from "../ui/forms/GenderSelect";
 import SubmitButton from "../ui/forms/SubmitButton";
 import ReactFlagsSelect from "react-flags-select";
 import PasswordField from "./../ui/forms/PasswordField";
-import { Form } from "react-bootstrap";
 
 export default function PersonalInfo() {
   const { t } = useTranslation();
@@ -33,11 +33,11 @@ export default function PersonalInfo() {
           </div>
 
           <div className="form_group">
-            <PhoneField
+            {/* <PhoneField
               label={t("profile.phone")}
               placeholder={t("profile.enterPhone")}
               value="9631234567"
-            />
+            /> */}
 
             <div className="input-field">
               <label>{t("checkoutForm.nationality")}</label>
