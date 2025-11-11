@@ -1,17 +1,15 @@
-import { useTranslation } from "react-i18next";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
 
-export default function PopularAirLines() {
-  const { t } = useTranslation();
+export default function PopularAirLines({ airlines }) {
   return (
     <section className="how_we_work_section">
       <div className="container">
         <div className="row">
           <div className="col-12 p-2 mb-3">
-            <h3>{t("popularAirlines.title")}</h3>
-            <p>{t("popularAirlines.subtitle")}</p>
+            <h3>{airlines?.title}</h3>
+            <p>{airlines?.content}</p>
           </div>
 
           <div className="col-12 p-2">
@@ -40,27 +38,11 @@ export default function PopularAirLines() {
                 },
               }}
             >
-              <SwiperSlide>
-                <img src="/airlines/E5.webp" alt="Egypt Air" />
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src="/airlines/EK.webp" alt="Lufthansa" />
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src="/airlines/MS.webp" alt="Etihad" />
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src="/airlines/NP.webp" alt="Kuwait Airways" />
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src="/airlines/SV.webp" alt="Emirates" />
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src="/airlines/TK.webp" alt="Turkish Airlines" />
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src="/airlines/XY.webp" alt="Turkish Airlines" />
-              </SwiperSlide>
+              {airlines?.data?.map((airline) => (
+                <SwiperSlide key={airline?.id}>
+                  <img src={airline?.image} alt={airline?.name} />
+                </SwiperSlide>
+              ))}
             </Swiper>
           </div>
         </div>

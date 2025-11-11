@@ -14,7 +14,7 @@ export default function useGetPosts() {
 async function getPosts() {
   const response = await axiosInstance.get("/posts");
   if (response.data.code === 200) {
-    return response.data?.data?.posts || [];
+    return response.data?.data || [];
   }
   throw new Error("Failed to fetch posts");
 }
