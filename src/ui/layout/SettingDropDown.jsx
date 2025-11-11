@@ -1,13 +1,16 @@
 import { Dropdown } from "react-bootstrap";
+import { useQueryClient } from "@tanstack/react-query";
 import i18next from "i18next";
 import useSettingsStore from "../../stores/settingsStore";
 
 export default function SettingDropDown() {
   const { setLanguage } = useSettingsStore();
+  const queryClient = useQueryClient();
 
   const handleLanguageChange = (selectedLanguage) => {
     setLanguage(selectedLanguage);
     i18next.changeLanguage(selectedLanguage);
+     queryClient.clear();
 
     const bodyElement = document.querySelector("body");
     if (bodyElement) {

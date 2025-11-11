@@ -1,11 +1,11 @@
 import { Link } from "react-router";
 
-export default function BlogCard({ title, date, image, index }) {
+export default function BlogCard({ title, date, image, id }) {
   return (
     <div className="blog_card">
-      <Link to={`/blogs/${index + 1}`}>
+      <Link to={`/blogs/${id}`}>
         <div className="img">
-          <img src={image} alt={`blog${index + 1}`} />
+          <img src={image} alt={`blog${id}`} />
         </div>
         <div className="content">
           <h5>{title}</h5>

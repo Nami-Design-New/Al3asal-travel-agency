@@ -3,14 +3,12 @@ import { useMutation } from "@tanstack/react-query";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { toast } from "sonner";
 import { useCookies } from "react-cookie";
-import { useAuthedUserStore } from "../../../stores/authedUser";
 import * as yup from "yup";
 import axiosInstance from "../../../utils/axiosInstance";
 import useAuthStore from "../../../stores/authStore";
 
 export default function useRegister(t) {
   const { closeAuthModal } = useAuthStore();
-  const { setAuthedUser } = useAuthedUserStore();
   const [, setCookie] = useCookies(["token"]);
 
   const schema = yup.object().shape({
@@ -53,7 +51,6 @@ export default function useRegister(t) {
           sameSite: "Strict",
         });
         closeAuthModal();
-        setAuthedUser(data?.data);
       } else {
         toast.error(t("auth.registerFailed"));
       }

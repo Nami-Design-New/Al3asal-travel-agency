@@ -1,9 +1,19 @@
 import { Form } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
+import { useState } from "react";
 import { Link } from "react-router";
+import useSubscribeNewsLetter from "../../hooks/useSubscribeNewsLetter";
 
 export default function Footer() {
   const { t } = useTranslation();
+  const [email, setEmail] = useState("");
+  const { mutate, isPending } = useSubscribeNewsLetter();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    mutate(email);
+  };
+
   return (
     <footer className="footer text-white pt-5 pb-3">
       <div className="container">
@@ -16,9 +26,26 @@ export default function Footer() {
             </div>
             <p className="about">{t("footer.description")}</p>
 
-            <form className="newsletter-form ">
-              <Form.Control type="email" placeholder={t("footer.email")} />
-              <button>{t("footer.subscribe")}</button>
+            <form className="newsletter-form" onSubmit={handleSubmit}>
+              <Form.Control
+                type="email"
+                placeholder={t("footer.email")}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+
+              <button
+                type="submit"
+                disabled={isPending}
+                className="d-flex align-items-center gap-2"
+              >
+                {t("footer.subscribe")}
+                {isPending ? (
+                  <i className="fa-solid fa-spinner fa-spin"></i>
+                ) : (
+                  <i className="fa-solid fa-paper-plane"></i>
+                )}
+              </button>
             </form>
           </div>
 

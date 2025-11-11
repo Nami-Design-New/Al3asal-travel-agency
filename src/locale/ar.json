@@ -447,5 +447,9 @@
     "terms": "يجب أن توافق على الشروط والأحكام",
     "alphaNumericOnly": "يسمح فقط بالحروف والأرقام",
     "numbersOnly": "يسمح بالأرقام فقط"
-  }
+  },
+  "lastUpdate":"آخر تحديث:",
+  "recentBlogs": "أحدث المدونات",
+  "subscribedSuccessfully": "تم الاشتراك بنجاح",
+  "failedToSubscribe": "فشل الاشتراك"
 }

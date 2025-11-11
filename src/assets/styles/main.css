@@ -3563,6 +3563,9 @@ body main .blog_details_page .blog_header .blog_header_actions .share_section .s
 body main .blog_details_page .blog_header .blog_header_actions .share_section .share_buttons button:hover {
   opacity: 0.8;
 }
+body main .blog_details_page .blog_image {
+  aspect-ratio: 4/2;
+}
 body main .blog_details_page .blog_image img {
   width: 100%;
   height: auto;

@@ -450,5 +450,9 @@
     "terms": "You must agree to the terms and conditions",
     "alphaNumericOnly": "Only letters and numbers are allowed",
     "numbersOnly": "Only numeric values are allowed"
-  }
+  },
+  "lastUpdate":"Last updated:",
+  "recentBlogs": "Recent Blogs",
+  "subscribedSuccessfully": "Subscribed successfully",
+  "failedToSubscribe": "Failed to subscribe"
 }

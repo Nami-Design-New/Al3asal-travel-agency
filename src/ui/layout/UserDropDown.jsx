@@ -1,9 +1,11 @@
 import { Dropdown } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router";
+import useLogout from "../../hooks/useLogout";
 
 export default function UserDropDown({ userName }) {
   const { t } = useTranslation();
+    const { logoutAction } = useLogout();
 
   return (
     <>
@@ -31,7 +33,7 @@ export default function UserDropDown({ userName }) {
             {t("header.contactus")}
           </Dropdown.Item>
 
-          <Dropdown.Item>
+          <Dropdown.Item onClick={logoutAction}>
             <i className="fa-regular fa-sign-out-alt"></i>
             {t("header.logout")}
           </Dropdown.Item>

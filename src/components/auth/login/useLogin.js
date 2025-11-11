@@ -3,10 +3,10 @@ import { useMutation } from "@tanstack/react-query";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { toast } from "sonner";
 import { useCookies } from "react-cookie";
+import { useAuthedUserStore } from "../../../stores/authedUser";
 import * as yup from "yup";
 import axiosInstance from "../../../utils/axiosInstance";
 import useAuthStore from "../../../stores/authStore";
-import { useAuthedUserStore } from "../../../stores/authedUser";
 
 export default function useLogin(t) {
   const { closeAuthModal } = useAuthStore();
