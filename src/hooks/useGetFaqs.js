@@ -2,7 +2,6 @@ import { useQuery } from "@tanstack/react-query";
 import axiosInstance from "../utils/axiosInstance";
 
 export default function useGetFaqs() {
-
   const { data, isLoading } = useQuery({
     queryKey: ["faqs"],
     queryFn: () => getFaqs(),

@@ -3,10 +3,14 @@ import { useTranslation } from "react-i18next";
 import { useState } from "react";
 import { Link } from "react-router";
 import useSubscribeNewsLetter from "../../hooks/useSubscribeNewsLetter";
+import useGetSettings from "../../hooks/useGetSettings";
+import useSettingsStore from "../../stores/settingsStore";
 
 export default function Footer() {
   const { t } = useTranslation();
   const [email, setEmail] = useState("");
+  const { lang } = useSettingsStore();
+  const { data } = useGetSettings();
   const { mutate, isPending } = useSubscribeNewsLetter();
 
   const handleSubmit = (e) => {
@@ -24,7 +28,11 @@ export default function Footer() {
                 <img src="/images/logo.svg" alt="logo" />
               </Link>
             </div>
-            <p className="about">{t("footer.description")}</p>
+            <p className="about">
+              {lang === "en"
+                ? data?.footer_text?.en || ""
+                : data?.footer_text?.ar || ""}
+            </p>
 
             <form className="newsletter-form" onSubmit={handleSubmit}>
               <Form.Control
@@ -73,18 +81,10 @@ export default function Footer() {
           <div className="col-lg-3 col-md-6 p-2">
             <h5 className="mb-4">{t("footer.services")}</h5>
             <ul>
-              <li>
-                <Link to="/flights">{t("footer.ser1")}</Link>
-              </li>
-              <li>
-                <Link to="/flights">{t("footer.ser2")}</Link>
-              </li>
-              <li>
-                <Link to="/flights">{t("footer.ser3")}</Link>
-              </li>
-              <li>
-                <Link to="/flights">{t("footer.ser4")}</Link>
-              </li>
+              <li>{t("footer.ser1")}</li>
+              <li>{t("footer.ser2")}</li>
+              <li>{t("footer.ser3")}</li>
+              <li>{t("footer.ser4")}</li>
             </ul>
           </div>
 
@@ -95,36 +95,36 @@ export default function Footer() {
               <li>
                 <i className="fas fa-map-marker-alt"></i>
                 <Link
-                  to="https://maps.app.goo.gl/7GDMHfsN3Z6BkrX47"
+                  to={data?.map_link}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  4QJ4+G95، حماة، سوريا
+                  {lang === "en"
+                    ? data?.address?.en || ""
+                    : data?.address?.ar || ""}
                 </Link>
               </li>
 
               <li>
                 <i className="fas fa-envelope"></i>
-                <Link to="mailto:info@alasalatravel.com">
-                  info@alasalatravel.com
-                </Link>
+                <Link to={`mailto:${data?.email}`}>{data?.email}</Link>
               </li>
 
               <li>
                 <i className="fas fa-envelope"></i>
-                <Link to="mailto:info@alasalatravel.com">
-                  hr@alasalatravel.com
+                <Link to={`mailto:${data?.other_email}`}>
+                  {data?.other_email}
                 </Link>
               </li>
 
               <li>
                 <i className="fas fa-phone-alt"></i>
-                <Link to="tel:+963964442015">+963964442015</Link>
+                <Link to={`tel:${data?.phone}`}>{data?.phone}</Link>
               </li>
 
               <li>
                 <i className="fab fa-whatsapp"></i>
-                <Link to="https://wa.me/963964442015">+963964442015</Link>
+                <Link to={`tel:${data?.other_phone}`}>{data?.other_phone}</Link>
               </li>
             </ul>
           </div>
@@ -132,21 +132,22 @@ export default function Footer() {
           <div className="col-12 p-2">
             <div className="copyrights">
               <p>
-                &copy; {new Date().getFullYear()} {t("footer.copyright")}{" "}
-                {t("footer.al3asal")}
+                {lang === "en"
+                  ? data?.copyright?.en || ""
+                  : data?.copyright?.ar || ""}
               </p>
 
               <div className="social-icons">
-                <Link to="https://www.facebook.com/groups/al3asalofficial/">
+                <Link to={data?.facebook || "#"}>
                   <i className="fab fa-facebook-f"></i>
                 </Link>
-                <Link to="#">
+                <Link to={data?.twitter || "#"}>
                   <img src="/icons/twitter.svg" alt="twitter" />
                 </Link>
-                <Link to="#">
+                <Link to={data?.linkedin || "#"}>
                   <i className="fab fa-linkedin-in"></i>
                 </Link>
-                <Link to="https://www.instagram.com/al3asalofficial/?hl=ar">
+                <Link to={data?.instagram || "#"}>
                   <i className="fab fa-instagram"></i>
                 </Link>
               </div>

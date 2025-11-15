@@ -2,7 +2,6 @@ import { useQuery } from "@tanstack/react-query";
 import axiosInstance from "../utils/axiosInstance";
 
 export default function useGetHome() {
-
   const { data, isLoading } = useQuery({
     queryKey: ["home"],
     queryFn: () => getHome(),

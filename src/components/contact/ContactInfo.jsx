@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router";
 
-export default function ContactInfo() {
+export default function ContactInfo({ settings }) {
   const { t } = useTranslation();
 
   const contactInfo = [
@@ -9,22 +9,22 @@ export default function ContactInfo() {
       icon: "fa-light fa-phone-volume",
       title: t("contact.callUs"),
       description: t("contact.callDescription"),
-      linkText: "+963964442015",
-      linkUrl: "tel:+963964442015",
+      linkText: settings?.phone,
+      linkUrl: `tel:${settings?.phone}`,
     },
     {
       icon: "fa-light fa-envelope",
       title: t("contact.helpSupport"),
       description: t("contact.helpDescription"),
-      linkText: "info@alasalatravel.com",
-      linkUrl: "mailto:info@alasalatravel.com",
+      linkText: settings?.email,
+      linkUrl: `mailto:${settings?.email}`,
     },
     {
       icon: "fa-light fa-phone-volume",
       title: t("contact.otherHelp"),
       description: t("contact.otherHelpDescription"),
-      linkText: "+963964442015",
-      linkUrl: "tel:+963964442015",
+      linkText: settings?.other_phone,
+      linkUrl: `tel:${settings?.other_phone}`,
     },
     {
       icon: "fa-light fa-share-alt",
@@ -32,19 +32,19 @@ export default function ContactInfo() {
       description: t("contact.followDescription"),
       subLinks: [
         {
-          link: "https://facebook.com/yourpage",
+          link: settings?.facebook,
           icon: "fa-brands fa-facebook-f",
         },
         {
-          link: "https://twitter.com/yourhandle",
+          link: settings?.twitter,
           icon: "fa-brands fa-twitter",
         },
         {
-          link: "https://instagram.com/yourprofile",
+          link: settings?.instagram,
           icon: "fa-brands fa-instagram",
         },
         {
-          link: "https://linkedin.com/yourprofile",
+          link: settings?.linkedin,
           icon: "fa-brands fa-linkedin-in",
         },
       ],

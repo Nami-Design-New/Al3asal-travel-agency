@@ -1,9 +1,64 @@
 import { useTranslation } from "react-i18next";
+import { useForm } from "react-hook-form";
 import InputField from "../../ui/forms/InputField";
 import SelectField from "../../ui/forms/SelectField";
+import useGetContactContent from "../../hooks/useGetContactContent";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+import axiosInstance from "../../utils/axiosInstance";
+import { useMutation } from "@tanstack/react-query";
+import { toast } from "sonner";
+import SubmitButton from "../../ui/forms/SubmitButton";
 
 export default function ContactForm() {
   const { t } = useTranslation();
+  const { data } = useGetContactContent();
+
+  const schema = yup.object().shape({
+    name: yup.string().required(t("contact.fields.fullName.required")),
+    email: yup
+      .string()
+      .email(t("contact.fields.email.invalid"))
+      .required(t("contact.fields.email.required")),
+    contact_category_id: yup
+      .number()
+      .required(t("contact.fields.problemCategory.required")),
+    contact_type_id: yup
+      .number()
+      .required(t("contact.fields.problemType.required")),
+    message: yup.string().required(t("contact.fields.message.required")),
+    date: yup.date().required(t("contact.fields.date.required")),
+    booking_number: yup
+      .string()
+      .required(t("contact.fields.referenceNumber.required")),
+  });
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
+    mode: "onChange",
+    defaultValues: {
+      name: "",
+      email: "",
+      contact_category_id: "",
+      contact_type_id: "",
+      message: "",
+      date: "",
+      booking_number: "",
+    },
+  });
+
+  console.log(errors);
+
+  const mutation = useMutation({
+    mutationFn: (values) => axiosInstance.post("/contacts", values),
+    onSuccess: () => {
+      toast.success(t("contact.success"));
+    },
+  });
 
   return (
     <div className="row mt-5">
@@ -15,15 +70,19 @@ export default function ContactForm() {
       </div>
 
       <div className="col-lg-7 col-12 p-2">
-        <form className="form_ui">
+        <form className="form_ui" onSubmit={handleSubmit(mutation.mutate)}>
           <div className="form_group">
             <InputField
               label={t("contact.fields.fullName.label")}
               placeholder={t("contact.fields.fullName.placeholder")}
+              {...register("name")}
+              error={errors?.name?.message}
             />
             <InputField
               label={t("contact.fields.email.label")}
               placeholder={t("contact.fields.email.placeholder")}
+              {...register("email")}
+              error={errors?.email?.message}
             />
           </div>
 
@@ -31,40 +90,23 @@ export default function ContactForm() {
             <SelectField
               label={t("contact.fields.problemType.label")}
               defaultSelect={t("contact.fields.problemType.placeholder")}
-              value=""
-              options={[
-                {
-                  value: "booking",
-                  name: t("contact.fields.problemType.booking"),
-                },
-                {
-                  value: "payment",
-                  name: t("contact.fields.problemType.payment"),
-                },
-                {
-                  value: "other",
-                  name: t("contact.fields.problemType.other"),
-                },
-              ]}
+              {...register("contact_type_id")}
+              error={errors?.contact_type_id?.message}
+              options={(data?.types || []).map((item) => ({
+                value: item?.id,
+                name: item?.title || "",
+              }))}
             />
+
             <SelectField
               label={t("contact.fields.problemCategory.label")}
               defaultSelect={t("contact.fields.problemCategory.placeholder")}
-              value=""
-              options={[
-                {
-                  value: "technical",
-                  name: t("contact.fields.problemCategory.technical"),
-                },
-                {
-                  value: "service",
-                  name: t("contact.fields.problemCategory.service"),
-                },
-                {
-                  value: "billing",
-                  name: t("contact.fields.problemCategory.billing"),
-                },
-              ]}
+              {...register("contact_category_id")}
+              error={errors?.contact_category_id?.message}
+              options={(data?.categories || []).map((item) => ({
+                value: item?.id,
+                name: item?.title || "",
+              }))}
             />
           </div>
 
@@ -72,8 +114,16 @@ export default function ContactForm() {
             <InputField
               label={t("contact.fields.referenceNumber.label")}
               placeholder={t("contact.fields.referenceNumber.placeholder")}
+              {...register("booking_number")}
+              error={errors?.booking_number?.message}
             />
-            <InputField type="date" label={t("contact.fields.flightDate")} />
+
+            <InputField
+              type="date"
+              label={t("contact.fields.flightDate")}
+              {...register("date")}
+              error={errors?.date?.message}
+            />
           </div>
 
           <div className="form_group">
@@ -81,12 +131,15 @@ export default function ContactForm() {
               as="textarea"
               label={t("contact.fields.message.label")}
               placeholder={t("contact.fields.message.placeholder")}
+              {...register("message")}
+              error={errors?.message?.message}
             />
           </div>
 
-          <button className="submit_btn mt-2">
-            {t("contact.fields.submit")}
-          </button>
+          <SubmitButton
+            text={t("contact.fields.submit")}
+            loading={mutation.isPending}
+          />
         </form>
       </div>
 
