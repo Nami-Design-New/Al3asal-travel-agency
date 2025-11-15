@@ -75,7 +75,12 @@
     "newPassword": "كلمة المرور الجديدة",
     "confirmPassword": "تاكيد كلمة المرور",
     "enterNewPassword": "ادخل كلمة المرور الجديدة",
-    "enterConfirmPassword": "ادخل تاكيد كلمة المرور"
+    "enterConfirmPassword": "ادخل تاكيد كلمة المرور",
+    "otpSent": "تم إرسال رمز التحقق إلى هاتفك.",
+    "codeConfirmed": "تم تأكيد رمز التحقق.",
+    "phoneNumber": "رقم الهاتف",
+    "passwordResetSuccess": "تم إعادة تعيين كلمة المرور بنجاح.",
+    "somethingWentWrong": "حدث خطأ غير متوقع. يرجى المحاولة مرة أخرى لاحقاً."
   },
   "flights": {
     "oneWay": "ذهاب فقط",

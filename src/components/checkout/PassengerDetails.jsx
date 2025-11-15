@@ -67,8 +67,9 @@ export default function PassengerDetails({ setActiveTab }) {
   const {
     handleSubmit,
     trigger,
-    control,
+    setValue,
     register,
+    control,
     formState: { errors },
   } = methods;
 
@@ -201,6 +202,18 @@ export default function PassengerDetails({ setActiveTab }) {
     bookFlight(payload);
   };
 
+  const handlePhoneChange = (value, country) => {
+    const dialCode = country.dialCode;
+    const phoneNumber = value.replace(dialCode, "").replace("+", "");
+
+    setValue("contact.phone", {
+      raw: value,
+      country_code: Number(dialCode),
+      area_code: Number(dialCode.slice(-3)) || Number(dialCode),
+      phone_number: Number(phoneNumber) || 0,
+    });
+  };
+
   return (
     <FormProvider {...methods}>
       <form className="form_ui" onSubmit={handleSubmit(onSubmit, onError)}>
@@ -225,6 +238,7 @@ export default function PassengerDetails({ setActiveTab }) {
             <PhoneField
               name="contact.phone"
               label="Phone *"
+              handleChange={handlePhoneChange}
               error={
                 errors.contact?.phone?.phone_number?.message ||
                 errors.contact?.phone?.area_code?.message ||

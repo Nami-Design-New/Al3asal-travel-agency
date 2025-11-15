@@ -3,6 +3,10 @@ import { create } from "zustand";
 const useAuthStore = create((set) => ({
   show: false,
   step: "login",
+  phone: {
+    code: "",
+    number: "",
+  },
 
   openAuthModal: (value) =>
     set(() => ({
@@ -18,6 +22,11 @@ const useAuthStore = create((set) => ({
   setStep: (step) =>
     set(() => ({
       step,
+    })),
+
+  setPhone: (phone) =>
+    set(() => ({
+      phone,
     })),
 }));
 

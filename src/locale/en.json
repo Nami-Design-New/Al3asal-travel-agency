@@ -77,7 +77,12 @@
     "enterNewPassword": "Enter new password",
     "enterConfirmPassword": "Enter confirm password",
     "loginSuccess": "Login successful",
-    "loginFailed": "Login failed, please check your credentials"
+    "loginFailed": "Login failed, please check your credentials",
+    "otpSent": "Verification code sent to your phone. Please check your inbox.",
+    "codeConfirmed": "Verification code confirmed. You can now reset your password.",
+    "phoneNumber": "Phone Number",
+    "passwordResetSuccess": "Password reset successful. You can now log in with your new password.",
+    "somethingWentWrong": "Something went wrong. Please try again later."
   },
   "flights": {
     "oneWay": "One Way",

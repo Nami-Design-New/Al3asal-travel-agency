@@ -17,27 +17,27 @@ export default function useRegister(t) {
       .string()
       .email(t("validation.email"))
       .required(t("validation.required")),
+    phone: yup.string().required(t("validation.required")),
+    phone_code: yup.string().required(t("validation.required")),
     password: yup
       .string()
       .required(t("validation.required"))
       .min(6, t("validation.min", { min: 6 })),
   });
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm({
+  const methods = useForm({
     resolver: yupResolver(schema),
     mode: "onChange",
     defaultValues: {
       name: "",
       email: "",
+      phone_code: "",
+      phone: "",
       password: "",
     },
   });
 
-  const { mutate: submitRegister, isPending } = useMutation({ 
+  const { mutate: submitRegister, isPending } = useMutation({
     mutationFn: async (data) => {
       const response = await axiosInstance.post("/auth/register", data);
       return response.data;
@@ -61,9 +61,8 @@ export default function useRegister(t) {
   });
 
   return {
-    errors,
     isLoading: isPending,
-    register,
-    handleSubmit: handleSubmit(submitRegister),
+    methods,
+    handleSubmit: methods.handleSubmit(submitRegister),
   };
 }

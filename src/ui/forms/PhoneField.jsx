@@ -3,7 +3,7 @@ import { Form } from "react-bootstrap";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 
-export default function PhoneField({ name, label, error }) {
+export default function PhoneField({ name, label, error, handleChange }) {
   const { control } = useFormContext();
 
   return (
@@ -18,17 +18,7 @@ export default function PhoneField({ name, label, error }) {
             country="sy"
             enableSearch
             value={field.value?.raw || ""}
-            onChange={(value, country) => {
-              const dialCode = country.dialCode;
-              const phoneNumber = value.replace(dialCode, "").replace("+", "");
-
-              field.onChange({
-                raw: value,
-                country_code: Number(dialCode),
-                area_code: Number(dialCode.slice(-3)) || Number(dialCode),
-                phone_number: Number(phoneNumber) || 0,
-              });
-            }}
+            onChange={(value, country) => handleChange(value, country)}
             inputClass={error ? "is-invalid" : ""}
           />
         )}

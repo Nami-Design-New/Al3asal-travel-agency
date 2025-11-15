@@ -23,6 +23,8 @@
     padding: 48px 32px 32px;
     gap: 24px;
     flex-direction: column;
+    height: 580px;
+    overflow-y: auto;
     @media screen and (max-width: 768px) {
       width: 100%;
     }

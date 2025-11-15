@@ -1,11 +1,8 @@
-import { useState } from "react";
-import { useTranslation } from "react-i18next";
+import useGetFaqs from "../hooks/useGetFaqs";
+import { Accordion } from "react-bootstrap";
 
 export default function FAQ() {
-  const { t } = useTranslation();
-  const [activeTab, setActiveTab] = useState("tab1");
-
-  const handleTabClick = (tab) => setActiveTab(tab);
+  const { data } = useGetFaqs();
 
   return (
     <section className="faq_section">
@@ -19,32 +16,22 @@ export default function FAQ() {
 
       <div className="container">
         <div className="section_title mb-5 text-center">
-          <h2>{t("faq.sectionTitle")}</h2>
-          <p>{t("faq.sectionSubtitle")}</p>
+          <h2>{data?.title || ""}</h2>
+          <p>{data?.content || ""}</p>
         </div>
 
-        <div className="row">
-          <div className="col-lg-4">
-            <ul className="nav flex-column faq_tabs" role="tablist">
-              {[1, 2, 3, 4, 5].map((num) => (
-                <li
-                  key={num}
-                  className={`nav-item ${
-                    activeTab === `tab${num}` ? "active" : ""
-                  }`}
-                  onClick={() => handleTabClick(`tab${num}`)}
-                >
-                  <i className={`fas ${t(`faq.tabs.tab${num}Icon`)}`}></i>{" "}
-                  {t(`faq.tabs.tab${num}Title`)}
-                </li>
+        <div className="row justify-content-center">
+          <div className="col-lg-8 col-12">
+            <Accordion defaultActiveKey={0}>
+              {data?.data?.map((item) => (
+                <Accordion.Item eventKey={item?.id} key={item?.id}>
+                  <Accordion.Header>{item?.question}</Accordion.Header>
+                  <Accordion.Body>
+                    <p> {item?.answer}</p>
+                  </Accordion.Body>
+                </Accordion.Item>
               ))}
-            </ul>
-          </div>
-
-          <div className="col-lg-8">
-            <div className={`tab-content ${activeTab}`}>
-              <p>{t(`faq.answers.${activeTab}`)}</p>
-            </div>
+            </Accordion>
           </div>
         </div>
       </div>
