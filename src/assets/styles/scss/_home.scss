@@ -22,7 +22,7 @@
 
       @media screen and (max-width: 576px) {
         font-size: 22px;
-        margin-top: 90px;
+        margin-top: -208px;
       }
     }
 
@@ -194,6 +194,10 @@
         border-radius: 8px;
         font-size: 14px;
         border: 1px solid $input_stroke;
+
+        @media screen and (max-width: 576px) {
+          padding: 10px 12px;
+        }
       }
     }
   }
@@ -204,6 +208,10 @@
     border-radius: 8px;
     font-size: 14px;
     border: 1px solid $input_stroke;
+
+    @media screen and (max-width: 576px) {
+      padding: 10px 12px;
+    }
   }
 
   .flight_specifications {
@@ -220,6 +228,10 @@
     .dropdown {
       width: 100%;
       max-width: 280px;
+
+      @media screen and (max-width: 576px) {
+        max-width: unset;
+      }
     }
 
     .from_to {
@@ -231,6 +243,7 @@
 
       @media screen and (max-width: 576px) {
         width: 100%;
+        flex-direction: column;
       }
 
       .swap_button {
@@ -283,6 +296,11 @@
       display: flex;
       align-items: center;
       gap: 8px;
+
+      @media screen and (max-width: 576px) {
+        height: unset;
+        padding: 12px 24px;
+      }
     }
 
     .travelers_menu,
