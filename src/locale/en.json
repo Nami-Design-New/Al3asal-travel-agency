@@ -161,6 +161,7 @@
     "securePaymentDescription": "No hidden fees, taxes or other nasty surprises"
   },
   "contact": {
+    "success": "Your message has been sent successfully. We'll get back to you as soon as possible.",
     "title": "Contact Us",
     "description": "We are always happy to hear from you. Our team is ready to answer all your inquiries and assist you in planning your next trip.",
     "callUs": "Call Us",
@@ -462,5 +463,13 @@
   "lastUpdate": "Last updated:",
   "recentBlogs": "Recent Blogs",
   "subscribedSuccessfully": "Subscribed successfully",
-  "failedToSubscribe": "Failed to subscribe"
+  "failedToSubscribe": "Failed to subscribe",
+  "nameRequired": "Name is required",
+  "emailInvalid": "Please enter a valid email address",
+  "emailRequired": "Email is required",
+  "categoryRequired": "Category is required",
+  "typeRequired": "Type is required",
+  "messageRequired": "Message is required",
+  "dateRequired": "Date is required",
+  "bookingRequired": "Booking number is required"
 }

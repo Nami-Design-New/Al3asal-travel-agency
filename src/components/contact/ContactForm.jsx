@@ -15,26 +15,26 @@ export default function ContactForm() {
   const { data } = useGetContactContent();
 
   const schema = yup.object().shape({
-    name: yup.string().required(t("contact.fields.fullName.required")),
-    email: yup
-      .string()
-      .email(t("contact.fields.email.invalid"))
-      .required(t("contact.fields.email.required")),
-    contact_category_id: yup
-      .number()
-      .required(t("contact.fields.problemCategory.required")),
-    contact_type_id: yup
-      .number()
-      .required(t("contact.fields.problemType.required")),
-    message: yup.string().required(t("contact.fields.message.required")),
-    date: yup.date().required(t("contact.fields.date.required")),
-    booking_number: yup
-      .string()
-      .required(t("contact.fields.referenceNumber.required")),
+    name: yup.string().required(t("nameRequired")),
+    email: yup.string().email(t("emailInvalid")).required(t("emailRequired")),
+    contact_category_id: yup.number().required(t("categoryRequired")),
+    contact_type_id: yup.number().required(t("typeRequired")),
+    message: yup.string().required(t("messageRequired")),
+
+    date: yup
+      .date()
+      .nullable()
+      .transform((value, originalValue) => {
+        return originalValue === "" ? null : value;
+      })
+      .required(t("dateRequired")),
+
+    booking_number: yup.string().required(t("bookingRequired")),
   });
 
   const {
     register,
+    reset,
     handleSubmit,
     formState: { errors },
   } = useForm({
@@ -54,9 +54,14 @@ export default function ContactForm() {
   console.log(errors);
 
   const mutation = useMutation({
-    mutationFn: (values) => axiosInstance.post("/contacts", values),
+    mutationFn: (values) =>
+      axiosInstance.post("/contacts", {
+        ...values,
+        date: values.date.toISOString().split("T")[0],
+      }),
     onSuccess: () => {
       toast.success(t("contact.success"));
+      reset();
     },
   });
 
