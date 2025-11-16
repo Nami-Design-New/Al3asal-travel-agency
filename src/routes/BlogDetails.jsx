@@ -57,7 +57,7 @@ const BlogDetails = () => {
           <div className="recent_blogs">
             <h3>{t("recentBlogs")}</h3>
             <ul>
-              {posts?.map((blog) => (
+              {posts?.posts?.map((blog) => (
                 <li key={blog?.id || ""}>
                   <Link to={`/blogs/${blog?.id || ""}`}>
                     <div className="blog_item">
