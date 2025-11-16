@@ -1630,7 +1630,7 @@ body main .top_destinations {
 }
 @media screen and (max-width: 576px) {
   body main .top_destinations {
-    padding: 280px 0 80px;
+    padding: 320px 0 80px;
   }
 }
 body main .top_destinations h2 {
