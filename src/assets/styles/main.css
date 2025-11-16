@@ -1609,7 +1609,7 @@ body main .hero_section .hero_text h1 {
 @media screen and (max-width: 576px) {
   body main .hero_section .hero_text h1 {
     font-size: 22px;
-    margin-top: -208px;
+    margin-top: -160px;
   }
 }
 body main .hero_section .hero_text p {
@@ -1741,7 +1741,7 @@ body main .flights_filter {
 }
 @media screen and (max-width: 576px) {
   body main .flights_filter {
-    bottom: -232px;
+    bottom: -282px;
   }
 }
 body main .filter_container {
