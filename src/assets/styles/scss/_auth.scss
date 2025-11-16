@@ -27,6 +27,7 @@
     overflow-y: auto;
     @media screen and (max-width: 768px) {
       width: 100%;
+      height: unset;
     }
     h5 {
       color: $black;
@@ -126,4 +127,9 @@
       background: $input_stroke !important;
     }
   }
+}
+
+.resend_link {
+  font-size: 14px;
+  color: #777 !important;
 }

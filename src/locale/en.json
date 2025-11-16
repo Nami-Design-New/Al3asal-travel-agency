@@ -81,6 +81,9 @@
     "otpSent": "Verification code sent to your phone. Please check your inbox.",
     "codeConfirmed": "Verification code confirmed. You can now reset your password.",
     "phoneNumber": "Phone Number",
+    "resendCode": "Resend Code",
+    "accountVerified": "Account successfully verified",
+    "resetLinkSent": "The confirmation code has been resent successfully",
     "passwordResetSuccess": "Password reset successful. You can now log in with your new password.",
     "somethingWentWrong": "Something went wrong. Please try again later."
   },
@@ -456,7 +459,7 @@
     "alphaNumericOnly": "Only letters and numbers are allowed",
     "numbersOnly": "Only numeric values are allowed"
   },
-  "lastUpdate":"Last updated:",
+  "lastUpdate": "Last updated:",
   "recentBlogs": "Recent Blogs",
   "subscribedSuccessfully": "Subscribed successfully",
   "failedToSubscribe": "Failed to subscribe"

@@ -9,37 +9,35 @@ import axiosInstance from "../../../utils/axiosInstance";
 import useAuthStore from "../../../stores/authStore";
 
 export default function useLogin(t) {
-  const { closeAuthModal } = useAuthStore();
+  const { closeAuthModal, setStep, setPhone } = useAuthStore();
   const { setAuthedUser } = useAuthedUserStore();
   const [, setCookie] = useCookies(["token"]);
 
   const schema = yup.object().shape({
-    email: yup
-      .string()
-      .email(t("validation.email"))
-      .required(t("validation.required")),
+    phone: yup.string().required(t("validation.required")),
+    phone_code: yup.string().required(t("validation.required")),
     password: yup
       .string()
       .required(t("validation.required"))
       .min(6, t("validation.min", { min: 6 })),
   });
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm({
+  const methods = useForm({
     resolver: yupResolver(schema),
     mode: "onChange",
     defaultValues: {
-      email: "",
+      phone_code: "",
+      phone: "",
       password: "",
     },
   });
 
   const { mutate: submitLogin, isPending } = useMutation({
     mutationFn: async (data) => {
-      const response = await axiosInstance.post("/auth/login", data);
+      const response = await axiosInstance.post("/auth/login", {
+        password: data.password,
+        email_phone: data.phone,
+      });
       return response.data;
     },
     onSuccess: (data) => {
@@ -52,6 +50,8 @@ export default function useLogin(t) {
         });
         closeAuthModal();
         setAuthedUser(data?.data);
+      } else if (data?.code === 403) {
+        setStep("verify_register");
       } else {
         toast.error(t("auth.loginFailed"));
       }
@@ -62,9 +62,14 @@ export default function useLogin(t) {
   });
 
   return {
-    register,
-    handleSubmit: handleSubmit(submitLogin),
-    errors,
+    methods,
+    handleSubmit: methods.handleSubmit((data) => {
+      submitLogin(data);
+      setPhone({
+        phone_code: data.phone_code,
+        phone: data.phone,
+      });
+    }),
     isLoading: isPending,
   };
 }

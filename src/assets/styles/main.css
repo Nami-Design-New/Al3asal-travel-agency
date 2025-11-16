@@ -1219,6 +1219,7 @@ header nav .actions .user_dropdown i {
 @media screen and (max-width: 768px) {
   .auth_modal .auth_form {
     width: 100%;
+    height: unset;
   }
 }
 .auth_modal .auth_form h5 {
@@ -1315,6 +1316,11 @@ header nav .actions .user_dropdown i {
 }
 .auth_modal .modal_close_btn:hover {
   background: #f4f4f4 !important;
+}
+
+.resend_link {
+  font-size: 14px;
+  color: #777 !important;
 }
 
 .form_ui {

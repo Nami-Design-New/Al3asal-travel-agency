@@ -79,6 +79,9 @@
     "otpSent": "تم إرسال رمز التحقق إلى هاتفك.",
     "codeConfirmed": "تم تأكيد رمز التحقق.",
     "phoneNumber": "رقم الهاتف",
+    "resendCode": "اعاده الارسال",
+    "accountVerified": "تم التحقق من حسابك بنجاح",
+    "resetLinkSent": "تم اعاده ارسال لامز التاكيد بنجاح ",
     "passwordResetSuccess": "تم إعادة تعيين كلمة المرور بنجاح.",
     "somethingWentWrong": "حدث خطأ غير متوقع. يرجى المحاولة مرة أخرى لاحقاً."
   },

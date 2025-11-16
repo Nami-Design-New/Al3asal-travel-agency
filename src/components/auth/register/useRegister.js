@@ -2,14 +2,12 @@ import { useForm } from "react-hook-form";
 import { useMutation } from "@tanstack/react-query";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { toast } from "sonner";
-import { useCookies } from "react-cookie";
 import * as yup from "yup";
 import axiosInstance from "../../../utils/axiosInstance";
 import useAuthStore from "../../../stores/authStore";
 
 export default function useRegister(t) {
-  const { closeAuthModal } = useAuthStore();
-  const [, setCookie] = useCookies(["token"]);
+  const { setStep } = useAuthStore();
 
   const schema = yup.object().shape({
     name: yup.string().required(t("validation.required")),
@@ -45,12 +43,7 @@ export default function useRegister(t) {
     onSuccess: (data) => {
       if (data?.code === 200) {
         toast.success(t("auth.registerSuccess"));
-        setCookie("token", data.data?.auth?.token, {
-          path: "/",
-          secure: true,
-          sameSite: "Strict",
-        });
-        closeAuthModal();
+        setStep("verify_register");
       } else {
         toast.error(t("auth.registerFailed"));
       }

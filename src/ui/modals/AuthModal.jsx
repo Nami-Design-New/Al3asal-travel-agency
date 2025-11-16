@@ -1,6 +1,7 @@
 import { Modal } from "react-bootstrap";
 import Login from "../../components/auth/login/Login";
 import Register from "../../components/auth/register/Register";
+import VerifyRegister from "../../components/auth/register/VerifyRegister";
 import ResetPassword1 from "../../components/auth/reset-password/ResetPassword1";
 import ResetPassword2 from "../../components/auth/reset-password/ResetPassword2";
 import ResetPassword3 from "../../components/auth/reset-password/ResetPassword3";
@@ -26,6 +27,7 @@ export default function AuthModal() {
           {step === "login" && <Login />}
 
           {step === "register" && <Register />}
+          {step === "verify_register" && <VerifyRegister />}
 
           {step === "reset1" && <ResetPassword1 />}
           {step === "reset2" && <ResetPassword2 />}

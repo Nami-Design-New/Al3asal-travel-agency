@@ -11,7 +11,7 @@ import axiosInstance from "../../../utils/axiosInstance";
 
 export default function ResetPassword3() {
   const { t } = useTranslation();
-  const { setStep } = useAuthStore();
+  const { setStep, closeAuthModal } = useAuthStore();
 
   const handleBack = () => {
     setStep("reset2");
@@ -50,6 +50,7 @@ export default function ResetPassword3() {
     onSuccess: (data) => {
       if (data?.code === 200) {
         setStep("login");
+        closeAuthModal();
         toast.success(data?.message || t("auth.passwordResetSuccess"));
       } else {
         toast.error(data?.message || t("auth.somethingWentWrong"));
