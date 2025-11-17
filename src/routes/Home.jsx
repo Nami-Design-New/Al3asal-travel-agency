@@ -6,7 +6,7 @@ import WhyChooseUs from "../components/home/WhyChooseUs";
 import useGetHome from "../hooks/useGetHome";
 
 export default function Home() {
-  const { data, isLoading } = useGetHome();
+  const { data } = useGetHome();
 
   return (
     <>

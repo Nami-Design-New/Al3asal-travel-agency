@@ -49,7 +49,10 @@ const BlogDetails = () => {
             <img src={data?.image || ""} alt="blog" />
           </div>
           <div className="blog_content">
-            <div className="content-text">{data?.body || ""}</div>
+            <div
+              className="content-text"
+              dangerouslySetInnerHTML={{ __html: data?.body || "" }}
+            />
           </div>
         </div>
 

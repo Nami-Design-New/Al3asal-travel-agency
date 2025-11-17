@@ -1,6 +1,10 @@
 .my_profile {
   padding: 60px 0;
 
+  @media screen and (max-width: 576px) {
+    padding: 20px 0;
+  }
+
   .profile_sidebar {
     border: 1px solid $input_stroke;
     padding: 24px;
