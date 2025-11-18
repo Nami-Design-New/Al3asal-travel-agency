@@ -37,10 +37,6 @@ export default function useRegister(t) {
 
   const { mutate: submitRegister, isPending } = useMutation({
     mutationFn: async (data) => {
-      setPhone({
-        number: data.phone,
-        code: data.phone_code,
-      });
       const response = await axiosInstance.post("/auth/register", data);
       return response.data;
     },
@@ -60,6 +56,12 @@ export default function useRegister(t) {
   return {
     isLoading: isPending,
     methods,
-    handleSubmit: methods.handleSubmit(submitRegister),
+    handleSubmit: methods.handleSubmit((data) => {
+      submitRegister(data);
+      setPhone({
+        phone_code: data.phone_code,
+        phone: data.phone,
+      });
+    }),
   };
 }
