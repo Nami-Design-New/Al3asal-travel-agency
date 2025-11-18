@@ -6,7 +6,7 @@ export default function useGetTerms() {
   const { data, isLoading } = useQuery({
     queryKey: ["terms"],
     queryFn: () => getTerms(),
-    keepPreviousData: false,
+    
   });
 
   return { data, isLoading };

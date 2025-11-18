@@ -3,7 +3,6 @@ import { useTranslation } from "react-i18next";
 import { useMutation } from "@tanstack/react-query";
 import { toast } from "sonner";
 import { useCookies } from "react-cookie";
-import { useAuthedUserStore } from "../../../stores/authedUser";
 import OtpContainer from "../../../ui/forms/OtpContainer";
 import SubmitButton from "../../../ui/forms/SubmitButton";
 import axiosInstance from "../../../utils/axiosInstance";
@@ -14,7 +13,6 @@ export default function VerifyRegister() {
   const [, setCookie] = useCookies();
   const [code, setCode] = useState();
   const { phone, closeAuthModal } = useAuthStore();
-  const { setAuthedUser } = useAuthedUserStore();
   const [timer, setTimer] = useState(60);
   const [resendDisabled, setResendDisabled] = useState(false);
 
@@ -44,7 +42,6 @@ export default function VerifyRegister() {
           sameSite: "Strict",
         });
         closeAuthModal();
-        setAuthedUser(data?.data);
         toast.success(data?.message || t("auth.accountVerified"));
       } else {
         toast.error(data?.message || t("auth.somethingWentWrong"));

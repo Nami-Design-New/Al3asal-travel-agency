@@ -5,7 +5,7 @@ export default function useGetAboutPage() {
   const { data, isLoading } = useQuery({
     queryKey: ["about-page"],
     queryFn: () => getAboutPage(),
-    keepPreviousData: false,
+    
   });
 
   return { data, isLoading };

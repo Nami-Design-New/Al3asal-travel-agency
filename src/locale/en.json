@@ -425,7 +425,11 @@
     "passportExpiryDate": "Passport Expiry Date",
     "passportHolder": "Passport Holder Name",
     "passportIssueDate": "Passport Issue Date",
-    "passportIssueCountry": "Passport Issue Country"
+    "passportIssueCountry": "Passport Issue Country",
+    "enterName": "Enter full name",
+    "enterYourPassportNumber": "Enter your passport number",
+    "enterYourAdress": "Enter your address",
+    "gender": "Gender"
   },
   "receipt": {
     "al3asal": "Al3asal Travel & Tourism",
@@ -458,7 +462,13 @@
     "passwordMatch": "Passwords do not match",
     "terms": "You must agree to the terms and conditions",
     "alphaNumericOnly": "Only letters and numbers are allowed",
-    "numbersOnly": "Only numeric values are allowed"
+    "numbersOnly": "Only numeric values are allowed",
+    "passportHolderRequired": "Passport holder name is required",
+    "passportNationalityRequired": "Nationality is required",
+    "passportNumberRequired": "Passport number is required",
+    "passportEndDateRequired": "Expiry date is required",
+    "passportIssueDateRequired": "Issuance date is required",
+    "passportIssueCountryRequired": "Issuance country is required"
   },
   "lastUpdate": "Last updated:",
   "recentBlogs": "Recent Blogs",
@@ -471,5 +481,10 @@
   "typeRequired": "Type is required",
   "messageRequired": "Message is required",
   "dateRequired": "Date is required",
-  "bookingRequired": "Booking number is required"
+  "bookingRequired": "Booking number is required",
+  "sureYouWantDeleteYourAccount": "Are you sure you want to delete your account?",
+  "toast": {
+    "profile_updated_success": "Profile updated successfully",
+    "profile_update_error": "Failed to update profile"
+  }
 }

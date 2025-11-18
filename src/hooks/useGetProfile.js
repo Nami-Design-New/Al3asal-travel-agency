@@ -1,11 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
 import axiosInstance from "../utils/axiosInstance";
 
-export default function useGetProfile() {
+export default function useGetProfile(enabled) {
   return useQuery({
     queryKey: ["profile"],
     queryFn: () => getProfile(),
-    keepPreviousData: false,
+    enabled: enabled,
   });
 }
 

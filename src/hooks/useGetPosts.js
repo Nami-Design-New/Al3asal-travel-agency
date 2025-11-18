@@ -5,7 +5,7 @@ export default function useGetPosts() {
   const { data, isLoading } = useQuery({
     queryKey: ["posts"],
     queryFn: () => getPosts(),
-    keepPreviousData: false,
+    
   });
 
   return { data, isLoading };

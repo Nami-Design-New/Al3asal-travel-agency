@@ -5,7 +5,7 @@ export default function useGetSettings() {
   const { data, isLoading } = useQuery({
     queryKey: ["settings"],
     queryFn: () => getSettings(),
-    keepPreviousData: false,
+    
   });
 
   return { data, isLoading };

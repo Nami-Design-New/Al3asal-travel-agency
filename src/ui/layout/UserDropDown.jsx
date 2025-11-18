@@ -5,7 +5,7 @@ import useLogout from "../../hooks/useLogout";
 
 export default function UserDropDown({ userName }) {
   const { t } = useTranslation();
-    const { logoutAction } = useLogout();
+  const { logoutAction } = useLogout();
 
   return (
     <>

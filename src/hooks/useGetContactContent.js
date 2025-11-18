@@ -5,7 +5,7 @@ export default function useGetContactContent() {
   const { data, isLoading } = useQuery({
     queryKey: ["contact-page"],
     queryFn: () => getContactContent(),
-    keepPreviousData: false,
+    
   });
 
   return { data, isLoading };

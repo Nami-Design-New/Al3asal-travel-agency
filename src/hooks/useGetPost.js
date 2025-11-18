@@ -9,7 +9,7 @@ export default function useGetPost() {
   const { data, isLoading } = useQuery({
     queryKey: ["post", postId],
     queryFn: () => getPost(postId),
-    keepPreviousData: false,
+    
   });
 
   return { data, isLoading };

@@ -5,7 +5,7 @@ export default function useGetPrivacy() {
   const { data, isLoading } = useQuery({
     queryKey: ["privacy"],
     queryFn: () => getPrivacy(),
-    keepPreviousData: false,
+    
   });
 
   return { data, isLoading };

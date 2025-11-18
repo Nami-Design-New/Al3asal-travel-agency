@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { toast } from "sonner";
 import { useMutation } from "@tanstack/react-query";
 import { useCookies } from "react-cookie";
-import { useAuthedUserStore } from "../../../stores/authedUser";
 import SubmitButton from "../../../ui/forms/SubmitButton";
 import OtpContainer from "../../../ui/forms/OtpContainer";
 import useAuthStore from "../../../stores/authStore";
@@ -13,7 +12,6 @@ export default function ResetPassword2() {
   const { t } = useTranslation();
   const [, setCookie] = useCookies();
   const [code, setCode] = useState("");
-  const { setAuthedUser } = useAuthedUserStore();
   const { setStep, phone } = useAuthStore();
 
   const [timer, setTimer] = useState(60);
@@ -45,7 +43,6 @@ export default function ResetPassword2() {
           secure: true,
           sameSite: "Strict",
         });
-        setAuthedUser(data?.data);
         toast.success(data?.message || t("auth.codeConfirmed"));
       } else {
         toast.error(data?.message || t("auth.somethingWentWrong"));

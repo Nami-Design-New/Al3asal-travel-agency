@@ -5,7 +5,7 @@ export default function useGetFaqs() {
   const { data, isLoading } = useQuery({
     queryKey: ["faqs"],
     queryFn: () => getFaqs(),
-    keepPreviousData: false,
+    
   });
 
   return { data, isLoading };

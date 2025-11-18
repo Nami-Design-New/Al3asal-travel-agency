@@ -11,7 +11,7 @@ import useSearchStore from "../../stores/searchStore";
 import useBookFlight from "../../hooks/useBookFlight";
 import useFlightsStore from "../../stores/flightsStore";
 
-export default function PassengerDetails({ setActiveTab }) {
+export default function PassengerDetails() {
   const { flightsFilter } = useSearchStore();
   const { fare_details, dapart_flight, return_flight } = useFlightsStore();
   const { bookFlight, isPending } = useBookFlight();
@@ -99,6 +99,8 @@ export default function PassengerDetails({ setActiveTab }) {
   const onError = (errors) => {
     console.log("Validation errors:", errors);
   };
+
+  
 
   const onSubmit = (data) => {
     const departFares = dapart_flight?.fares?.[0]?.fare_info;
@@ -195,9 +197,10 @@ export default function PassengerDetails({ setActiveTab }) {
       },
 
       grand_total: total,
+      type: flightsFilter.trip_type === "ROUND_TRIP" ? "return" : "one_way",
+      departure_date: flightsFilter.departure_date,
+      return_date: flightsFilter.return_date,
     };
-
-    setActiveTab("tab2");
 
     bookFlight(payload);
   };

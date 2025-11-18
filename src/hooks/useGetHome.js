@@ -5,7 +5,7 @@ export default function useGetHome() {
   const { data, isLoading } = useQuery({
     queryKey: ["home"],
     queryFn: () => getHome(),
-    keepPreviousData: false,
+    
   });
 
   return { data, isLoading };
