@@ -7,7 +7,7 @@ import axiosInstance from "../../../utils/axiosInstance";
 import useAuthStore from "../../../stores/authStore";
 
 export default function useRegister(t) {
-  const { setStep } = useAuthStore();
+  const { setStep, setPhone } = useAuthStore();
 
   const schema = yup.object().shape({
     name: yup.string().required(t("validation.required")),
@@ -37,6 +37,10 @@ export default function useRegister(t) {
 
   const { mutate: submitRegister, isPending } = useMutation({
     mutationFn: async (data) => {
+      setPhone({
+        number: data.phone,
+        code: data.phone_code,
+      });
       const response = await axiosInstance.post("/auth/register", data);
       return response.data;
     },
