@@ -4042,9 +4042,14 @@ body main .trips .tabs .tab.active::after {
   width: 100%;
 }
 body main .trips .trip-list {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 16px;
+}
+@media screen and (max-width: 576px) {
+  body main .trips .trip-list {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 body main .trips .trip-card {
   background: #fff;

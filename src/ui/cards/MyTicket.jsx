@@ -1,6 +1,6 @@
-export default function MyTicket({ trip, setShow }) {
+export default function MyTicket({ trip, onClick }) {
   return (
-    <div key={trip.id} className="trip-card" onClick={() => setShow(true)}>
+    <div className="trip-card" onClick={onClick}>
       <div className="trip-card__top">
         <div>
           <i className="fa-regular fa-location-dot"></i>

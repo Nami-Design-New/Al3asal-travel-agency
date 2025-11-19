@@ -1,8 +1,8 @@
 import { useMutation } from "@tanstack/react-query";
 import { useNavigate } from "react-router";
 import { toast } from "sonner";
-import axiosInstance from "../utils/axiosInstance";
 import { useTranslation } from "react-i18next";
+import axiosInstance from "../utils/axiosInstance";
 
 export default function useBookFlight() {
   const navigate = useNavigate();
@@ -23,7 +23,7 @@ export default function useBookFlight() {
     window.addEventListener("message", (event) => {
       if (event.data.status === "success") {
         toast.success(t("booking_success"));
-        navigate("/");
+        navigate("/profile/bookings");
       } else if (event.data.status === "failed") {
         toast.error(t("booking_error"));
       }
@@ -37,7 +37,6 @@ export default function useBookFlight() {
     },
     onSuccess: (res) => {
       if (res?.code === 200) {
-        toast.success("Booking successful!");
         openPaymentPopup(res?.data?.url);
       } else {
         toast.error(res?.data?.message || "Booking failed");

@@ -3,7 +3,7 @@ import { Modal } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import { useReactToPrint } from "react-to-print";
 
-export default function ReceiptModal({ show, setShow }) {
+export default function ReceiptModal({ show, setShow, trip }) {
   const { t } = useTranslation();
   const invoiceRef = useRef();
 
@@ -13,43 +13,20 @@ export default function ReceiptModal({ show, setShow }) {
     onAfterPrint: () => setShow(false),
   });
 
-  const passengers = [
-    {
-      issueDate: "2025-05-08",
-      name: "Ahmed Elsayed",
-      passport: "A1234567",
-      ticketNumber: "TK123456789",
-      seatNumber: "12A",
-    },
-    {
-      issueDate: "2025-05-08",
-      name: "Sara Ali",
-      passport: "B2345678",
-      ticketNumber: "TK987654321",
-      seatNumber: "2C",
-    },
-    {
-      issueDate: "2025-05-08",
-      name: "Mohamed Hassan",
-      passport: "C3456789",
-      ticketNumber: "TK112233445",
-      seatNumber: "1A",
-    },
-    {
-      issueDate: "2025-05-08",
-      name: "Amira Mohamed",
-      passport: "D4567890",
-      ticketNumber: "TK445566778",
-      seatNumber: "3B",
-    },
-    {
-      issueDate: "2025-05-08",
-      name: "Youssef Ali",
-      passport: "E5678901",
-      ticketNumber: "TK667778899",
-      seatNumber: "4D",
-    },
-  ];
+  if (!trip) return null;
+
+  const reservationData = trip.reservationData;
+  const firstBook = reservationData?.book_details?.books[0];
+  const firstLeg = reservationData?.flight_details?.depart_flight?.legs[0];
+
+  const passengers =
+    firstBook?.pax_list?.map((passenger) => ({
+      issueDate: new Date().toISOString().split("T")[0],
+      name: `${passenger.name} ${passenger.lastname}`,
+      passport: passenger.identity_info?.passport?.no || "N/A",
+      ticketNumber: passenger.eticket || "N/A",
+      seatNumber: "N/A",
+    })) || [];
 
   return (
     <Modal
@@ -64,11 +41,7 @@ export default function ReceiptModal({ show, setShow }) {
       </Modal.Header>
       <Modal.Body>
         <div className="receipt_container">
-          <div
-            className="receipt"
-            ref={invoiceRef}
-            // style={{ direction: lang === "ar" ? "rtl" : "ltr" }}
-          >
+          <div className="receipt" ref={invoiceRef}>
             {/* header */}
             <div className="header">
               <div className="logo">
@@ -91,15 +64,19 @@ export default function ReceiptModal({ show, setShow }) {
               <div className="head">
                 <h6>{t("receipt.flightDetails")}</h6>
                 <h6>
-                  {t("receipt.flightNumber")} : <span>WKI7437</span>
+                  {t("receipt.flightNumber")} :{" "}
+                  <span>{firstLeg?.flight_number}</span>
                 </h6>
               </div>
 
               <div className="flight_info">
                 <div className="airport">
                   <h6>{t("receipt.departure")}</h6>
-                  <span>1 Jul 2025, 08:00</span>
-                  <p>Amman International Airport (Amman)</p>
+                  <span>{formatDateTime(firstLeg?.departure_info?.date)}</span>
+                  <p>
+                    {firstLeg?.departure_info?.airport_name} (
+                    {firstLeg?.departure_info?.city_name})
+                  </p>
                 </div>
 
                 <div className="icon">
@@ -108,29 +85,35 @@ export default function ReceiptModal({ show, setShow }) {
 
                 <div className="airport">
                   <h6>{t("receipt.arrival")}</h6>
-                  <span>1 Jul 2025, 10:30</span>
-                  <p>King Khalid International Airport (Saudia Arabia)</p>
+                  <span>{formatDateTime(firstLeg?.arrival_info?.date)}</span>
+                  <p>
+                    {firstLeg?.arrival_info?.airport_name} (
+                    {firstLeg?.arrival_info?.city_name})
+                  </p>
                 </div>
               </div>
 
               <ul className="flight_details">
                 <li>
-                  {t("receipt.airLine")} : <span>Qatar Airways</span>
+                  {t("receipt.airLine")} :{" "}
+                  <span>{firstLeg?.airline_info?.carrier_name}</span>
                 </li>
                 <li>
                   {t("receipt.cabinClass")} : <span>Business</span>
                 </li>
                 <li>
-                  {t("receipt.numberOfPassengers")} : <span>5</span>
+                  {t("receipt.numberOfPassengers")} :{" "}
+                  <span>{trip.passengers}</span>
                 </li>
                 <li>
-                  {t("receipt.duration")} : <span>2h 30m</span>
+                  {t("receipt.duration")} : <span>{trip.duration}</span>
                 </li>
                 <li>
                   {t("receipt.baggageAllowance")} : <span>20kg</span>
                 </li>
                 <li>
-                  {t("receipt.flightNumber")} : <span>WKI7437</span>
+                  {t("receipt.flightNumber")} :{" "}
+                  <span>{firstLeg?.flight_number}</span>
                 </li>
                 <li>
                   {t("receipt.aircraft")} : <span>Boeing 747</span>
@@ -145,11 +128,13 @@ export default function ReceiptModal({ show, setShow }) {
             <div className="passengers">
               <table>
                 <thead>
-                  <th>{t("receipt.issueDate")}</th>
-                  <th>{t("receipt.name")}</th>
-                  <th>{t("receipt.passport")}</th>
-                  <th>{t("receipt.ticketNumber")}</th>
-                  <th>{t("receipt.seatNumber")}</th>
+                  <tr>
+                    <th>{t("receipt.issueDate")}</th>
+                    <th>{t("receipt.name")}</th>
+                    <th>{t("receipt.passport")}</th>
+                    <th>{t("receipt.ticketNumber")}</th>
+                    <th>{t("receipt.seatNumber")}</th>
+                  </tr>
                 </thead>
                 <tbody>
                   {passengers.map((passenger, index) => (
@@ -169,13 +154,15 @@ export default function ReceiptModal({ show, setShow }) {
             <div className="price">
               <ul>
                 <li>
-                  {t("receipt.price")} : <span>USD 1200</span>
+                  {t("receipt.price")} :{" "}
+                  <span>USD {reservationData.grand_total}</span>
                 </li>
                 <li>
                   {t("receipt.tax")} : <span>USD 200</span>
                 </li>
                 <li>
-                  {t("receipt.total")} : <span>USD 1400</span>
+                  {t("receipt.total")} :{" "}
+                  <span>USD {reservationData.grand_total}</span>
                 </li>
               </ul>
             </div>
@@ -189,8 +176,8 @@ export default function ReceiptModal({ show, setShow }) {
                   policy and, where your booking is made via a reservation
                   system provider (&quot;GDS&quot;), with its privacy policy.
                   These are available at{" "}
-                  <span>https://al3asal-travel-agency.vercel.app/privacy</span> or
-                  from the carrier or GDS directly. You should read this
+                  <span>https://al3asal-travel-agency.vercel.app/privacy</span>{" "}
+                  or from the carrier or GDS directly. You should read this
                   documentation, which applies to your booking and specifies,
                   for example, how your personal data is collected, stored,
                   used, disclosed and transferred.
@@ -208,4 +195,14 @@ export default function ReceiptModal({ show, setShow }) {
       </Modal.Body>
     </Modal>
   );
+}
+
+function formatDateTime(dateTimeString) {
+  if (!dateTimeString) return "N/A";
+  const date = new Date(dateTimeString);
+  return `${date.toLocaleDateString()}, ${date.toLocaleTimeString("en-US", {
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+  })}`;
 }

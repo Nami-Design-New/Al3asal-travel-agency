@@ -5,7 +5,7 @@ import axiosInstance from "../utils/axiosInstance";
 import useGetProfile from "./useGetProfile";
 
 export default function useAuth() {
-  const { setAuthedUser } = useAuthedUserStore();
+  const { setAuthedUser, clearAuthedUser } = useAuthedUserStore();
   const [cookies, , removeCookie] = useCookies(["token"]);
   const token = cookies.token;
 
@@ -17,8 +17,9 @@ export default function useAuth() {
     } else {
       delete axiosInstance.defaults.headers.common["Authorization"];
       removeCookie("token", { path: "/" });
+      clearAuthedUser();
     }
-  }, [token, removeCookie]);
+  }, [token, removeCookie, clearAuthedUser]);
 
   const { data: profile, isLoading, error } = useGetProfile(!!token);
 

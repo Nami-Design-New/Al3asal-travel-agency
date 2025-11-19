@@ -3,85 +3,51 @@ import { useTranslation } from "react-i18next";
 import { Link } from "react-router";
 import MyTicket from "../ui/cards/MyTicket";
 import ReceiptModal from "../ui/modals/ReceiptModal";
+import useGetMyReservations from "../hooks/useGetMyReservations";
 
 export default function Trips() {
   const { t } = useTranslation();
   const [show, setShow] = useState(false);
-  const [activeTab, setActiveTab] = useState("upcoming");
+  const [selectedTrip, setSelectedTrip] = useState(null);
+  const { data, isLoading } = useGetMyReservations();
 
-  const trips = [
-    {
-      id: 1,
-      from: "TBS",
-      to: "AMS",
-      departureTime: "04:55",
-      arrivalTime: "09:35",
-      duration: "6h 40",
-      stops: "1 stop",
-      price: "890$",
-      date: "2025-06-15",
-      passengers: 2,
-      status: "upcoming",
-    },
-    {
-      id: 2,
-      from: "AMS",
-      to: "TBS",
-      departureTime: "19:45",
-      arrivalTime: "04:00",
-      duration: "6h 15",
-      stops: "1 stop",
-      price: "790$",
-      date: "2025-07-20",
-      passengers: 1,
-      status: "upcoming",
-    },
-  ];
+  const trips = data?.trips || [];
+
+  const handleTicketClick = (trip) => {
+    setSelectedTrip(trip);
+    setShow(true);
+  };
+
+  if (isLoading) {
+    return (
+      <div className="trips">
+        <div className="container">
+          <div className="header">
+            <h5>{t("profile.MyBookings")}</h5>
+          </div>
+          <div className="loading">Loading...</div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="trips">
       <div className="container">
         <div className="header">
           <h5>{t("profile.MyBookings")}</h5>
-          <div className="search-box">
-            <i className="fa-solid fa-magnifying-glass"></i>
-            <input
-              type="text"
-              className="form-control"
-              placeholder={t("profile.search")}
-            />
-          </div>
-        </div>
-
-        <div className="tabs">
-          <div
-            className={`tab ${activeTab === "upcoming" ? "active" : ""}`}
-            onClick={() => setActiveTab("upcoming")}
-          >
-            {t("profile.Upcoming")}
-          </div>
-          <div
-            className={`tab ${activeTab === "past" ? "active" : ""}`}
-            onClick={() => setActiveTab("past")}
-          >
-            {t("profile.Past")}
-          </div>
-          <div
-            className={`tab ${activeTab === "cancelled" ? "active" : ""}`}
-            onClick={() => setActiveTab("cancelled")}
-          >
-            {t("profile.Cancelled")}
-          </div>
         </div>
 
         <div className="trip-list">
-          {trips
-            .filter((trip) => trip.status === activeTab)
-            .map((trip) => (
-              <MyTicket trip={trip} key={trip.id} setShow={setShow} />
-            ))}
+          {trips.map((trip) => (
+            <MyTicket
+              trip={trip}
+              key={trip.id}
+              onClick={() => handleTicketClick(trip)}
+            />
+          ))}
 
-          {trips.filter((trip) => trip.status === activeTab).length === 0 && (
+          {trips.length === 0 && (
             <div className="no-data">
               <img src="/icons/noData.svg" alt="" />
               <h6>{t("profile.noData")}</h6>
@@ -92,7 +58,7 @@ export default function Trips() {
         </div>
       </div>
 
-      <ReceiptModal show={show} setShow={setShow} page="checkout" />
+      <ReceiptModal show={show} setShow={setShow} trip={selectedTrip} />
     </div>
   );
 }
