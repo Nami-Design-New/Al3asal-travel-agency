@@ -1,48 +1,35 @@
-import { useLayoutEffect } from "react";
+import { useEffect } from "react";
 import { useCookies } from "react-cookie";
-import { useNavigate } from "react-router";
+import { useAuthedUserStore } from "../stores/authedUser";
 import axiosInstance from "../utils/axiosInstance";
+import useGetProfile from "./useGetProfile";
 
 export default function useAuth() {
+  const { setAuthedUser } = useAuthedUserStore();
   const [cookies, , removeCookie] = useCookies(["token"]);
   const token = cookies.token;
-  const navigate = useNavigate();
 
-  useLayoutEffect(() => {
-    const requestInterceptor = axiosInstance.interceptors.request.use(
-      (config) => {
-        if (token) {
-          config.headers.Authorization = `Bearer ${token}`;
-        }
-        return config;
-      },
-      (error) => Promise.reject(error)
-    );
+  useEffect(() => {
+    if (token) {
+      axiosInstance.defaults.headers.common[
+        "Authorization"
+      ] = `Bearer ${token}`;
+    } else {
+      delete axiosInstance.defaults.headers.common["Authorization"];
+      removeCookie("token", { path: "/" });
+    }
+  }, [token, removeCookie]);
 
-    const responseInterceptor = axiosInstance.interceptors.response.use(
-      (response) => response,
-      async (error) => {
-        const originalRequest = error.config;
+  const { data: profile, isLoading, error } = useGetProfile(!!token);
 
-        if (error.response?.status === 401 && !originalRequest._retry) {
-          originalRequest._retry = true;
-          removeCookie("token", { path: "/" });
-          navigate("/", { replace: true });
-
-          return Promise.reject(error);
-        }
-
-        return Promise.reject(error);
-      }
-    );
-
-    return () => {
-      axiosInstance.interceptors.request.eject(requestInterceptor);
-      axiosInstance.interceptors.response.eject(responseInterceptor);
-    };
-  }, [token, removeCookie, navigate]);
+  useEffect(() => {
+    if (profile) {
+      setAuthedUser(profile);
+    }
+  }, [profile, setAuthedUser]);
 
   return {
-    isAuthed: !!token,
+    loading: isLoading,
+    isAuthed: !!profile && !error,
   };
 }
