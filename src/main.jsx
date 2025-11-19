@@ -3,6 +3,7 @@ import App from "./App";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { GoogleOAuthProvider } from "@react-oauth/google";
 import { CookiesProvider } from "react-cookie";
 
 const queryClient = new QueryClient({
@@ -25,7 +26,9 @@ root.render(
   <QueryClientProvider client={queryClient}>
     <CookiesProvider>
       <ReactQueryDevtools initialIsOpen={false} />
-      <App />
+      <GoogleOAuthProvider clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID}>
+        <App />
+      </GoogleOAuthProvider>
     </CookiesProvider>
   </QueryClientProvider>
 );

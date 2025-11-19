@@ -87,11 +87,7 @@ export default function Trips() {
 
   return (
     <div className="trips">
-      <div className="container">
-        <div className="header">
-          <h5>{t("profile.MyBookings")}</h5>
-        </div>
-
+      <div className="container p-0">
         <div className="trip-list">
           {trips.map((trip) => (
             <MyTicket
