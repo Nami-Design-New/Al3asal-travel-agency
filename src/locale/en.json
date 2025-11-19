@@ -432,14 +432,10 @@
     "gender": "Gender"
   },
   "receipt": {
-    "al3asal": "Al3asal Travel & Tourism",
-    "flightNumber": "Flight Number",
+    "invoice": "Invoice",
+    "al3asal": "Al3asal",
     "flightDetails": "Flight Details",
-    "issueDate": "Issue Date",
-    "passport": "Passport Number",
-    "name": "Passenger Name",
-    "ticketNumber": "Ticket Number",
-    "seatNumber": " Seat Number",
+    "flightNumber": "Flight Number",
     "departure": "Departure",
     "arrival": "Arrival",
     "airLine": "Airline",
@@ -448,10 +444,20 @@
     "duration": "Duration",
     "baggageAllowance": "Baggage Allowance",
     "aircraft": "Aircraft",
+    "gate": "Gate",
+    "issueDate": "Issue Date",
+    "name": "Name",
+    "passport": "Passport",
+    "ticketNumber": "Ticket Number",
+    "seatNumber": "Seat Number",
     "price": "Price",
     "tax": "Tax",
     "total": "Total",
-    "gate": "Gate Number"
+    "notAvailable": "N/A",
+    "toBeAssigned": "TBA",
+    "economy": "Economy",
+    "piece": "piece",
+    "dataProtectionNotice": "Data Protection Notice: Your personal data will be processed in accordance with the applicable carrier's privacy policy and, where your booking is made via a reservation system provider (\"GDS\"), with its privacy policy. These are available at https://al3asal-travel-agency.vercel.app/privacy or from the carrier or GDS directly. You should read this documentation, which applies to your booking and specifies, for example, how your personal data is collected, stored, used, disclosed and transferred."
   },
   "validation": {
     "required": "This field is required",
@@ -486,5 +492,11 @@
   "toast": {
     "profile_updated_success": "Profile updated successfully",
     "profile_update_error": "Failed to update profile"
+  },
+  "flight": {
+    "nonstop": "Nonstop",
+    "oneStop": "1 stop",
+    "multiStops": "{{count}} stops",
+    "passengers": "passengers"
   }
 }

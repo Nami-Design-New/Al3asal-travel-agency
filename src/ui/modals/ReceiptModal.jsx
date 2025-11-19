@@ -3,30 +3,54 @@ import { Modal } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import { useReactToPrint } from "react-to-print";
 
-export default function ReceiptModal({ show, setShow, trip }) {
+export default function ReceiptModal({ show, setShow, reservationData }) {
   const { t } = useTranslation();
   const invoiceRef = useRef();
 
   const handlePrint = useReactToPrint({
     contentRef: invoiceRef,
-    documentTitle: "Invoice",
+    documentTitle: t("receipt.invoice"),
     onAfterPrint: () => setShow(false),
   });
 
-  if (!trip) return null;
+  if (
+    !reservationData ||
+    !reservationData.flight_details ||
+    !reservationData.flight_details.depart_flight ||
+    !reservationData.flight_details.depart_flight.legs ||
+    reservationData.flight_details.depart_flight.legs.length === 0
+  ) {
+    return null;
+  }
 
-  const reservationData = trip.reservationData;
-  const firstBook = reservationData?.book_details?.books[0];
-  const firstLeg = reservationData?.flight_details?.depart_flight?.legs[0];
+  const departFlight = reservationData.flight_details.depart_flight;
+  const departFirstLeg = departFlight.legs[0];
+  const departLastLeg = departFlight.legs[departFlight.legs.length - 1];
 
   const passengers =
-    firstBook?.pax_list?.map((passenger) => ({
-      issueDate: new Date().toISOString().split("T")[0],
-      name: `${passenger.name} ${passenger.lastname}`,
-      passport: passenger.identity_info?.passport?.no || "N/A",
-      ticketNumber: passenger.eticket || "N/A",
-      seatNumber: "N/A",
-    })) || [];
+    reservationData.book_details?.books?.flatMap((book) =>
+      book.pax_list?.map((pax) => ({
+        issueDate: reservationData.reserved_at,
+        name: `${pax.name || ""} ${pax.lastname || ""}`.trim(),
+        passport: pax.identity_info?.passport?.no || t("receipt.notAvailable"),
+        ticketNumber: pax.eticket || t("receipt.notAvailable"),
+        seatNumber: t("receipt.toBeAssigned"),
+      }))
+    ) || [];
+
+  const totalDuration = departFlight.legs.reduce(
+    (total, leg) => total + (leg.time_info?.leg_duration_time_minute || 0),
+    0
+  );
+  const hours = Math.floor(totalDuration / 60);
+  const minutes = totalDuration % 60;
+
+  const fareDetail = departFlight.fares?.[0]?.fare_info?.fare_detail;
+  const firstFare = departFlight.fares?.[0];
+  const cabinType =
+    firstFare?.fare_info?.cabin_types?.[0] || t("receipt.economy");
+  const baggageAllowance =
+    firstFare?.fare_info?.pax_fares?.[0]?.cabin_baggage_allowances?.[0];
 
   return (
     <Modal
@@ -65,17 +89,31 @@ export default function ReceiptModal({ show, setShow, trip }) {
                 <h6>{t("receipt.flightDetails")}</h6>
                 <h6>
                   {t("receipt.flightNumber")} :{" "}
-                  <span>{firstLeg?.flight_number}</span>
+                  <span>{departFirstLeg.flight_number}</span>
                 </h6>
               </div>
 
               <div className="flight_info">
                 <div className="airport">
                   <h6>{t("receipt.departure")}</h6>
-                  <span>{formatDateTime(firstLeg?.departure_info?.date)}</span>
+                  <span>
+                    {new Date(
+                      departFirstLeg.departure_info?.date || ""
+                    ).toLocaleString("en-GB", {
+                      day: "numeric",
+                      month: "short",
+                      year: "numeric",
+                      hour: "2-digit",
+                      minute: "2-digit",
+                    })}
+                  </span>
                   <p>
-                    {firstLeg?.departure_info?.airport_name} (
-                    {firstLeg?.departure_info?.city_name})
+                    {departFirstLeg.departure_info?.airport_name ||
+                      t("receipt.notAvailable")}{" "}
+                    (
+                    {departFirstLeg.departure_info?.city_name ||
+                      t("receipt.notAvailable")}
+                    )
                   </p>
                 </div>
 
@@ -85,10 +123,24 @@ export default function ReceiptModal({ show, setShow, trip }) {
 
                 <div className="airport">
                   <h6>{t("receipt.arrival")}</h6>
-                  <span>{formatDateTime(firstLeg?.arrival_info?.date)}</span>
+                  <span>
+                    {new Date(
+                      departLastLeg.arrival_info?.date || ""
+                    ).toLocaleString("en-GB", {
+                      day: "numeric",
+                      month: "short",
+                      year: "numeric",
+                      hour: "2-digit",
+                      minute: "2-digit",
+                    })}
+                  </span>
                   <p>
-                    {firstLeg?.arrival_info?.airport_name} (
-                    {firstLeg?.arrival_info?.city_name})
+                    {departLastLeg.arrival_info?.airport_name ||
+                      t("receipt.notAvailable")}{" "}
+                    (
+                    {departLastLeg.arrival_info?.city_name ||
+                      t("receipt.notAvailable")}
+                    )
                   </p>
                 </div>
               </div>
@@ -96,30 +148,47 @@ export default function ReceiptModal({ show, setShow, trip }) {
               <ul className="flight_details">
                 <li>
                   {t("receipt.airLine")} :{" "}
-                  <span>{firstLeg?.airline_info?.carrier_name}</span>
+                  <span>
+                    {departFirstLeg.airline_info?.carrier_name ||
+                      t("receipt.notAvailable")}
+                  </span>
                 </li>
                 <li>
-                  {t("receipt.cabinClass")} : <span>Business</span>
+                  {t("receipt.cabinClass")} : <span>{cabinType}</span>
                 </li>
                 <li>
                   {t("receipt.numberOfPassengers")} :{" "}
-                  <span>{trip.passengers}</span>
+                  <span>{passengers.length}</span>
                 </li>
                 <li>
-                  {t("receipt.duration")} : <span>{trip.duration}</span>
+                  {t("receipt.duration")} :{" "}
+                  <span>
+                    {hours}h {minutes}m
+                  </span>
                 </li>
                 <li>
-                  {t("receipt.baggageAllowance")} : <span>20kg</span>
+                  {t("receipt.baggageAllowance")} :{" "}
+                  <span>
+                    {baggageAllowance?.amount || 1} {t("receipt.piece")}
+                  </span>
                 </li>
                 <li>
                   {t("receipt.flightNumber")} :{" "}
-                  <span>{firstLeg?.flight_number}</span>
+                  <span>{departFirstLeg.flight_number}</span>
                 </li>
                 <li>
-                  {t("receipt.aircraft")} : <span>Boeing 747</span>
+                  {t("receipt.aircraft")} :{" "}
+                  <span>
+                    {departFirstLeg.airline_info?.operator_name ||
+                      t("receipt.notAvailable")}
+                  </span>
                 </li>
                 <li>
-                  {t("receipt.gate")} : <span>A3</span>
+                  {t("receipt.gate")} :{" "}
+                  <span>
+                    {departFirstLeg.departure_info?.terminal_no ||
+                      t("receipt.toBeAssigned")}
+                  </span>
                 </li>
               </ul>
             </div>
@@ -155,14 +224,24 @@ export default function ReceiptModal({ show, setShow, trip }) {
               <ul>
                 <li>
                   {t("receipt.price")} :{" "}
-                  <span>USD {reservationData.grand_total}</span>
+                  <span>
+                    {fareDetail?.currency_code || "USD"}{" "}
+                    {fareDetail?.price_info?.base_fare?.toFixed(2) || "0.00"}
+                  </span>
                 </li>
                 <li>
-                  {t("receipt.tax")} : <span>USD 200</span>
+                  {t("receipt.tax")} :{" "}
+                  <span>
+                    {fareDetail?.currency_code || "USD"}{" "}
+                    {fareDetail?.price_info?.tax?.toFixed(2) || "0.00"}
+                  </span>
                 </li>
                 <li>
                   {t("receipt.total")} :{" "}
-                  <span>USD {reservationData.grand_total}</span>
+                  <span>
+                    {fareDetail?.currency_code || "USD"}{" "}
+                    {fareDetail?.price_info?.total_fare?.toFixed(2) || "0.00"}
+                  </span>
                 </li>
               </ul>
             </div>
@@ -170,18 +249,7 @@ export default function ReceiptModal({ show, setShow, trip }) {
             {/* protection */}
             <div className="protection_note">
               <div className="note">
-                <p>
-                  Data Protection Notice: Your personal data will be processed
-                  in accordance with the applicable carrier&apos;s privacy
-                  policy and, where your booking is made via a reservation
-                  system provider (&quot;GDS&quot;), with its privacy policy.
-                  These are available at{" "}
-                  <span>https://al3asal-travel-agency.vercel.app/privacy</span>{" "}
-                  or from the carrier or GDS directly. You should read this
-                  documentation, which applies to your booking and specifies,
-                  for example, how your personal data is collected, stored,
-                  used, disclosed and transferred.
-                </p>
+                <p>{t("receipt.dataProtectionNotice")}</p>
               </div>
             </div>
           </div>
@@ -195,14 +263,4 @@ export default function ReceiptModal({ show, setShow, trip }) {
       </Modal.Body>
     </Modal>
   );
-}
-
-function formatDateTime(dateTimeString) {
-  if (!dateTimeString) return "N/A";
-  const date = new Date(dateTimeString);
-  return `${date.toLocaleDateString()}, ${date.toLocaleTimeString("en-US", {
-    hour: "2-digit",
-    minute: "2-digit",
-    hour12: false,
-  })}`;
 }
