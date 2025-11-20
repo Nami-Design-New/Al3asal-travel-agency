@@ -229,6 +229,7 @@
       border-left: 0 !important;
       flex-wrap: wrap;
       gap: 24px;
+      flex-direction: column;
     }
 
     .departure {
@@ -239,6 +240,7 @@
 
       @media screen and (max-width: 768px) {
         order: 3;
+        width: 100%;
       }
 
       .time {
@@ -350,6 +352,7 @@
 
       @media screen and (max-width: 768px) {
         order: 1;
+        width: 100%;
       }
 
       .content {
