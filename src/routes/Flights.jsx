@@ -1,6 +1,6 @@
 import { useState } from "react";
 import FilterFlights from "../components/filter/FilterFlights";
-import SortingFilter from "../components/flights/SortingFilter";
+// import SortingFilter from "../components/flights/SortingFilter";
 import FlightDetails from "../ui/modals/FlightDetails";
 import useGetTickets from "../hooks/useGetTickets";
 import useSearchStore from "../stores/searchStore";
@@ -35,7 +35,7 @@ export default function Flights() {
         <div className="row mt-2">
           <div className="col-12 p-2">
             <div className="results">
-              <SortingFilter />
+              {/* <SortingFilter /> */}
 
               {/* Depart flights only when not loading */}
               {!showReturnFlights && !isLoadingData && (
