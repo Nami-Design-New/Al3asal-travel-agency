@@ -1838,6 +1838,8 @@ body main .filter_container .flights_level {
   padding: 10px 16px;
   border-radius: 8px;
   font-size: 14px;
+  color: #000;
+  height: 41.6px;
   border: 1px solid #f4f4f4;
 }
 @media screen and (max-width: 576px) {
