@@ -400,10 +400,10 @@
     "deleteAccount": "Delete Account",
     "helpSupport": "Help & Support",
     "search": "Search for booking",
-    "Upcoming": "Upcoming",
-    "Past": "Past",
+    "current": "current",
+    "previous": "previous",
     "Cancelled": "Cancelled",
-    "noData": "No upcoming trips found",
+    "noData": "No current trips found",
     "noDataText": "Once you book any trips, you'll see them here.",
     "bookNow": "Book Now",
     "fullName": "Full Name",
@@ -498,5 +498,8 @@
     "oneStop": "1 stop",
     "multiStops": "{{count}} stops",
     "passengers": "passengers"
-  }
+  },
+  "booking_success": "Your booking has been confirmed successfully! You will receive an email with your ticket details shortly.",
+  "booking_error": "Sorry, we were unable to complete your booking. Please try again or contact support if the problem persists.",
+  "booking_refunded": "Your booking has been cancelled and the refund has been processed. The amount will appear in your account within 3-5 business days."
 }

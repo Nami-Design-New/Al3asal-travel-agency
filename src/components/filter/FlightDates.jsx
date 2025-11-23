@@ -14,14 +14,16 @@ export default function FlightDates() {
   const { lang } = useSettingsStore();
   const { flightsFilter, updateFilter } = useSearchStore();
 
+  const today = new Date();
+
   const [dateRange, setDateRange] = useState([
     {
       startDate: flightsFilter.departure_date
         ? new Date(flightsFilter.departure_date)
-        : new Date(),
+        : today,
       endDate: flightsFilter.return_date
         ? new Date(flightsFilter.return_date)
-        : new Date(),
+        : today,
       key: "selection",
     },
   ]);
@@ -97,11 +99,11 @@ export default function FlightDates() {
                 date={
                   flightsFilter.departure_date
                     ? new Date(flightsFilter.departure_date)
-                    : new Date()
+                    : today
                 }
                 onChange={handleOneWayChange}
                 locale={lang === "en" ? enUS : ar}
-                minDate={new Date()}
+                minDate={today}
                 color="#0d6efd"
               />
             ) : (
@@ -115,6 +117,7 @@ export default function FlightDates() {
                 direction="horizontal"
                 showDateDisplay={false}
                 rangeColors={["#0d6efd"]}
+                minDate={today}
               />
             )}
           </div>

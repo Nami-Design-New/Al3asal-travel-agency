@@ -26,6 +26,8 @@ export default function useBookFlight() {
         navigate("/profile/bookings");
       } else if (event.data.status === "failed") {
         toast.error(t("booking_error"));
+      } else if (event.data.status === "refunded") {
+        toast.error(t("booking_refunded"));
       }
     });
   }

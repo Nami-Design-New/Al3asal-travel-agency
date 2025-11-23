@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router";
+import { Link, useSearchParams } from "react-router";
 import MyTicket from "../ui/cards/MyTicket";
 import ReceiptModal from "../ui/modals/ReceiptModal";
 import useGetMyReservations from "../hooks/useGetMyReservations";
@@ -9,6 +9,8 @@ export default function Trips() {
   const { t } = useTranslation();
   const [show, setShow] = useState(false);
   const [selectedReservation, setSelectedReservation] = useState(null);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeTab = searchParams.get("tab") || "current";
   const { data, isLoading } = useGetMyReservations();
 
   const transformReservationToTrip = (reservation) => {
@@ -30,10 +32,10 @@ export default function Trips() {
 
     const departDate = new Date(departFirstLeg.departure_info.date);
     const today = new Date();
-    let status = "upcoming";
+    let status = "current";
 
     if (departDate < today) {
-      status = reservation.status === "cancelled" ? "cancelled" : "past";
+      status = reservation.status === "cancelled" ? "cancelled" : "previous";
     } else if (reservation.status === "cancelled") {
       status = "cancelled";
     }
@@ -88,6 +90,22 @@ export default function Trips() {
   return (
     <div className="trips">
       <div className="container p-0">
+        <div className="tabs">
+          <div
+            className={`tab ${activeTab === "current" ? "active" : ""}`}
+            onClick={() => setSearchParams({ tab: "current" })}
+          >
+            {t("profile.current")}
+          </div>
+
+          <div
+            className={`tab ${activeTab === "previous" ? "active" : ""}`}
+            onClick={() => setSearchParams({ tab: "previous" })}
+          >
+            {t("profile.previous")}
+          </div>
+        </div>
+
         <div className="trip-list">
           {trips.map((trip) => (
             <MyTicket
