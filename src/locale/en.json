@@ -489,10 +489,6 @@
   "dateRequired": "Date is required",
   "bookingRequired": "Booking number is required",
   "sureYouWantDeleteYourAccount": "Are you sure you want to delete your account?",
-  "toast": {
-    "profile_updated_success": "Profile updated successfully",
-    "profile_update_error": "Failed to update profile"
-  },
   "flight": {
     "nonstop": "Nonstop",
     "oneStop": "1 stop",
@@ -501,5 +497,7 @@
   },
   "booking_success": "Your booking has been confirmed successfully! You will receive an email with your ticket details shortly.",
   "booking_error": "Sorry, we were unable to complete your booking. Please try again or contact support if the problem persists.",
-  "booking_refunded": "Your booking has been cancelled and the refund has been processed. The amount will appear in your account within 3-5 business days."
+  "booking_refunded": "Your booking has been cancelled and the refund has been processed. The amount will appear in your account within 3-5 business days.",
+  "profile_updated_success": "Profile updated successfully",
+  "profile_update_error": "Failed to update profile"
 }
