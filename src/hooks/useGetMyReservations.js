@@ -4,7 +4,7 @@ import { useSearchParams } from "react-router";
 
 export default function useGetMyReservations() {
   const [searchParams] = useSearchParams();
-  const type = searchParams.get("data") || "current";
+  const type = searchParams.get("tab") || "current";
 
   const { data, isLoading } = useQuery({
     queryKey: ["my-reservations", type],
