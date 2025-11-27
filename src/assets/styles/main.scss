@@ -89,12 +89,30 @@ body {
       }
     }
 
+    .faq_section .accordion .accordion-item .accordion-button::after {
+      margin-left: auto;
+      margin-right: 0;
+    }
+
     main .top_destinations .link {
       left: initial !important;
       right: 16px !important;
       i {
         transform: scale(1) !important;
       }
+    }
+
+    main .blog_section .title a i {
+      transform: scale(1);
+    }
+
+    main .blog_card .content {
+      direction: ltr;
+    }
+
+    main .filter_container .flight_specifications .places_menu .places_menu_content .clear_btn{
+      left: initial;
+      right: 16px;
     }
 
     .footer h5::after {

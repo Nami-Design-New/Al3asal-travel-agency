@@ -62,7 +62,7 @@ export default function FlightDetails({ show, setShow, page }) {
       size="lg"
       show={show}
       className="flight_details_modal"
-      onHide={() => setShow(false)}
+      onHide={() => !isPending && setShow(false)}
     >
       <Modal.Header closeButton className="header">
         <h6>{t("flights.flightDetails")}</h6>

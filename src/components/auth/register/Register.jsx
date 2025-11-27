@@ -17,6 +17,7 @@ export default function Register() {
   const handlePhoneChange = (value, country) => {
     methods.setValue("phone_code", `+${country.dialCode}`);
     methods.setValue("phone", value.replace(country.dialCode, ""));
+    methods.trigger("phone")
   };
 
   return (

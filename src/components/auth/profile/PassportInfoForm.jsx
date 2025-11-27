@@ -10,6 +10,9 @@ import ReactFlagsSelect from "react-flags-select";
 import SubmitButton from "../../../ui/forms/SubmitButton";
 import useUpdateProfile from "../../../hooks/useUpdateProfile";
 
+const today = new Date();
+today.setHours(0, 0, 0, 0);
+
 const schema = yup.object().shape({
   passport_holder_name: yup
     .string()
@@ -17,11 +20,22 @@ const schema = yup.object().shape({
   passport_nationality: yup
     .string()
     .required("validation.passportNationalityRequired"),
-  passport_number: yup.string().required("validation.passportNumberRequired"),
-  passport_end_date: yup.date().required("validation.passportEndDateRequired"),
+  passport_number: yup
+    .string()
+    .required("validation.passportNumberRequired")
+    .matches(
+      /^[A-Z0-9]{6,14}$/,
+      "validation.passportNumberInvalid"
+    ),
+  passport_end_date: yup
+    .date()
+    .required("validation.passportEndDateRequired")
+    .min(today, "validation.passportEndDateFuture"),
   passport_issuance_date: yup
     .date()
-    .required("validation.passportIssueDateRequired"),
+    .required("validation.passportIssueDateRequired")
+    .max(yup.ref("passport_end_date"), "validation.passportIssueDateBeforeExpiry")
+    .max(today, "validation.passportIssueDatePast"),
   passport_issuance_country: yup
     .string()
     .required("validation.passportIssueCountryRequired"),

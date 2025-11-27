@@ -17,8 +17,25 @@ export default function ContactForm() {
   const schema = yup.object().shape({
     name: yup.string().required(t("nameRequired")),
     email: yup.string().email(t("emailInvalid")).required(t("emailRequired")),
-    contact_category_id: yup.number().required(t("categoryRequired")),
-    contact_type_id: yup.number().required(t("typeRequired")),
+
+    contact_category_id: yup
+      .mixed()
+      .test("required", t("categoryRequired"), (value) => {
+        return value !== "" && value !== null && value !== undefined;
+      })
+      .test("is-number", t("categoryRequired"), (value) => {
+        return value === "" || !isNaN(Number(value));
+      }),
+
+    contact_type_id: yup
+      .mixed()
+      .test("required", t("typeRequired"), (value) => {
+        return value !== "" && value !== null && value !== undefined;
+      })
+      .test("is-number", t("typeRequired"), (value) => {
+        return value === "" || !isNaN(Number(value));
+      }),
+
     message: yup.string().required(t("messageRequired")),
 
     date: yup
@@ -51,17 +68,22 @@ export default function ContactForm() {
     },
   });
 
-  console.log(errors);
-
   const mutation = useMutation({
     mutationFn: (values) =>
       axiosInstance.post("/contacts", {
         ...values,
-        date: values.date.toISOString().split("T")[0],
+        contact_category_id: Number(values.contact_category_id),
+        contact_type_id: Number(values.contact_type_id),
+        date: values.date ? values.date.toISOString().split("T")[0] : "",
       }),
-    onSuccess: () => {
-      toast.success(t("contact.success"));
-      reset();
+    onSuccess: (res) => {
+      if (res.data.code === 200) {
+        toast.success(t("contact.success"));
+        reset();
+      }
+    },
+    onError: (error) => {
+      toast.error(error.response?.data?.message || t("contact.error"));
     },
   });
 

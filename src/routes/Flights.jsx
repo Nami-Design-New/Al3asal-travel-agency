@@ -1,6 +1,6 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import FilterFlights from "../components/filter/FilterFlights";
-// import SortingFilter from "../components/flights/SortingFilter";
 import FlightDetails from "../ui/modals/FlightDetails";
 import useGetTickets from "../hooks/useGetTickets";
 import useSearchStore from "../stores/searchStore";
@@ -11,6 +11,7 @@ import RoundTrip from "../components/flights/RoundTrip";
 
 export default function Flights() {
   const { flightsFilter } = useSearchStore();
+  const { t } = useTranslation();
   const [showReturnFlights, setShowReturnFlights] = useState(false);
   const [showFlightDetails, setShowFlightDetails] = useState(false);
 
@@ -35,7 +36,6 @@ export default function Flights() {
         <div className="row mt-2">
           <div className="col-12 p-2">
             <div className="results">
-              {/* <SortingFilter /> */}
 
               {/* Depart flights only when not loading */}
               {!showReturnFlights && !isLoadingData && (
@@ -62,13 +62,9 @@ export default function Flights() {
               {/* No results */}
               {!data && !isLoadingData && (
                 <div className="no_flights_available">
-                  <img src="/icons/no_flights.svg" alt="no-data" />
-                  <h2>NO FLIGHTS FOUND!.</h2>
-                  <p>
-                    We couldn&apos;t find any flights. You can change your
-                    search, remove filters, or check the calendar for available
-                    dates.
-                  </p>
+                  <img src="/icons/no_flights.svg" alt={t("no_flights_alt")} />
+                  <h2>{t("no_flights_found")}</h2>
+                  <p>{t("no_flights_message")}</p>
                 </div>
               )}
             </div>

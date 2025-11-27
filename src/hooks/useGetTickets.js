@@ -3,7 +3,7 @@ import useSearchStore from "../stores/searchStore";
 import axiosInstance from "../utils/axiosInstance";
 import useSettingsStore from "../stores/settingsStore";
 
-export default function useGetTickets() {
+export default function useGetTickets(enabled) {
   const { lang } = useSettingsStore();
   const { flightsFilter } = useSearchStore();
 
@@ -27,6 +27,7 @@ export default function useGetTickets() {
   const { data, isLoading, refetch, isFetching } = useQuery({
     queryKey: ["tickets", lang],
     queryFn: () => getTickets(payload),
+    enabled
   });
 
   return { data, isLoading, refetch, isFetching };

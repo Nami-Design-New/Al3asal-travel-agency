@@ -230,6 +230,7 @@
     .dropdown {
       width: 100%;
       max-width: 280px;
+      min-width: calc(100% / 2 - 8px);
 
       @media screen and (max-width: 576px) {
         max-width: unset;
@@ -402,7 +403,7 @@
         .clear_btn {
           position: absolute;
           top: 16px;
-          right: 16px;
+          left: 16px;
           font-size: 14px;
           z-index: 999;
         }

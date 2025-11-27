@@ -15,7 +15,7 @@ export default function ResetPassword2() {
   const { setStep, phone } = useAuthStore();
 
   const [timer, setTimer] = useState(60);
-  const [resendDisabled, setResendDisabled] = useState(false);
+  const [resendDisabled, setResendDisabled] = useState(true);
 
   useEffect(() => {
     if (timer > 0) {
@@ -63,18 +63,29 @@ export default function ResetPassword2() {
   };
 
   const handleResend = async () => {
+    if (resendDisabled) return;
+
     try {
+      setResendDisabled(true);
+      setTimer(60);
+
       const res = await axiosInstance.post("/auth/resend-verification-code", {
         ...phone,
         code,
       });
+
       if (res.data.code === 200) {
         toast.success(t("auth.resetLinkSent"));
-        setResendDisabled(true);
-        setTimer(60);
+      } else {
+        toast.error(res.data.message || t("auth.somethingWentWrong"));
+        setResendDisabled(false);
       }
     } catch (error) {
       console.log(error);
+      toast.error(
+        error.response?.data?.message || t("auth.somethingWentWrong")
+      );
+      setResendDisabled(false);
     }
   };
 
@@ -90,7 +101,14 @@ export default function ResetPassword2() {
         <div className="resend_code">
           <span className={`resend_link ${resendDisabled ? "disabled" : ""}`}>
             {t("auth.resend")}{" "}
-            <span style={{ cursor: "pointer" }} onClick={handleResend}>
+            <span
+              style={{
+                cursor: resendDisabled ? "not-allowed" : "pointer",
+                opacity: resendDisabled ? 0.5 : 1,
+                pointerEvents: resendDisabled ? "none" : "auto",
+              }}
+              onClick={handleResend}
+            >
               {t("auth.resendCode")}
             </span>
           </span>

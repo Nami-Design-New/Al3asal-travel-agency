@@ -11,7 +11,10 @@ export default function FilterFlights({ setShowReturnFlights }) {
   const { t } = useTranslation();
   const location = useLocation();
   const navigate = useNavigate();
-  const { refetch } = useGetTickets();
+
+  const { refetch, isLoading } = useGetTickets(
+    location.pathname === "/flights"
+  );
   const { setReturnFlight, setDepartFlight } = useFlightsStore();
 
   const onSubmitFilter = async (e) => {
@@ -34,8 +37,16 @@ export default function FilterFlights({ setShowReturnFlights }) {
         <FromToAirport />
         <FlightDates />
         <Travelers />
-        <button type="submit" className="search">
-          {t("flights.search")} <i className="fa-light fa-magnifying-glass"></i>
+
+        <button type="submit" className="search" disabled={isLoading}>
+          {t("flights.search")}{" "}
+          <i
+            className={
+              isLoading
+                ? "fa-regular fa-circle-notch fa-spin"
+                : "fa-light fa-magnifying-glass"
+            }
+          />
         </button>
       </div>
     </form>

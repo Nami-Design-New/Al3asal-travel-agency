@@ -46,7 +46,7 @@ export default function BlogSection({ blogs }) {
                 <SwiperSlide key={blog?.id}>
                   <BlogCard
                     title={blog?.title}
-                    date={blog?.date}
+                    date={blog?.created_at}
                     image={blog?.image}
                     id={blog?.id}
                   />

@@ -10,6 +10,10 @@
     a {
       color: $main;
       font-size: 14px;
+
+      i {
+        transform: scale(-1);
+      }
     }
   }
 }
@@ -40,6 +44,7 @@
     flex-direction: column;
     gap: 12px;
     padding: 16px;
+    direction: rtl;
     h5 {
       font-size: 14px;
       color: $black;
@@ -63,16 +68,16 @@
 
   .blog_header {
     margin-bottom: 30px;
-  
+
     h1 {
       font-size: 1.8rem;
       margin-bottom: 16px;
       color: #333;
     }
-  
+
     .tags {
       margin-bottom: 12px;
-  
+
       span {
         display: inline-block;
         background: #eee;
@@ -83,37 +88,37 @@
         margin-left: 6px;
       }
     }
-  
+
     .blog_header_actions {
       display: flex;
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
       gap: 15px;
-  
+
       .date {
         font-size: 0.85rem;
         color: #888;
-  
+
         i {
           margin-inline: 6px;
         }
       }
-  
+
       .share_section {
         display: flex;
         align-items: center;
         gap: 10px;
-  
+
         i {
           color: #666;
           font-size: 1rem;
         }
-  
+
         .share_buttons {
           display: flex;
           gap: 8px;
-  
+
           button {
             background: $main;
             border: none;
@@ -123,16 +128,15 @@
             font-size: 0.8rem;
             cursor: pointer;
             transition: 0.3s;
-  
+
             &:hover {
-             opacity: 0.8;
+              opacity: 0.8;
             }
           }
         }
       }
     }
   }
-  
 
   .blog_image {
     aspect-ratio: 4 / 2;
@@ -214,7 +218,7 @@
     border-radius: 8px;
     position: sticky;
     top: 120px;
-  
+
     h3 {
       font-size: 1.1rem;
       margin-bottom: 16px;
@@ -222,24 +226,24 @@
       border-bottom: 1px solid #ddd;
       padding-bottom: 6px;
     }
-  
+
     ul {
       list-style: none;
       padding: 0;
       margin: 0;
-  
+
       li {
         margin-bottom: 15px;
-  
+
         a {
           text-decoration: none;
           color: #333;
-  
+
           .blog_item {
             display: flex;
             align-items: flex-start;
             gap: 10px;
-  
+
             img {
               width: 70px;
               height: 50px;
@@ -247,7 +251,7 @@
               border-radius: 5px;
               flex-shrink: 0;
             }
-  
+
             .blog_info {
               h4 {
                 font-size: 0.95rem;
@@ -255,14 +259,14 @@
                 line-height: 1.4;
                 transition: color 0.3s;
               }
-  
+
               .date {
                 font-size: 0.75rem;
                 color: #999;
               }
             }
           }
-  
+
           &:hover {
             .blog_info h4 {
               color: $main;
@@ -272,5 +276,4 @@
       }
     }
   }
-  
 }

@@ -1865,6 +1865,7 @@ body main .filter_container .flight_specifications {
 body main .filter_container .flight_specifications .dropdown {
   width: 100%;
   max-width: 280px;
+  min-width: calc(50% - 8px);
 }
 @media screen and (max-width: 576px) {
   body main .filter_container .flight_specifications .dropdown {
@@ -2041,7 +2042,7 @@ body main .filter_container .flight_specifications .places_menu .places_menu_con
 body main .filter_container .flight_specifications .places_menu .places_menu_content .clear_btn {
   position: absolute;
   top: 16px;
-  right: 16px;
+  left: 16px;
   font-size: 14px;
   z-index: 999;
 }
@@ -2477,7 +2478,7 @@ body main .flights .return_flight {
   }
 }
 body main .no_flights_available {
-  height: 300px;
+  height: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2983,8 +2984,8 @@ body main .faq_section .accordion .accordion-item .accordion-button::after {
   font-weight: 400;
   transform: rotate(135deg);
   transform-origin: center;
-  margin-right: 0;
-  margin-left: auto;
+  margin-right: auto;
+  margin-left: 0;
 }
 body main .faq_section .accordion .accordion-item .accordion-button:not(.collapsed)::after {
   transform: rotate(0deg);
@@ -3555,6 +3556,9 @@ body main .blog_section .title a {
   color: #54a0c4;
   font-size: 14px;
 }
+body main .blog_section .title a i {
+  transform: scale(-1);
+}
 body main .swiper-slide {
   height: auto;
 }
@@ -3580,6 +3584,7 @@ body main .blog_card .content {
   flex-direction: column;
   gap: 12px;
   padding: 16px;
+  direction: rtl;
 }
 body main .blog_card .content h5 {
   font-size: 14px;
@@ -4201,12 +4206,26 @@ body.en .form_ui .input-field .pass-group .show-pass {
   border-left: 0;
   border-right: 1px solid #f4f4f4;
 }
+body.en .faq_section .accordion .accordion-item .accordion-button::after {
+  margin-left: auto;
+  margin-right: 0;
+}
 body.en main .top_destinations .link {
   left: initial !important;
   right: 16px !important;
 }
 body.en main .top_destinations .link i {
   transform: scale(1) !important;
+}
+body.en main .blog_section .title a i {
+  transform: scale(1);
+}
+body.en main .blog_card .content {
+  direction: ltr;
+}
+body.en main .filter_container .flight_specifications .places_menu .places_menu_content .clear_btn {
+  left: initial;
+  right: 16px;
 }
 body.en .footer h5::after {
   background: radial-gradient(90% 70% at 0% 20%, #54a0c4, rgba(238, 238, 238, 0));
