@@ -85,7 +85,9 @@
     "accountVerified": "Account successfully verified",
     "resetLinkSent": "The confirmation code has been resent successfully",
     "passwordResetSuccess": "Password reset successful. You can now log in with your new password.",
-    "somethingWentWrong": "Something went wrong. Please try again later."
+    "somethingWentWrong": "Something went wrong. Please try again later.",
+    "loginError": "Login failed, please check your credentials",
+    "googleLoginError": "Google login failed, please try again"
   },
   "flights": {
     "oneWay": "One Way",
@@ -465,6 +467,7 @@
     "passwordComplexity": "Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character",
     "min": "Must be at least {{min}} characters",
     "max": "Must be no more than {{max}} characters",
+    "onlyNumbers": "Only numbers are allowed",
     "passwordMatch": "Passwords do not match",
     "terms": "You must agree to the terms and conditions",
     "alphaNumericOnly": "Only letters and numbers are allowed",

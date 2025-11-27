@@ -1,8 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
 import useSearchStore from "../stores/searchStore";
 import axiosInstance from "../utils/axiosInstance";
+import useSettingsStore from "../stores/settingsStore";
 
 export default function useGetTickets() {
+  const { lang } = useSettingsStore();
   const { flightsFilter } = useSearchStore();
 
   const payload = {
@@ -23,9 +25,8 @@ export default function useGetTickets() {
   }
 
   const { data, isLoading, refetch, isFetching } = useQuery({
-    queryKey: ["tickets"],
+    queryKey: ["tickets", lang],
     queryFn: () => getTickets(payload),
-    
   });
 
   return { data, isLoading, refetch, isFetching };

@@ -1,11 +1,13 @@
 import { useQuery } from "@tanstack/react-query";
 import axiosInstance from "../utils/axiosInstance";
+import useSettingsStore from "../stores/settingsStore";
 
 export default function useGetAboutPage() {
+  const { lang } = useSettingsStore();
+
   const { data, isLoading } = useQuery({
-    queryKey: ["about-page"],
+    queryKey: ["about-page", lang],
     queryFn: () => getAboutPage(),
-    
   });
 
   return { data, isLoading };

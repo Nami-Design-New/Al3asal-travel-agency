@@ -1,11 +1,13 @@
 import { useQuery } from "@tanstack/react-query";
 import axiosInstance from "../utils/axiosInstance";
+import useSettingsStore from "../stores/settingsStore";
 
 export default function useGetSettings() {
+  const { lang } = useSettingsStore();
+
   const { data, isLoading } = useQuery({
-    queryKey: ["settings"],
+    queryKey: ["settings", lang],
     queryFn: () => getSettings(),
-    
   });
 
   return { data, isLoading };

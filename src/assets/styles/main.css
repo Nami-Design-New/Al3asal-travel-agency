@@ -1361,11 +1361,11 @@ header nav .actions .user_dropdown i {
   background: #fafafa;
   border: 1px solid #f4f4f4;
   border-right: 0;
-  border-radius: 12px 0 0 12px !important;
+  border-radius: 12px 0 0 12px;
 }
 .form_ui .input-field .pass-group input {
-  border-left: 0 !important;
-  border-radius: 0 12px 12px 0 !important;
+  border-left: 0;
+  border-radius: 0 12px 12px 0;
 }
 .form_ui .input-field input,
 .form_ui .input-field select,
@@ -1589,6 +1589,9 @@ body {
   overflow-x: hidden;
   scrollbar-width: none;
   font-family: "Baloo Bhaijaan 2", sans-serif;
+}
+body .invalid-feedback {
+  display: block;
 }
 body .confirmation_modal p {
   margin-top: 16px;
@@ -4189,14 +4192,14 @@ body.en {
   direction: ltr;
 }
 body.en .form_ui .input-field .pass-group input {
-  border-radius: 12px 0 0 12px !important;
+  border-radius: 12px 0 0 12px;
   border-right: 0 !important;
-  border-left: 1px solid #f4f4f4 !important;
+  border-left: 1px solid #f4f4f4;
 }
 body.en .form_ui .input-field .pass-group .show-pass {
-  border-radius: 0 12px 12px 0 !important;
-  border-left: 0 !important;
-  border-right: 1px solid #f4f4f4 !important;
+  border-radius: 0 12px 12px 0;
+  border-left: 0;
+  border-right: 1px solid #f4f4f4;
 }
 body.en main .top_destinations .link {
   left: initial !important;

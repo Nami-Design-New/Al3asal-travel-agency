@@ -5,7 +5,7 @@ import SubmitButton from "../../../ui/forms/SubmitButton";
 import useAuthStore from "../../../stores/authStore";
 import useLogin from "./useLogin";
 import { FormProvider } from "react-hook-form";
-import GoogleBtn from "./GoogleBtn";
+import GoogleBtn from "../GoogleBtn";
 
 export default function Login() {
   const { t } = useTranslation();
@@ -59,10 +59,10 @@ export default function Login() {
           <div className="socials_login">
             <GoogleBtn/>
             
-            <button>
+            {/* <button>
               <img src="/icons/apple.svg" alt="google" />{" "}
               {t("auth.loginWithApple")}
-            </button>
+            </button> */}
           </div>
 
           <p className="register_link">

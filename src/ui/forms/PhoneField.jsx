@@ -4,7 +4,7 @@ import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 
 export default function PhoneField({ name, label, error, handleChange }) {
-  const { control } = useFormContext();
+  const { control, trigger } = useFormContext();
 
   return (
     <div className="input-field">
@@ -17,8 +17,12 @@ export default function PhoneField({ name, label, error, handleChange }) {
           <PhoneInput
             country="sy"
             enableSearch
-            value={field.value?.raw || ""}
-            onChange={(value, country) => handleChange(value, country)}
+            value={field.value || ""}
+            onChange={(value, country) => {
+              field.onChange(value);
+              handleChange(value, country);
+              trigger(name);
+            }}
             inputClass={error ? "is-invalid" : ""}
           />
         )}

@@ -6,6 +6,8 @@ import SubmitButton from "../../../ui/forms/SubmitButton";
 import useAuthStore from "../../../stores/authStore";
 import useRegister from "./useRegister";
 import PhoneField from "../../../ui/forms/PhoneField";
+import GoogleBtn from "../GoogleBtn";
+import GenderSelect from "../../../ui/forms/GenderSelect";
 
 export default function Register() {
   const { t } = useTranslation();
@@ -47,11 +49,26 @@ export default function Register() {
             error={methods.formState.errors.email?.message}
           />
 
+          <GenderSelect
+            name="gender"
+            label={t("profile.gender")}
+            value={methods.watch("gender")}
+            onChange={(e) => methods.setValue("gender", e.target.value)}
+            error={methods.formState.errors.gender?.message}
+          />
+
           <PasswordField
             label={t("auth.password")}
             placeholder={t("auth.enterPassword")}
             {...methods.register("password")}
             error={methods.formState.errors.password?.message}
+          />
+
+          <PasswordField
+            label={t("auth.confirmPassword")}
+            placeholder={t("auth.confirmPassword")}
+            {...methods.register("confirm_password")}
+            error={methods.formState.errors.confirm_password?.message}
           />
 
           <SubmitButton
@@ -65,14 +82,7 @@ export default function Register() {
           </div>
 
           <div className="socials_login">
-            <button>
-              <img src="/icons/google.svg" alt="google" />{" "}
-              {t("auth.loginWithGoogle")}
-            </button>
-            <button>
-              <img src="/icons/apple.svg" alt="google" />{" "}
-              {t("auth.loginWithApple")}
-            </button>
+            <GoogleBtn />
           </div>
 
           <p className="register_link">

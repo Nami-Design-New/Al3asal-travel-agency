@@ -1,9 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
 import axiosInstance from "../utils/axiosInstance";
+import useSettingsStore from "../stores/settingsStore";
 
 export default function useGetProfile(enabled) {
+  const { lang } = useSettingsStore();
+
   return useQuery({
-    queryKey: ["profile"],
+    queryKey: ["profile", lang],
     queryFn: () => getProfile(),
     enabled: enabled,
   });

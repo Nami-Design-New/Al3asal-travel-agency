@@ -1,15 +1,16 @@
 import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router";
 import axiosInstance from "../utils/axiosInstance";
+import useSettingsStore from "../stores/settingsStore";
 
 export default function useGetPost() {
   const params = useParams();
   const postId = params.id || "";
+  const { lang } = useSettingsStore();
 
   const { data, isLoading } = useQuery({
-    queryKey: ["post", postId],
+    queryKey: ["post", postId, lang],
     queryFn: () => getPost(postId),
-    
   });
 
   return { data, isLoading };

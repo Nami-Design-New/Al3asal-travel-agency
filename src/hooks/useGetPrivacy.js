@@ -1,11 +1,13 @@
 import { useQuery } from "@tanstack/react-query";
 import axiosInstance from "../utils/axiosInstance";
+import useSettingsStore from "../stores/settingsStore";
 
 export default function useGetPrivacy() {
+  const { lang } = useSettingsStore();
+
   const { data, isLoading } = useQuery({
-    queryKey: ["privacy"],
+    queryKey: ["privacy", lang],
     queryFn: () => getPrivacy(),
-    
   });
 
   return { data, isLoading };
