@@ -230,7 +230,10 @@
     .dropdown {
       width: 100%;
       max-width: 280px;
-      min-width: calc(100% / 2 - 8px);
+
+      &.f_tmenu {
+        min-width: calc(100% / 2 - 8px);
+      }
 
       @media screen and (max-width: 576px) {
         max-width: unset;

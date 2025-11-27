@@ -1865,6 +1865,8 @@ body main .filter_container .flight_specifications {
 body main .filter_container .flight_specifications .dropdown {
   width: 100%;
   max-width: 280px;
+}
+body main .filter_container .flight_specifications .dropdown.f_tmenu {
   min-width: calc(50% - 8px);
 }
 @media screen and (max-width: 576px) {

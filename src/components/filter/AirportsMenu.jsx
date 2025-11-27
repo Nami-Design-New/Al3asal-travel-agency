@@ -60,7 +60,7 @@ export default function AirportsMenu({ direction }) {
   };
 
   return (
-    <Dropdown show={show} onToggle={(isOpen) => setShow(isOpen)}>
+    <Dropdown show={show} onToggle={(isOpen) => setShow(isOpen)} className="f_tmenu">
       <Dropdown.Toggle className="filter_btn" onClick={() => setShow(!show)}>
         <i className="fa-regular fa-location-dot"></i>
         <p className="d-flex flex-column m-0 align-items-start">
