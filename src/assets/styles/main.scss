@@ -115,6 +115,10 @@ body {
       right: 16px;
     }
 
+    main .flights .round_trip_flight .center_devider span {
+      clip-path: polygon(0% 0%, 50% 50%, 0% 100%);
+    }
+
     .footer h5::after {
       background: radial-gradient(
         90% 70% at 0% 20%,

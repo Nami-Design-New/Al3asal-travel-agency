@@ -2441,8 +2441,8 @@ body main .flights .round_trip_flight .center_devider span {
   width: 100%;
   height: 100%;
   background: rgba(84, 160, 196, 0.2196078431);
-  -webkit-clip-path: polygon(0% 0%, 50% 50%, 0% 100%);
-          clip-path: polygon(0% 0%, 50% 50%, 0% 100%);
+  -webkit-clip-path: polygon(100% 0%, 100% 100%, 50% 50%);
+          clip-path: polygon(100% 0%, 100% 100%, 50% 50%);
 }
 body main .flights .round_trip_flight .center_devider.active {
   background: rgba(84, 160, 196, 0.2196078431);
@@ -4228,6 +4228,10 @@ body.en main .blog_card .content {
 body.en main .filter_container .flight_specifications .places_menu .places_menu_content .clear_btn {
   left: initial;
   right: 16px;
+}
+body.en main .flights .round_trip_flight .center_devider span {
+  -webkit-clip-path: polygon(0% 0%, 50% 50%, 0% 100%);
+          clip-path: polygon(0% 0%, 50% 50%, 0% 100%);
 }
 body.en .footer h5::after {
   background: radial-gradient(90% 70% at 0% 20%, #54a0c4, rgba(238, 238, 238, 0));
