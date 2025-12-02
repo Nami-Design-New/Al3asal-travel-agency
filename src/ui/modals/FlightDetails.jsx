@@ -8,10 +8,13 @@ import useFlightsStore from "../../stores/flightsStore";
 import axiosInstance from "../../utils/axiosInstance";
 import useSearchStore from "../../stores/searchStore";
 import SubmitButton from "../forms/SubmitButton";
+import useGetSettings from "../../hooks/useGetSettings";
 
 export default function FlightDetails({ show, setShow, page }) {
   const { t } = useTranslation();
   const navigate = useNavigate();
+  const { data: settings } = useGetSettings();
+  const profitPercentage = settings?.profit_percentage;
 
   const { dapart_flight, return_flight, setFareDetails } = useFlightsStore();
   const { flightsFilter } = useSearchStore();
@@ -26,18 +29,25 @@ export default function FlightDetails({ show, setShow, page }) {
   };
 
   const getTotalPrice = () => {
+    const calculatePriceWithProfit = (price) => {
+      if (!price || isNaN(price)) return 0;
+      const profit = (Number(price) * (Number(profitPercentage) || 0)) / 100;
+      return Number(price) + profit;
+    };
+
     const departPrice =
       dapart_flight?.fares?.[0]?.fare_info?.fare_detail?.price_info
         ?.total_fare || 0;
+    const departPriceWithProfit = calculatePriceWithProfit(departPrice);
+
     const returnPrice =
       return_flight?.fares?.[0]?.fare_info?.fare_detail?.price_info
         ?.total_fare || 0;
+    const returnPriceWithProfit = return_flight
+      ? calculatePriceWithProfit(returnPrice)
+      : 0;
 
-    if (return_flight) {
-      return departPrice + returnPrice;
-    }
-
-    return departPrice;
+    return departPriceWithProfit + returnPriceWithProfit;
   };
 
   const { mutate: getFareKey, isPending } = useMutation({

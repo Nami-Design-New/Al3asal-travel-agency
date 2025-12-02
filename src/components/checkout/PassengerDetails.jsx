@@ -10,12 +10,15 @@ import SubmitButton from "../../ui/forms/SubmitButton";
 import useSearchStore from "../../stores/searchStore";
 import useBookFlight from "../../hooks/useBookFlight";
 import useFlightsStore from "../../stores/flightsStore";
+import useGetSettings from "../../hooks/useGetSettings";
 
 export default function PassengerDetails() {
   const { flightsFilter } = useSearchStore();
   const { fare_details, dapart_flight, return_flight } = useFlightsStore();
   const { bookFlight, isPending } = useBookFlight();
   const [active, setActive] = useState(0);
+  const { data: settings } = useGetSettings();
+  const profitPercentage = settings?.profit_percentage;
 
   const paxDefaults = flightsFilter.pax_list.flatMap((pax) =>
     Array.from({ length: pax.count }, () => ({
@@ -100,13 +103,13 @@ export default function PassengerDetails() {
     console.log("Validation errors:", errors);
   };
 
-  
-
   const onSubmit = (data) => {
     const departFares = dapart_flight?.fares?.[0]?.fare_info;
     const returnFares = return_flight?.fares?.[0]?.fare_info;
 
-    const total = getTotalPrice(departFares, returnFares);
+    const priceBeforeProfit = getTotalPrice(departFares, returnFares);
+    const totalProfit =
+      (getTotalPrice(departFares, returnFares) * profitPercentage) / 100;
 
     const payload = {
       book_details: {
@@ -196,7 +199,9 @@ export default function PassengerDetails() {
         return_flight: return_flight,
       },
 
-      grand_total: total,
+      grand_total: Number(totalProfit) + Number(priceBeforeProfit),
+      total_profit: Number(totalProfit),
+      price_before_profit: Number(priceBeforeProfit),
       type: flightsFilter.trip_type === "ROUND_TRIP" ? "return" : "one_way",
       departure_date: flightsFilter.departure_date,
       return_date: flightsFilter.return_date,

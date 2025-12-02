@@ -194,6 +194,13 @@
   flex-direction: column;
   gap: 8px;
 
+  h2 {
+    width: min(100% - 12px, 700px);
+    font-size: 18px;
+    text-align: center;
+    margin-top: 12px;
+  }
+
   p {
     width: min(100% - 12px, 600px);
     text-align: center;

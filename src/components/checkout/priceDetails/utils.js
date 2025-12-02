@@ -19,14 +19,7 @@ export const getTotalService = (departFare, returnFare) => {
 };
 
 export const getTotalPrice = (departFare, returnFare) => {
-  if (
-    departFare?.fare_detail?.price_info?.total_fare &&
-    returnFare?.fare_detail?.price_info?.total_fare
-  ) {
-    return (
-      Number(departFare.fare_detail.price_info.total_fare) +
-      Number(returnFare.fare_detail.price_info.total_fare)
-    ).toFixed(2);
-  }
-  return departFare?.fare_detail?.price_info?.total_fare;
+  const depart = Number(departFare?.fare_detail?.price_info?.total_fare) || 0;
+  const ret = Number(returnFare?.fare_detail?.price_info?.total_fare) || 0;
+  return depart + ret;
 };

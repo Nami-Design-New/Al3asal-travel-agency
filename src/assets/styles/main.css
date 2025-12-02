@@ -2487,6 +2487,12 @@ body main .no_flights_available {
   flex-direction: column;
   gap: 8px;
 }
+body main .no_flights_available h2 {
+  width: min(100% - 12px, 700px);
+  font-size: 18px;
+  text-align: center;
+  margin-top: 12px;
+}
 body main .no_flights_available p {
   width: min(100% - 12px, 600px);
   text-align: center;
