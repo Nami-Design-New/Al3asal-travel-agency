@@ -26,12 +26,16 @@ export default function ReceiptModal({ show, setShow, reservationData }) {
 
   const departFlight = reservationData.flight_details.depart_flight;
   const returnFlight = reservationData.flight_details.return_flight;
-  const isRoundTrip = !!returnFlight;
+  // Check if return flight exists AND has legs
+  const isRoundTrip =
+    returnFlight && returnFlight.legs && returnFlight.legs.length > 0;
 
   const departFirstLeg = departFlight.legs[0];
   const departLastLeg = departFlight.legs[departFlight.legs.length - 1];
-  const returnFirstLeg = returnFlight?.legs?.[0];
-  const returnLastLeg = returnFlight?.legs?.[returnFlight?.legs?.length - 1];
+  const returnFirstLeg = isRoundTrip ? returnFlight.legs[0] : null;
+  const returnLastLeg = isRoundTrip
+    ? returnFlight.legs[returnFlight.legs.length - 1]
+    : null;
 
   // Extract passengers from all books
   const passengers =
@@ -69,26 +73,32 @@ export default function ReceiptModal({ show, setShow, reservationData }) {
 
   // Get fare details for both flights
   const departFareDetail = departFlight.fares?.[0]?.fare_info?.fare_detail;
-  const returnFareDetail = returnFlight?.fares?.[0]?.fare_info?.fare_detail;
+  const returnFareDetail = isRoundTrip
+    ? returnFlight.fares?.[0]?.fare_info?.fare_detail
+    : null;
 
   const departCabinType =
     departFlight.fares?.[0]?.fare_info?.cabin_types?.[0] ||
     t("receipt.economy");
-  const returnCabinType =
-    returnFlight?.fares?.[0]?.fare_info?.cabin_types?.[0] ||
-    t("receipt.economy");
+  const returnCabinType = isRoundTrip
+    ? returnFlight.fares?.[0]?.fare_info?.cabin_types?.[0] ||
+      t("receipt.economy")
+    : null;
 
   // Calculate total price for both flights
   const departTotalPrice = departFareDetail?.price_info?.total_fare || 0;
-  const returnTotalPrice = returnFareDetail?.price_info?.total_fare || 0;
+  const returnTotalPrice = isRoundTrip
+    ? returnFareDetail?.price_info?.total_fare || 0
+    : 0;
   const grandTotal = departTotalPrice + returnTotalPrice;
 
   // Get baggage allowance
   const departBaggageAllowance =
     departFlight.fares?.[0]?.fare_info?.pax_fares?.[0]?.baggage_allowances?.[0];
-  const returnBaggageAllowance =
-    returnFlight?.fares?.[0]?.fare_info?.pax_fares?.[0]
-      ?.baggage_allowances?.[0];
+  const returnBaggageAllowance = isRoundTrip
+    ? returnFlight.fares?.[0]?.fare_info?.pax_fares?.[0]
+        ?.baggage_allowances?.[0]
+    : null;
 
   return (
     <Modal
@@ -234,7 +244,10 @@ export default function ReceiptModal({ show, setShow, reservationData }) {
                   <li>
                     {t("receipt.baggageAllowance")} :{" "}
                     <span>
-                      {departBaggageAllowance?.amount || 1} {t("receipt.piece")}
+                      {departBaggageAllowance?.amount || 1}{" "}
+                      {departBaggageAllowance?.type === "KILO"
+                        ? "kg"
+                        : t("receipt.piece")}
                     </span>
                   </li>
                   {departFlight.legs.length > 1 && (
@@ -339,7 +352,9 @@ export default function ReceiptModal({ show, setShow, reservationData }) {
                       {t("receipt.baggageAllowance")} :{" "}
                       <span>
                         {returnBaggageAllowance?.amount || 1}{" "}
-                        {t("receipt.piece")}
+                        {returnBaggageAllowance?.type === "KILO"
+                          ? "kg"
+                          : t("receipt.piece")}
                       </span>
                     </li>
                     {returnFlight.legs.length > 1 && (
