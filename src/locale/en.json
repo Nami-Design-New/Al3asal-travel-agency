@@ -339,7 +339,22 @@
     "toBeAssigned": "TBA",
     "economy": "Economy",
     "piece": "piece",
-    "dataProtectionNotice": "Data Protection Notice: Your personal data will be processed in accordance with the applicable carrier's privacy policy and, where your booking is made via a reservation system provider (\"GDS\"), with its privacy policy. These are available at https://al3asal-travel-agency.vercel.app/privacy or from the carrier or GDS directly. You should read this documentation, which applies to your booking and specifies, for example, how your personal data is collected, stored, used, disclosed and transferred."
+    "dataProtectionNotice": "Data Protection Notice: Your personal data will be processed in accordance with the applicable carrier's privacy policy and, where your booking is made via a reservation system provider (\"GDS\"), with its privacy policy. These are available at https://al3asal-travel-agency.vercel.app/privacy or from the carrier or GDS directly. You should read this documentation, which applies to your booking and specifies, for example, how your personal data is collected, stored, used, disclosed and transferred.",
+    "roundTrip": "Round Trip",
+    "oneWay": "One Way",
+    "bookingReference": "Booking Reference",
+    "bookingDate": "Booking Date",
+    "departureFlight": "Departure Flight",
+    "returnFlight": "Return Flight",
+    "stops": "Stops",
+    "stop": "stop",
+    "passengers": "Passengers",
+    "priceBreakdown": "Price Breakdown",
+    "grandTotal": "Grand Total",
+    "thankYou": "Thank you for choosing Al3asal Travel!",
+    "contactForSupport": "For any questions or support, please contact our customer service.",
+    "status": "Status",
+    "currency": "USD"
   },
   "validation": {
     "required": "This field is required",

@@ -108,6 +108,7 @@ export default function PassengerDetails() {
     const returnFares = return_flight?.fares?.[0]?.fare_info;
 
     const priceBeforeProfit = getTotalPrice(departFares, returnFares);
+
     const totalProfit =
       (getTotalPrice(departFares, returnFares) * profitPercentage) / 100;
 
@@ -199,9 +200,9 @@ export default function PassengerDetails() {
         return_flight: return_flight,
       },
 
-      grand_total: Number(totalProfit) + Number(priceBeforeProfit),
-      total_profit: Number(totalProfit),
-      price_before_profit: Number(priceBeforeProfit),
+      grand_total: (totalProfit + priceBeforeProfit).toFixed(2),
+      total_profit: (totalProfit).toFixed(2),
+      price_before_profit: (priceBeforeProfit).toFixed(2),
       type: flightsFilter.trip_type === "ROUND_TRIP" ? "return" : "one_way",
       departure_date: flightsFilter.departure_date,
       return_date: flightsFilter.return_date,
