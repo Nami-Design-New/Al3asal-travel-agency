@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { FormProvider, useForm, useFieldArray } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { passengerSchema } from "../../validations/passengerSchema";
@@ -13,6 +14,7 @@ import useFlightsStore from "../../stores/flightsStore";
 import useGetSettings from "../../hooks/useGetSettings";
 
 export default function PassengerDetails() {
+  const { t } = useTranslation();
   const { flightsFilter } = useSearchStore();
   const { fare_details, dapart_flight, return_flight } = useFlightsStore();
   const { bookFlight, isPending } = useBookFlight();
@@ -191,7 +193,7 @@ export default function PassengerDetails() {
           })(),
         })),
 
-        notes: "Booking from Al3asal Travel Agency",
+        notes: t("booking_note"),
         accept_pending: true,
       },
 
@@ -228,30 +230,33 @@ export default function PassengerDetails() {
       <form className="form_ui" onSubmit={handleSubmit(onSubmit, onError)}>
         <div className="row">
           <div className="col-12 p-2">
-            <h6>Contact Info</h6>
+            <h6>{t("checkoutForm.contactInfo")}</h6>
           </div>
 
           <div className="col-lg-6 col-12 p-2">
             <InputField
               name="email"
-              label="Email *"
+              label={`${t("checkoutForm.email")} *`}
               type="email"
               id="email"
-              placeholder="Email"
+              placeholder={t("checkoutForm.enterEmail")}
               {...register("contact.email")}
-              error={errors.contact?.email?.message}
+              error={errors.contact?.email?.message && t(errors.contact?.email?.message)}
             />
           </div>
 
           <div className="col-lg-6 col-12 p-2">
             <PhoneField
               name="contact.phone"
-              label="Phone *"
+              label={`${t("checkoutForm.phone")} *`}
               handleChange={handlePhoneChange}
               error={
-                errors.contact?.phone?.phone_number?.message ||
-                errors.contact?.phone?.area_code?.message ||
-                errors.contact?.phone?.country_code?.message
+                t(
+                  errors.contact?.phone?.phone_number?.message ||
+                    errors.contact?.phone?.area_code?.message ||
+                    errors.contact?.phone?.country_code?.message ||
+                    ""
+                )
               }
             />
           </div>
@@ -270,7 +275,7 @@ export default function PassengerDetails() {
 
           {active === fields.length - 1 && (
             <div className="col-12 p-2 mt-2">
-              <SubmitButton text="Continue" loading={isPending} />
+              <SubmitButton text={t("checkoutForm.continue")} loading={isPending} />
             </div>
           )}
         </div>

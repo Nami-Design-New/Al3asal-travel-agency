@@ -1,12 +1,20 @@
+import { useTranslation } from "react-i18next";
+
 export default function FareBreakdown({ fares }) {
+  const { t } = useTranslation();
+
+  const typeLabelMap = {
+    ADULT: t("flights.adult"),
+    CHILD: t("flights.child"),
+    INFANT: t("flights.infant"),
+  };
   return (
     <>
       {fares?.fare_detail?.pax_fares?.map((pax) => (
         <div className="price" key={pax.pax_type}>
           <h6>
-            {pax.number_of_pax}{" "}
-            {pax.pax_type.charAt(0) + pax.pax_type.slice(1).toLowerCase()}
-            {pax.number_of_pax > 1 ? "s" : ""}, Economy
+            {pax.number_of_pax} {typeLabelMap[pax.pax_type] || pax.pax_type}
+            , {t("flights.economy")}
             <span>
               {pax.number_of_pax} x{" "}
               {(pax.price_info.base_fare / pax.number_of_pax).toFixed(2)}{" "}
@@ -21,7 +29,7 @@ export default function FareBreakdown({ fares }) {
       ))}
 
       <div className="price">
-        <h6>Total Tax</h6>
+        <h6>{t("checkoutForm.totaltax")}</h6>
         <h5>
           {fares?.fare_detail?.pax_fares
             ?.reduce((acc, pax) => acc + pax.price_info.tax, 0)
@@ -31,9 +39,9 @@ export default function FareBreakdown({ fares }) {
       </div>
 
       <div className="price">
-        <h6>Total Price</h6>
+        <h6>{t("checkoutForm.totalPrice")}</h6>
         <h5>
-          {fares?.fare_detail?.price_info?.total_fare} <span>USD</span>
+          {fares?.fare_detail?.price_info?.total_fare} <span>{t("receipt.currency")}</span>
         </h5>
       </div>
     </>

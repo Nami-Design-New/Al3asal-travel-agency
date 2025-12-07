@@ -180,7 +180,7 @@
               border: 1px solid $input_stroke;
               @include centerFlex();
               box-shadow: rgba(0, 0, 0, 0.035) 0px 2.45093px 8.98675px 0px;
-              margin-left: -14px;
+              margin-right: -14px;
               img {
                 object-fit: contain;
                 width: 2rem;

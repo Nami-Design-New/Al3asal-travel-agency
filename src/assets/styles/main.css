@@ -3261,7 +3261,7 @@ body main .checkout_section .price_details_container .price_details .ticket_deta
   align-items: center;
   justify-content: center;
   box-shadow: rgba(0, 0, 0, 0.035) 0px 2.45093px 8.98675px 0px;
-  margin-left: -14px;
+  margin-right: -14px;
 }
 body main .checkout_section .price_details_container .price_details .ticket_details .flight .airlines .img img {
   -o-object-fit: contain;
@@ -4312,6 +4312,10 @@ body.en main .filter_container .flight_specifications .places_menu .places_menu_
 body.en main .flights .round_trip_flight .center_devider span {
   -webkit-clip-path: polygon(0% 0%, 50% 50%, 0% 100%);
           clip-path: polygon(0% 0%, 50% 50%, 0% 100%);
+}
+body.en main .checkout_section .price_details_container .price_details .ticket_details .flight .airlines .img {
+  margin-right: 0;
+  margin-left: -14px;
 }
 body.en .footer h5::after {
   background: radial-gradient(90% 70% at 0% 20%, #54a0c4, rgba(238, 238, 238, 0));

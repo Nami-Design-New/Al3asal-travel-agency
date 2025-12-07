@@ -222,6 +222,11 @@ body {
       clip-path: polygon(0% 0%, 50% 50%, 0% 100%);
     }
 
+    main .checkout_section .price_details_container .price_details .ticket_details .flight .airlines .img {
+      margin-right: 0;
+      margin-left: -14px;
+    }
+
     .footer h5::after {
       background: radial-gradient(
         90% 70% at 0% 20%,

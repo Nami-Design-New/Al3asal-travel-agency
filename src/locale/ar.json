@@ -126,7 +126,10 @@
     "BUSINESS": "درجة رجال الأعمال",
     "select_departure": "اختر تاريخ المغادرة",
     "select_departure_return": "اختر تاريخي الذهاب والعودة",
-    "traveler": "مسافر"
+    "traveler": "مسافر",
+    "adult": "بالغ",
+    "child": "طفل",
+    "infant": "رضيع"
   },
   "home": {
     "welcome": "مرحباً بكم في العسل للسفر والسياحة",
@@ -256,6 +259,25 @@
     "dateOfBirth": "تاريخ الميلاد",
     "passportExpiryDate": "تاريخ انتهاء الجواز",
     "nationality": "الجنسية",
+    "firstName": "الاسم الأول",
+    "lastName": "اسم العائلة",
+    "selectGender": "اختر الجنس",
+    "identityDocumentType": "نوع وثيقة الهوية",
+    "selectIdentityType": "اختر نوع الهوية",
+    "citizenshipCountry": "بلد الجنسية",
+    "cnicNumber": "رقم البطاقة الوطنية",
+    "foidNumber": "رقم الهوية الأجنبية",
+    "tcNumber": "رقم الهوية",
+    "hesCodeOptional": "رمز HES (اختياري)",
+    "hesCode": "رمز HES",
+    "identityTypes": {
+      "passport": "جواز سفر",
+      "cnic": "البطاقة الوطنية (باكستان)",
+      "foid": "هوية أجنبية",
+      "tc": "رقم الهوية (تركيا)"
+    },
+    "notTurkishCitizen": "ليس مواطناً تركياً",
+    "notPakistanCitizen": "ليس مواطناً باكستانياً",
     "continue": "متابعة",
     "totalPrice": "السعر الإجمالي",
     "bookingFee": "رسوم الحجز",
@@ -311,7 +333,9 @@
     "enterName": "أدخل الاسم الكامل",
     "enterYourPassportNumber": "أدخل رقم جواز سفرك",
     "enterYourAdress": "أدخل عنوانك",
-    "gender": "الجنس"
+    "gender": "الجنس",
+    "genderMale": "ذكر",
+    "genderFemale": "أنثى"
   },
   "receipt": {
     "invoice": "فاتورة",
@@ -376,7 +400,19 @@
     "passportIssueDatePast": "تاريخ الإصدار يجب أن يكون في الماضي",
     "passportEndDateRequired": "تاريخ الانتهاء مطلوب",
     "passportIssueDateRequired": "تاريخ الإصدار مطلوب",
-    "passportIssueCountryRequired": "بلد الإصدار مطلوب"
+    "passportIssueCountryRequired": "بلد الإصدار مطلوب",
+    "firstNameRequired": "الاسم الأول مطلوب",
+    "lastNameRequired": "اسم العائلة مطلوب",
+    "birthdateRequired": "تاريخ الميلاد مطلوب",
+    "birthdateInvalid": "يرجى إدخال تاريخ ميلاد صحيح",
+    "birthdateFutureInvalid": "تاريخ الميلاد لا يمكن أن يكون في المستقبل",
+    "passengerTypeRequired": "نوع الراكب مطلوب",
+    "genderRequired": "الجنس مطلوب",
+    "identityTypeRequired": "نوع الهوية مطلوب",
+    "areaCodeRequired": "رمز المنطقة مطلوب",
+    "countryCodeRequired": "رمز الدولة مطلوب",
+    "phoneNumberRequired": "رقم الهاتف مطلوب",
+    "phoneMinDigits": "يجب أن يكون رقم الهاتف على الأقل {{min}} أرقام"
   },
   "lastUpdate": "آخر تحديث:",
   "recentBlogs": "المدونات الحديثة",
@@ -400,6 +436,7 @@
   "booking_success": "تم تأكيد حجزك بنجاح! سوف تتلقى بريدًا إلكترونيًا يحتوي على تفاصيل تذكرتك قريبًا.",
   "booking_error": "عذرًا، لم نتمكن من إتمام حجزك. يرجى المحاولة مرة أخرى أو الاتصال بالدعم إذا استمرت المشكلة.",
   "booking_refunded": "تم إلغاء حجزك ومعالجة استرداد المبلغ. سيظهر المبلغ في حسابك خلال 3-5 أيام عمل.",
+  "booking_note": "حجز من العسل للسفر والسياحة",
   "profile_updated_success": "تم تحديث الملف الشخصي بنجاح",
   "profile_update_error": "فشل في تحديث الملف الشخصي",
   "no_flights_message": "عذراً، لم يتم العثور على رحلات متاحة في الوقت الحالي.",

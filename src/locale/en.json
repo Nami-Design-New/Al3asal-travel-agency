@@ -126,7 +126,10 @@
     "BUSINESS": "Business Class",
     "select_departure": "Select departure date",
     "select_departure_return": "Select departure & return dates",
-    "traveler": "Traveler"
+    "traveler": "Traveler",
+    "adult": "Adult",
+    "child": "Child",
+    "infant": "Infant"
   },
   "home": {
     "welcome": "Welcome to Al3asal Travel & Tourism",
@@ -256,6 +259,25 @@
     "dateOfBirth": "Date of Birth",
     "passportExpiryDate": "Passport Expiry Date",
     "nationality": "Nationality",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "selectGender": "Select Gender",
+    "identityDocumentType": "Identity Document Type",
+    "selectIdentityType": "Select Identity Type",
+    "citizenshipCountry": "Citizenship Country",
+    "cnicNumber": "CNIC Number",
+    "foidNumber": "Foreign ID Number",
+    "tcNumber": "TC Number",
+    "hesCodeOptional": "HES Code (Optional)",
+    "hesCode": "HES Code",
+    "identityTypes": {
+      "passport": "Passport",
+      "cnic": "CNIC (Pakistan)",
+      "foid": "Foreign ID",
+      "tc": "TC (Turkey)"
+    },
+    "notTurkishCitizen": "Not a Turkish citizen",
+    "notPakistanCitizen": "Not a Pakistan citizen",
     "continue": "Continue",
     "totalPrice": "Total Price",
     "bookingFee": "Booking Fee",
@@ -311,7 +333,9 @@
     "enterName": "Enter full name",
     "enterYourPassportNumber": "Enter your passport number",
     "enterYourAdress": "Enter your address",
-    "gender": "Gender"
+    "gender": "Gender",
+    "genderMale": "Male",
+    "genderFemale": "Female"
   },
   "receipt": {
     "invoice": "Invoice",
@@ -376,7 +400,19 @@
     "passportIssueDatePast": "Issue date must be in the past",
     "passportEndDateRequired": "Expiry date is required",
     "passportIssueDateRequired": "Issuance date is required",
-    "passportIssueCountryRequired": "Issuance country is required"
+    "passportIssueCountryRequired": "Issuance country is required",
+    "firstNameRequired": "First name is required",
+    "lastNameRequired": "Last name is required",
+    "birthdateRequired": "Date of birth is required",
+    "birthdateInvalid": "Please enter a valid date of birth",
+    "birthdateFutureInvalid": "Birthdate cannot be in the future",
+    "passengerTypeRequired": "Passenger type is required",
+    "genderRequired": "Gender is required",
+    "identityTypeRequired": "Identity type is required",
+    "areaCodeRequired": "Area code is required",
+    "countryCodeRequired": "Country code is required",
+    "phoneNumberRequired": "Phone number is required",
+    "phoneMinDigits": "Phone number must be at least {{min}} digits"
   },
   "lastUpdate": "Last updated:",
   "recentBlogs": "Recent Blogs",
@@ -400,6 +436,7 @@
   "booking_success": "Your booking has been confirmed successfully! You will receive an email with your ticket details shortly.",
   "booking_error": "Sorry, we were unable to complete your booking. Please try again or contact support if the problem persists.",
   "booking_refunded": "Your booking has been cancelled and the refund has been processed. The amount will appear in your account within 3-5 business days.",
+  "booking_note": "Booking from Al3asal Travel Agency",
   "profile_updated_success": "Profile updated successfully",
   "profile_update_error": "Failed to update profile",
   "no_flights_message": "Sorry, no flights are available at the moment.",
