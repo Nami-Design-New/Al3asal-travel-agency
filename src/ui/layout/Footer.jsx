@@ -85,6 +85,7 @@ export default function Footer() {
               <li>{t("footer.ser2")}</li>
               <li>{t("footer.ser3")}</li>
               <li>{t("footer.ser4")}</li>
+              <li>{t("footer.ser5")}</li>
             </ul>
           </div>
 

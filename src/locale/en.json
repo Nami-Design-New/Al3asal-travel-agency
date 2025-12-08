@@ -87,7 +87,8 @@
     "passwordResetSuccess": "Password reset successful. You can now log in with your new password.",
     "somethingWentWrong": "Something went wrong. Please try again later.",
     "loginError": "Login failed, please check your credentials",
-    "googleLoginError": "Google login failed, please try again"
+    "googleLoginError": "Google login failed, please try again",
+    "registerFailed": "Registration failed, please try again"
   },
   "flights": {
     "oneWay": "One Way",
@@ -152,7 +153,7 @@
       "title": "Comprehensive Services",
       "description": "We provide complete solutions that meet all your needs with the highest standards of quality and attention."
     },
-    "discoverMore": "Discover More"
+    "discoverMore": "Book Now"
   },
   "benefits": {
     "sectionTitle": "Why choose us?",
@@ -231,6 +232,7 @@
     "ser2": "Comprehensive travel programs",
     "ser3": "Travel visa arrangements",
     "ser4": "Honeymoon trip planning",
+    "ser5": "24/7 Customer Support",
     "usefulLinks": "Useful Links",
     "home": "Home",
     "about": "About Us",

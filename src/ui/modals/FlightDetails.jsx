@@ -23,7 +23,7 @@ export default function FlightDetails({ show, setShow, page }) {
   const returnFareKey = return_flight?.fares?.[0]?.fare_key;
 
   const payload = {
-    pax_list: flightsFilter.pax_list,
+    pax_list: flightsFilter.pax_list.filter((pax) => pax.count > 0),
     departure_fare_key: departFareKey,
     return_fare_key: returnFareKey,
   };

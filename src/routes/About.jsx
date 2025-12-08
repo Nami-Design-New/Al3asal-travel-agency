@@ -2,6 +2,7 @@ import { useTranslation } from "react-i18next";
 import HeaderSection from "../ui/layout/HeaderSection";
 import WhyChooseUs from "../components/home/WhyChooseUs";
 import useGetAboutPage from "../hooks/useGetAboutPage";
+import { Link } from "react-router";
 
 const AboutUsSection = () => {
   const { t } = useTranslation();
@@ -39,7 +40,7 @@ const AboutUsSection = () => {
                 <p className="section-description">{data?.about?.content}</p>
 
                 <div className="features-container">
-                  {data?.about?.data?.map((d) => (
+                  {data?.about?.data?.slice(0, 3).map((d) => (
                     <div className="feature-item" key={d.id}>
                       <img
                         src="/icons/check.png"
@@ -47,20 +48,16 @@ const AboutUsSection = () => {
                         className="feature-icon"
                       />
                       <div>
-                        <h4 className="feature-title">
-                         {d.title}
-                        </h4>
-                        <p className="feature-description">
-                          {d.content}
-                        </p>
+                        <h4 className="feature-title">{d.title}</h4>
+                        <p className="feature-description">{d.content}</p>
                       </div>
                     </div>
                   ))}
                 </div>
 
-                <button className="discover-more-btn">
+                <Link to="/flights" className="discover-more-btn">
                   {t("aboutUs.discoverMore")} <span className="arrow">←</span>
-                </button>
+                </Link>
               </div>
             </div>
           </div>

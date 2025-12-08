@@ -2,9 +2,12 @@ import { useTranslation } from "react-i18next";
 import { flightLevels } from "./../../utils/constants";
 import CheckField from "../../ui/forms/CheckField";
 import useSearchStore from "../../stores/searchStore";
+import useFlightsStore from "../../stores/flightsStore";
 
 export default function TripType() {
   const { flightsFilter, updateFilter } = useSearchStore();
+  const { setReturnFlight } = useFlightsStore();
+
   const { t } = useTranslation();
 
   return (
@@ -14,7 +17,10 @@ export default function TripType() {
         name="flight-type"
         text={t("flights.oneWay")}
         checked={flightsFilter.trip_type === "ONE_WAY"}
-        onChange={() => updateFilter({ trip_type: "ONE_WAY", return_date: "" })}
+        onChange={() => {
+          updateFilter({ trip_type: "ONE_WAY", return_date: "" });
+          setReturnFlight({});
+        }}
       />
 
       <CheckField
