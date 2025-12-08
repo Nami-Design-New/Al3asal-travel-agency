@@ -34,6 +34,7 @@ export default function useLogin(t) {
     mutationFn: async (data) => {
       const response = await axiosInstance.post("/auth/login", {
         password: data.password,
+        phone_code: data.phone_code,
         email_phone: data.phone,
       });
       return response.data;

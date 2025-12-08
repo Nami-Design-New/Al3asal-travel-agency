@@ -255,7 +255,8 @@ export default function PassengerDetails() {
                   errors.contact?.phone?.phone_number?.message ||
                     errors.contact?.phone?.area_code?.message ||
                     errors.contact?.phone?.country_code?.message ||
-                    ""
+                    "",
+                  { min: 7 }
                 )
               }
             />

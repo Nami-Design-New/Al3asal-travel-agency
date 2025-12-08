@@ -3632,7 +3632,8 @@ body main .blog_section .title {
 }
 body main .blog_section .title h4 {
   color: #000;
-  font-size: 18px;
+  font-size: 28px;
+  margin-bottom: 12px;
 }
 body main .blog_section .title a {
   color: #54a0c4;
