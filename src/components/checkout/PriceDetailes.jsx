@@ -72,10 +72,10 @@ export default function PriceDetails() {
           </>
         )}
 
-        <span className="line" />
+        {/* <span className="line" /> */}
 
         {/* booking fee */}
-        <div className="total_price">
+        {/* <div className="total_price">
           <h6>{t("checkoutForm.bookingFee")}</h6>
           <h5>
             {getTotalService(departFares, returnFares) !== 0 ? (
@@ -87,7 +87,7 @@ export default function PriceDetails() {
               <span style={{ color: "#44b50c" }}>Free</span>
             )}
           </h5>
-        </div>
+        </div> */}
       </div>
 
       <FlightDetails show={showModal} setShow={setShowModal} page="checkout" />

@@ -153,7 +153,7 @@
       "title": "خدمات شاملة",
       "description": "نقدم حلولاً متكاملة تلبي جميع احتياجاتك بأعلى معايير الجودة والاهتمام."
     },
-    "discoverMore": "احجز الآن"
+    "discoverMore": "اكتشف المزيد"
   },
   "benefits": {
     "sectionTitle": "لماذا تختارنا؟",
@@ -272,6 +272,7 @@
     "tcNumber": "رقم الهوية",
     "hesCodeOptional": "رمز HES (اختياري)",
     "hesCode": "رمز HES",
+    "totalfees": "إجمالي الرسوم",
     "identityTypes": {
       "passport": "جواز سفر",
       "cnic": "البطاقة الوطنية (باكستان)",

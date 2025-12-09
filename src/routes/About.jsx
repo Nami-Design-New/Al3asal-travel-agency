@@ -1,10 +1,11 @@
 import { useTranslation } from "react-i18next";
+import { useState } from "react";
 import HeaderSection from "../ui/layout/HeaderSection";
 import WhyChooseUs from "../components/home/WhyChooseUs";
 import useGetAboutPage from "../hooks/useGetAboutPage";
-import { Link } from "react-router";
 
 const AboutUsSection = () => {
+  const [showAll , setShowAll] = useState(false);
   const { t } = useTranslation();
   const { data } = useGetAboutPage();
 
@@ -40,7 +41,7 @@ const AboutUsSection = () => {
                 <p className="section-description">{data?.about?.content}</p>
 
                 <div className="features-container">
-                  {data?.about?.data?.slice(0, 3).map((d) => (
+                  {!showAll && data?.about?.data?.slice(0, 3).map((d) => (
                     <div className="feature-item" key={d.id}>
                       <img
                         src="/icons/check.png"
@@ -53,11 +54,27 @@ const AboutUsSection = () => {
                       </div>
                     </div>
                   ))}
+
+                  {
+                    showAll && data?.about?.data?.slice(3).map((d) => (
+                      <div className="feature-item" key={d.id}>
+                        <img
+                          src="/icons/check.png"
+                          alt={t("aboutUs.feature1.title")}
+                          className="feature-icon"
+                        />
+                        <div>
+                          <h4 className="feature-title">{d.title}</h4>
+                          <p className="feature-description">{d.content}</p>
+                        </div>
+                      </div>
+                    ))
+                  }
                 </div>
 
-                <Link to="/flights" className="discover-more-btn">
+                <button className="discover-more-btn" onClick={() => setShowAll(!showAll)}>
                   {t("aboutUs.discoverMore")} <span className="arrow">←</span>
-                </Link>
+                </button>
               </div>
             </div>
           </div>
