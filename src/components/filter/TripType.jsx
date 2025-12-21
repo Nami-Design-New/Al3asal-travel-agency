@@ -6,11 +6,11 @@ import useFlightsStore from "../../stores/flightsStore";
 import { useSearchParams } from "react-router";
 
 export default function TripType() {
+  const { t } = useTranslation();
   const { flightsFilter, updateFilter } = useSearchStore();
   const { setReturnFlight } = useFlightsStore();
-  const { t } = useTranslation();
-
   const [searchParams, setSearchParams] = useSearchParams();
+  const airlines = JSON.parse(localStorage.getItem("airlines"));
 
   const handleSortChange = (e) => {
     const value = e.target.value; // asc | desc
@@ -29,7 +29,6 @@ export default function TripType() {
 
     setSearchParams(params);
   };
-  const airlines = JSON.parse(localStorage.getItem("airlines"));
 
   return (
     <div className="flight_type">
@@ -67,17 +66,18 @@ export default function TripType() {
       </select>
 
       <select className="flights_level" onChange={handleFilterAirLine}>
-        <option value=""> ترتيب حسب الدوله </option>
+        <option value=""> {t("flights.select_country")}</option>
         {airlines?.map((item) => (
           <option value={item} key={item}>
             {item}
           </option>
         ))}
       </select>
+
       <select className="flights_level" onChange={handleSortChange}>
-        <option value=""> ترتيب حسب السعر </option>
-        <option value="desc">السعر: من الأعلى إلى الأقل</option>
-        <option value="asc">السعر: من الأقل إلى الأعلى</option>
+        <option value=""> {t("flights.sort_by_price")}</option>
+        <option value="desc"> {t("flights.price_high_to_low")}</option>
+        <option value="asc"> {t("flights.price_low_to_high")}</option>
       </select>
     </div>
   );

@@ -130,7 +130,11 @@
     "traveler": "Traveler",
     "adult": "Adult",
     "child": "Child",
-    "infant": "Infant"
+    "infant": "Infant",
+    "select_country": "Select country",
+    "sort_by_price": "Sort by price",
+    "price_high_to_low": "High to low",
+    "price_low_to_high": "Low to high"
   },
   "home": {
     "welcome": "Welcome to Al3asal Travel & Tourism",
