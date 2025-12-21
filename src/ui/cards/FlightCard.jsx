@@ -8,7 +8,8 @@ export default function FlightCard({ flight, handleSelect }) {
   const { data: settings } = useGetSettings();
 
   const profitPercentage = settings?.profit_percentage;
-  const finalPrice = Number(totalPrice) + Number(totalPrice) * Number(profitPercentage) / 100;
+  const finalPrice =
+    Number(totalPrice) + (Number(totalPrice) * Number(profitPercentage)) / 100;
 
   return (
     <div className="flight_card" onClick={() => handleSelect(flight)}>

@@ -13,6 +13,7 @@ export default function useGetTickets(enabled) {
     departure_date: flightsFilter.departure_date,
     accept_pending: true,
     cabin_type: flightsFilter.cabin_type,
+    sort_price: flightsFilter.sort_price,
   };
 
   if (flightsFilter.return_date) {

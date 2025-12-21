@@ -327,9 +327,12 @@
           .time {
             bottom: initial;
             top: -22px;
+            display: flex;
             align-items: center;
+            justify-content: space-between;
             flex-direction: row;
             white-space: nowrap;
+            min-width: 100%;
           }
         }
 

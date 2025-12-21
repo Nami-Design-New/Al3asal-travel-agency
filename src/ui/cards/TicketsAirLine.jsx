@@ -1,3 +1,6 @@
+import { useEffect } from "react";
+import { storeUniqueAirlines } from "../../utils/storeUniqueAirlines";
+
 export default function TicketsAirLine({ flight }) {
   const uniqueAirlines = Array.from(
     new Map(
@@ -11,19 +14,28 @@ export default function TicketsAirLine({ flight }) {
     ).values()
   );
 
+  const airlineNames = uniqueAirlines.map((a) => a.name);
+
+  useEffect(() => {
+    if (airlineNames.length) {
+      storeUniqueAirlines(airlineNames);
+    }
+  }, [airlineNames]);
+
   return (
     <div className="airlines">
       <div className="content">
         <div className="images">
           {uniqueAirlines.map((airline) => (
             <img
+              key={airline.code}
               src={`http://img.wway.io/pics/root/${airline.code}@svg`}
               alt={airline.name}
-              key={airline.code}
             />
           ))}
         </div>
-        <h6>{uniqueAirlines.map((a) => a.name).join(", ")}</h6>
+
+        <h6>{airlineNames.join(", ")}</h6>
       </div>
     </div>
   );

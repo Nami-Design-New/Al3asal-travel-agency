@@ -46,6 +46,8 @@ export default function TicketTimeLine({ flight }) {
 
             const stopDurationMinutes = dateTimeDiffCalc(stop.from, stop.to);
             const offsetInMinutes = dateTimeDiffCalc(departureTime, stop.from);
+            const timeStartTransit = stop.from;
+            const timeEndTransit = stop.to;
 
             const width = (stopDurationMinutes / totalDuration) * 100;
             const left = (offsetInMinutes / totalDuration) * 100;
@@ -71,9 +73,14 @@ export default function TicketTimeLine({ flight }) {
                   }}
                 >
                   <span className="time">
-                    <i className="fa-regular fa-timer"></i>{" "}
-                    {minutesToHM(stopDurationMinutes)}
+                    <div>{formatTimeHHMM(timeStartTransit)}</div>
+                    <div>
+                      <i className="fa-regular fa-timer"></i>{" "}
+                      {minutesToHM(stopDurationMinutes)}
+                    </div>
+                    <div>{formatTimeHHMM(timeEndTransit)}</div>
                   </span>
+
                   <span>{stop.code}</span>
                 </div>
               </OverlayTrigger>
@@ -85,7 +92,8 @@ export default function TicketTimeLine({ flight }) {
         {legs.length === 1 && (
           <>
             <span className="flight_d up">
-              <i className="fa-regular fa-timer"></i> {minutesToHM(totalDuration)}
+              <i className="fa-regular fa-timer"></i>{" "}
+              {minutesToHM(totalDuration)}
             </span>
             <span className="flight_d">Direct Flight</span>
           </>
@@ -113,10 +121,15 @@ export default function TicketTimeLine({ flight }) {
               <OverlayTrigger
                 placement="bottom"
                 overlay={renderTooltip({
-                  content: <span style={{ fontSize: "12px" }}>night flight</span>,
+                  content: (
+                    <span style={{ fontSize: "12px" }}>night flight</span>
+                  ),
                 })}
               >
-                <i className="fa-regular fa-moon" style={{ color: "#FFD700" }} />
+                <i
+                  className="fa-regular fa-moon"
+                  style={{ color: "#FFD700" }}
+                />
               </OverlayTrigger>
             </>
           )}
