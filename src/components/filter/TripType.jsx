@@ -12,19 +12,14 @@ export default function TripType() {
   const [searchParams, setSearchParams] = useSearchParams();
   const airlines = JSON.parse(localStorage.getItem("airlines"));
 
-  const handleSortChange = (e) => {
-    const value = e.target.value; // asc | desc
-    setSearchParams({ sort: value });
-  };
-  const handleFilterAirLine = (e) => {
+  const handleQueryChange = (key) => (e) => {
     const value = e.target.value;
-
     const params = Object.fromEntries(searchParams.entries());
 
     if (value) {
-      params.airline = value;
+      params[key] = value;
     } else {
-      delete params.airline;
+      delete params[key];
     }
 
     setSearchParams(params);
@@ -65,7 +60,7 @@ export default function TripType() {
         ))}
       </select>
 
-      <select className="flights_level" onChange={handleFilterAirLine}>
+      <select className="flights_level" onChange={handleQueryChange("airline")}>
         <option value=""> {t("flights.select_country")}</option>
         {airlines?.map((item) => (
           <option value={item} key={item}>
@@ -74,7 +69,7 @@ export default function TripType() {
         ))}
       </select>
 
-      <select className="flights_level" onChange={handleSortChange}>
+      <select className="flights_level" onChange={handleQueryChange("sort")}>
         <option value=""> {t("flights.sort_by_price")}</option>
         <option value="desc"> {t("flights.price_high_to_low")}</option>
         <option value="asc"> {t("flights.price_low_to_high")}</option>
