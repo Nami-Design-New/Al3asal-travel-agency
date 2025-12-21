@@ -2515,8 +2515,7 @@ body main .flights .round_trip_flight .center_devider span {
   width: 100%;
   height: 100%;
   background: rgba(84, 160, 196, 0.2196078431);
-  -webkit-clip-path: polygon(100% 0%, 100% 100%, 50% 50%);
-          clip-path: polygon(100% 0%, 100% 100%, 50% 50%);
+  clip-path: polygon(100% 0%, 100% 100%, 50% 50%);
 }
 body main .flights .round_trip_flight .center_devider.active {
   background: rgba(84, 160, 196, 0.2196078431);
@@ -2686,9 +2685,12 @@ body main .flight_card .flight_info .departure .time_line .line span {
 body main .flight_card .flight_info .departure .time_line .line .time {
   bottom: initial;
   top: -22px;
+  display: flex;
   align-items: center;
+  justify-content: space-between;
   flex-direction: row;
   white-space: nowrap;
+  min-width: 100%;
 }
 body main .flight_card .flight_info .departure .time_line::before, body main .flight_card .flight_info .departure .time_line::after {
   content: "";
@@ -3411,7 +3413,7 @@ body main .about-us-section .discover-more-btn {
   border-radius: 50px;
 }
 body main .about-us-section .discover-more-btn:hover {
-  background: linear-gradient(135deg, #54a0c4 0%, #3b86aa 100%);
+  background: linear-gradient(135deg, #54a0c4 0%, rgb(58.7434782609, 134.4130434783, 170.2565217391) 100%);
   color: #fff;
   transform: translateY(-3px);
   box-shadow: 0 8px 20px rgba(84, 160, 196, 0.35);
@@ -4311,8 +4313,7 @@ body.en main .filter_container .flight_specifications .places_menu .places_menu_
   right: 16px;
 }
 body.en main .flights .round_trip_flight .center_devider span {
-  -webkit-clip-path: polygon(0% 0%, 50% 50%, 0% 100%);
-          clip-path: polygon(0% 0%, 50% 50%, 0% 100%);
+  clip-path: polygon(0% 0%, 50% 50%, 0% 100%);
 }
 body.en main .checkout_section .price_details_container .price_details .ticket_details .flight .airlines .img {
   margin-right: 0;

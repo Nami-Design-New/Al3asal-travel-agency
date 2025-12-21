@@ -130,7 +130,11 @@
     "traveler": "مسافر",
     "adult": "بالغ",
     "child": "طفل",
-    "infant": "رضيع"
+    "infant": "رضيع",
+    "select_country": "اختر الدولة",
+    "sort_by_price": "ترتيب حسب السعر",
+    "price_high_to_low": "من الأعلى إلى الأقل",
+    "price_low_to_high": "من الأقل إلى الأعلى"
   },
   "home": {
     "welcome": "مرحباً بكم في العسل للسفر والسياحة",
