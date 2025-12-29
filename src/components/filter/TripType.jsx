@@ -46,34 +46,39 @@ export default function TripType() {
         onChange={() => updateFilter({ trip_type: "ROUND_TRIP" })}
       />
 
-      <select
-        name="flight-level"
-        id="flight-level"
-        className="flights_level"
-        value={flightsFilter.cabin_type || "ECONOMY"}
-        onChange={(e) => updateFilter({ cabin_type: e.target.value })}
-      >
-        {flightLevels.map((l) => (
-          <option value={l} key={l}>
-            {t(`flights.${l}`)}
-          </option>
-        ))}
-      </select>
+      <div className="d-flex gap-2 align-center flex-wrap mt-2 mt-sm-0">
+        <select
+          name="flight-level"
+          id="flight-level"
+          className="flights_level"
+          value={flightsFilter.cabin_type || "ECONOMY"}
+          onChange={(e) => updateFilter({ cabin_type: e.target.value })}
+        >
+          {flightLevels.map((l) => (
+            <option value={l} key={l}>
+              {t(`flights.${l}`)}
+            </option>
+          ))}
+        </select>
 
-      <select className="flights_level" onChange={handleQueryChange("airline")}>
-        <option value=""> {t("flights.select_country")}</option>
-        {airlines?.map((item) => (
-          <option value={item} key={item}>
-            {item}
-          </option>
-        ))}
-      </select>
+        <select
+          className="flights_level"
+          onChange={handleQueryChange("airline")}
+        >
+          <option value=""> {t("flights.select_country")}</option>
+          {airlines?.map((item) => (
+            <option value={item} key={item}>
+              {item}
+            </option>
+          ))}
+        </select>
 
-      <select className="flights_level" onChange={handleQueryChange("sort")}>
-        <option value=""> {t("flights.sort_by_price")}</option>
-        <option value="desc"> {t("flights.price_high_to_low")}</option>
-        <option value="asc"> {t("flights.price_low_to_high")}</option>
-      </select>
+        <select className="flights_level" onChange={handleQueryChange("sort")}>
+          <option value=""> {t("flights.sort_by_price")}</option>
+          <option value="desc"> {t("flights.price_high_to_low")}</option>
+          <option value="asc"> {t("flights.price_low_to_high")}</option>
+        </select>
+      </div>
     </div>
   );
 }
