@@ -1883,6 +1883,7 @@ body main .filter_container .flight_type {
   display: flex;
   align-items: center;
   gap: 16px;
+  flex-wrap: wrap;
 }
 body main .filter_container .flight_type label {
   cursor: pointer;
